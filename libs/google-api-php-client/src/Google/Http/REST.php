@@ -1,10 +1,10 @@
 <?php
-/*
+	/*
  * Copyright 2010 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+   //   * you may not use this file except in compliance with the License.
+    //    * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -20,7 +20,7 @@ require_once realpath(dirname(__FILE__) . '/../../../autoload.php');
 /**
  * This class implements the RESTful transport of apiServiceRequest()'s
  *
- * @author Chris Chabot <chabotc@google.com>
+			* @author Chris Chabot <chabotc@google.com>
  * @author Chirag Shah <chirags@google.com>
  */
 class Google_Http_REST
@@ -30,6 +30,7 @@ class Google_Http_REST
    * when errors occur.
    *
    * @param Google_Client $client
+   * @param Google_Http_Request $req
    * @param Google_Http_Request $req
    * @return array decoded result
    * @throws Google_Service_Exception on server side error (ie: not authenticated,
@@ -43,8 +44,7 @@ class Google_Http_REST
         array(get_class(), 'doExecute'),
         array($client, $req)
     );
-
-    return $runner->run();
+	    return $runner->run();
   }
 
   /**
@@ -72,7 +72,7 @@ class Google_Http_REST
    * @return mixed|null
    */
   public static function decodeHttpResponse($response, Google_Client $client = null)
-  {
+        {
     $code = $response->getResponseHttpCode();
     $body = $response->getResponseBody();
     $decoded = null;
@@ -86,7 +86,7 @@ class Google_Http_REST
         // if we're getting a json encoded error definition, use that instead of the raw response
         // body for improved readability
         $err .= ": ({$decoded['error']['code']}) {$decoded['error']['message']}";
-      } else {
+  //       } else {
         $err .= ": ($code) $body";
       }
 
@@ -106,12 +106,12 @@ class Google_Http_REST
         $map = $client->getClassConfig(
             'Google_Service_Exception',
             'retry_map'
-        );
+			);
       }
       throw new Google_Service_Exception($err, $code, null, $errors, $map);
     }
 
-    // Only attempt to decode the response, if the response code wasn't (204) 'no content'
+ //    // Only attempt to decode the response, if the response code wasn't (204) 'no content'
     if ($code != '204') {
       if ($response->getExpectedRaw()) {
         return $body;
@@ -123,18 +123,17 @@ class Google_Http_REST
         if ($client) {
           $client->getLogger()->error($error);
         }
-        throw new Google_Service_Exception($error);
+     throw new Google_Service_Exception($error);
       }
 
       if ($response->getExpectedClass()) {
-        $class = $response->getExpectedClass();
+          $class = $response->getExpectedClass();
         $decoded = new $class($decoded);
       }
     }
     return $decoded;
   }
-
-  /**
+					  /**
    * Parse/expand request parameters and create a fully qualified
    * request uri.
    * @static
@@ -175,5 +174,5 @@ class Google_Http_REST
     }
 
     return $requestUrl;
-  }
+	}
 }

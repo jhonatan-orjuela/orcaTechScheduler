@@ -2,11 +2,11 @@
 /*
  * Copyright 2013 Google Inc.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+         * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+       *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,7 +24,7 @@ echo pageHeader("Batching Queries");
  ************************************************/
 require_once realpath(dirname(__FILE__) . '/../autoload.php');
 
-/************************************************
+                /************************************************
   We create the client and set the simple API
   access key. If you comment out the call to
   setDeveloperKey, the request may still succeed
@@ -43,7 +43,7 @@ if ($apiKey == '<YOUR_API_KEY>') {
 
   /************************************************
     To actually make the batch call we need to 
-    enable batching on the client - this will apply 
+               enable batching on the client - this will apply 
     globally until we set it to false. This causes
     call to the service methods to return the query
     rather than immediately executing.
@@ -65,7 +65,7 @@ if ($apiKey == '<YOUR_API_KEY>') {
   /************************************************
     Executing the batch will send all requests off
     at once.
-   ************************************************/
+************************************************/
   $results = $batch->execute();
 
   echo "<h3>Results Of Call 1:</h3>";
@@ -77,5 +77,4 @@ if ($apiKey == '<YOUR_API_KEY>') {
     echo $item['volumeInfo']['title'], "<br /> \n";
   }
 }
-
-echo pageFooter(__FILE__);
+	echo pageFooter(__FILE__);

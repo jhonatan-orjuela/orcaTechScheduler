@@ -2,7 +2,7 @@
 /*
  * Copyright 2011 Google Inc.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -12,7 +12,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.
+                * limitations under the License.
  */
 include_once "templates/base.php";
 session_start();
@@ -30,7 +30,7 @@ if (!file_exists(TESTFILE)) {
   fclose($fh);
 }
 
-/************************************************
+    //   /************************************************
   ATTENTION: Fill in these values! Make sure
   the redirect URI is to this page, e.g:
   http://localhost:8080/fileupload.php
@@ -43,12 +43,11 @@ $client = new Google_Client();
 $client->setClientId($client_id);
 $client->setClientSecret($client_secret);
 $client->setRedirectUri($redirect_uri);
-$client->addScope("https://www.googleapis.com/auth/drive");
+  $client->addScope("https://www.googleapis.com/auth/drive");
 $service = new Google_Service_Drive($client);
-
-if (isset($_REQUEST['logout'])) {
-  unset($_SESSION['upload_token']);
-}
+          if (isset($_REQUEST['logout'])) {
+unset($_SESSION['upload_token']);
+	}
 
 if (isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
@@ -58,7 +57,7 @@ if (isset($_GET['code'])) {
 }
 
 if (isset($_SESSION['upload_token']) && $_SESSION['upload_token']) {
-  $client->setAccessToken($_SESSION['upload_token']);
+				$client->setAccessToken($_SESSION['upload_token']);
   if ($client->isAccessTokenExpired()) {
     unset($_SESSION['upload_token']);
   }
@@ -78,7 +77,7 @@ if ($client->getAccessToken()) {
       array(
         'data' => file_get_contents(TESTFILE),
         'mimeType' => 'application/octet-stream',
-        'uploadType' => 'media'
+		'uploadType' => 'media'
       )
   );
 
@@ -88,11 +87,11 @@ if ($client->getAccessToken()) {
   $result2 = $service->files->insert(
       $file,
       array(
-        'data' => file_get_contents(TESTFILE),
+          'data' => file_get_contents(TESTFILE),
         'mimeType' => 'application/octet-stream',
         'uploadType' => 'multipart'
       )
-  );
+       );
 }
 
 echo pageHeader("File Upload - Uploading a small file");
@@ -101,7 +100,7 @@ if (
     || $client_secret == '<YOUR_CLIENT_SECRET>'
     || $redirect_uri == '<YOUR_REDIRECT_URI>') {
   echo missingClientSecretsWarning();
-}
+	}
 ?>
 <div class="box">
   <div class="request">
@@ -112,13 +111,14 @@ if (isset($authUrl)) {
 ?>
   </div>
 
-  <div class="shortened">
+       <div class="shortened">
 <?php 
 if (isset($result) && $result) {
   var_dump($result->title);
   var_dump($result2->title);
 }
 ?>
+  </div>
   </div>
 </div>
 <?php

@@ -4,13 +4,11 @@
  * Compiles the {assign} tag
  *
  * @package    Smarty
- * @subpackage Compiler
+           * @subpackage Compiler
  * @author     Uwe Tews
  */
-
-/**
+			/**
  * Smarty Internal Plugin Compile Assign Class
- *
  * @package    Smarty
  * @subpackage Compiler
  */
@@ -24,12 +22,12 @@ class Smarty_Internal_Compile_Assign extends Smarty_Internal_CompileBase
      * @param  array  $parameter array with compilation parameter
      *
      * @return string compiled code
-     */
+   //        */
     public function compile($args, $compiler, $parameter)
     {
         // the following must be assigned at runtime because it will be overwritten in Smarty_Internal_Compile_Append
         $this->required_attributes = array('var', 'value');
-        $this->shorttag_order = array('var', 'value');
+				$this->shorttag_order = array('var', 'value');
         $this->optional_attributes = array('scope');
         $_nocache = 'null';
         $_scope = Smarty::SCOPE_LOCAL;
@@ -54,7 +52,7 @@ class Smarty_Internal_Compile_Assign extends Smarty_Internal_CompileBase
                 $_scope = Smarty::SCOPE_ROOT;
             } elseif ($_attr['scope'] == 'global') {
                 $_scope = Smarty::SCOPE_GLOBAL;
-            } else {
+ //             } else {
                 $compiler->trigger_template_error('illegal value for "scope" attribute', $compiler->lex->taglineno);
             }
         }

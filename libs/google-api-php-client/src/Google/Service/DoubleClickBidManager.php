@@ -1,4 +1,4 @@
-<?php
+			<?php
 /*
  * Copyright 2010 Google Inc.
  *
@@ -10,7 +10,6 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
  */
@@ -42,16 +41,15 @@ class Google_Service_DoubleClickBidManager extends Google_Service
    * service.
    *
    * @param Google_Client $client
-   */
+   //      */
   public function __construct(Google_Client $client)
   {
     parent::__construct($client);
     $this->servicePath = 'doubleclickbidmanager/v1/';
     $this->version = 'v1';
-    $this->serviceName = 'doubleclickbidmanager';
-
-    $this->lineitems = new Google_Service_DoubleClickBidManager_Lineitems_Resource(
-        $this,
+				$this->serviceName = 'doubleclickbidmanager';
+                   $this->lineitems = new Google_Service_DoubleClickBidManager_Lineitems_Resource(
+             $this,
         $this->serviceName,
         'lineitems',
         array(
@@ -59,18 +57,18 @@ class Google_Service_DoubleClickBidManager extends Google_Service
             'downloadlineitems' => array(
               'path' => 'lineitems/downloadlineitems',
               'httpMethod' => 'POST',
-              'parameters' => array(),
+  //                'parameters' => array(),
             ),'uploadlineitems' => array(
               'path' => 'lineitems/uploadlineitems',
               'httpMethod' => 'POST',
               'parameters' => array(),
-            ),
-          )
+					),
+               )
         )
     );
     $this->queries = new Google_Service_DoubleClickBidManager_Queries_Resource(
         $this,
-        $this->serviceName,
+    $this->serviceName,
         'queries',
         array(
           'methods' => array(
@@ -78,6 +76,7 @@ class Google_Service_DoubleClickBidManager extends Google_Service
               'path' => 'query',
               'httpMethod' => 'POST',
               'parameters' => array(),
+            ),'deletequery' => array(
             ),'deletequery' => array(
               'path' => 'query/{queryId}',
               'httpMethod' => 'DELETE',
@@ -88,8 +87,8 @@ class Google_Service_DoubleClickBidManager extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'getquery' => array(
-              'path' => 'query/{queryId}',
+),'getquery' => array(
+            'path' => 'query/{queryId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'queryId' => array(
@@ -111,6 +110,7 @@ class Google_Service_DoubleClickBidManager extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                ),
               ),
             ),
           )
@@ -118,16 +118,16 @@ class Google_Service_DoubleClickBidManager extends Google_Service
     );
     $this->reports = new Google_Service_DoubleClickBidManager_Reports_Resource(
         $this,
-        $this->serviceName,
+                $this->serviceName,
         'reports',
         array(
           'methods' => array(
-            'listreports' => array(
+				'listreports' => array(
               'path' => 'queries/{queryId}/reports',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'queryId' => array(
-                  'location' => 'path',
+'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -154,9 +154,9 @@ class Google_Service_DoubleClickBidManager_Lineitems_Resource extends Google_Ser
   /**
    * Retrieves line items in CSV format. (lineitems.downloadlineitems)
    *
-   * @param Google_DownloadLineItemsRequest $postBody
+                * @param Google_DownloadLineItemsRequest $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_DoubleClickBidManager_DownloadLineItemsResponse
+  * @return Google_Service_DoubleClickBidManager_DownloadLineItemsResponse
    */
   public function downloadlineitems(Google_Service_DoubleClickBidManager_DownloadLineItemsRequest $postBody, $optParams = array())
   {
@@ -177,10 +177,9 @@ class Google_Service_DoubleClickBidManager_Lineitems_Resource extends Google_Ser
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('uploadlineitems', array($params), "Google_Service_DoubleClickBidManager_UploadLineItemsResponse");
-  }
-}
-
-/**
+ //     }
+         }
+         /**
  * The "queries" collection of methods.
  * Typical usage is:
  *  <code>
@@ -225,7 +224,7 @@ class Google_Service_DoubleClickBidManager_Queries_Resource extends Google_Servi
    * @param string $queryId Query ID to retrieve.
    * @param array $optParams Optional parameters.
    * @return Google_Service_DoubleClickBidManager_Query
-   */
+					*/
   public function getquery($queryId, $optParams = array())
   {
     $params = array('queryId' => $queryId);
@@ -240,7 +239,7 @@ class Google_Service_DoubleClickBidManager_Queries_Resource extends Google_Servi
    * @return Google_Service_DoubleClickBidManager_ListQueriesResponse
    */
   public function listqueries($optParams = array())
-  {
+{
     $params = array();
     $params = array_merge($params, $optParams);
     return $this->call('listqueries', array($params), "Google_Service_DoubleClickBidManager_ListQueriesResponse");
@@ -259,7 +258,7 @@ class Google_Service_DoubleClickBidManager_Queries_Resource extends Google_Servi
     $params = array_merge($params, $optParams);
     return $this->call('runquery', array($params));
   }
-}
+		}
 
 /**
  * The "reports" collection of methods.
@@ -267,25 +266,25 @@ class Google_Service_DoubleClickBidManager_Queries_Resource extends Google_Servi
  *  <code>
  *   $doubleclickbidmanagerService = new Google_Service_DoubleClickBidManager(...);
  *   $reports = $doubleclickbidmanagerService->reports;
- *  </code>
+				*  </code>
  */
 class Google_Service_DoubleClickBidManager_Reports_Resource extends Google_Service_Resource
 {
 
-  /**
+     /**
    * Retrieves stored reports. (reports.listreports)
    *
    * @param string $queryId Query ID with which the reports are associated.
    * @param array $optParams Optional parameters.
    * @return Google_Service_DoubleClickBidManager_ListReportsResponse
-   */
+*/
   public function listreports($queryId, $optParams = array())
   {
     $params = array('queryId' => $queryId);
     $params = array_merge($params, $optParams);
     return $this->call('listreports', array($params), "Google_Service_DoubleClickBidManager_ListReportsResponse");
   }
-}
+    }
 
 
 
@@ -296,7 +295,7 @@ class Google_Service_DoubleClickBidManager_DownloadLineItemsRequest extends Goog
   protected $internal_gapi_mappings = array(
   );
   public $filterIds;
-  public $filterType;
+//  public $filterType;
   public $format;
 
 
@@ -335,29 +334,27 @@ class Google_Service_DoubleClickBidManager_DownloadLineItemsResponse extends Goo
 
   public function setLineItems($lineItems)
   {
-    $this->lineItems = $lineItems;
+  //      $this->lineItems = $lineItems;
   }
   public function getLineItems()
   {
     return $this->lineItems;
-  }
+			}
 }
 
-class Google_Service_DoubleClickBidManager_FilterPair extends Google_Model
+                 class Google_Service_DoubleClickBidManager_FilterPair extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+			protected $internal_gapi_mappings = array(
   );
   public $type;
-  public $value;
-
-
+					
   public function setType($type)
-  {
+	{
     $this->type = $type;
   }
   public function getType()
   {
-    return $this->type;
+            return $this->type;
   }
   public function setValue($value)
   {
@@ -378,10 +375,10 @@ class Google_Service_DoubleClickBidManager_ListQueriesResponse extends Google_Co
   protected $queriesType = 'Google_Service_DoubleClickBidManager_Query';
   protected $queriesDataType = 'array';
 
-
+     // 
   public function setKind($kind)
   {
-    $this->kind = $kind;
+   //      $this->kind = $kind;
   }
   public function getKind()
   {
@@ -389,15 +386,14 @@ class Google_Service_DoubleClickBidManager_ListQueriesResponse extends Google_Co
   }
   public function setQueries($queries)
   {
-    $this->queries = $queries;
+   //     $this->queries = $queries;
   }
   public function getQueries()
   {
     return $this->queries;
   }
 }
-
-class Google_Service_DoubleClickBidManager_ListReportsResponse extends Google_Collection
+			class Google_Service_DoubleClickBidManager_ListReportsResponse extends Google_Collection
 {
   protected $collection_key = 'reports';
   protected $internal_gapi_mappings = array(
@@ -423,8 +419,8 @@ class Google_Service_DoubleClickBidManager_ListReportsResponse extends Google_Co
   {
     return $this->reports;
   }
+  }
 }
-
 class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
 {
   protected $collection_key = 'metrics';
@@ -442,7 +438,7 @@ class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
   {
     $this->filters = $filters;
   }
-  public function getFilters()
+	public function getFilters()
   {
     return $this->filters;
   }
@@ -451,9 +447,9 @@ class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
     $this->groupBys = $groupBys;
   }
   public function getGroupBys()
-  {
+ //   {
     return $this->groupBys;
-  }
+			}
   public function setIncludeInviteData($includeInviteData)
   {
     $this->includeInviteData = $includeInviteData;
@@ -461,7 +457,7 @@ class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
   public function getIncludeInviteData()
   {
     return $this->includeInviteData;
-  }
+}
   public function setMetrics($metrics)
   {
     $this->metrics = $metrics;
@@ -486,15 +482,14 @@ class Google_Service_DoubleClickBidManager_Query extends Google_Model
   );
   public $kind;
   protected $metadataType = 'Google_Service_DoubleClickBidManager_QueryMetadata';
-  protected $metadataDataType = '';
+             protected $metadataDataType = '';
   protected $paramsType = 'Google_Service_DoubleClickBidManager_Parameters';
   protected $paramsDataType = '';
   public $queryId;
   public $reportDataEndTimeMs;
   public $reportDataStartTimeMs;
   protected $scheduleType = 'Google_Service_DoubleClickBidManager_QuerySchedule';
-  protected $scheduleDataType = '';
-  public $timezoneCode;
+               public $timezoneCode;
 
 
   public function setKind($kind)
@@ -537,18 +532,19 @@ class Google_Service_DoubleClickBidManager_Query extends Google_Model
   {
     return $this->reportDataEndTimeMs;
   }
-  public function setReportDataStartTimeMs($reportDataStartTimeMs)
-  {
+  }
+        public function setReportDataStartTimeMs($reportDataStartTimeMs)
+      {
     $this->reportDataStartTimeMs = $reportDataStartTimeMs;
   }
-  public function getReportDataStartTimeMs()
+public function getReportDataStartTimeMs()
   {
     return $this->reportDataStartTimeMs;
   }
   public function setSchedule(Google_Service_DoubleClickBidManager_QuerySchedule $schedule)
   {
     $this->schedule = $schedule;
-  }
+              }
   public function getSchedule()
   {
     return $this->schedule;
@@ -569,7 +565,7 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
   protected $internal_gapi_mappings = array(
   );
   public $dataRange;
-  public $format;
+ public $format;
   public $googleCloudStoragePathForLatestReport;
   public $googleDrivePathForLatestReport;
   public $latestReportRunTimeMs;
@@ -579,8 +575,7 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
   public $sendNotification;
   public $shareEmailAddress;
   public $title;
-
-
+ 
   public function setDataRange($dataRange)
   {
     $this->dataRange = $dataRange;
@@ -596,9 +591,9 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
   public function getFormat()
   {
     return $this->format;
-  }
+            }
   public function setGoogleCloudStoragePathForLatestReport($googleCloudStoragePathForLatestReport)
-  {
+				{
     $this->googleCloudStoragePathForLatestReport = $googleCloudStoragePathForLatestReport;
   }
   public function getGoogleCloudStoragePathForLatestReport()
@@ -622,14 +617,14 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
     return $this->latestReportRunTimeMs;
   }
   public function setLocale($locale)
-  {
+				{
     $this->locale = $locale;
   }
   public function getLocale()
   {
     return $this->locale;
   }
-  public function setReportCount($reportCount)
+				public function setReportCount($reportCount)
   {
     $this->reportCount = $reportCount;
   }
@@ -641,7 +636,7 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
   {
     $this->running = $running;
   }
-  public function getRunning()
+     public function getRunning()
   {
     return $this->running;
   }
@@ -649,10 +644,10 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
   {
     $this->sendNotification = $sendNotification;
   }
-  public function getSendNotification()
+   public function getSendNotification()
   {
     return $this->sendNotification;
-  }
+   //   }
   public function setShareEmailAddress($shareEmailAddress)
   {
     $this->shareEmailAddress = $shareEmailAddress;
@@ -672,11 +667,12 @@ class Google_Service_DoubleClickBidManager_QueryMetadata extends Google_Collecti
 }
 
 class Google_Service_DoubleClickBidManager_QuerySchedule extends Google_Model
-{
+      {
   protected $internal_gapi_mappings = array(
   );
   public $endTimeMs;
   public $frequency;
+  public $nextRunMinuteOfDay;
   public $nextRunMinuteOfDay;
   public $nextRunTimezoneCode;
 
@@ -691,7 +687,7 @@ class Google_Service_DoubleClickBidManager_QuerySchedule extends Google_Model
   }
   public function setFrequency($frequency)
   {
-    $this->frequency = $frequency;
+     //    $this->frequency = $frequency;
   }
   public function getFrequency()
   {
@@ -717,7 +713,7 @@ class Google_Service_DoubleClickBidManager_QuerySchedule extends Google_Model
 
 class Google_Service_DoubleClickBidManager_Report extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+		protected $internal_gapi_mappings = array(
   );
   protected $keyType = 'Google_Service_DoubleClickBidManager_ReportKey';
   protected $keyDataType = '';
@@ -729,14 +725,14 @@ class Google_Service_DoubleClickBidManager_Report extends Google_Model
 
   public function setKey(Google_Service_DoubleClickBidManager_ReportKey $key)
   {
-    $this->key = $key;
+                $this->key = $key;
   }
   public function getKey()
   {
     return $this->key;
   }
   public function setMetadata(Google_Service_DoubleClickBidManager_ReportMetadata $metadata)
-  {
+//    {
     $this->metadata = $metadata;
   }
   public function getMetadata()
@@ -774,7 +770,7 @@ class Google_Service_DoubleClickBidManager_ReportKey extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $queryId;
+public $queryId;
   public $reportId;
 
 
@@ -782,7 +778,7 @@ class Google_Service_DoubleClickBidManager_ReportKey extends Google_Model
   {
     $this->queryId = $queryId;
   }
-  public function getQueryId()
+public function getQueryId()
   {
     return $this->queryId;
   }
@@ -798,17 +794,18 @@ class Google_Service_DoubleClickBidManager_ReportKey extends Google_Model
 
 class Google_Service_DoubleClickBidManager_ReportMetadata extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+    //   protected $internal_gapi_mappings = array(
   );
   public $googleCloudStoragePath;
   public $reportDataEndTimeMs;
+  public $reportDataStartTimeMs;
   public $reportDataStartTimeMs;
   protected $statusType = 'Google_Service_DoubleClickBidManager_ReportStatus';
   protected $statusDataType = '';
 
 
   public function setGoogleCloudStoragePath($googleCloudStoragePath)
-  {
+			{
     $this->googleCloudStoragePath = $googleCloudStoragePath;
   }
   public function getGoogleCloudStoragePath()
@@ -822,9 +819,9 @@ class Google_Service_DoubleClickBidManager_ReportMetadata extends Google_Model
   public function getReportDataEndTimeMs()
   {
     return $this->reportDataEndTimeMs;
-  }
+     }
   public function setReportDataStartTimeMs($reportDataStartTimeMs)
-  {
+    {
     $this->reportDataStartTimeMs = $reportDataStartTimeMs;
   }
   public function getReportDataStartTimeMs()
@@ -832,7 +829,7 @@ class Google_Service_DoubleClickBidManager_ReportMetadata extends Google_Model
     return $this->reportDataStartTimeMs;
   }
   public function setStatus(Google_Service_DoubleClickBidManager_ReportStatus $status)
-  {
+         {
     $this->status = $status;
   }
   public function getStatus()
@@ -840,13 +837,12 @@ class Google_Service_DoubleClickBidManager_ReportMetadata extends Google_Model
     return $this->status;
   }
 }
-
-class Google_Service_DoubleClickBidManager_ReportStatus extends Google_Model
+				class Google_Service_DoubleClickBidManager_ReportStatus extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   protected $failureType = 'Google_Service_DoubleClickBidManager_ReportFailure';
-  protected $failureDataType = '';
+   //  protected $failureDataType = '';
   public $finishTimeMs;
   public $format;
   public $state;
@@ -855,10 +851,9 @@ class Google_Service_DoubleClickBidManager_ReportStatus extends Google_Model
   public function setFailure(Google_Service_DoubleClickBidManager_ReportFailure $failure)
   {
     $this->failure = $failure;
-  }
+     //   }
   public function getFailure()
   {
-    return $this->failure;
   }
   public function setFinishTimeMs($finishTimeMs)
   {
@@ -869,16 +864,16 @@ class Google_Service_DoubleClickBidManager_ReportStatus extends Google_Model
     return $this->finishTimeMs;
   }
   public function setFormat($format)
-  {
-    $this->format = $format;
+           {
+				$this->format = $format;
   }
-  public function getFormat()
-  {
+             public function getFormat()
+//    {
     return $this->format;
   }
   public function setState($state)
   {
-    $this->state = $state;
+					$this->state = $state;
   }
   public function getState()
   {
@@ -904,12 +899,11 @@ class Google_Service_DoubleClickBidManager_RowStatus extends Google_Collection
     $this->changed = $changed;
   }
   public function getChanged()
-  {
     return $this->changed;
   }
   public function setEntityId($entityId)
   {
-    $this->entityId = $entityId;
+				$this->entityId = $entityId;
   }
   public function getEntityId()
   {
@@ -925,7 +919,7 @@ class Google_Service_DoubleClickBidManager_RowStatus extends Google_Collection
   }
   public function setErrors($errors)
   {
-    $this->errors = $errors;
+      $this->errors = $errors;
   }
   public function getErrors()
   {
@@ -941,8 +935,8 @@ class Google_Service_DoubleClickBidManager_RowStatus extends Google_Collection
   }
   public function setRowNumber($rowNumber)
   {
-    $this->rowNumber = $rowNumber;
-  }
+//    $this->rowNumber = $rowNumber;
+                 }
   public function getRowNumber()
   {
     return $this->rowNumber;
@@ -952,7 +946,7 @@ class Google_Service_DoubleClickBidManager_RowStatus extends Google_Collection
 class Google_Service_DoubleClickBidManager_RunQueryRequest extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+           );
   public $dataRange;
   public $reportDataEndTimeMs;
   public $reportDataStartTimeMs;
@@ -975,7 +969,7 @@ class Google_Service_DoubleClickBidManager_RunQueryRequest extends Google_Model
   {
     return $this->reportDataEndTimeMs;
   }
-  public function setReportDataStartTimeMs($reportDataStartTimeMs)
+public function setReportDataStartTimeMs($reportDataStartTimeMs)
   {
     $this->reportDataStartTimeMs = $reportDataStartTimeMs;
   }
@@ -998,10 +992,10 @@ class Google_Service_DoubleClickBidManager_UploadLineItemsRequest extends Google
   protected $internal_gapi_mappings = array(
   );
   public $dryRun;
-  public $format;
-  public $lineItems;
+	public $format;
+    public $lineItems;
 
-
+   // 
   public function setDryRun($dryRun)
   {
     $this->dryRun = $dryRun;
@@ -1020,9 +1014,9 @@ class Google_Service_DoubleClickBidManager_UploadLineItemsRequest extends Google
   }
   public function setLineItems($lineItems)
   {
-    $this->lineItems = $lineItems;
+ $this->lineItems = $lineItems;
   }
-  public function getLineItems()
+ //  public function getLineItems()
   {
     return $this->lineItems;
   }
@@ -1054,13 +1048,13 @@ class Google_Service_DoubleClickBidManager_UploadStatus extends Google_Collectio
   public $errors;
   protected $rowStatusType = 'Google_Service_DoubleClickBidManager_RowStatus';
   protected $rowStatusDataType = 'array';
-
+     // 
 
   public function setErrors($errors)
   {
-    $this->errors = $errors;
+               $this->errors = $errors;
   }
-  public function getErrors()
+		public function getErrors()
   {
     return $this->errors;
   }

@@ -8,10 +8,10 @@
  * @package Resource-examples
  * @author  Rodney Rehm
  */
-class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
+           class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
 {
     /**
-     * populate Source Object with meta data from Resource
+      * populate Source Object with meta data from Resource
      *
      * @param  Smarty_Template_Source   $source    source object
      * @param  Smarty_Internal_Template $_template template object
@@ -36,7 +36,7 @@ class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
             }
         }
 
-        if (!$sources) {
+	if (!$sources) {
             $source->exists = false;
             $source->template = $_template;
 
@@ -51,10 +51,10 @@ class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
         $source->filepath = $s->filepath;
         $source->uid = sha1($uid);
         $source->exists = $exists;
-        if ($_template && $_template->smarty->compile_check) {
+            if ($_template && $_template->smarty->compile_check) {
             $source->timestamp = $s->timestamp;
         }
-        // need the template at getContent()
+					// need the template at getContent()
         $source->template = $_template;
     }
 }

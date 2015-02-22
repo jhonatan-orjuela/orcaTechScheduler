@@ -1,4 +1,4 @@
-<?php
+                <?php
 /**
  * Smarty plugin
  *
@@ -20,7 +20,7 @@
  *
  * @param array $params parameters
  *
- * @return string with compiled code
+				* @return string with compiled code
  */
 
 function smarty_modifiercompiler_strip($params)

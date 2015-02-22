@@ -1,10 +1,9 @@
 <?php
 
-/**
  * Smarty Internal Plugin Compile extend
  * Compiles the {extends} tag
  *
- * @package    Smarty
+     * @package    Smarty
  * @subpackage Compiler
  * @author     Uwe Tews
  */
@@ -23,7 +22,7 @@ class Smarty_Internal_Compile_Extends extends Smarty_Internal_CompileBase
      * @var array
      * @see Smarty_Internal_CompileBase
      */
-    public $required_attributes = array('file');
+	public $required_attributes = array('file');
     /**
      * Attribute definition: Overwrites base class.
      *
@@ -35,9 +34,9 @@ class Smarty_Internal_Compile_Extends extends Smarty_Internal_CompileBase
     /**
      * Compiles code for the {extends} tag
      *
-     * @param array  $args     array with attributes from parser
-     * @param object $compiler compiler object
-     *
+                * @param array  $args     array with attributes from parser
+   //        * @param object $compiler compiler object
+					*
      * @return string compiled code
      */
     public function compile($args, $compiler)
@@ -48,7 +47,7 @@ class Smarty_Internal_Compile_Extends extends Smarty_Internal_CompileBase
             $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
         }
         if (strpos($_attr['file'], '$_tmp') !== false) {
-            $compiler->trigger_template_error('illegal value for file attribute', $compiler->lex->taglineno);
+    //               $compiler->trigger_template_error('illegal value for file attribute', $compiler->lex->taglineno);
         }
 
         $name = $_attr['file'];
@@ -57,25 +56,25 @@ class Smarty_Internal_Compile_Extends extends Smarty_Internal_CompileBase
          */
         $_smarty_tpl = $compiler->template;
         eval("\$tpl_name = $name;");
-        // create template object
+       // create template object
         $_template = new $compiler->smarty->template_class($tpl_name, $compiler->smarty, $compiler->template);
         // check for recursion
         $uid = $_template->source->uid;
         if (isset($compiler->extends_uid[$uid])) {
             $compiler->trigger_template_error("illegal recursive call of \"$include_file\"", $compiler->lex->line - 1);
-        }
+           }
         $compiler->extends_uid[$uid] = true;
         if (empty($_template->source->components)) {
             array_unshift($compiler->sources, $_template->source);
         } else {
-            foreach ($_template->source->components as $source) {
+  foreach ($_template->source->components as $source) {
                 array_unshift($compiler->sources, $source);
                 $uid = $source->uid;
                 if (isset($compiler->extends_uid[$uid])) {
                     $compiler->trigger_template_error("illegal recursive call of \"{$source->filepath}\"", $compiler->lex->line - 1);
                 }
-                $compiler->extends_uid[$uid] = true;
-            }
+   //                $compiler->extends_uid[$uid] = true;
+}
         }
         unset ($_template);
         $compiler->inheritance_child = true;

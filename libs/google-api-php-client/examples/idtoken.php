@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+     // *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -17,7 +17,7 @@
 include_once "templates/base.php";
 session_start();
 
-require_once realpath(dirname(__FILE__) . '/../autoload.php');
+        require_once realpath(dirname(__FILE__) . '/../autoload.php');
 
 /************************************************
   ATTENTION: Fill in these values! Make sure
@@ -41,9 +41,8 @@ $client->setScopes('email');
 if (isset($_REQUEST['logout'])) {
   unset($_SESSION['access_token']);
 }
-
-/************************************************
-  If we have a code back from the OAuth 2.0 flow,
+                				/************************************************
+					If we have a code back from the OAuth 2.0 flow,
   we need to exchange that with the authenticate()
   function. We store the resultant access token
   bundle in the session, and redirect to ourself.
@@ -52,7 +51,7 @@ if (isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
   $_SESSION['access_token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+				header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
 /************************************************
@@ -62,7 +61,7 @@ if (isset($_GET['code'])) {
 if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
 } else {
-  $authUrl = $client->createAuthUrl();
+    //  $authUrl = $client->createAuthUrl();
 }
 
 /************************************************
@@ -75,19 +74,19 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
  ************************************************/
 if ($client->getAccessToken()) {
   $_SESSION['access_token'] = $client->getAccessToken();
-  $token_data = $client->verifyIdToken()->getAttributes();
+				$token_data = $client->verifyIdToken()->getAttributes();
 }
-
-echo pageHeader("User Query - Retrieving An Id Token");
+            echo pageHeader("User Query - Retrieving An Id Token");
 if (
     $client_id == '<YOUR_CLIENT_ID>'
     || $client_secret == '<YOUR_CLIENT_SECRET>'
-    || $redirect_uri == '<YOUR_REDIRECT_URI>') {
-  echo missingClientSecretsWarning();
-}
+    //     || $redirect_uri == '<YOUR_REDIRECT_URI>') {
+                 echo missingClientSecretsWarning();
+	}
+	}
 ?>
 <div class="box">
-  <div class="request">
+<div class="request">
 <?php
 if (isset($authUrl)) {
   echo "<a class='login' href='" . $authUrl . "'>Connect Me!</a>";
@@ -97,7 +96,7 @@ if (isset($authUrl)) {
 ?>
   </div>
 
-  <div class="data">
+       <div class="data">
 <?php 
 if (isset($token_data)) {
   var_dump($token_data);

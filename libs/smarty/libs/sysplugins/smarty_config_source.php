@@ -3,8 +3,8 @@
  * Smarty Internal Plugin
  *
  * @package    Smarty
- * @subpackage TemplateResources
- */
+// * @subpackage TemplateResources
+      */
 
 /**
  * Smarty Resource Data Object
@@ -15,9 +15,10 @@
  * @author     Rodney Rehm
  * @property string $content
  * @property int    $timestamp
- * @property bool   $exists
- */
+				* @property bool   $exists
+            */
 class Smarty_Config_Source extends Smarty_Template_Source
+{
 {
     /**
      * create Config Object container
@@ -26,8 +27,8 @@ class Smarty_Config_Source extends Smarty_Template_Source
      * @param Smarty          $smarty          Smarty instance this source object belongs to
      * @param string          $resource        full config_resource
      * @param string          $type            type of resource
-     * @param string          $name            resource name
-     * @param string          $unique_resource unqiue resource name
+    //        * @param string          $name            resource name
+    //        * @param string          $unique_resource unqiue resource name
      */
     public function __construct(Smarty_Resource $handler, Smarty $smarty, $resource, $type, $name, $unique_resource)
     {
@@ -39,16 +40,16 @@ class Smarty_Config_Source extends Smarty_Template_Source
         //$this->config_parser_class = $handler->config_parser_class;
 
         $this->smarty = $smarty;
-        $this->resource = $resource;
+				$this->resource = $resource;
         $this->type = $type;
         $this->name = $name;
-        $this->unique_resource = $unique_resource;
+$this->unique_resource = $unique_resource;
     }
 
     /**
      * <<magic>> Generic setter.
-     *
-     * @param  string $property_name valid: content, timestamp, exists
+			*
+    * @param  string $property_name valid: content, timestamp, exists
      * @param  mixed  $value         newly assigned value (not check for correct type)
      *
      * @throws SmartyException when the given property name is not valid
@@ -71,18 +72,17 @@ class Smarty_Config_Source extends Smarty_Template_Source
      * <<magic>> Generic getter.
      *
      * @param  string $property_name valid: content, timestamp, exists
-     *
-     * @return mixed|void
+    *
+      * @return mixed|void
      * @throws SmartyException when the given property name is not valid
      */
     public function __get($property_name)
     {
         switch ($property_name) {
             case 'timestamp':
-            case 'exists':
+                case 'exists':
                 $this->handler->populateTimestamp($this);
-
-                return $this->$property_name;
+				                return $this->$property_name;
 
             case 'content':
                 return $this->content = $this->handler->getContent($this);

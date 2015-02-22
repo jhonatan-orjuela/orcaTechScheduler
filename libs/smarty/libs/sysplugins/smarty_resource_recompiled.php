@@ -5,10 +5,11 @@
  * @package    Smarty
  * @subpackage TemplateResources
  * @author     Rodney Rehm
+ * @author     Rodney Rehm
  */
 
 /**
- * Smarty Resource Plugin
+              * Smarty Resource Plugin
  * Base implementation for resource plugins that don't compile cache
  *
  * @package    Smarty
@@ -22,7 +23,7 @@ abstract class Smarty_Resource_Recompiled extends Smarty_Resource
      * @param  Smarty_Template_Compiled $compiled  compiled object
      * @param  Smarty_Internal_Template $_template template object
      *
-     * @return void
+* @return void
      */
     public function populateCompiledFilepath(Smarty_Template_Compiled $compiled, Smarty_Internal_Template $_template)
     {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2010 Google Inc.
+					* Copyright 2010 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -8,7 +8,7 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
+ //  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
@@ -45,7 +45,7 @@ class Google_Service_Dfareporting extends Google_Service
   public $ads;
   public $advertiserGroups;
   public $advertisers;
-  public $browsers;
+             public $browsers;
   public $campaignCreativeAssociations;
   public $campaigns;
   public $changeLogs;
@@ -63,7 +63,7 @@ class Google_Service_Dfareporting extends Google_Service
   public $directorySites;
   public $eventTags;
   public $files;
-  public $floodlightActivities;
+            public $floodlightActivities;
   public $floodlightActivityGroups;
   public $floodlightConfigurations;
   public $landingPages;
@@ -106,23 +106,23 @@ class Google_Service_Dfareporting extends Google_Service
         $this->serviceName,
         'accountActiveAdSummaries',
         array(
-          'methods' => array(
+               'methods' => array(
             'get' => array(
               'path' => 'userprofiles/{profileId}/accountActiveAdSummaries/{summaryAccountId}',
               'httpMethod' => 'GET',
-              'parameters' => array(
+					'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-                'summaryAccountId' => array(
+    'summaryAccountId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),
+),
           )
         )
     );
@@ -156,7 +156,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+    ),
             ),
           )
         )
@@ -164,7 +164,7 @@ class Google_Service_Dfareporting extends Google_Service
     $this->accountPermissions = new Google_Service_Dfareporting_AccountPermissions_Resource(
         $this,
         $this->serviceName,
-        'accountPermissions',
+  'accountPermissions',
         array(
           'methods' => array(
             'get' => array(
@@ -175,6 +175,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
                 ),
                 'id' => array(
                   'location' => 'path',
@@ -188,7 +189,7 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+				'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -207,18 +208,18 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+               'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+    'required' => true,
                 ),
-                'id' => array(
+             'id' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => 'userprofiles/{profileId}/accountUserProfiles',
+     //               'path' => 'userprofiles/{profileId}/accountUserProfiles',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
@@ -227,13 +228,13 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
                 'searchString' => array(
-                  'location' => 'query',
+			'location' => 'query',
                   'type' => 'string',
-                ),
-                'subaccountId' => array(
+		),
+		'subaccountId' => array(
                   'location' => 'query',
-                  'type' => 'string',
-                ),
+    'type' => 'string',
+        ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -248,15 +249,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+     //                  'location' => 'query',
                   'type' => 'string',
                 ),
-                'userRoleId' => array(
+  'userRoleId' => array(
                   'location' => 'query',
-                  'type' => 'string',
+					'type' => 'string',
                 ),
                 'sortOrder' => array(
-                  'location' => 'query',
+	'location' => 'query',
                   'type' => 'string',
                 ),
                 'active' => array(
@@ -276,7 +277,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'required' => true,
+     'required' => true,
                 ),
               ),
             ),'update' => array(
@@ -298,14 +299,14 @@ class Google_Service_Dfareporting extends Google_Service
         $this->serviceName,
         'accounts',
         array(
-          'methods' => array(
+     'methods' => array(
             'get' => array(
               'path' => 'userprofiles/{profileId}/accounts/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+    //                   'location' => 'path',
+     'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
@@ -321,8 +322,8 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
-                ),
+			'required' => true,
+     //                  ),
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -336,10 +337,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
+                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
+	),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -361,15 +362,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+   ),
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+  ),
             ),'update' => array(
-              'path' => 'userprofiles/{profileId}/accounts',
+				'path' => 'userprofiles/{profileId}/accounts',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
@@ -389,7 +390,7 @@ class Google_Service_Dfareporting extends Google_Service
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'userprofiles/{profileId}/ads/{id}',
+    //                 'path' => 'userprofiles/{profileId}/ads/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
@@ -430,7 +431,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'overriddenEventTagId' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+   //                   ),
                 'campaignIds' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -440,7 +441,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'creativeOptimizationConfigurationIds' => array(
+             'creativeOptimizationConfigurationIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -449,10 +450,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'sizeIds' => array(
+		'sizeIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+        'repeated' => true,
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -465,14 +466,14 @@ class Google_Service_Dfareporting extends Google_Service
                 'type' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
-                ),
+				'repeated' => true,
+         ),
                 'sslRequired' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'creativeIds' => array(
-                  'location' => 'query',
+              'creativeIds' => array(
+					'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -483,32 +484,32 @@ class Google_Service_Dfareporting extends Google_Service
                 'creativeType' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+),
                 'placementIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+  ),
                 'active' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'compatibility' => array(
+  'compatibility' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+					),
                 'advertiserId' => array(
-                  'location' => 'query',
+        'location' => 'query',
                   'type' => 'string',
                 ),
                 'searchString' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'string',
                 ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+  //                ),
                 'audienceSegmentIds' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -522,10 +523,11 @@ class Google_Service_Dfareporting extends Google_Service
                 'remarketingListIds' => array(
                   'location' => 'query',
                   'type' => 'string',
+                  'type' => 'string',
                   'repeated' => true,
                 ),
                 'dynamicClickTracker' => array(
-                  'location' => 'query',
+					'location' => 'query',
                   'type' => 'boolean',
                 ),
               ),
@@ -535,7 +537,7 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+    //                    'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
@@ -545,15 +547,16 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'update' => array(
+            ),'update' => array(
               'path' => 'userprofiles/{profileId}/ads',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+    'type' => 'string',
                   'required' => true,
                 ),
-              ),
+        ),
             ),
           )
         )
@@ -568,7 +571,7 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/advertiserGroups/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
-                'profileId' => array(
+            'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -580,7 +583,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => 'userprofiles/{profileId}/advertiserGroups/{id}',
+           'path' => 'userprofiles/{profileId}/advertiserGroups/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
@@ -589,19 +592,19 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+        'location' => 'path',
+	'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'insert' => array(
-              'path' => 'userprofiles/{profileId}/advertiserGroups',
+    //                 'path' => 'userprofiles/{profileId}/advertiserGroups',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+   'required' => true,
                 ),
               ),
             ),'list' => array(
@@ -612,7 +615,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+       ),
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -622,10 +625,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                 ),
                 'ids' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+		),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
@@ -651,15 +654,15 @@ class Google_Service_Dfareporting extends Google_Service
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'required' => true,
+   'required' => true,
                 ),
-              ),
+  ),
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/advertiserGroups',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+     //                  'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -669,13 +672,13 @@ class Google_Service_Dfareporting extends Google_Service
         )
     );
     $this->advertisers = new Google_Service_Dfareporting_Advertisers_Resource(
-        $this,
+          $this,
         $this->serviceName,
         'advertisers',
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'userprofiles/{profileId}/advertisers/{id}',
+     'path' => 'userprofiles/{profileId}/advertisers/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
@@ -687,7 +690,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+  //                  ),
               ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/advertisers',
@@ -698,13 +701,13 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+             ),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/advertisers',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+     'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -716,7 +719,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'subaccountId' => array(
+      'subaccountId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -729,7 +732,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                 ),
                 'ids' => array(
-                  'location' => 'query',
+  'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -757,7 +760,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'advertiserGroupIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+             'repeated' => true,
                 ),
               ),
             ),'patch' => array(
@@ -780,20 +783,21 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
+                'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),
+   ),
           )
         )
     );
-    $this->browsers = new Google_Service_Dfareporting_Browsers_Resource(
+            $this->browsers = new Google_Service_Dfareporting_Browsers_Resource(
         $this,
         $this->serviceName,
         'browsers',
-        array(
+              array(
           'methods' => array(
             'list' => array(
               'path' => 'userprofiles/{profileId}/browsers',
@@ -812,21 +816,21 @@ class Google_Service_Dfareporting extends Google_Service
     $this->campaignCreativeAssociations = new Google_Service_Dfareporting_CampaignCreativeAssociations_Resource(
         $this,
         $this->serviceName,
-        'campaignCreativeAssociations',
+  //           'campaignCreativeAssociations',
         array(
           'methods' => array(
-            'insert' => array(
-              'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/campaignCreativeAssociations',
+      'insert' => array(
+					'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/campaignCreativeAssociations',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+   //                    'required' => true,
                 ),
                 'campaignId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+     //                    'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -835,12 +839,12 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+  //                     'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'campaignId' => array(
-                  'location' => 'path',
+             'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -867,11 +871,11 @@ class Google_Service_Dfareporting extends Google_Service
         'campaigns',
         array(
           'methods' => array(
-            'get' => array(
+	'get' => array(
               'path' => 'userprofiles/{profileId}/campaigns/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -879,7 +883,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'id' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+        'required' => true,
                 ),
               ),
             ),'insert' => array(
@@ -910,7 +914,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+      ),
                 'archived' => array(
                   'location' => 'query',
                   'type' => 'boolean',
@@ -919,46 +923,46 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'subaccountId' => array(
+               'subaccountId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+          'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'advertiserIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
-                ),
+                'repeated' => true,
+        ),
                 'ids' => array(
-                  'location' => 'query',
+        'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
                 'maxResults' => array(
-                  'location' => 'query',
+	'location' => 'query',
                   'type' => 'integer',
                 ),
-                'excludedIds' => array(
+             'excludedIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+         'location' => 'query',
                   'type' => 'string',
                 ),
-                'advertiserGroupIds' => array(
-                  'location' => 'query',
+					'advertiserGroupIds' => array(
+		'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+),
                 'overriddenEventTagId' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -969,7 +973,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => 'userprofiles/{profileId}/campaigns',
+         'path' => 'userprofiles/{profileId}/campaigns',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'profileId' => array(
@@ -984,9 +988,9 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => 'userprofiles/{profileId}/campaigns',
+					'path' => 'userprofiles/{profileId}/campaigns',
               'httpMethod' => 'PUT',
-              'parameters' => array(
+           'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -995,15 +999,14 @@ class Google_Service_Dfareporting extends Google_Service
               ),
             ),
           )
-        )
+)
     );
     $this->changeLogs = new Google_Service_Dfareporting_ChangeLogs_Resource(
         $this,
-        $this->serviceName,
-        'changeLogs',
+		$this->serviceName,
         array(
-          'methods' => array(
-            'get' => array(
+	'methods' => array(
+      'get' => array(
               'path' => 'userprofiles/{profileId}/changeLogs/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -1021,17 +1024,17 @@ class Google_Service_Dfareporting extends Google_Service
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/changeLogs',
               'httpMethod' => 'GET',
-              'parameters' => array(
+           'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+				'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-                'minChangeTime' => array(
+'minChangeTime' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'searchString' => array(
+               ),
+     'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1050,7 +1053,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'repeated' => true,
                 ),
                 'maxResults' => array(
-                  'location' => 'query',
+        'location' => 'query',
                   'type' => 'integer',
                 ),
                 'objectIds' => array(
@@ -1059,7 +1062,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'repeated' => true,
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+             'location' => 'query',
                   'type' => 'string',
                 ),
                 'action' => array(
@@ -1071,12 +1074,12 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),
-          )
+       ),
+   )
         )
     );
     $this->cities = new Google_Service_Dfareporting_Cities_Resource(
-        $this,
+          $this,
         $this->serviceName,
         'cities',
         array(
@@ -1085,12 +1088,12 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/cities',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+			'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+					'type' => 'string',
                   'required' => true,
                 ),
-                'dartIds' => array(
+	'dartIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -1106,7 +1109,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'countryDartIds' => array(
                   'location' => 'query',
-                  'type' => 'string',
+    //                     'type' => 'string',
                   'repeated' => true,
                 ),
               ),
@@ -1142,24 +1145,23 @@ class Google_Service_Dfareporting extends Google_Service
           'methods' => array(
             'delete' => array(
               'path' => 'userprofiles/{profileId}/contentCategories/{id}',
-              'httpMethod' => 'DELETE',
+					'httpMethod' => 'DELETE',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+   'required' => true,
                 ),
                 'id' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
-            ),'get' => array(
+		),
               'path' => 'userprofiles/{profileId}/contentCategories/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1184,7 +1186,7 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/contentCategories',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+					'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1193,43 +1195,43 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+	'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+'repeated' => true,
                 ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+//                  'location' => 'query',
                   'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+              ),
               ),
             ),'patch' => array(
               'path' => 'userprofiles/{profileId}/contentCategories',
-              'httpMethod' => 'PATCH',
+   //              'httpMethod' => 'PATCH',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+  //                 ),
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+                 ),
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/contentCategories',
               'httpMethod' => 'PUT',
@@ -1237,20 +1239,20 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
-                ),
+'required' => true,
+          ),
               ),
             ),
           )
         )
-    );
+           );
     $this->countries = new Google_Service_Dfareporting_Countries_Resource(
         $this,
         $this->serviceName,
-        'countries',
+		'countries',
         array(
           'methods' => array(
-            'get' => array(
+					'get' => array(
               'path' => 'userprofiles/{profileId}/countries/{dartId}',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -1296,7 +1298,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'advertiserId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+					'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -1308,8 +1310,8 @@ class Google_Service_Dfareporting extends Google_Service
         $this,
         $this->serviceName,
         'creativeFieldValues',
-        array(
-          'methods' => array(
+ array(
+            'methods' => array(
             'delete' => array(
               'path' => 'userprofiles/{profileId}/creativeFields/{creativeFieldId}/creativeFieldValues/{id}',
               'httpMethod' => 'DELETE',
@@ -1324,10 +1326,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'id' => array(
+  'id' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+ 'required' => true,
                 ),
               ),
             ),'get' => array(
@@ -1359,7 +1361,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'creativeFieldId' => array(
+ 'creativeFieldId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1378,7 +1380,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+        ),
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1390,7 +1392,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+					),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1401,7 +1403,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'integer',
                 ),
                 'sortOrder' => array(
-                  'location' => 'query',
+                'location' => 'query',
                   'type' => 'string',
                 ),
               ),
@@ -1412,17 +1414,17 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+          'required' => true,
                 ),
                 'creativeFieldId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+    ),
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'required' => true,
+   //                    'required' => true,
                 ),
               ),
             ),'update' => array(
@@ -1430,7 +1432,7 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+  //                  'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -1451,7 +1453,7 @@ class Google_Service_Dfareporting extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => 'userprofiles/{profileId}/creativeFields/{id}',
+   'path' => 'userprofiles/{profileId}/creativeFields/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'profileId' => array(
@@ -1479,7 +1481,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+                 ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/creativeFields',
               'httpMethod' => 'POST',
@@ -1510,17 +1512,18 @@ class Google_Service_Dfareporting extends Google_Service
                 'advertiserIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+   //                   'repeated' => true,
                 ),
                 'ids' => array(
                   'location' => 'query',
-                  'type' => 'string',
+      'type' => 'string',
                   'repeated' => true,
                 ),
-                'maxResults' => array(
+    //                   'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
+                'pageToken' => array(
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1529,8 +1532,8 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-              ),
-            ),'patch' => array(
+//              ),
+     ),'patch' => array(
               'path' => 'userprofiles/{profileId}/creativeFields',
               'httpMethod' => 'PATCH',
               'parameters' => array(
@@ -1540,7 +1543,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'query',
+          'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -1548,14 +1551,14 @@ class Google_Service_Dfareporting extends Google_Service
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/creativeFields',
               'httpMethod' => 'PUT',
-              'parameters' => array(
+				'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+		'required' => true,
                 ),
               ),
-            ),
+ //              ),
           )
         )
     );
@@ -1583,7 +1586,7 @@ class Google_Service_Dfareporting extends Google_Service
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/creativeGroups',
               'httpMethod' => 'POST',
-              'parameters' => array(
+		'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -1603,7 +1606,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortField' => array(
+					'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1620,14 +1623,14 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'ids' => array(
+             'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+					),
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
+			'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
@@ -1640,7 +1643,7 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+               'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
@@ -1655,12 +1658,12 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+	)
         )
     );
     $this->creatives = new Google_Service_Dfareporting_Creatives_Resource(
@@ -1695,8 +1698,8 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'userprofiles/{profileId}/creatives',
-              'httpMethod' => 'GET',
+//                 'path' => 'userprofiles/{profileId}/creatives',
+             'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -1709,7 +1712,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'repeated' => true,
                 ),
                 'archived' => array(
-                  'location' => 'query',
+//                     'location' => 'query',
                   'type' => 'boolean',
                 ),
                 'searchString' => array(
@@ -1718,7 +1721,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'campaignId' => array(
                   'location' => 'query',
-                  'type' => 'string',
+            'type' => 'string',
                 ),
                 'sortField' => array(
                   'location' => 'query',
@@ -1726,20 +1729,20 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'renderingIds' => array(
                   'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
+'type' => 'string',
+    //                   'repeated' => true,
                 ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+       ),
                 'maxResults' => array(
-                  'location' => 'query',
+     'location' => 'query',
                   'type' => 'integer',
                 ),
                 'advertiserId' => array(
-                  'location' => 'query',
+             'location' => 'query',
                   'type' => 'string',
                 ),
                 'pageToken' => array(
@@ -1748,7 +1751,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'studioCreativeId' => array(
                   'location' => 'query',
-                  'type' => 'string',
+     //                  'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
@@ -1757,7 +1760,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'companionCreativeIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+     'repeated' => true,
                 ),
                 'active' => array(
                   'location' => 'query',
@@ -1769,7 +1772,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'repeated' => true,
                 ),
                 'types' => array(
-                  'location' => 'query',
+				'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -1812,13 +1815,13 @@ class Google_Service_Dfareporting extends Google_Service
             'query' => array(
               'path' => 'userprofiles/{profileId}/dimensionvalues/query',
               'httpMethod' => 'POST',
-              'parameters' => array(
+'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageToken' => array(
+               'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1826,15 +1829,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-              ),
+ ),
             ),
           )
         )
     );
     $this->directorySiteContacts = new Google_Service_Dfareporting_DirectorySiteContacts_Resource(
-        $this,
+               $this,
         $this->serviceName,
-        'directorySiteContacts',
+       'directorySiteContacts',
         array(
           'methods' => array(
             'get' => array(
@@ -1851,7 +1854,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+			),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/directorySiteContacts',
               'httpMethod' => 'GET',
@@ -1878,39 +1881,40 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
+                  'repeated' => true,
                 ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+  //                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'sortOrder' => array(
+		),
+ //                   'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
               ),
-            ),
+     ),
           )
         )
     );
     $this->directorySites = new Google_Service_Dfareporting_DirectorySites_Resource(
         $this,
-        $this->serviceName,
+ //           $this->serviceName,
         'directorySites',
         array(
-          'methods' => array(
+    'methods' => array(
             'get' => array(
-              'path' => 'userprofiles/{profileId}/directorySites/{id}',
+					'path' => 'userprofiles/{profileId}/directorySites/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+            ),
                 'id' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -1918,15 +1922,15 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'userprofiles/{profileId}/directorySites',
+	'path' => 'userprofiles/{profileId}/directorySites',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'acceptsInterstitialPlacements' => array(
+  ),
+   'acceptsInterstitialPlacements' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
@@ -1934,7 +1938,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'searchString' => array(
+  //                  'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1953,7 +1957,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+         'repeated' => true,
                 ),
                 'maxResults' => array(
                   'location' => 'query',
@@ -1967,14 +1971,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'parentId' => array(
+  //                'parentId' => array(
+                  'location' => 'query',
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'active' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
-                ),
+'type' => 'boolean',
+			),
                 'dfp_network_code' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1983,7 +1988,7 @@ class Google_Service_Dfareporting extends Google_Service
             ),
           )
         )
-    );
+  //    );
     $this->eventTags = new Google_Service_Dfareporting_EventTags_Resource(
         $this,
         $this->serviceName,
@@ -1994,11 +1999,11 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/eventTags/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
-                'profileId' => array(
+ 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+   ),
                 'id' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -2006,7 +2011,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => 'userprofiles/{profileId}/eventTags/{id}',
+					'path' => 'userprofiles/{profileId}/eventTags/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
@@ -2021,12 +2026,12 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'insert' => array(
-              'path' => 'userprofiles/{profileId}/eventTags',
+			'path' => 'userprofiles/{profileId}/eventTags',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+   //                   'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -2058,7 +2063,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+             'repeated' => true,
                 ),
                 'advertiserId' => array(
                   'location' => 'query',
@@ -2076,15 +2081,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+ ),
                 'definitionsOnly' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+ //                   'type' => 'boolean',
                 ),
               ),
             ),'patch' => array(
               'path' => 'userprofiles/{profileId}/eventTags',
-              'httpMethod' => 'PATCH',
+       'httpMethod' => 'PATCH',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -2094,15 +2099,15 @@ class Google_Service_Dfareporting extends Google_Service
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'required' => true,
+                 'required' => true,
                 ),
               ),
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/eventTags',
               'httpMethod' => 'PUT',
               'parameters' => array(
-                'profileId' => array(
-                  'location' => 'path',
+//                'profileId' => array(
+'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -2115,9 +2120,9 @@ class Google_Service_Dfareporting extends Google_Service
         $this,
         $this->serviceName,
         'files',
-        array(
+	array(
           'methods' => array(
-            'get' => array(
+  'get' => array(
               'path' => 'reports/{reportId}/files/{fileId}',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -2134,7 +2139,7 @@ class Google_Service_Dfareporting extends Google_Service
               ),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/files',
-              'httpMethod' => 'GET',
+'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -2153,7 +2158,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+ //                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2172,14 +2177,15 @@ class Google_Service_Dfareporting extends Google_Service
         'floodlightActivities',
         array(
           'methods' => array(
+          'methods' => array(
             'delete' => array(
-              'path' => 'userprofiles/{profileId}/floodlightActivities/{id}',
+ //                'path' => 'userprofiles/{profileId}/floodlightActivities/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+          'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+                 'required' => true,
                 ),
                 'id' => array(
                   'location' => 'path',
@@ -2199,7 +2205,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'floodlightActivityId' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+       ),
               ),
             ),'get' => array(
               'path' => 'userprofiles/{profileId}/floodlightActivities/{id}',
@@ -2213,13 +2219,13 @@ class Google_Service_Dfareporting extends Google_Service
                 'id' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+  'required' => true,
                 ),
               ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/floodlightActivities',
               'httpMethod' => 'POST',
-              'parameters' => array(
+	'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -2227,8 +2233,8 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'userprofiles/{profileId}/floodlightActivities',
-              'httpMethod' => 'GET',
+   'path' => 'userprofiles/{profileId}/floodlightActivities',
+'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -2239,10 +2245,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+		),
                 'sortOrder' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+			'type' => 'string',
                 ),
                 'searchString' => array(
                   'location' => 'query',
@@ -2255,9 +2260,9 @@ class Google_Service_Dfareporting extends Google_Service
                 'floodlightConfigurationId' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+ ),
                 'ids' => array(
-                  'location' => 'query',
+	'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -2291,16 +2296,16 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => 'userprofiles/{profileId}/floodlightActivities',
+			'path' => 'userprofiles/{profileId}/floodlightActivities',
               'httpMethod' => 'PATCH',
               'parameters' => array(
-                'profileId' => array(
+//                  'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'query',
+        'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -2308,12 +2313,12 @@ class Google_Service_Dfareporting extends Google_Service
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/floodlightActivities',
               'httpMethod' => 'PUT',
-              'parameters' => array(
+     //                'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
-                ),
+   'required' => true,
+  //                ),
               ),
             ),
           )
@@ -2329,23 +2334,23 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/floodlightActivityGroups/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
-                'profileId' => array(
+        'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+ 'required' => true,
                 ),
                 'id' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+					'required' => true,
                 ),
               ),
-            ),'get' => array(
+			),'get' => array(
               'path' => 'userprofiles/{profileId}/floodlightActivityGroups/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
-                  'location' => 'path',
+		'profileId' => array(
+     //                    'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -2354,20 +2359,20 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+        ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/floodlightActivityGroups',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+		'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+                 ),
               ),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/floodlightActivityGroups',
-              'httpMethod' => 'GET',
+          'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -2405,7 +2410,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
-                  'type' => 'string',
+ //                   'type' => 'string',
                 ),
                 'type' => array(
                   'location' => 'query',
@@ -2413,7 +2418,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => 'userprofiles/{profileId}/floodlightActivityGroups',
+           'path' => 'userprofiles/{profileId}/floodlightActivityGroups',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'profileId' => array(
@@ -2423,7 +2428,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'id' => array(
                   'location' => 'query',
-                  'type' => 'string',
+'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -2431,7 +2436,7 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/floodlightActivityGroups',
               'httpMethod' => 'PUT',
               'parameters' => array(
-                'profileId' => array(
+   //                  'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -2445,19 +2450,19 @@ class Google_Service_Dfareporting extends Google_Service
         $this,
         $this->serviceName,
         'floodlightConfigurations',
-        array(
+   array(
           'methods' => array(
             'get' => array(
               'path' => 'userprofiles/{profileId}/floodlightConfigurations/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
-                  'location' => 'path',
+           'profileId' => array(
+				'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'path',
+             'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -2466,14 +2471,14 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/floodlightConfigurations',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+     'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'ids' => array(
                   'location' => 'query',
-                  'type' => 'string',
+              'type' => 'string',
                   'repeated' => true,
                 ),
               ),
@@ -2481,7 +2486,7 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/floodlightConfigurations',
               'httpMethod' => 'PATCH',
               'parameters' => array(
-                'profileId' => array(
+              'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -2498,7 +2503,7 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+			'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -2511,7 +2516,7 @@ class Google_Service_Dfareporting extends Google_Service
         $this->serviceName,
         'landingPages',
         array(
-          'methods' => array(
+       'methods' => array(
             'delete' => array(
               'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/landingPages/{id}',
               'httpMethod' => 'DELETE',
@@ -2531,14 +2536,14 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+                ),
             ),'get' => array(
               'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/landingPages/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+			'type' => 'string',
                   'required' => true,
                 ),
                 'campaignId' => array(
@@ -2546,7 +2551,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'id' => array(
+			'id' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -2554,10 +2559,11 @@ class Google_Service_Dfareporting extends Google_Service
               ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/landingPages',
+              'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/landingPages',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'profileId' => array(
-                  'location' => 'path',
+'profileId' => array(
+           'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -2571,7 +2577,7 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/campaigns/{campaignId}/landingPages',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+               'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -2591,7 +2597,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'campaignId' => array(
+     //                  'campaignId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -2608,22 +2614,23 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+          'type' => 'string',
                   'required' => true,
                 ),
                 'campaignId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+                 ),
               ),
             ),
           )
         )
     );
     $this->metros = new Google_Service_Dfareporting_Metros_Resource(
-        $this,
+                $this,
         $this->serviceName,
+        'metros',
         'metros',
         array(
           'methods' => array(
@@ -2640,7 +2647,7 @@ class Google_Service_Dfareporting extends Google_Service
             ),
           )
         )
-    );
+             );
     $this->mobileCarriers = new Google_Service_Dfareporting_MobileCarriers_Resource(
         $this,
         $this->serviceName,
@@ -2656,12 +2663,12 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+       ),
             ),
           )
         )
     );
-    $this->operatingSystemVersions = new Google_Service_Dfareporting_OperatingSystemVersions_Resource(
+          $this->operatingSystemVersions = new Google_Service_Dfareporting_OperatingSystemVersions_Resource(
         $this,
         $this->serviceName,
         'operatingSystemVersions',
@@ -2671,7 +2678,7 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/operatingSystemVersions',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+  'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -2681,11 +2688,11 @@ class Google_Service_Dfareporting extends Google_Service
           )
         )
     );
-    $this->operatingSystems = new Google_Service_Dfareporting_OperatingSystems_Resource(
+     $this->operatingSystems = new Google_Service_Dfareporting_OperatingSystems_Resource(
         $this,
         $this->serviceName,
         'operatingSystems',
-        array(
+array(
           'methods' => array(
             'list' => array(
               'path' => 'userprofiles/{profileId}/operatingSystems',
@@ -2707,14 +2714,13 @@ class Google_Service_Dfareporting extends Google_Service
         'placementGroups',
         array(
           'methods' => array(
-            'get' => array(
+   //               'get' => array(
               'path' => 'userprofiles/{profileId}/placementGroups/{id}',
               'httpMethod' => 'GET',
-              'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+                 'type' => 'string',
+				'required' => true,
                 ),
                 'id' => array(
                   'location' => 'path',
@@ -2722,18 +2728,18 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'insert' => array(
+     //               ),'insert' => array(
               'path' => 'userprofiles/{profileId}/placementGroups',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+   //                   'required' => true,
                 ),
-              ),
+          ),
             ),'list' => array(
-              'path' => 'userprofiles/{profileId}/placementGroups',
+  'path' => 'userprofiles/{profileId}/placementGroups',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
@@ -2742,10 +2748,10 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
                 'placementStrategyIds' => array(
-                  'location' => 'query',
+	'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+           ),
                 'archived' => array(
                   'location' => 'query',
                   'type' => 'boolean',
@@ -2753,17 +2759,17 @@ class Google_Service_Dfareporting extends Google_Service
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'contentCategoryIds' => array(
+ //                   ),
+   'contentCategoryIds' => array(
                   'location' => 'query',
-                  'type' => 'string',
+			'type' => 'string',
                   'repeated' => true,
-                ),
+),
                 'directorySiteIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+               ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -2780,10 +2786,10 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+'type' => 'integer',
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+     'location' => 'query',
                   'type' => 'string',
                 ),
                 'sortOrder' => array(
@@ -2793,12 +2799,12 @@ class Google_Service_Dfareporting extends Google_Service
                 'placementGroupType' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+),
                 'pricingTypes' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+	),
                 'siteIds' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -2815,16 +2821,16 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+ //                  'location' => 'path',
+	'type' => 'string',
+//                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+					),
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/placementGroups',
               'httpMethod' => 'PUT',
@@ -2840,18 +2846,19 @@ class Google_Service_Dfareporting extends Google_Service
         )
     );
     $this->placementStrategies = new Google_Service_Dfareporting_PlacementStrategies_Resource(
-        $this,
+    $this,
         $this->serviceName,
-        'placementStrategies',
-        array(
+		'placementStrategies',
+    array(
           'methods' => array(
             'delete' => array(
               'path' => 'userprofiles/{profileId}/placementStrategies/{id}',
               'httpMethod' => 'DELETE',
+              'httpMethod' => 'DELETE',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+				'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
@@ -2861,20 +2868,20 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => 'userprofiles/{profileId}/placementStrategies/{id}',
+'path' => 'userprofiles/{profileId}/placementStrategies/{id}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+              'type' => 'string',
+			'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'path',
+   //                     'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+      ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/placementStrategies',
               'httpMethod' => 'POST',
@@ -2889,19 +2896,19 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/placementStrategies',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'profileId' => array(
+          'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'searchString' => array(
                   'location' => 'query',
-                  'type' => 'string',
+'type' => 'string',
                 ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+               ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -2915,7 +2922,6 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -2927,17 +2933,17 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+ //                  'required' => true,
                 ),
                 'id' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'required' => true,
+ //                    'required' => true,
                 ),
               ),
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/placementStrategies',
-              'httpMethod' => 'PUT',
+                 'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -2949,11 +2955,11 @@ class Google_Service_Dfareporting extends Google_Service
           )
         )
     );
-    $this->placements = new Google_Service_Dfareporting_Placements_Resource(
+      $this->placements = new Google_Service_Dfareporting_Placements_Resource(
         $this,
         $this->serviceName,
         'placements',
-        array(
+	array(
           'methods' => array(
             'generatetags' => array(
               'path' => 'userprofiles/{profileId}/placements/generatetags',
@@ -2962,17 +2968,17 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
-                ),
+					'required' => true,
+     //                  ),
                 'tagFormats' => array(
-                  'location' => 'query',
+				'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+   //                ),
                 'placementIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+				'repeated' => true,
                 ),
                 'campaignId' => array(
                   'location' => 'query',
@@ -2982,7 +2988,7 @@ class Google_Service_Dfareporting extends Google_Service
             ),'get' => array(
               'path' => 'userprofiles/{profileId}/placements/{id}',
               'httpMethod' => 'GET',
-              'parameters' => array(
+                 'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -2992,7 +2998,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+		),
               ),
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/placements',
@@ -3004,7 +3010,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
+			),'list' => array(
               'path' => 'userprofiles/{profileId}/placements',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -3016,9 +3022,9 @@ class Google_Service_Dfareporting extends Google_Service
                 'placementStrategyIds' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
+       'repeated' => true,
                 ),
-                'sortOrder' => array(
+     'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -3029,13 +3035,13 @@ class Google_Service_Dfareporting extends Google_Service
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+),
                 'contentCategoryIds' => array(
                   'location' => 'query',
-                  'type' => 'string',
+ 'type' => 'string',
                   'repeated' => true,
                 ),
-                'directorySiteIds' => array(
+       'directorySiteIds' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
@@ -3054,7 +3060,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                 ),
                 'ids' => array(
-                  'location' => 'query',
+//                  'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -3077,17 +3083,15 @@ class Google_Service_Dfareporting extends Google_Service
                   'repeated' => true,
                 ),
                 'groupIds' => array(
-                  'location' => 'query',
+					'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
-                'pricingTypes' => array(
+//                   'pricingTypes' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
                 ),
-                'siteIds' => array(
-                  'location' => 'query',
+           'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -3097,17 +3101,17 @@ class Google_Service_Dfareporting extends Google_Service
                   'repeated' => true,
                 ),
               ),
-            ),'patch' => array(
+   ),'patch' => array(
               'path' => 'userprofiles/{profileId}/placements',
-              'httpMethod' => 'PATCH',
+             'httpMethod' => 'PATCH',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -3125,9 +3129,9 @@ class Google_Service_Dfareporting extends Google_Service
             ),
           )
         )
-    );
+         );
     $this->platformTypes = new Google_Service_Dfareporting_PlatformTypes_Resource(
-        $this,
+				$this,
         $this->serviceName,
         'platformTypes',
         array(
@@ -3157,11 +3161,11 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+              'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+   //              ),
             ),
           )
         )
@@ -3177,7 +3181,7 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+			'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -3189,7 +3193,7 @@ class Google_Service_Dfareporting extends Google_Service
     $this->reports = new Google_Service_Dfareporting_Reports_Resource(
         $this,
         $this->serviceName,
-        'reports',
+            'reports',
         array(
           'methods' => array(
             'delete' => array(
@@ -3203,11 +3207,11 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'reportId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+  //                  'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),'get' => array(
+               ),'get' => array(
               'path' => 'userprofiles/{profileId}/reports/{reportId}',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -3225,13 +3229,13 @@ class Google_Service_Dfareporting extends Google_Service
             ),'insert' => array(
               'path' => 'userprofiles/{profileId}/reports',
               'httpMethod' => 'POST',
-              'parameters' => array(
+ //               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/reports',
               'httpMethod' => 'GET',
@@ -3247,7 +3251,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+	'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -3257,10 +3261,9 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'scope' => array(
+        'scope' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
               ),
             ),'patch' => array(
               'path' => 'userprofiles/{profileId}/reports/{reportId}',
@@ -3289,7 +3292,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'reportId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+         'required' => true,
                 ),
                 'synchronous' => array(
                   'location' => 'query',
@@ -3309,7 +3312,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+    ),
               ),
             ),
           )
@@ -3328,15 +3331,16 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+    'required' => true,
                 ),
-              ),
+        ),
+            ),
             ),
           )
         )
     );
     $this->reports_files = new Google_Service_Dfareporting_ReportsFiles_Resource(
-        $this,
+     //           $this,
         $this->serviceName,
         'files',
         array(
@@ -3363,7 +3367,7 @@ class Google_Service_Dfareporting extends Google_Service
               ),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/reports/{reportId}/files',
-              'httpMethod' => 'GET',
+          'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -3374,18 +3378,17 @@ class Google_Service_Dfareporting extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+         ),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxResults' => array(
+	'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
@@ -3407,13 +3410,13 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+  'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
                   'location' => 'path',
-                  'type' => 'string',
+  'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -3424,10 +3427,10 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+  'required' => true,
                 ),
               ),
-            ),'list' => array(
+ //            ),'list' => array(
               'path' => 'userprofiles/{profileId}/sites',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -3471,7 +3474,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
+ 'location' => 'query',
                   'type' => 'string',
                 ),
                 'acceptsPublisherPaidPlacements' => array(
@@ -3507,7 +3510,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+    'required' => true,
                 ),
                 'id' => array(
                   'location' => 'query',
@@ -3521,14 +3524,14 @@ class Google_Service_Dfareporting extends Google_Service
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+//                     'type' => 'string',
                   'required' => true,
-                ),
+    //                   ),
               ),
             ),
           )
         )
-    );
+			);
     $this->sizes = new Google_Service_Dfareporting_Sizes_Resource(
         $this,
         $this->serviceName,
@@ -3538,9 +3541,9 @@ class Google_Service_Dfareporting extends Google_Service
             'get' => array(
               'path' => 'userprofiles/{profileId}/sizes/{id}',
               'httpMethod' => 'GET',
-              'parameters' => array(
+           'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+     'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -3555,10 +3558,10 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'POST',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+//                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+   ),
               ),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/sizes',
@@ -3578,8 +3581,8 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'integer',
                 ),
                 'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+	'location' => 'query',
+					'type' => 'string',
                   'repeated' => true,
                 ),
                 'height' => array(
@@ -3587,20 +3590,20 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'integer',
                 ),
               ),
-            ),
+          ),
           )
         )
     );
     $this->subaccounts = new Google_Service_Dfareporting_Subaccounts_Resource(
         $this,
-        $this->serviceName,
+    $this->serviceName,
         'subaccounts',
         array(
           'methods' => array(
             'get' => array(
               'path' => 'userprofiles/{profileId}/subaccounts/{id}',
               'httpMethod' => 'GET',
-              'parameters' => array(
+                 'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -3627,14 +3630,14 @@ class Google_Service_Dfareporting extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+				'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+),
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -3657,7 +3660,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),'patch' => array(
+                 ),'patch' => array(
               'path' => 'userprofiles/{profileId}/subaccounts',
               'httpMethod' => 'PATCH',
               'parameters' => array(
@@ -3667,7 +3670,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'required' => true,
                 ),
                 'id' => array(
-                  'location' => 'query',
+               'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -3675,7 +3678,7 @@ class Google_Service_Dfareporting extends Google_Service
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/subaccounts',
               'httpMethod' => 'PUT',
-              'parameters' => array(
+                 'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -3688,6 +3691,7 @@ class Google_Service_Dfareporting extends Google_Service
     );
     $this->userProfiles = new Google_Service_Dfareporting_UserProfiles_Resource(
         $this,
+        $this,
         $this->serviceName,
         'userProfiles',
         array(
@@ -3699,8 +3703,9 @@ class Google_Service_Dfareporting extends Google_Service
                 'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
+                  'type' => 'string',
                   'required' => true,
-                ),
+       ),
               ),
             ),'list' => array(
               'path' => 'userprofiles',
@@ -3715,7 +3720,7 @@ class Google_Service_Dfareporting extends Google_Service
         $this->serviceName,
         'userRolePermissionGroups',
         array(
-          'methods' => array(
+     'methods' => array(
             'get' => array(
               'path' => 'userprofiles/{profileId}/userRolePermissionGroups/{id}',
               'httpMethod' => 'GET',
@@ -3742,7 +3747,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
               ),
             ),
-          )
+					)
         )
     );
     $this->userRolePermissions = new Google_Service_Dfareporting_UserRolePermissions_Resource(
@@ -3751,9 +3756,9 @@ class Google_Service_Dfareporting extends Google_Service
         'userRolePermissions',
         array(
           'methods' => array(
-            'get' => array(
+        'get' => array(
               'path' => 'userprofiles/{profileId}/userRolePermissions/{id}',
-              'httpMethod' => 'GET',
+    'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -3784,10 +3789,11 @@ class Google_Service_Dfareporting extends Google_Service
             ),
           )
         )
-    );
+        )
+  //     );
     $this->userRoles = new Google_Service_Dfareporting_UserRoles_Resource(
         $this,
-        $this->serviceName,
+				$this->serviceName,
         'userRoles',
         array(
           'methods' => array(
@@ -3795,16 +3801,16 @@ class Google_Service_Dfareporting extends Google_Service
               'path' => 'userprofiles/{profileId}/userRoles/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
-                'profileId' => array(
+			'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'id' => array(
                   'location' => 'path',
-                  'type' => 'string',
+ //                    'type' => 'string',
                   'required' => true,
-                ),
+            ),
               ),
             ),'get' => array(
               'path' => 'userprofiles/{profileId}/userRoles/{id}',
@@ -3815,7 +3821,7 @@ class Google_Service_Dfareporting extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'id' => array(
+	'id' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -3833,7 +3839,7 @@ class Google_Service_Dfareporting extends Google_Service
               ),
             ),'list' => array(
               'path' => 'userprofiles/{profileId}/userRoles',
-              'httpMethod' => 'GET',
+				'httpMethod' => 'GET',
               'parameters' => array(
                 'profileId' => array(
                   'location' => 'path',
@@ -3843,7 +3849,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'searchString' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+//                   ),
                 'subaccountId' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -3851,7 +3857,7 @@ class Google_Service_Dfareporting extends Google_Service
                 'sortField' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+   ),
                 'ids' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -3863,7 +3869,7 @@ class Google_Service_Dfareporting extends Google_Service
                 ),
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
+    'type' => 'string',
                 ),
                 'sortOrder' => array(
                   'location' => 'query',
@@ -3872,13 +3878,13 @@ class Google_Service_Dfareporting extends Google_Service
                 'accountUserRoleOnly' => array(
                   'location' => 'query',
                   'type' => 'boolean',
-                ),
-              ),
+        ),
+      ),
             ),'patch' => array(
               'path' => 'userprofiles/{profileId}/userRoles',
               'httpMethod' => 'PATCH',
-              'parameters' => array(
-                'profileId' => array(
+     'parameters' => array(
+'profileId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -3891,22 +3897,21 @@ class Google_Service_Dfareporting extends Google_Service
               ),
             ),'update' => array(
               'path' => 'userprofiles/{profileId}/userRoles',
-              'httpMethod' => 'PUT',
+ 'httpMethod' => 'PUT',
               'parameters' => array(
                 'profileId' => array(
-                  'location' => 'path',
+ //                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+       'required' => true,
                 ),
               ),
-            ),
+  //              ),
           )
         )
     );
   }
 }
-
-
+					
 /**
  * The "accountActiveAdSummaries" collection of methods.
  * Typical usage is:
@@ -3916,18 +3921,17 @@ class Google_Service_Dfareporting extends Google_Service
  *  </code>
  */
 class Google_Service_Dfareporting_AccountActiveAdSummaries_Resource extends Google_Service_Resource
-{
-
-  /**
+  {
+		  /**
    * Gets the account's active ad summary by account ID.
    * (accountActiveAdSummaries.get)
    *
-   * @param string $profileId User profile ID associated with this request.
+                * @param string $profileId User profile ID associated with this request.
    * @param string $summaryAccountId Account ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_AccountActiveAdSummary
    */
-  public function get($profileId, $summaryAccountId, $optParams = array())
+    //   public function get($profileId, $summaryAccountId, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'summaryAccountId' => $summaryAccountId);
     $params = array_merge($params, $optParams);
@@ -3936,10 +3940,10 @@ class Google_Service_Dfareporting_AccountActiveAdSummaries_Resource extends Goog
 }
 
 /**
- * The "accountPermissionGroups" collection of methods.
- * Typical usage is:
+                 * The "accountPermissionGroups" collection of methods.
+* Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+          *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $accountPermissionGroups = $dfareportingService->accountPermissionGroups;
  *  </code>
  */
@@ -3950,7 +3954,7 @@ class Google_Service_Dfareporting_AccountPermissionGroups_Resource extends Googl
    * Gets one account permission group by ID. (accountPermissionGroups.get)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Account permission group ID.
+ * @param string $id Account permission group ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_AccountPermissionGroup
    */
@@ -3971,14 +3975,13 @@ class Google_Service_Dfareporting_AccountPermissionGroups_Resource extends Googl
    */
   public function listAccountPermissionGroups($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+     //     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_AccountPermissionGroupsListResponse");
   }
 }
-
-/**
- * The "accountPermissions" collection of methods.
+			/**
+//    * The "accountPermissions" collection of methods.
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
@@ -3997,7 +4000,7 @@ class Google_Service_Dfareporting_AccountPermissions_Resource extends Google_Ser
    * @return Google_Service_Dfareporting_AccountPermission
    */
   public function get($profileId, $id, $optParams = array())
-  {
+               {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_AccountPermission");
@@ -4006,17 +4009,17 @@ class Google_Service_Dfareporting_AccountPermissions_Resource extends Google_Ser
   /**
    * Retrieves the list of account permissions.
    * (accountPermissions.listAccountPermissions)
-   *
+                *
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_AccountPermissionsListResponse
    */
   public function listAccountPermissions($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+             $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_AccountPermissionsListResponse");
-  }
+              }
 }
 
 /**
@@ -4034,11 +4037,11 @@ class Google_Service_Dfareporting_AccountUserProfiles_Resource extends Google_Se
    * Gets one account user profile by ID. (accountUserProfiles.get)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id User profile ID.
+   //    * @param string $id User profile ID.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_AccountUserProfile
+                * @return Google_Service_Dfareporting_AccountUserProfile
    */
-  public function get($profileId, $id, $optParams = array())
+    //   public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
@@ -4063,16 +4066,16 @@ class Google_Service_Dfareporting_AccountUserProfiles_Resource extends Google_Se
    * subaccount ID.
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string ids Select only user profiles with these IDs.
-   * @opt_param int maxResults Maximum number of results to return.
+        * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param string userRoleId Select only user profiles with the specified
    * user role ID.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
-   * @opt_param bool active Select only active user profiles.
+                * @opt_param bool active Select only active user profiles.
    * @return Google_Service_Dfareporting_AccountUserProfilesListResponse
    */
-  public function listAccountUserProfiles($profileId, $optParams = array())
+                public function listAccountUserProfiles($profileId, $optParams = array())
   {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
@@ -4084,23 +4087,23 @@ class Google_Service_Dfareporting_AccountUserProfiles_Resource extends Google_Se
    * semantics. (accountUserProfiles.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id User profile ID.
-   * @param Google_AccountUserProfile $postBody
+			* @param string $id User profile ID.
+        * @param Google_AccountUserProfile $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_AccountUserProfile
+    * @return Google_Service_Dfareporting_AccountUserProfile
    */
   public function patch($profileId, $id, Google_Service_Dfareporting_AccountUserProfile $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Dfareporting_AccountUserProfile");
+     return $this->call('patch', array($params), "Google_Service_Dfareporting_AccountUserProfile");
   }
 
   /**
    * Updates an existing account user profile. (accountUserProfiles.update)
-   *
-   * @param string $profileId User profile ID associated with this request.
-   * @param Google_AccountUserProfile $postBody
+*
+					* @param string $profileId User profile ID associated with this request.
+  * @param Google_AccountUserProfile $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_AccountUserProfile
    */
@@ -4118,14 +4121,14 @@ class Google_Service_Dfareporting_AccountUserProfiles_Resource extends Google_Se
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $accounts = $dfareportingService->accounts;
- *  </code>
+	*  </code>
  */
 class Google_Service_Dfareporting_Accounts_Resource extends Google_Service_Resource
 {
 
   /**
    * Gets one account by ID. (accounts.get)
-   *
+ //      *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Account ID.
    * @param array $optParams Optional parameters.
@@ -4139,10 +4142,10 @@ class Google_Service_Dfareporting_Accounts_Resource extends Google_Service_Resou
   }
 
   /**
-   * Retrieves the list of accounts, possibly filtered. (accounts.listAccounts)
+      * Retrieves the list of accounts, possibly filtered. (accounts.listAccounts)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param array $optParams Optional parameters.
+             * @param array $optParams Optional parameters.
    *
    * @opt_param string searchString Allows searching for objects by name or ID.
    * Wildcards (*) are allowed. For example, "account*2015" will return objects
@@ -4173,7 +4176,7 @@ class Google_Service_Dfareporting_Accounts_Resource extends Google_Service_Resou
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Account ID.
-   * @param Google_Account $postBody
+     //     * @param Google_Account $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Account
    */
@@ -4188,11 +4191,11 @@ class Google_Service_Dfareporting_Accounts_Resource extends Google_Service_Resou
    * Updates an existing account. (accounts.update)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param Google_Account $postBody
+         * @param Google_Account $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Account
    */
-  public function update($profileId, Google_Service_Dfareporting_Account $postBody, $optParams = array())
+          public function update($profileId, Google_Service_Dfareporting_Account $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -4204,7 +4207,7 @@ class Google_Service_Dfareporting_Accounts_Resource extends Google_Service_Resou
  * The "ads" collection of methods.
  * Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+			*   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $ads = $dfareportingService->ads;
  *  </code>
  */
@@ -4239,9 +4242,9 @@ class Google_Service_Dfareporting_Ads_Resource extends Google_Service_Resource
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Ad");
-  }
+      }
 
-  /**
+              /**
    * Retrieves a list of ads, possibly filtered. (ads.listAds)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -4260,10 +4263,10 @@ class Google_Service_Dfareporting_Ads_Resource extends Google_Service_Resource
    * result page.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
    * @opt_param string type Select only ads with these types.
-   * @opt_param bool sslRequired Select only ads that require SSL.
+                 * @opt_param bool sslRequired Select only ads that require SSL.
    * @opt_param string creativeIds Select only ads with these creative IDs
-   * assigned.
-   * @opt_param int maxResults Maximum number of results to return.
+	* assigned.
+   //   * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string creativeType Select only ads with the specified
    * creativeType.
    * @opt_param string placementIds Select only ads with these placement IDs
@@ -4272,9 +4275,10 @@ class Google_Service_Dfareporting_Ads_Resource extends Google_Service_Resource
    * @opt_param string compatibility Select default ads with the specified
    * compatibility. Applicable when type is AD_SERVING_DEFAULT_AD. WEB and
    * WEB_INTERSTITIAL refer to rendering either on desktop or on mobile devices
-   * for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are
+       * for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are
    * for rendering in mobile apps. IN_STREAM_VIDEO refers to rendering an in-
    * stream video ads developed with the VAST standard.
+   * @opt_param string advertiserId Select only ads with this advertiser ID.
    * @opt_param string advertiserId Select only ads with this advertiser ID.
    * @opt_param string searchString Allows searching for objects by name or ID.
    * Wildcards (*) are allowed. For example, "ad*2015" will return objects with
@@ -4295,7 +4299,7 @@ class Google_Service_Dfareporting_Ads_Resource extends Google_Service_Resource
    * @return Google_Service_Dfareporting_AdsListResponse
    */
   public function listAds($profileId, $optParams = array())
-  {
+                 {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_AdsListResponse");
@@ -4307,26 +4311,26 @@ class Google_Service_Dfareporting_Ads_Resource extends Google_Service_Resource
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Ad ID.
    * @param Google_Ad $postBody
-   * @param array $optParams Optional parameters.
+           * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Ad
    */
   public function patch($profileId, $id, Google_Service_Dfareporting_Ad $postBody, $optParams = array())
-  {
+		{
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_Ad");
   }
 
   /**
    * Updates an existing ad. (ads.update)
    *
-   * @param string $profileId User profile ID associated with this request.
+              * @param string $profileId User profile ID associated with this request.
    * @param Google_Ad $postBody
-   * @param array $optParams Optional parameters.
+			* @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Ad
    */
   public function update($profileId, Google_Service_Dfareporting_Ad $postBody, $optParams = array())
-  {
+ {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_Ad");
@@ -4335,7 +4339,7 @@ class Google_Service_Dfareporting_Ads_Resource extends Google_Service_Resource
 
 /**
  * The "advertiserGroups" collection of methods.
- * Typical usage is:
+        * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $advertiserGroups = $dfareportingService->advertiserGroups;
@@ -4347,18 +4351,18 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
   /**
    * Deletes an existing advertiser group. (advertiserGroups.delete)
    *
-   * @param string $profileId User profile ID associated with this request.
+//      * @param string $profileId User profile ID associated with this request.
    * @param string $id Advertiser group ID.
    * @param array $optParams Optional parameters.
    */
-  public function delete($profileId, $id, $optParams = array())
-  {
+     public function delete($profileId, $id, $optParams = array())
+		{
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
 
-  /**
+              /**
    * Gets one advertiser group by ID. (advertiserGroups.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -4374,7 +4378,7 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
   }
 
   /**
-   * Inserts a new advertiser group. (advertiserGroups.insert)
+           * Inserts a new advertiser group. (advertiserGroups.insert)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_AdvertiserGroup $postBody
@@ -4384,7 +4388,7 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
   public function insert($profileId, Google_Service_Dfareporting_AdvertiserGroup $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+  //      $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_AdvertiserGroup");
   }
 
@@ -4392,13 +4396,13 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
    * Retrieves a list of advertiser groups, possibly filtered.
    * (advertiserGroups.listAdvertiserGroups)
    *
-   * @param string $profileId User profile ID associated with this request.
+      * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string searchString Allows searching for objects by name or ID.
+  //     * @opt_param string searchString Allows searching for objects by name or ID.
    * Wildcards (*) are allowed. For example, "advertiser*2015" will return objects
    * with names like "advertiser group June 2015", "advertiser group April 2015"
-   * or simply "advertiser group 2015". Most of the searches also add wildcards
+             * or simply "advertiser group 2015". Most of the searches also add wildcards
    * implicitly at the start and the end of the search string. For example, a
    * search string of "advertisergroup" will match objects with name "my
    * advertisergroup", "advertisergroup 2015" or simply "advertisergroup".
@@ -4411,7 +4415,7 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
    * @return Google_Service_Dfareporting_AdvertiserGroupsListResponse
    */
   public function listAdvertiserGroups($profileId, $optParams = array())
-  {
+                 {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_AdvertiserGroupsListResponse");
@@ -4423,7 +4427,7 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Advertiser group ID.
-   * @param Google_AdvertiserGroup $postBody
+			* @param Google_AdvertiserGroup $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_AdvertiserGroup
    */
@@ -4433,13 +4437,13 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_AdvertiserGroup");
   }
-
+ //
   /**
    * Updates an existing advertiser group. (advertiserGroups.update)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_AdvertiserGroup $postBody
-   * @param array $optParams Optional parameters.
+          * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_AdvertiserGroup
    */
   public function update($profileId, Google_Service_Dfareporting_AdvertiserGroup $postBody, $optParams = array())
@@ -4450,7 +4454,7 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
   }
 }
 
-/**
+		/**
  * The "advertisers" collection of methods.
  * Typical usage is:
  *  <code>
@@ -4458,7 +4462,7 @@ class Google_Service_Dfareporting_AdvertiserGroups_Resource extends Google_Servi
  *   $advertisers = $dfareportingService->advertisers;
  *  </code>
  */
-class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Resource
+ //class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Resource
 {
 
   /**
@@ -4469,10 +4473,10 @@ class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Re
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Advertiser
    */
-  public function get($profileId, $id, $optParams = array())
+public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
-    $params = array_merge($params, $optParams);
+       $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_Advertiser");
   }
 
@@ -4481,7 +4485,7 @@ class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Re
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_Advertiser $postBody
-   * @param array $optParams Optional parameters.
+				* @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Advertiser
    */
   public function insert($profileId, Google_Service_Dfareporting_Advertiser $postBody, $optParams = array())
@@ -4493,31 +4497,31 @@ class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Re
 
   /**
    * Retrieves a list of advertisers, possibly filtered.
-   * (advertisers.listAdvertisers)
+             * (advertisers.listAdvertisers)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string status Select only advertisers with the specified status.
+				* @opt_param string status Select only advertisers with the specified status.
    * @opt_param string searchString Allows searching for objects by name or ID.
    * Wildcards (*) are allowed. For example, "advertiser*2015" will return objects
    * with names like "advertiser June 2015", "advertiser April 2015" or simply
    * "advertiser 2015". Most of the searches also add wildcards implicitly at the
-   * start and the end of the search string. For example, a search string of
+* start and the end of the search string. For example, a search string of
    * "advertiser" will match objects with name "my advertiser", "advertiser 2015"
    * or simply "advertiser".
    * @opt_param string subaccountId Select only advertisers with these subaccount
    * IDs.
    * @opt_param bool includeAdvertisersWithoutGroupsOnly Select only advertisers
    * which do not belong to any advertiser group.
-   * @opt_param string sortField Field by which to sort the list.
-   * @opt_param string ids Select only advertisers with these IDs.
+        * @opt_param string sortField Field by which to sort the list.
+   //   * @opt_param string ids Select only advertisers with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param bool onlyParent Select only advertisers which use another
    * advertiser's floodlight configuration.
-   * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
+				* @opt_param string sortOrder Order of sorted results, default is ASCENDING.
    * @opt_param string floodlightConfigurationIds Select only advertisers with
    * these floodlight configuration IDs.
    * @opt_param string advertiserGroupIds Select only advertisers with these
@@ -4525,11 +4529,11 @@ class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Re
    * @return Google_Service_Dfareporting_AdvertisersListResponse
    */
   public function listAdvertisers($profileId, $optParams = array())
-  {
+               {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_AdvertisersListResponse");
-  }
+   }
 
   /**
    * Updates an existing advertiser. This method supports patch semantics.
@@ -4552,35 +4556,35 @@ class Google_Service_Dfareporting_Advertisers_Resource extends Google_Service_Re
    * Updates an existing advertiser. (advertisers.update)
    *
    * @param string $profileId User profile ID associated with this request.
+   * @param string $profileId User profile ID associated with this request.
    * @param Google_Advertiser $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Advertiser
    */
   public function update($profileId, Google_Service_Dfareporting_Advertiser $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'postBody' => $postBody);
+   //    $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_Advertiser");
   }
 }
 
-/**
+///**
  * The "browsers" collection of methods.
  * Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+                 *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $browsers = $dfareportingService->browsers;
- *  </code>
+                 *  </code>
  */
 class Google_Service_Dfareporting_Browsers_Resource extends Google_Service_Resource
 {
-
-  /**
+   /**
    * Retrieves a list of browsers. (browsers.listBrowsers)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_BrowsersListResponse
+	* @return Google_Service_Dfareporting_BrowsersListResponse
    */
   public function listBrowsers($profileId, $optParams = array())
   {
@@ -4590,7 +4594,7 @@ class Google_Service_Dfareporting_Browsers_Resource extends Google_Service_Resou
   }
 }
 
-/**
+    /**
  * The "campaignCreativeAssociations" collection of methods.
  * Typical usage is:
  *  <code>
@@ -4607,13 +4611,13 @@ class Google_Service_Dfareporting_CampaignCreativeAssociations_Resource extends 
    * default ad does not exist already. (campaignCreativeAssociations.insert)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $campaignId Campaign ID in this association.
+  //      * @param string $campaignId Campaign ID in this association.
    * @param Google_CampaignCreativeAssociation $postBody
-   * @param array $optParams Optional parameters.
+* @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CampaignCreativeAssociation
    */
   public function insert($profileId, $campaignId, Google_Service_Dfareporting_CampaignCreativeAssociation $postBody, $optParams = array())
-  {
+{
     $params = array('profileId' => $profileId, 'campaignId' => $campaignId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_CampaignCreativeAssociation");
@@ -4633,7 +4637,7 @@ class Google_Service_Dfareporting_CampaignCreativeAssociations_Resource extends 
    * @opt_param int maxResults Maximum number of results to return.
    * @return Google_Service_Dfareporting_CampaignCreativeAssociationsListResponse
    */
-  public function listCampaignCreativeAssociations($profileId, $campaignId, $optParams = array())
+			public function listCampaignCreativeAssociations($profileId, $campaignId, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'campaignId' => $campaignId);
     $params = array_merge($params, $optParams);
@@ -4642,7 +4646,7 @@ class Google_Service_Dfareporting_CampaignCreativeAssociations_Resource extends 
 }
 
 /**
- * The "campaigns" collection of methods.
+      * The "campaigns" collection of methods.
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
@@ -4652,7 +4656,7 @@ class Google_Service_Dfareporting_CampaignCreativeAssociations_Resource extends 
 class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Resource
 {
 
-  /**
+				/**
    * Gets one campaign by ID. (campaigns.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -4661,7 +4665,7 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
    * @return Google_Service_Dfareporting_Campaign
    */
   public function get($profileId, $id, $optParams = array())
-  {
+               {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_Campaign");
@@ -4672,7 +4676,7 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $defaultLandingPageName Default landing page name for this new
-   * campaign. Must be less than 256 characters long.
+   //   * campaign. Must be less than 256 characters long.
    * @param string $defaultLandingPageUrl Default landing page URL for this new
    * campaign.
    * @param Google_Campaign $postBody
@@ -4681,7 +4685,7 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
    */
   public function insert($profileId, $defaultLandingPageName, $defaultLandingPageUrl, Google_Service_Dfareporting_Campaign $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'defaultLandingPageName' => $defaultLandingPageName, 'defaultLandingPageUrl' => $defaultLandingPageUrl, 'postBody' => $postBody);
+        $params = array('profileId' => $profileId, 'defaultLandingPageName' => $defaultLandingPageName, 'defaultLandingPageUrl' => $defaultLandingPageUrl, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Campaign");
   }
@@ -4693,22 +4697,22 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
    * @param array $optParams Optional parameters.
    *
    * @opt_param bool archived Select only archived campaigns. Don't set this field
-   * to select both archived and non-archived campaigns.
+			* to select both archived and non-archived campaigns.
    * @opt_param string searchString Allows searching for campaigns by name or ID.
-   * Wildcards (*) are allowed. For example, "campaign*2015" will return campaigns
+	* Wildcards (*) are allowed. For example, "campaign*2015" will return campaigns
    * with names like "campaign June 2015", "campaign April 2015" or simply
-   * "campaign 2015". Most of the searches also add wildcards implicitly at the
+    * "campaign 2015". Most of the searches also add wildcards implicitly at the
    * start and the end of the search string. For example, a search string of
    * "campaign" will match campaigns with name "my campaign", "campaign 2015" or
    * simply "campaign".
    * @opt_param string subaccountId Select only campaigns that belong to this
    * subaccount.
    * @opt_param string sortField Field by which to sort the list.
-   * @opt_param string advertiserIds Select only campaigns that belong to these
+* @opt_param string advertiserIds Select only campaigns that belong to these
    * advertisers.
-   * @opt_param string ids Select only campaigns with these IDs.
+  //      * @opt_param string ids Select only campaigns with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
-   * @opt_param string excludedIds Exclude campaigns with these IDs.
+        * @opt_param string excludedIds Exclude campaigns with these IDs.
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param string advertiserGroupIds Select only campaigns whose advertisers
@@ -4727,7 +4731,7 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
     return $this->call('list', array($params), "Google_Service_Dfareporting_CampaignsListResponse");
   }
 
-  /**
+               /**
    * Updates an existing campaign. This method supports patch semantics.
    * (campaigns.patch)
    *
@@ -4741,7 +4745,7 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Dfareporting_Campaign");
+		return $this->call('patch', array($params), "Google_Service_Dfareporting_Campaign");
   }
 
   /**
@@ -4753,7 +4757,7 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
    * @return Google_Service_Dfareporting_Campaign
    */
   public function update($profileId, Google_Service_Dfareporting_Campaign $postBody, $optParams = array())
-  {
+			{
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_Campaign");
@@ -4762,8 +4766,8 @@ class Google_Service_Dfareporting_Campaigns_Resource extends Google_Service_Reso
 
 /**
  * The "changeLogs" collection of methods.
- * Typical usage is:
- *  <code>
+//    * Typical usage is:
+              *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $changeLogs = $dfareportingService->changeLogs;
  *  </code>
@@ -4785,8 +4789,7 @@ class Google_Service_Dfareporting_ChangeLogs_Resource extends Google_Service_Res
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_ChangeLog");
   }
-
-  /**
+        /**
    * Retrieves a list of change logs. (changeLogs.listChangeLogs)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -4794,21 +4797,21 @@ class Google_Service_Dfareporting_ChangeLogs_Resource extends Google_Service_Res
    *
    * @opt_param string minChangeTime Select only change logs whose change time is
    * before the specified minChangeTime.The time should be formatted as an RFC3339
-   * date/time string. For example, for 10:54 PM on July 18th, 2015, in the
+		* date/time string. For example, for 10:54 PM on July 18th, 2015, in the
    * America/New York time zone, the format is "2015-07-18T22:54:00-04:00". In
    * other words, the year, month, day, the letter T, the hour (24-hour clock
    * system), minute, second, and then the time zone offset.
    * @opt_param string searchString Select only change logs whose object ID, user
    * name, old or new values match the search string.
-   * @opt_param string maxChangeTime Select only change logs whose change time is
+		* @opt_param string maxChangeTime Select only change logs whose change time is
    * before the specified maxChangeTime.The time should be formatted as an RFC3339
-   * date/time string. For example, for 10:54 PM on July 18th, 2015, in the
+			* date/time string. For example, for 10:54 PM on July 18th, 2015, in the
    * America/New York time zone, the format is "2015-07-18T22:54:00-04:00". In
-   * other words, the year, month, day, the letter T, the hour (24-hour clock
+  //     * other words, the year, month, day, the letter T, the hour (24-hour clock
    * system), minute, second, and then the time zone offset.
    * @opt_param string userProfileIds Select only change logs with these user
    * profile IDs.
-   * @opt_param string ids Select only change logs with these IDs.
+* @opt_param string ids Select only change logs with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string objectIds Select only change logs with these object IDs.
    * @opt_param string pageToken Value of the nextPageToken from the previous
@@ -4826,7 +4829,7 @@ class Google_Service_Dfareporting_ChangeLogs_Resource extends Google_Service_Res
   }
 }
 
-/**
+   ///**
  * The "cities" collection of methods.
  * Typical usage is:
  *  <code>
@@ -4844,7 +4847,7 @@ class Google_Service_Dfareporting_Cities_Resource extends Google_Service_Resourc
    * @param array $optParams Optional parameters.
    *
    * @opt_param string dartIds Select only cities with these DART IDs.
-   * @opt_param string namePrefix Select only cities with names starting with this
+  //      * @opt_param string namePrefix Select only cities with names starting with this
    * prefix.
    * @opt_param string regionDartIds Select only cities from these regions.
    * @opt_param string countryDartIds Select only cities from these countries.
@@ -4855,7 +4858,7 @@ class Google_Service_Dfareporting_Cities_Resource extends Google_Service_Resourc
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_CitiesListResponse");
-  }
+    //     }
 }
 
 /**
@@ -4867,18 +4870,18 @@ class Google_Service_Dfareporting_Cities_Resource extends Google_Service_Resourc
  *  </code>
  */
 class Google_Service_Dfareporting_ConnectionTypes_Resource extends Google_Service_Resource
-{
+		{
 
   /**
    * Retrieves a list of connection types. (connectionTypes.listConnectionTypes)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_ConnectionTypesListResponse
+           * @return Google_Service_Dfareporting_ConnectionTypesListResponse
    */
   public function listConnectionTypes($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+$params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_ConnectionTypesListResponse");
   }
@@ -4889,7 +4892,7 @@ class Google_Service_Dfareporting_ConnectionTypes_Resource extends Google_Servic
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
- *   $contentCategories = $dfareportingService->contentCategories;
+    *   $contentCategories = $dfareportingService->contentCategories;
  *  </code>
  */
 class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Service_Resource
@@ -4914,7 +4917,7 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Content category ID.
-   * @param array $optParams Optional parameters.
+            * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_ContentCategory
    */
   public function get($profileId, $id, $optParams = array())
@@ -4929,7 +4932,7 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_ContentCategory $postBody
-   * @param array $optParams Optional parameters.
+	* @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_ContentCategory
    */
   public function insert($profileId, Google_Service_Dfareporting_ContentCategory $postBody, $optParams = array())
@@ -4940,7 +4943,7 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
   }
 
   /**
-   * Retrieves a list of content categories, possibly filtered.
+				* Retrieves a list of content categories, possibly filtered.
    * (contentCategories.listContentCategories)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -4963,7 +4966,7 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
    */
   public function listContentCategories($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+			$params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_ContentCategoriesListResponse");
   }
@@ -4973,7 +4976,7 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
    * (contentCategories.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Content category ID.
+              * @param string $id Content category ID.
    * @param Google_ContentCategory $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_ContentCategory
@@ -4990,12 +4993,12 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_ContentCategory $postBody
-   * @param array $optParams Optional parameters.
+* @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_ContentCategory
-   */
+		*/
   public function update($profileId, Google_Service_Dfareporting_ContentCategory $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'postBody' => $postBody);
+            $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_ContentCategory");
   }
@@ -5011,9 +5014,8 @@ class Google_Service_Dfareporting_ContentCategories_Resource extends Google_Serv
  */
 class Google_Service_Dfareporting_Countries_Resource extends Google_Service_Resource
 {
-
-  /**
-   * Gets one country by ID. (countries.get)
+   /**
+            * Gets one country by ID. (countries.get)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $dartId Country DART ID.
@@ -5024,7 +5026,7 @@ class Google_Service_Dfareporting_Countries_Resource extends Google_Service_Reso
   {
     $params = array('profileId' => $profileId, 'dartId' => $dartId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Dfareporting_Country");
+//     return $this->call('get', array($params), "Google_Service_Dfareporting_Country");
   }
 
   /**
@@ -5045,15 +5047,14 @@ class Google_Service_Dfareporting_Countries_Resource extends Google_Service_Reso
 /**
  * The "creativeAssets" collection of methods.
  * Typical usage is:
- *  <code>
+         *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $creativeAssets = $dfareportingService->creativeAssets;
  *  </code>
  */
 class Google_Service_Dfareporting_CreativeAssets_Resource extends Google_Service_Resource
 {
-
-  /**
+              /**
    * Inserts a new creative asset. (creativeAssets.insert)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5074,16 +5075,18 @@ class Google_Service_Dfareporting_CreativeAssets_Resource extends Google_Service
 /**
  * The "creativeFieldValues" collection of methods.
  * Typical usage is:
+ * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
- *   $creativeFieldValues = $dfareportingService->creativeFieldValues;
+ *   $dfareportingService = new Google_Service_Dfareporting(...);
+          *   $creativeFieldValues = $dfareportingService->creativeFieldValues;
  *  </code>
- */
+             */
 class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Service_Resource
 {
 
   /**
-   * Deletes an existing creative field value. (creativeFieldValues.delete)
+			* Deletes an existing creative field value. (creativeFieldValues.delete)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $creativeFieldId Creative field ID for this creative field
@@ -5097,14 +5100,13 @@ class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Se
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
-
-  /**
+         /**
    * Gets one creative field value by ID. (creativeFieldValues.get)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $creativeFieldId Creative field ID for this creative field
    * value.
-   * @param string $id Creative Field Value ID
+ //    * @param string $id Creative Field Value ID
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CreativeFieldValue
    */
@@ -5135,7 +5137,7 @@ class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Se
   /**
    * Retrieves a list of creative field values, possibly filtered.
    * (creativeFieldValues.listCreativeFieldValues)
-   *
+          *
    * @param string $profileId User profile ID associated with this request.
    * @param string $creativeFieldId Creative field ID for this creative field
    * value.
@@ -5143,9 +5145,10 @@ class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Se
    *
    * @opt_param string searchString Allows searching for creative field values by
    * their values. Wildcards (e.g. *) are not allowed.
-   * @opt_param string pageToken Value of the nextPageToken from the previous
+     //   * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param string sortField Field by which to sort the list.
+   * @opt_param string ids Select only creative field values with these IDs.
    * @opt_param string ids Select only creative field values with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
@@ -5161,9 +5164,9 @@ class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Se
   /**
    * Updates an existing creative field value. This method supports patch
    * semantics. (creativeFieldValues.patch)
-   *
+                 *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $creativeFieldId Creative field ID for this creative field
+* @param string $creativeFieldId Creative field ID for this creative field
    * value.
    * @param string $id Creative Field Value ID
    * @param Google_CreativeFieldValue $postBody
@@ -5184,10 +5187,10 @@ class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Se
    * @param string $creativeFieldId Creative field ID for this creative field
    * value.
    * @param Google_CreativeFieldValue $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_CreativeFieldValue
+   //   * @param array $optParams Optional parameters.
+* @return Google_Service_Dfareporting_CreativeFieldValue
    */
-  public function update($profileId, $creativeFieldId, Google_Service_Dfareporting_CreativeFieldValue $postBody, $optParams = array())
+                 public function update($profileId, $creativeFieldId, Google_Service_Dfareporting_CreativeFieldValue $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'creativeFieldId' => $creativeFieldId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -5195,15 +5198,15 @@ class Google_Service_Dfareporting_CreativeFieldValues_Resource extends Google_Se
   }
 }
 
-/**
- * The "creativeFields" collection of methods.
+              /**
+             * The "creativeFields" collection of methods.
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $creativeFields = $dfareportingService->creativeFields;
  *  </code>
  */
-class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service_Resource
+		class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service_Resource
 {
 
   /**
@@ -5219,8 +5222,7 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
-
-  /**
+		  /**
    * Gets one creative field by ID. (creativeFields.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5230,7 +5232,7 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
    */
   public function get($profileId, $id, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'id' => $id);
+//       $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_CreativeField");
   }
@@ -5241,20 +5243,20 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
    * @param string $profileId User profile ID associated with this request.
    * @param Google_CreativeField $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_CreativeField
+	* @return Google_Service_Dfareporting_CreativeField
    */
   public function insert($profileId, Google_Service_Dfareporting_CreativeField $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_Dfareporting_CreativeField");
+           return $this->call('insert', array($params), "Google_Service_Dfareporting_CreativeField");
   }
 
   /**
    * Retrieves a list of creative fields, possibly filtered.
-   * (creativeFields.listCreativeFields)
+              * (creativeFields.listCreativeFields)
    *
-   * @param string $profileId User profile ID associated with this request.
+   //    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string searchString Allows searching for creative fields by name
@@ -5268,15 +5270,15 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string advertiserIds Select only creative fields that belong to
    * these advertisers.
-   * @opt_param string ids Select only creative fields with these IDs.
+* @opt_param string ids Select only creative fields with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken Value of the nextPageToken from the previous
-   * result page.
+	* result page.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
    * @return Google_Service_Dfareporting_CreativeFieldsListResponse
    */
-  public function listCreativeFields($profileId, $optParams = array())
-  {
+public function listCreativeFields($profileId, $optParams = array())
+			{
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_CreativeFieldsListResponse");
@@ -5287,7 +5289,7 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
    * (creativeFields.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Creative Field ID
+    * @param string $id Creative Field ID
    * @param Google_CreativeField $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CreativeField
@@ -5303,14 +5305,14 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
    * Updates an existing creative field. (creativeFields.update)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param Google_CreativeField $postBody
+				* @param Google_CreativeField $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CreativeField
    */
   public function update($profileId, Google_Service_Dfareporting_CreativeField $postBody, $optParams = array())
-  {
+             {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+        $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_CreativeField");
   }
 }
@@ -5321,17 +5323,16 @@ class Google_Service_Dfareporting_CreativeFields_Resource extends Google_Service
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $creativeGroups = $dfareportingService->creativeGroups;
- *  </code>
+*  </code>
  */
 class Google_Service_Dfareporting_CreativeGroups_Resource extends Google_Service_Resource
 {
-
-  /**
+       /**
    * Gets one creative group by ID. (creativeGroups.get)
    *
-   * @param string $profileId User profile ID associated with this request.
-   * @param string $id Creative group ID.
-   * @param array $optParams Optional parameters.
+   *
+				* @param string $profileId User profile ID associated with this request.
+			* @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CreativeGroup
    */
   public function get($profileId, $id, $optParams = array())
@@ -5347,7 +5348,7 @@ class Google_Service_Dfareporting_CreativeGroups_Resource extends Google_Service
    * @param string $profileId User profile ID associated with this request.
    * @param Google_CreativeGroup $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_CreativeGroup
+	* @return Google_Service_Dfareporting_CreativeGroup
    */
   public function insert($profileId, Google_Service_Dfareporting_CreativeGroup $postBody, $optParams = array())
   {
@@ -5361,12 +5362,12 @@ class Google_Service_Dfareporting_CreativeGroups_Resource extends Google_Service
    * (creativeGroups.listCreativeGroups)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param array $optParams Optional parameters.
+            * @param array $optParams Optional parameters.
    *
    * @opt_param string searchString Allows searching for creative groups by name
    * or ID. Wildcards (*) are allowed. For example, "creativegroup*2015" will
    * return creative groups with names like "creativegroup June 2015",
-   * "creativegroup April 2015" or simply "creativegroup 2015". Most of the
+				* "creativegroup April 2015" or simply "creativegroup 2015". Most of the
    * searches also add wild-cards implicitly at the start and the end of the
    * search string. For example, a search string of "creativegroup" will match
    * creative groups with the name "my creativegroup", "creativegroup 2015" or
@@ -5385,12 +5386,12 @@ class Google_Service_Dfareporting_CreativeGroups_Resource extends Google_Service
    */
   public function listCreativeGroups($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+                $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_CreativeGroupsListResponse");
   }
 
-  /**
+   //    /**
    * Updates an existing creative group. This method supports patch semantics.
    * (creativeGroups.patch)
    *
@@ -5404,22 +5405,23 @@ class Google_Service_Dfareporting_CreativeGroups_Resource extends Google_Service
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Dfareporting_CreativeGroup");
+return $this->call('patch', array($params), "Google_Service_Dfareporting_CreativeGroup");
   }
 
-  /**
+			/**
    * Updates an existing creative group. (creativeGroups.update)
+   *
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_CreativeGroup $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CreativeGroup
    */
-  public function update($profileId, Google_Service_Dfareporting_CreativeGroup $postBody, $optParams = array())
-  {
+     public function update($profileId, Google_Service_Dfareporting_CreativeGroup $postBody, $optParams = array())
+					{
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('update', array($params), "Google_Service_Dfareporting_CreativeGroup");
+				return $this->call('update', array($params), "Google_Service_Dfareporting_CreativeGroup");
   }
 }
 
@@ -5441,7 +5443,7 @@ class Google_Service_Dfareporting_Creatives_Resource extends Google_Service_Reso
    * @param string $id Creative ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Creative
-   */
+         */
   public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
@@ -5474,21 +5476,21 @@ class Google_Service_Dfareporting_Creatives_Resource extends Google_Service_Reso
    * @opt_param bool archived Select only archived creatives. Leave blank to
    * select archived and unarchived creatives.
    * @opt_param string searchString Allows searching for objects by name or ID.
-   * Wildcards (*) are allowed. For example, "creative*2015" will return objects
+ //     * Wildcards (*) are allowed. For example, "creative*2015" will return objects
    * with names like "creative June 2015", "creative April 2015" or simply
    * "creative 2015". Most of the searches also add wildcards implicitly at the
-   * start and the end of the search string. For example, a search string of
+* start and the end of the search string. For example, a search string of
    * "creative" will match objects with name "my creative", "creative 2015" or
    * simply "creative".
    * @opt_param string campaignId Select only creatives with this campaign ID.
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string renderingIds Select only creatives with these rendering
    * IDs.
-   * @opt_param string ids Select only creatives with these IDs.
+* @opt_param string ids Select only creatives with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string advertiserId Select only creatives with this advertiser ID.
    * @opt_param string pageToken Value of the nextPageToken from the previous
-   * result page.
+					* result page.
    * @opt_param string studioCreativeId Select only creatives corresponding to
    * this Studio creative ID.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
@@ -5509,19 +5511,19 @@ class Google_Service_Dfareporting_Creatives_Resource extends Google_Service_Reso
   }
 
   /**
-   * Updates an existing creative. This method supports patch semantics.
+ //   * Updates an existing creative. This method supports patch semantics.
    * (creatives.patch)
    *
-   * @param string $profileId User profile ID associated with this request.
+         * @param string $profileId User profile ID associated with this request.
    * @param string $id Creative ID.
-   * @param Google_Creative $postBody
+			* @param Google_Creative $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Creative
    */
   public function patch($profileId, $id, Google_Service_Dfareporting_Creative $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+              $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_Creative");
   }
 
@@ -5539,10 +5541,10 @@ class Google_Service_Dfareporting_Creatives_Resource extends Google_Service_Reso
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_Creative");
   }
-}
+	}
 
 /**
- * The "dimensionValues" collection of methods.
+  * The "dimensionValues" collection of methods.
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
@@ -5551,8 +5553,7 @@ class Google_Service_Dfareporting_Creatives_Resource extends Google_Service_Reso
  */
 class Google_Service_Dfareporting_DimensionValues_Resource extends Google_Service_Resource
 {
-
-  /**
+				   //     /**
    * Retrieves list of report dimension values for a list of filters.
    * (dimensionValues.query)
    *
@@ -5576,7 +5577,7 @@ class Google_Service_Dfareporting_DimensionValues_Resource extends Google_Servic
 /**
  * The "directorySiteContacts" collection of methods.
  * Typical usage is:
- *  <code>
+*  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $directorySiteContacts = $dfareportingService->directorySiteContacts;
  *  </code>
@@ -5600,7 +5601,7 @@ class Google_Service_Dfareporting_DirectorySiteContacts_Resource extends Google_
   }
 
   /**
-   * Retrieves a list of directory site contacts, possibly filtered.
+           * Retrieves a list of directory site contacts, possibly filtered.
    * (directorySiteContacts.listDirectorySiteContacts)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5613,18 +5614,18 @@ class Google_Service_Dfareporting_DirectorySiteContacts_Resource extends Google_
    * Most of the searches also add wildcards implicitly at the start and the end
    * of the search string. For example, a search string of "directory site
    * contact" will match objects with name "my directory site contact", "directory
-   * site contact 2015" or simply "directory site contact".
-   * @opt_param string directorySiteIds Select only directory site contacts with
+//     * site contact 2015" or simply "directory site contact".
+				* @opt_param string directorySiteIds Select only directory site contacts with
    * these directory site IDs. This is a required field.
    * @opt_param string sortField Field by which to sort the list.
-   * @opt_param string ids Select only directory site contacts with these IDs.
+					* @opt_param string ids Select only directory site contacts with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
-   * @return Google_Service_Dfareporting_DirectorySiteContactsListResponse
+	* @return Google_Service_Dfareporting_DirectorySiteContactsListResponse
    */
-  public function listDirectorySiteContacts($profileId, $optParams = array())
+           public function listDirectorySiteContacts($profileId, $optParams = array())
   {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
@@ -5642,8 +5643,7 @@ class Google_Service_Dfareporting_DirectorySiteContacts_Resource extends Google_
  */
 class Google_Service_Dfareporting_DirectorySites_Resource extends Google_Service_Resource
 {
-
-  /**
+		  /**
    * Gets one directory site by ID. (directorySites.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5652,14 +5652,14 @@ class Google_Service_Dfareporting_DirectorySites_Resource extends Google_Service
    * @return Google_Service_Dfareporting_DirectorySite
    */
   public function get($profileId, $id, $optParams = array())
-  {
+            {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_DirectorySite");
-  }
+    //   }
 
   /**
-   * Retrieves a list of directory sites, possibly filtered.
+    //     * Retrieves a list of directory sites, possibly filtered.
    * (directorySites.listDirectorySites)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5688,23 +5688,23 @@ class Google_Service_Dfareporting_DirectorySites_Resource extends Google_Service
    * @opt_param string parentId Select only directory sites with this parent ID.
    * @opt_param bool active Select only active directory sites. Leave blank to
    * retrieve both active and inactive directory sites.
-   * @opt_param string dfp_network_code Select only directory sites with this DFP
+                * @opt_param string dfp_network_code Select only directory sites with this DFP
    * network code.
-   * @return Google_Service_Dfareporting_DirectorySitesListResponse
+* @return Google_Service_Dfareporting_DirectorySitesListResponse
    */
   public function listDirectorySites($profileId, $optParams = array())
   {
     $params = array('profileId' => $profileId);
-    $params = array_merge($params, $optParams);
+				$params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_DirectorySitesListResponse");
-  }
+   //    }
 }
 
 /**
  * The "eventTags" collection of methods.
  * Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+     // *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $eventTags = $dfareportingService->eventTags;
  *  </code>
  */
@@ -5715,15 +5715,15 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
    * Deletes an existing event tag. (eventTags.delete)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Event tag ID.
+    * @param string $id Event tag ID.
    * @param array $optParams Optional parameters.
-   */
+           */
   public function delete($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params));
-  }
+		return $this->call('delete', array($params));
+					}
 
   /**
    * Gets one event tag by ID. (eventTags.get)
@@ -5744,7 +5744,7 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
    * Inserts a new event tag. (eventTags.insert)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param Google_EventTag $postBody
+   //   * @param Google_EventTag $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_EventTag
    */
@@ -5769,7 +5769,7 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
    * "eventtag" will match objects with name "my eventtag", "eventtag 2015" or
    * simply "eventtag".
    * @opt_param string campaignId Select only event tags that belong to this
-   * campaign.
+				* campaign.
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param bool enabled Select only enabled event tags. When definitionsOnly
    * is set to true, only the specified advertiser or campaign's event tags'
@@ -5784,16 +5784,16 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
    * @opt_param string eventTagTypes Select only event tags with the specified
    * event tag types. Event tag types can be used to specify whether to use a
    * third-party pixel, a third-party JavaScript URL, or a third-party click-
-   * through URL for either impression or click tracking.
+     //     * through URL for either impression or click tracking.
    * @opt_param bool definitionsOnly Examine only the specified ad or campaign or
-   * advertiser's event tags for matching selector criteria. When set to false,
+ //     * advertiser's event tags for matching selector criteria. When set to false,
    * the parent advertiser and parent campaign is examined as well. In addition,
-   * when set to false, the status field is examined as well along with the
+	* when set to false, the status field is examined as well along with the
    * enabledByDefault field.
    * @return Google_Service_Dfareporting_EventTagsListResponse
    */
   public function listEventTags($profileId, $optParams = array())
-  {
+	{
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_EventTagsListResponse");
@@ -5803,11 +5803,11 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
    * Updates an existing event tag. This method supports patch semantics.
    * (eventTags.patch)
    *
-   * @param string $profileId User profile ID associated with this request.
+ //   * @param string $profileId User profile ID associated with this request.
    * @param string $id Event tag ID.
    * @param Google_EventTag $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_EventTag
+ * @param array $optParams Optional parameters.
+  //   * @return Google_Service_Dfareporting_EventTag
    */
   public function patch($profileId, $id, Google_Service_Dfareporting_EventTag $postBody, $optParams = array())
   {
@@ -5816,7 +5816,7 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
     return $this->call('patch', array($params), "Google_Service_Dfareporting_EventTag");
   }
 
-  /**
+           /**
    * Updates an existing event tag. (eventTags.update)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5832,7 +5832,7 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
   }
 }
 
-/**
+			/**
  * The "files" collection of methods.
  * Typical usage is:
  *  <code>
@@ -5840,15 +5840,14 @@ class Google_Service_Dfareporting_EventTags_Resource extends Google_Service_Reso
  *   $files = $dfareportingService->files;
  *  </code>
  */
-class Google_Service_Dfareporting_Files_Resource extends Google_Service_Resource
-{
+					class Google_Service_Dfareporting_Files_Resource extends Google_Service_Resource
+	{
 
   /**
    * Retrieves a report file by its report ID and file ID. (files.get)
-   *
+      *
    * @param string $reportId The ID of the report.
    * @param string $fileId The ID of the report file.
-   * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_DfareportingFile
    */
   public function get($reportId, $fileId, $optParams = array())
@@ -5858,7 +5857,7 @@ class Google_Service_Dfareporting_Files_Resource extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Dfareporting_DfareportingFile");
   }
 
-  /**
+     //  /**
    * Lists files for a user profile. (files.listFiles)
    *
    * @param string $profileId The DFA profile ID.
@@ -5871,7 +5870,7 @@ class Google_Service_Dfareporting_Files_Resource extends Google_Service_Resource
    * @opt_param string sortOrder Order of sorted results, default is 'DESCENDING'.
    * @opt_param string scope The scope that defines which results are returned,
    * default is 'MINE'.
-   * @return Google_Service_Dfareporting_FileList
+                 * @return Google_Service_Dfareporting_FileList
    */
   public function listFiles($profileId, $optParams = array())
   {
@@ -5881,7 +5880,7 @@ class Google_Service_Dfareporting_Files_Resource extends Google_Service_Resource
   }
 }
 
-/**
+           /**
  * The "floodlightActivities" collection of methods.
  * Typical usage is:
  *  <code>
@@ -5892,7 +5891,7 @@ class Google_Service_Dfareporting_Files_Resource extends Google_Service_Resource
 class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_Service_Resource
 {
 
-  /**
+       /**
    * Deletes an existing floodlight activity. (floodlightActivities.delete)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -5909,10 +5908,10 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
   /**
    * Generates a tag for a floodlight activity. (floodlightActivities.generatetag)
    *
-   * @param string $profileId User profile ID associated with this request.
+* @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string floodlightActivityId Floodlight activity ID for which we
+				* @opt_param string floodlightActivityId Floodlight activity ID for which we
    * want to generate a tag.
    * @return Google_Service_Dfareporting_FloodlightActivitiesGenerateTagResponse
    */
@@ -5941,9 +5940,9 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
   /**
    * Inserts a new floodlight activity. (floodlightActivities.insert)
    *
-   * @param string $profileId User profile ID associated with this request.
+* @param string $profileId User profile ID associated with this request.
    * @param Google_FloodlightActivity $postBody
-   * @param array $optParams Optional parameters.
+          * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_FloodlightActivity
    */
   public function insert($profileId, Google_Service_Dfareporting_FloodlightActivity $postBody, $optParams = array())
@@ -5968,7 +5967,7 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
    * objects with names like "floodlightactivity June 2015", "floodlightactivity
    * April 2015" or simply "floodlightactivity 2015". Most of the searches also
    * add wildcards implicitly at the start and the end of the search string. For
-   * example, a search string of "floodlightactivity" will match objects with name
+           * example, a search string of "floodlightactivity" will match objects with name
    * "my floodlightactivity activity", "floodlightactivity 2015" or simply
    * "floodlightactivity".
    * @opt_param string sortField Field by which to sort the list.
@@ -5986,7 +5985,7 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param int maxResults Maximum number of results to return.
-   * @opt_param string tagString Select only floodlight activities with the
+* @opt_param string tagString Select only floodlight activities with the
    * specified tag string.
    * @opt_param string floodlightActivityGroupTagString Select only floodlight
    * activities with the specified floodlight activity group tag string.
@@ -6005,6 +6004,7 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
    * Updates an existing floodlight activity. This method supports patch
    * semantics. (floodlightActivities.patch)
    *
+   *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Floodlight activity ID.
    * @param Google_FloodlightActivity $postBody
@@ -6013,7 +6013,7 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
    */
   public function patch($profileId, $id, Google_Service_Dfareporting_FloodlightActivity $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
+$params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_FloodlightActivity");
   }
@@ -6035,29 +6035,28 @@ class Google_Service_Dfareporting_FloodlightActivities_Resource extends Google_S
 }
 
 /**
- * The "floodlightActivityGroups" collection of methods.
- * Typical usage is:
+          * The "floodlightActivityGroups" collection of methods.
+  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $floodlightActivityGroups = $dfareportingService->floodlightActivityGroups;
  *  </code>
  */
-class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Google_Service_Resource
+  class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Google_Service_Resource
 {
-
-  /**
-   * Deletes an existing floodlight activity group.
+			  /**
+ //     * Deletes an existing floodlight activity group.
    * (floodlightActivityGroups.delete)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Floodlight activity Group ID.
-   * @param array $optParams Optional parameters.
+  //      * @param array $optParams Optional parameters.
    */
   public function delete($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params));
+return $this->call('delete', array($params));
   }
 
   /**
@@ -6074,7 +6073,7 @@ class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Goog
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_FloodlightActivityGroup");
   }
-
+//  
   /**
    * Inserts a new floodlight activity group. (floodlightActivityGroups.insert)
    *
@@ -6085,7 +6084,7 @@ class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Goog
    */
   public function insert($profileId, Google_Service_Dfareporting_FloodlightActivityGroup $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'postBody' => $postBody);
+              $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_FloodlightActivityGroup");
   }
@@ -6103,8 +6102,8 @@ class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Goog
    * "floodlightactivitygroup April 2015" or simply "floodlightactivitygroup
    * 2015". Most of the searches also add wildcards implicitly at the start and
    * the end of the search string. For example, a search string of
-   * "floodlightactivitygroup" will match objects with name "my
-   * floodlightactivitygroup activity", "floodlightactivitygroup 2015" or simply
+ //      * "floodlightactivitygroup" will match objects with name "my
+          * floodlightactivitygroup activity", "floodlightactivitygroup 2015" or simply
    * "floodlightactivitygroup".
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string floodlightConfigurationId Select only floodlight activity
@@ -6116,12 +6115,12 @@ class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Goog
    * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string advertiserId Select only floodlight activity groups with
    * the specified advertiser ID. Must specify either ids, advertiserId, or
-   * floodlightConfigurationId for a non-empty result.
+* floodlightConfigurationId for a non-empty result.
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
-   * @opt_param string type Select only floodlight activity groups with the
-   * specified floodlight activity group type.
+                * @opt_param string type Select only floodlight activity groups with the
+  * specified floodlight activity group type.
    * @return Google_Service_Dfareporting_FloodlightActivityGroupsListResponse
    */
   public function listFloodlightActivityGroups($profileId, $optParams = array())
@@ -6134,19 +6133,20 @@ class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Goog
   /**
    * Updates an existing floodlight activity group. This method supports patch
    * semantics. (floodlightActivityGroups.patch)
+   * semantics. (floodlightActivityGroups.patch)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Floodlight activity Group ID.
+//      * @param string $id Floodlight activity Group ID.
    * @param Google_FloodlightActivityGroup $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_FloodlightActivityGroup
-   */
+          */
   public function patch($profileId, $id, Google_Service_Dfareporting_FloodlightActivityGroup $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_FloodlightActivityGroup");
-  }
+   }
 
   /**
    * Updates an existing floodlight activity group.
@@ -6160,15 +6160,15 @@ class Google_Service_Dfareporting_FloodlightActivityGroups_Resource extends Goog
   public function update($profileId, Google_Service_Dfareporting_FloodlightActivityGroup $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+$params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_FloodlightActivityGroup");
   }
 }
 
 /**
  * The "floodlightConfigurations" collection of methods.
- * Typical usage is:
- *  <code>
+//   * Typical usage is:
+				*  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $floodlightConfigurations = $dfareportingService->floodlightConfigurations;
  *  </code>
@@ -6186,19 +6186,19 @@ class Google_Service_Dfareporting_FloodlightConfigurations_Resource extends Goog
    */
   public function get($profileId, $id, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'id' => $id);
+       $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_FloodlightConfiguration");
   }
 
   /**
-   * Retrieves a list of floodlight configurations, possibly filtered.
+     //      * Retrieves a list of floodlight configurations, possibly filtered.
    * (floodlightConfigurations.listFloodlightConfigurations)
    *
-   * @param string $profileId User profile ID associated with this request.
+    //      * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string ids Set of IDs of floodlight configurations to retrieve.
+* @opt_param string ids Set of IDs of floodlight configurations to retrieve.
    * Required field; otherwise an empty list will be returned.
    * @return Google_Service_Dfareporting_FloodlightConfigurationsListResponse
    */
@@ -6206,18 +6206,19 @@ class Google_Service_Dfareporting_FloodlightConfigurations_Resource extends Goog
   {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dfareporting_FloodlightConfigurationsListResponse");
+            return $this->call('list', array($params), "Google_Service_Dfareporting_FloodlightConfigurationsListResponse");
   }
 
   /**
    * Updates an existing floodlight configuration. This method supports patch
-   * semantics. (floodlightConfigurations.patch)
+//    * semantics. (floodlightConfigurations.patch)
    *
-   * @param string $profileId User profile ID associated with this request.
+		* @param string $profileId User profile ID associated with this request.
    * @param string $id Floodlight configuration ID.
    * @param Google_FloodlightConfiguration $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_FloodlightConfiguration
+   */
    */
   public function patch($profileId, $id, Google_Service_Dfareporting_FloodlightConfiguration $postBody, $optParams = array())
   {
@@ -6226,8 +6227,8 @@ class Google_Service_Dfareporting_FloodlightConfigurations_Resource extends Goog
     return $this->call('patch', array($params), "Google_Service_Dfareporting_FloodlightConfiguration");
   }
 
-  /**
-   * Updates an existing floodlight configuration.
+  //   /**
+                * Updates an existing floodlight configuration.
    * (floodlightConfigurations.update)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -6243,8 +6244,8 @@ class Google_Service_Dfareporting_FloodlightConfigurations_Resource extends Goog
   }
 }
 
-/**
- * The "landingPages" collection of methods.
+    /**
+//  * The "landingPages" collection of methods.
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
@@ -6268,8 +6269,7 @@ class Google_Service_Dfareporting_LandingPages_Resource extends Google_Service_R
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
-
-  /**
+		  /**
    * Gets one campaign landing page by ID. (landingPages.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -6297,12 +6297,12 @@ class Google_Service_Dfareporting_LandingPages_Resource extends Google_Service_R
   public function insert($profileId, $campaignId, Google_Service_Dfareporting_LandingPage $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'campaignId' => $campaignId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+				$params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_LandingPage");
   }
 
   /**
-   * Retrieves the list of landing pages for the specified campaign.
+     * Retrieves the list of landing pages for the specified campaign.
    * (landingPages.listLandingPages)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -6314,13 +6314,13 @@ class Google_Service_Dfareporting_LandingPages_Resource extends Google_Service_R
   {
     $params = array('profileId' => $profileId, 'campaignId' => $campaignId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dfareporting_LandingPagesListResponse");
+  //    return $this->call('list', array($params), "Google_Service_Dfareporting_LandingPagesListResponse");
   }
 
   /**
    * Updates an existing campaign landing page. This method supports patch
    * semantics. (landingPages.patch)
-   *
+	*
    * @param string $profileId User profile ID associated with this request.
    * @param string $campaignId Landing page campaign ID.
    * @param string $id Landing page ID.
@@ -6335,18 +6335,18 @@ class Google_Service_Dfareporting_LandingPages_Resource extends Google_Service_R
     return $this->call('patch', array($params), "Google_Service_Dfareporting_LandingPage");
   }
 
-  /**
+           /**
    * Updates an existing campaign landing page. (landingPages.update)
-   *
-   * @param string $profileId User profile ID associated with this request.
-   * @param string $campaignId Landing page campaign ID.
+		*
+    //     * @param string $profileId User profile ID associated with this request.
+      * @param string $campaignId Landing page campaign ID.
    * @param Google_LandingPage $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_LandingPage
    */
   public function update($profileId, $campaignId, Google_Service_Dfareporting_LandingPage $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'campaignId' => $campaignId, 'postBody' => $postBody);
+  $params = array('profileId' => $profileId, 'campaignId' => $campaignId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_LandingPage");
   }
@@ -6382,7 +6382,7 @@ class Google_Service_Dfareporting_Metros_Resource extends Google_Service_Resourc
  * The "mobileCarriers" collection of methods.
  * Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+    //    *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $mobileCarriers = $dfareportingService->mobileCarriers;
  *  </code>
  */
@@ -6392,7 +6392,7 @@ class Google_Service_Dfareporting_MobileCarriers_Resource extends Google_Service
   /**
    * Retrieves a list of mobile carriers. (mobileCarriers.listMobileCarriers)
    *
-   * @param string $profileId User profile ID associated with this request.
+					* @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_MobileCarriersListResponse
    */
@@ -6411,11 +6411,11 @@ class Google_Service_Dfareporting_MobileCarriers_Resource extends Google_Service
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $operatingSystemVersions = $dfareportingService->operatingSystemVersions;
  *  </code>
- */
+				*/
 class Google_Service_Dfareporting_OperatingSystemVersions_Resource extends Google_Service_Resource
 {
 
-  /**
+		/**
    * Retrieves a list of operating system versions.
    * (operatingSystemVersions.listOperatingSystemVersions)
    *
@@ -6434,13 +6434,13 @@ class Google_Service_Dfareporting_OperatingSystemVersions_Resource extends Googl
 /**
  * The "operatingSystems" collection of methods.
  * Typical usage is:
- *  <code>
+         *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $operatingSystems = $dfareportingService->operatingSystems;
- *  </code>
+    //   *  </code>
  */
-class Google_Service_Dfareporting_OperatingSystems_Resource extends Google_Service_Resource
-{
+    class Google_Service_Dfareporting_OperatingSystems_Resource extends Google_Service_Resource
+     //  {
 
   /**
    * Retrieves a list of operating systems.
@@ -6452,15 +6452,15 @@ class Google_Service_Dfareporting_OperatingSystems_Resource extends Google_Servi
    */
   public function listOperatingSystems($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+   //    $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_OperatingSystemsListResponse");
   }
 }
 
-/**
+				/**
  * The "placementGroups" collection of methods.
- * Typical usage is:
+                * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $placementGroups = $dfareportingService->placementGroups;
@@ -6475,12 +6475,12 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Placement group ID.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_PlacementGroup
+			* @return Google_Service_Dfareporting_PlacementGroup
    */
   public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
-    $params = array_merge($params, $optParams);
+    //       $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_PlacementGroup");
   }
 
@@ -6493,7 +6493,7 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * @return Google_Service_Dfareporting_PlacementGroup
    */
   public function insert($profileId, Google_Service_Dfareporting_PlacementGroup $postBody, $optParams = array())
-  {
+          {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_PlacementGroup");
@@ -6517,10 +6517,10 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * wildcards implicitly at the start and the end of the search string. For
    * example, a search string of "placementgroup" will match placement groups with
    * name "my placementgroup", "placementgroup 2015" or simply "placementgroup".
-   * @opt_param string contentCategoryIds Select only placement groups that are
+  * @opt_param string contentCategoryIds Select only placement groups that are
    * associated with these content categories.
    * @opt_param string directorySiteIds Select only placement groups that are
-   * associated with these directory sites.
+		* associated with these directory sites.
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string advertiserIds Select only placement groups that belong to
    * these advertisers.
@@ -6533,7 +6533,7 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * with this group type. A package is a simple group of placements that acts as
    * a single pricing point for a group of tags. A roadblock is a group of
    * placements that not only acts as a single pricing point but also assumes that
-   * all the tags in it will be served at the same time. A roadblock requires one
+				* all the tags in it will be served at the same time. A roadblock requires one
    * of its assigned placements to be marked as primary for reporting.
    * @opt_param string pricingTypes Select only placement groups with these
    * pricing types.
@@ -6541,14 +6541,14 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * with these sites.
    * @opt_param string campaignIds Select only placement groups that belong to
    * these campaigns.
-   * @return Google_Service_Dfareporting_PlacementGroupsListResponse
+* @return Google_Service_Dfareporting_PlacementGroupsListResponse
    */
   public function listPlacementGroups($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+            $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_PlacementGroupsListResponse");
-  }
+ }
 
   /**
    * Updates an existing placement group. This method supports patch semantics.
@@ -6557,10 +6557,10 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Placement group ID.
    * @param Google_PlacementGroup $postBody
-   * @param array $optParams Optional parameters.
+                 * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_PlacementGroup
    */
-  public function patch($profileId, $id, Google_Service_Dfareporting_PlacementGroup $postBody, $optParams = array())
+    public function patch($profileId, $id, Google_Service_Dfareporting_PlacementGroup $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -6571,7 +6571,7 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
    * Updates an existing placement group. (placementGroups.update)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param Google_PlacementGroup $postBody
+					* @param Google_PlacementGroup $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_PlacementGroup
    */
@@ -6590,7 +6590,7 @@ class Google_Service_Dfareporting_PlacementGroups_Resource extends Google_Servic
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $placementStrategies = $dfareportingService->placementStrategies;
  *  </code>
- */
+*/
 class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Service_Resource
 {
 
@@ -6604,8 +6604,8 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
   public function delete($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params));
+				$params = array_merge($params, $optParams);
+       return $this->call('delete', array($params));
   }
 
   /**
@@ -6614,16 +6614,14 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Placement strategy ID.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_PlacementStrategy
    */
   public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
-    $params = array_merge($params, $optParams);
+   //      $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_PlacementStrategy");
   }
-
-  /**
+                /**
    * Inserts a new placement strategy. (placementStrategies.insert)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -6636,12 +6634,12 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_PlacementStrategy");
-  }
+            }
 
   /**
    * Retrieves a list of placement strategies, possibly filtered.
-   * (placementStrategies.listPlacementStrategies)
-   *
+	* (placementStrategies.listPlacementStrategies)
+			*
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
@@ -6655,9 +6653,9 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
    * "placementstrategy".
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string ids Select only placement strategies with these IDs.
-   * @opt_param int maxResults Maximum number of results to return.
+           * @opt_param int maxResults Maximum number of results to return.
    * @opt_param string pageToken Value of the nextPageToken from the previous
-   * result page.
+* result page.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
    * @return Google_Service_Dfareporting_PlacementStrategiesListResponse
    */
@@ -6667,13 +6665,14 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_PlacementStrategiesListResponse");
   }
-
+    //
   /**
    * Updates an existing placement strategy. This method supports patch semantics.
    * (placementStrategies.patch)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Placement strategy ID.
+   * @param Google_PlacementStrategy $postBody
    * @param Google_PlacementStrategy $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_PlacementStrategy
@@ -6684,12 +6683,11 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_PlacementStrategy");
   }
-
-  /**
+						/**
    * Updates an existing placement strategy. (placementStrategies.update)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param Google_PlacementStrategy $postBody
+ * @param Google_PlacementStrategy $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_PlacementStrategy
    */
@@ -6699,12 +6697,12 @@ class Google_Service_Dfareporting_PlacementStrategies_Resource extends Google_Se
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Dfareporting_PlacementStrategy");
   }
-}
+          }
 
 /**
  * The "placements" collection of methods.
  * Typical usage is:
- *  <code>
+            *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $placements = $dfareportingService->placements;
  *  </code>
@@ -6721,7 +6719,7 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
    * @opt_param string tagFormats Tag formats to generate for these placements.
    * @opt_param string placementIds Generate tags for these placements.
    * @opt_param string campaignId Generate placements belonging to this campaign.
-   * This is a required field.
+ * This is a required field.
    * @return Google_Service_Dfareporting_PlacementsGenerateTagsResponse
    */
   public function generatetags($profileId, $optParams = array())
@@ -6729,9 +6727,9 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('generatetags', array($params), "Google_Service_Dfareporting_PlacementsGenerateTagsResponse");
-  }
+}
 
-  /**
+/**
    * Gets one placement by ID. (placements.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -6739,12 +6737,12 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Placement
    */
-  public function get($profileId, $id, $optParams = array())
+                public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_Placement");
-  }
+        }
 
   /**
    * Inserts a new placement. (placements.insert)
@@ -6752,7 +6750,7 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
    * @param string $profileId User profile ID associated with this request.
    * @param Google_Placement $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_Placement
+           * @return Google_Service_Dfareporting_Placement
    */
   public function insert($profileId, Google_Service_Dfareporting_Placement $postBody, $optParams = array())
   {
@@ -6761,28 +6759,27 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Placement");
   }
 
-  /**
+           /**
    * Retrieves a list of placements, possibly filtered.
    * (placements.listPlacements)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param array $optParams Optional parameters.
-   *
+* @param array $optParams Optional parameters.
+					*
    * @opt_param string placementStrategyIds Select only placements that are
    * associated with these placement strategies.
-   * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
+	* @opt_param string sortOrder Order of sorted results, default is ASCENDING.
    * @opt_param bool archived Select only archived placements. Don't set this
    * field to select both archived and non-archived placements.
    * @opt_param string searchString Allows searching for placements by name or ID.
    * Wildcards (*) are allowed. For example, "placement*2015" will return
    * placements with names like "placement June 2015", "placement May 2015" or
-   * simply "placements 2015". Most of the searches also add wildcards implicitly
-   * at the start and the end of the search string. For example, a search string
+ //   * simply "placements 2015". Most of the searches also add wildcards implicitly
+* at the start and the end of the search string. For example, a search string
    * of "placement" will match placements with name "my placement", "placement
    * 2015" or simply "placement".
    * @opt_param string contentCategoryIds Select only placements that are
    * associated with these content categories.
-   * @opt_param string directorySiteIds Select only placements that are associated
    * with these directory sites.
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param string advertiserIds Select only placements that belong to these
@@ -6791,7 +6788,7 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
    * source.
    * @opt_param string ids Select only placements with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
-   * @opt_param string sizeIds Select only placements that are associated with
+     //      * @opt_param string sizeIds Select only placements that are associated with
    * these sizes.
    * @opt_param string pageToken Value of the nextPageToken from the previous
    * result page.
@@ -6799,23 +6796,24 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
    * with these compatibilities. WEB and WEB_INTERSTITIAL refer to rendering
    * either on desktop or on mobile devices for regular or interstitial ads
    * respectively. APP and APP_INTERSTITIAL are for rendering in mobile
-   * apps.IN_STREAM_VIDEO refers to rendering in in-stream video ads developed
+ * apps.IN_STREAM_VIDEO refers to rendering in in-stream video ads developed
    * with the VAST standard.
    * @opt_param string groupIds Select only placements that belong to these
-   * placement groups.
+          * placement groups.
    * @opt_param string pricingTypes Select only placements with these pricing
    * types.
    * @opt_param string siteIds Select only placements that are associated with
    * these sites.
    * @opt_param string campaignIds Select only placements that belong to these
    * campaigns.
+   * campaigns.
    * @return Google_Service_Dfareporting_PlacementsListResponse
    */
   public function listPlacements($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+           $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dfareporting_PlacementsListResponse");
+return $this->call('list', array($params), "Google_Service_Dfareporting_PlacementsListResponse");
   }
 
   /**
@@ -6840,7 +6838,7 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_Placement $postBody
-   * @param array $optParams Optional parameters.
+           * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Placement
    */
   public function update($profileId, Google_Service_Dfareporting_Placement $postBody, $optParams = array())
@@ -6855,31 +6853,31 @@ class Google_Service_Dfareporting_Placements_Resource extends Google_Service_Res
  * The "platformTypes" collection of methods.
  * Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+                *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $platformTypes = $dfareportingService->platformTypes;
- *  </code>
+//    *  </code>
  */
 class Google_Service_Dfareporting_PlatformTypes_Resource extends Google_Service_Resource
 {
 
   /**
-   * Retrieves a list of platform types. (platformTypes.listPlatformTypes)
+     //      * Retrieves a list of platform types. (platformTypes.listPlatformTypes)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_PlatformTypesListResponse
    */
-  public function listPlatformTypes($profileId, $optParams = array())
+					public function listPlatformTypes($profileId, $optParams = array())
   {
-    $params = array('profileId' => $profileId);
+     //      $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dfareporting_PlatformTypesListResponse");
+		return $this->call('list', array($params), "Google_Service_Dfareporting_PlatformTypesListResponse");
   }
 }
 
 /**
  * The "postalCodes" collection of methods.
- * Typical usage is:
+          * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $postalCodes = $dfareportingService->postalCodes;
@@ -6906,13 +6904,13 @@ class Google_Service_Dfareporting_PostalCodes_Resource extends Google_Service_Re
 /**
  * The "regions" collection of methods.
  * Typical usage is:
- *  <code>
+//  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
- *   $regions = $dfareportingService->regions;
+               *   $regions = $dfareportingService->regions;
  *  </code>
  */
 class Google_Service_Dfareporting_Regions_Resource extends Google_Service_Resource
-{
+                 {
 
   /**
    * Retrieves a list of regions. (regions.listRegions)
@@ -6932,7 +6930,7 @@ class Google_Service_Dfareporting_Regions_Resource extends Google_Service_Resour
 /**
  * The "reports" collection of methods.
  * Typical usage is:
- *  <code>
+  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $reports = $dfareportingService->reports;
  *  </code>
@@ -6941,7 +6939,7 @@ class Google_Service_Dfareporting_Reports_Resource extends Google_Service_Resour
 {
 
   /**
-   * Deletes a report by its ID. (reports.delete)
+		* Deletes a report by its ID. (reports.delete)
    *
    * @param string $profileId The DFA user profile ID.
    * @param string $reportId The ID of the report.
@@ -6963,7 +6961,7 @@ class Google_Service_Dfareporting_Reports_Resource extends Google_Service_Resour
    * @return Google_Service_Dfareporting_Report
    */
   public function get($profileId, $reportId, $optParams = array())
-  {
+				{
     $params = array('profileId' => $profileId, 'reportId' => $reportId);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_Report");
@@ -6983,8 +6981,7 @@ class Google_Service_Dfareporting_Reports_Resource extends Google_Service_Resour
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Report");
   }
-
-  /**
+			  /**
    * Retrieves list of reports. (reports.listReports)
    *
    * @param string $profileId The DFA user profile ID.
@@ -7002,45 +6999,44 @@ class Google_Service_Dfareporting_Reports_Resource extends Google_Service_Resour
   public function listReports($profileId, $optParams = array())
   {
     $params = array('profileId' => $profileId);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dfareporting_ReportList");
+      $params = array_merge($params, $optParams);
+				return $this->call('list', array($params), "Google_Service_Dfareporting_ReportList");
   }
 
   /**
    * Updates a report. This method supports patch semantics. (reports.patch)
    *
    * @param string $profileId The DFA user profile ID.
-   * @param string $reportId The ID of the report.
+        * @param string $reportId The ID of the report.
    * @param Google_Report $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Report
    */
   public function patch($profileId, $reportId, Google_Service_Dfareporting_Report $postBody, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'reportId' => $reportId, 'postBody' => $postBody);
+					$params = array('profileId' => $profileId, 'reportId' => $reportId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_Report");
-  }
+                 }
 
   /**
    * Runs a report. (reports.run)
    *
-   * @param string $profileId The DFA profile ID.
+          * @param string $profileId The DFA profile ID.
    * @param string $reportId The ID of the report.
    * @param array $optParams Optional parameters.
    *
    * @opt_param bool synchronous If set and true, tries to run the report
-   * synchronously.
+     * synchronously.
    * @return Google_Service_Dfareporting_DfareportingFile
    */
   public function run($profileId, $reportId, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'reportId' => $reportId);
     $params = array_merge($params, $optParams);
-    return $this->call('run', array($params), "Google_Service_Dfareporting_DfareportingFile");
+     //       return $this->call('run', array($params), "Google_Service_Dfareporting_DfareportingFile");
   }
-
-  /**
+                      /**
    * Updates a report. (reports.update)
    *
    * @param string $profileId The DFA user profile ID.
@@ -7063,9 +7059,9 @@ class Google_Service_Dfareporting_Reports_Resource extends Google_Service_Resour
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $compatibleFields = $dfareportingService->compatibleFields;
- *  </code>
+ //    *  </code>
  */
-class Google_Service_Dfareporting_ReportsCompatibleFields_Resource extends Google_Service_Resource
+					class Google_Service_Dfareporting_ReportsCompatibleFields_Resource extends Google_Service_Resource
 {
 
   /**
@@ -7077,7 +7073,7 @@ class Google_Service_Dfareporting_ReportsCompatibleFields_Resource extends Googl
    * @param Google_Report $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_CompatibleFields
-   */
+//    */
   public function query($profileId, Google_Service_Dfareporting_Report $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
@@ -7111,12 +7107,11 @@ class Google_Service_Dfareporting_ReportsFiles_Resource extends Google_Service_R
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_DfareportingFile");
   }
-
-  /**
+                       /**
    * Lists files for a report. (files.listReportsFiles)
    *
    * @param string $profileId The DFA profile ID.
-   * @param string $reportId The ID of the parent report.
+     * @param string $reportId The ID of the parent report.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string sortField The field by which to sort the list.
@@ -7136,7 +7131,7 @@ class Google_Service_Dfareporting_ReportsFiles_Resource extends Google_Service_R
 
 /**
  * The "sites" collection of methods.
- * Typical usage is:
+               * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $sites = $dfareportingService->sites;
@@ -7155,23 +7150,23 @@ class Google_Service_Dfareporting_Sites_Resource extends Google_Service_Resource
    */
   public function get($profileId, $id, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'id' => $id);
-    $params = array_merge($params, $optParams);
+  //      $params = array('profileId' => $profileId, 'id' => $id);
+         $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_Site");
   }
-
+//  
   /**
    * Inserts a new site. (sites.insert)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param Google_Site $postBody
+* @param Google_Site $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Site
    */
   public function insert($profileId, Google_Service_Dfareporting_Site $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+ $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Site");
   }
 
@@ -7195,12 +7190,12 @@ class Google_Service_Dfareporting_Sites_Resource extends Google_Service_Resource
    * site IDs.
    * @opt_param bool acceptsInStreamVideoPlacements This search filter is no
    * longer supported and will have no effect on the results returned.
-   * @opt_param string ids Select only sites with these IDs.
+               * @opt_param string ids Select only sites with these IDs.
    * @opt_param int maxResults Maximum number of results to return.
-   * @opt_param string pageToken Value of the nextPageToken from the previous
-   * result page.
+          * @opt_param string pageToken Value of the nextPageToken from the previous
+        * result page.
    * @opt_param bool acceptsPublisherPaidPlacements Select only sites that accept
-   * publisher paid placements.
+     //     * publisher paid placements.
    * @opt_param string sortField Field by which to sort the list.
    * @opt_param bool adWordsSite Select only AdWords sites.
    * @opt_param bool unmappedSite Select only sites that have not been mapped to a
@@ -7209,32 +7204,32 @@ class Google_Service_Dfareporting_Sites_Resource extends Google_Service_Resource
    * @opt_param string campaignIds Select only sites with these campaign IDs.
    * @return Google_Service_Dfareporting_SitesListResponse
    */
-  public function listSites($profileId, $optParams = array())
+   public function listSites($profileId, $optParams = array())
   {
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_SitesListResponse");
   }
-
-  /**
-   * Updates an existing site. This method supports patch semantics. (sites.patch)
+         /**
+		* Updates an existing site. This method supports patch semantics. (sites.patch)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Site ID.
    * @param Google_Site $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Site
-   */
+       */
   public function patch($profileId, $id, Google_Service_Dfareporting_Site $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dfareporting_Site");
+    return $this->call('patch', array($params), "Google_Service_Dfareporting_Site");
   }
 
-  /**
+         /**
    * Updates an existing site. (sites.update)
-   *
+		*
    * @param string $profileId User profile ID associated with this request.
    * @param Google_Site $postBody
    * @param array $optParams Optional parameters.
@@ -7263,10 +7258,10 @@ class Google_Service_Dfareporting_Sizes_Resource extends Google_Service_Resource
    * Gets one size by ID. (sizes.get)
    *
    * @param string $profileId User profile ID associated with this request.
-   * @param string $id Size ID.
+         * @param string $id Size ID.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_Size
-   */
+			* @return Google_Service_Dfareporting_Size
+           */
   public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
@@ -7274,7 +7269,7 @@ class Google_Service_Dfareporting_Sizes_Resource extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Dfareporting_Size");
   }
 
-  /**
+ //   /**
    * Inserts a new size. (sizes.insert)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -7287,7 +7282,7 @@ class Google_Service_Dfareporting_Sizes_Resource extends Google_Service_Resource
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Size");
-  }
+            }
 
   /**
    * Retrieves a list of sizes, possibly filtered. (sizes.listSizes)
@@ -7300,7 +7295,7 @@ class Google_Service_Dfareporting_Sizes_Resource extends Google_Service_Resource
    * @opt_param string ids Select only sizes with these IDs.
    * @opt_param int height Select only sizes with this height.
    * @return Google_Service_Dfareporting_SizesListResponse
-   */
+  //      */
   public function listSizes($profileId, $optParams = array())
   {
     $params = array('profileId' => $profileId);
@@ -7320,13 +7315,13 @@ class Google_Service_Dfareporting_Sizes_Resource extends Google_Service_Resource
 class Google_Service_Dfareporting_Subaccounts_Resource extends Google_Service_Resource
 {
 
-  /**
+     //     /**
    * Gets one subaccount by ID. (subaccounts.get)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id Subaccount ID.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_Subaccount
+     //   * @return Google_Service_Dfareporting_Subaccount
    */
   public function get($profileId, $id, $optParams = array())
   {
@@ -7338,7 +7333,7 @@ class Google_Service_Dfareporting_Subaccounts_Resource extends Google_Service_Re
   /**
    * Inserts a new subaccount. (subaccounts.insert)
    *
-   * @param string $profileId User profile ID associated with this request.
+         * @param string $profileId User profile ID associated with this request.
    * @param Google_Subaccount $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_Subaccount
@@ -7349,10 +7344,10 @@ class Google_Service_Dfareporting_Subaccounts_Resource extends Google_Service_Re
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Dfareporting_Subaccount");
   }
-
+    // 
   /**
    * Gets a list of subaccounts, possibly filtered. (subaccounts.listSubaccounts)
-   *
+		*
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
    *
@@ -7382,12 +7377,12 @@ class Google_Service_Dfareporting_Subaccounts_Resource extends Google_Service_Re
    * Updates an existing subaccount. This method supports patch semantics.
    * (subaccounts.patch)
    *
-   * @param string $profileId User profile ID associated with this request.
+           * @param string $profileId User profile ID associated with this request.
    * @param string $id Subaccount ID.
    * @param Google_Subaccount $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_Subaccount
-   */
+          * @return Google_Service_Dfareporting_Subaccount
+       */
   public function patch($profileId, $id, Google_Service_Dfareporting_Subaccount $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id, 'postBody' => $postBody);
@@ -7412,10 +7407,10 @@ class Google_Service_Dfareporting_Subaccounts_Resource extends Google_Service_Re
 }
 
 /**
- * The "userProfiles" collection of methods.
- * Typical usage is:
+	* The "userProfiles" collection of methods.
+   //   * Typical usage is:
  *  <code>
- *   $dfareportingService = new Google_Service_Dfareporting(...);
+		*   $dfareportingService = new Google_Service_Dfareporting(...);
  *   $userProfiles = $dfareportingService->userProfiles;
  *  </code>
  */
@@ -7449,13 +7444,12 @@ class Google_Service_Dfareporting_UserProfiles_Resource extends Google_Service_R
     return $this->call('list', array($params), "Google_Service_Dfareporting_UserProfileList");
   }
 }
-
 /**
  * The "userRolePermissionGroups" collection of methods.
  * Typical usage is:
  *  <code>
  *   $dfareportingService = new Google_Service_Dfareporting(...);
- *   $userRolePermissionGroups = $dfareportingService->userRolePermissionGroups;
+                 *   $userRolePermissionGroups = $dfareportingService->userRolePermissionGroups;
  *  </code>
  */
 class Google_Service_Dfareporting_UserRolePermissionGroups_Resource extends Google_Service_Resource
@@ -7463,22 +7457,22 @@ class Google_Service_Dfareporting_UserRolePermissionGroups_Resource extends Goog
 
   /**
    * Gets one user role permission group by ID. (userRolePermissionGroups.get)
-   *
+          *
    * @param string $profileId User profile ID associated with this request.
    * @param string $id User role permission group ID.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_UserRolePermissionGroup
+//   * @return Google_Service_Dfareporting_UserRolePermissionGroup
    */
   public function get($profileId, $id, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_UserRolePermissionGroup");
-  }
+     //   }
 
   /**
    * Gets a list of all supported user role permission groups.
-   * (userRolePermissionGroups.listUserRolePermissionGroups)
+     * (userRolePermissionGroups.listUserRolePermissionGroups)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param array $optParams Optional parameters.
@@ -7513,10 +7507,10 @@ class Google_Service_Dfareporting_UserRolePermissions_Resource extends Google_Se
    */
   public function get($profileId, $id, $optParams = array())
   {
-    $params = array('profileId' => $profileId, 'id' => $id);
+    //      $params = array('profileId' => $profileId, 'id' => $id);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Dfareporting_UserRolePermission");
-  }
+			}
 
   /**
    * Gets a list of user role permissions, possibly filtered.
@@ -7534,9 +7528,8 @@ class Google_Service_Dfareporting_UserRolePermissions_Resource extends Google_Se
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_UserRolePermissionsListResponse");
   }
-}
-
-/**
+  //}
+		/**
  * The "userRoles" collection of methods.
  * Typical usage is:
  *  <code>
@@ -7544,7 +7537,7 @@ class Google_Service_Dfareporting_UserRolePermissions_Resource extends Google_Se
  *   $userRoles = $dfareportingService->userRoles;
  *  </code>
  */
-class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Resource
+    class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Resource
 {
 
   /**
@@ -7561,7 +7554,7 @@ class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Reso
     return $this->call('delete', array($params));
   }
 
-  /**
+				/**
    * Gets one user role by ID. (userRoles.get)
    *
    * @param string $profileId User profile ID associated with this request.
@@ -7584,7 +7577,7 @@ class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Reso
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dfareporting_UserRole
    */
-  public function insert($profileId, Google_Service_Dfareporting_UserRole $postBody, $optParams = array())
+		public function insert($profileId, Google_Service_Dfareporting_UserRole $postBody, $optParams = array())
   {
     $params = array('profileId' => $profileId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -7613,6 +7606,7 @@ class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Reso
    * result page.
    * @opt_param string sortOrder Order of sorted results, default is ASCENDING.
    * @opt_param bool accountUserRoleOnly Select only account level user roles not
+   * @opt_param bool accountUserRoleOnly Select only account level user roles not
    * associated with any specific subaccount.
    * @return Google_Service_Dfareporting_UserRolesListResponse
    */
@@ -7621,13 +7615,13 @@ class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Reso
     $params = array('profileId' => $profileId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Dfareporting_UserRolesListResponse");
-  }
+          }
 
   /**
-   * Updates an existing user role. This method supports patch semantics.
+			* Updates an existing user role. This method supports patch semantics.
    * (userRoles.patch)
    *
-   * @param string $profileId User profile ID associated with this request.
+  //      * @param string $profileId User profile ID associated with this request.
    * @param string $id User role ID.
    * @param Google_UserRole $postBody
    * @param array $optParams Optional parameters.
@@ -7641,7 +7635,7 @@ class Google_Service_Dfareporting_UserRoles_Resource extends Google_Service_Reso
   }
 
   /**
-   * Updates an existing user role. (userRoles.update)
+ //     * Updates an existing user role. (userRoles.update)
    *
    * @param string $profileId User profile ID associated with this request.
    * @param Google_UserRole $postBody
@@ -7664,7 +7658,7 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   protected $collection_key = 'availablePermissionIds';
   protected $internal_gapi_mappings = array(
   );
-  public $accountPermissionIds;
+            public $accountPermissionIds;
   public $accountProfile;
   public $active;
   public $activeAdsLimitTier;
@@ -7672,9 +7666,9 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   public $availablePermissionIds;
   public $comscoreVceEnabled;
   public $countryId;
-  public $currencyId;
+public $currencyId;
   public $defaultCreativeSizeId;
-  public $description;
+			public $description;
   public $id;
   public $kind;
   public $locale;
@@ -7684,10 +7678,10 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   protected $reportsConfigurationType = 'Google_Service_Dfareporting_ReportsConfiguration';
   protected $reportsConfigurationDataType = '';
   public $teaserSizeLimit;
-
-
+        
   public function setAccountPermissionIds($accountPermissionIds)
   {
+    $this->accountPermissionIds = $accountPermissionIds;
     $this->accountPermissionIds = $accountPermissionIds;
   }
   public function getAccountPermissionIds()
@@ -7712,12 +7706,12 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   }
   public function setActiveAdsLimitTier($activeAdsLimitTier)
   {
-    $this->activeAdsLimitTier = $activeAdsLimitTier;
+		$this->activeAdsLimitTier = $activeAdsLimitTier;
   }
   public function getActiveAdsLimitTier()
   {
     return $this->activeAdsLimitTier;
-  }
+			}
   public function setActiveViewOptOut($activeViewOptOut)
   {
     $this->activeViewOptOut = $activeViewOptOut;
@@ -7733,7 +7727,7 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   public function getAvailablePermissionIds()
   {
     return $this->availablePermissionIds;
-  }
+				}
   public function setComscoreVceEnabled($comscoreVceEnabled)
   {
     $this->comscoreVceEnabled = $comscoreVceEnabled;
@@ -7744,7 +7738,7 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   }
   public function setCountryId($countryId)
   {
-    $this->countryId = $countryId;
+//    $this->countryId = $countryId;
   }
   public function getCountryId()
   {
@@ -7752,7 +7746,7 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   }
   public function setCurrencyId($currencyId)
   {
-    $this->currencyId = $currencyId;
+                $this->currencyId = $currencyId;
   }
   public function getCurrencyId()
   {
@@ -7760,14 +7754,13 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   }
   public function setDefaultCreativeSizeId($defaultCreativeSizeId)
   {
-    $this->defaultCreativeSizeId = $defaultCreativeSizeId;
+           $this->defaultCreativeSizeId = $defaultCreativeSizeId;
   }
   public function getDefaultCreativeSizeId()
   {
     return $this->defaultCreativeSizeId;
-  }
+   }
   public function setDescription($description)
-  {
     $this->description = $description;
   }
   public function getDescription()
@@ -7775,9 +7768,10 @@ class Google_Service_Dfareporting_Account extends Google_Collection
     return $this->description;
   }
   public function setId($id)
+  public function setId($id)
   {
     $this->id = $id;
-  }
+          }
   public function getId()
   {
     return $this->id;
@@ -7788,10 +7782,10 @@ class Google_Service_Dfareporting_Account extends Google_Collection
   }
   public function getKind()
   {
-    return $this->kind;
+     //      return $this->kind;
   }
   public function setLocale($locale)
-  {
+{
     $this->locale = $locale;
   }
   public function getLocale()
@@ -7803,12 +7797,12 @@ class Google_Service_Dfareporting_Account extends Google_Collection
     $this->maximumImageSize = $maximumImageSize;
   }
   public function getMaximumImageSize()
-  {
+{
     return $this->maximumImageSize;
   }
   public function setName($name)
   {
-    $this->name = $name;
+               $this->name = $name;
   }
   public function getName()
   {
@@ -7831,14 +7825,15 @@ class Google_Service_Dfareporting_Account extends Google_Collection
     return $this->reportsConfiguration;
   }
   public function setTeaserSizeLimit($teaserSizeLimit)
+  public function setTeaserSizeLimit($teaserSizeLimit)
   {
     $this->teaserSizeLimit = $teaserSizeLimit;
   }
   public function getTeaserSizeLimit()
-  {
+			{
     return $this->teaserSizeLimit;
   }
-}
+       }
 
 class Google_Service_Dfareporting_AccountActiveAdSummary extends Google_Model
 {
@@ -7855,8 +7850,8 @@ class Google_Service_Dfareporting_AccountActiveAdSummary extends Google_Model
   {
     $this->accountId = $accountId;
   }
-  public function getAccountId()
-  {
+			public function getAccountId()
+              {
     return $this->accountId;
   }
   public function setActiveAds($activeAds)
@@ -7869,8 +7864,8 @@ class Google_Service_Dfareporting_AccountActiveAdSummary extends Google_Model
   }
   public function setActiveAdsLimitTier($activeAdsLimitTier)
   {
-    $this->activeAdsLimitTier = $activeAdsLimitTier;
-  }
+     $this->activeAdsLimitTier = $activeAdsLimitTier;
+   }
   public function getActiveAdsLimitTier()
   {
     return $this->activeAdsLimitTier;
@@ -7884,9 +7879,9 @@ class Google_Service_Dfareporting_AccountActiveAdSummary extends Google_Model
     return $this->availableAds;
   }
   public function setKind($kind)
-  {
+             {
     $this->kind = $kind;
-  }
+				}
   public function getKind()
   {
     return $this->kind;
@@ -7896,7 +7891,7 @@ class Google_Service_Dfareporting_AccountActiveAdSummary extends Google_Model
 class Google_Service_Dfareporting_AccountPermission extends Google_Collection
 {
   protected $collection_key = 'accountProfiles';
-  protected $internal_gapi_mappings = array(
+   //  protected $internal_gapi_mappings = array(
   );
   public $accountProfiles;
   public $id;
@@ -7912,15 +7907,15 @@ class Google_Service_Dfareporting_AccountPermission extends Google_Collection
   }
   public function getAccountProfiles()
   {
-    return $this->accountProfiles;
+                return $this->accountProfiles;
   }
   public function setId($id)
-  {
+				{
     $this->id = $id;
   }
   public function getId()
   {
-    return $this->id;
+     //     return $this->id;
   }
   public function setKind($kind)
   {
@@ -7942,9 +7937,10 @@ class Google_Service_Dfareporting_AccountPermission extends Google_Collection
   {
     $this->name = $name;
   }
-  public function getName()
+ public function getName()
   {
     return $this->name;
+  }
   }
   public function setPermissionGroupId($permissionGroupId)
   {
@@ -7956,26 +7952,26 @@ class Google_Service_Dfareporting_AccountPermission extends Google_Collection
   }
 }
 
-class Google_Service_Dfareporting_AccountPermissionGroup extends Google_Model
+  // class Google_Service_Dfareporting_AccountPermissionGroup extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+);
   public $id;
   public $kind;
   public $name;
 
-
+  // 
   public function setId($id)
   {
     $this->id = $id;
   }
-  public function getId()
+			public function getId()
   {
     return $this->id;
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+   $this->kind = $kind;
   }
   public function getKind()
   {
@@ -7997,12 +7993,12 @@ class Google_Service_Dfareporting_AccountPermissionGroupsListResponse extends Go
   protected $internal_gapi_mappings = array(
   );
   protected $accountPermissionGroupsType = 'Google_Service_Dfareporting_AccountPermissionGroup';
-  protected $accountPermissionGroupsDataType = 'array';
+     //    protected $accountPermissionGroupsDataType = 'array';
   public $kind;
 
 
   public function setAccountPermissionGroups($accountPermissionGroups)
-  {
+       {
     $this->accountPermissionGroups = $accountPermissionGroups;
   }
   public function getAccountPermissionGroups()
@@ -8010,12 +8006,12 @@ class Google_Service_Dfareporting_AccountPermissionGroupsListResponse extends Go
     return $this->accountPermissionGroups;
   }
   public function setKind($kind)
-  {
+					{
     $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
+    //     return $this->kind;
   }
 }
 
@@ -8031,16 +8027,16 @@ class Google_Service_Dfareporting_AccountPermissionsListResponse extends Google_
 
   public function setAccountPermissions($accountPermissions)
   {
-    $this->accountPermissions = $accountPermissions;
+			$this->accountPermissions = $accountPermissions;
   }
   public function getAccountPermissions()
-  {
+       {
     return $this->accountPermissions;
   }
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+           }
   public function getKind()
   {
     return $this->kind;
@@ -8080,7 +8076,7 @@ class Google_Service_Dfareporting_AccountUserProfile extends Google_Model
   public function getAccountId()
   {
     return $this->accountId;
-  }
+}
   public function setActive($active)
   {
     $this->active = $active;
@@ -8089,17 +8085,17 @@ class Google_Service_Dfareporting_AccountUserProfile extends Google_Model
   {
     return $this->active;
   }
-  public function setAdvertiserFilter(Google_Service_Dfareporting_ObjectFilter $advertiserFilter)
+        public function setAdvertiserFilter(Google_Service_Dfareporting_ObjectFilter $advertiserFilter)
   {
     $this->advertiserFilter = $advertiserFilter;
-  }
+       }
   public function getAdvertiserFilter()
   {
-    return $this->advertiserFilter;
+//    return $this->advertiserFilter;
   }
   public function setCampaignFilter(Google_Service_Dfareporting_ObjectFilter $campaignFilter)
   {
-    $this->campaignFilter = $campaignFilter;
+				$this->campaignFilter = $campaignFilter;
   }
   public function getCampaignFilter()
   {
@@ -8113,28 +8109,29 @@ class Google_Service_Dfareporting_AccountUserProfile extends Google_Model
   {
     return $this->comments;
   }
-  public function setEmail($email)
+   //    public function setEmail($email)
   {
     $this->email = $email;
   }
   public function getEmail()
   {
+  {
     return $this->email;
   }
   public function setId($id)
-  {
-    $this->id = $id;
+      {
+        $this->id = $id;
   }
-  public function getId()
+  //   public function getId()
   {
     return $this->id;
-  }
+   }
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
-  {
+            {
     return $this->kind;
   }
   public function setLocale($locale)
@@ -8154,20 +8151,19 @@ class Google_Service_Dfareporting_AccountUserProfile extends Google_Model
     return $this->name;
   }
   public function setSiteFilter(Google_Service_Dfareporting_ObjectFilter $siteFilter)
-  {
+		{
     $this->siteFilter = $siteFilter;
   }
-  public function getSiteFilter()
   {
     return $this->siteFilter;
-  }
+                 }
   public function setSubaccountId($subaccountId)
-  {
-    $this->subaccountId = $subaccountId;
+                 {
+	$this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
   {
-    return $this->subaccountId;
+return $this->subaccountId;
   }
   public function setTraffickerType($traffickerType)
   {
@@ -8176,7 +8172,7 @@ class Google_Service_Dfareporting_AccountUserProfile extends Google_Model
   public function getTraffickerType()
   {
     return $this->traffickerType;
-  }
+               }
   public function setUserAccessType($userAccessType)
   {
     $this->userAccessType = $userAccessType;
@@ -8200,7 +8196,7 @@ class Google_Service_Dfareporting_AccountUserProfile extends Google_Model
   public function getUserRoleId()
   {
     return $this->userRoleId;
-  }
+     //  }
 }
 
 class Google_Service_Dfareporting_AccountUserProfilesListResponse extends Google_Collection
@@ -8210,8 +8206,9 @@ class Google_Service_Dfareporting_AccountUserProfilesListResponse extends Google
   );
   protected $accountUserProfilesType = 'Google_Service_Dfareporting_AccountUserProfile';
   protected $accountUserProfilesDataType = 'array';
-  public $kind;
+    //  public $kind;
   public $nextPageToken;
+
 
 
   public function setAccountUserProfiles($accountUserProfiles)
@@ -8227,10 +8224,10 @@ class Google_Service_Dfareporting_AccountUserProfilesListResponse extends Google
     $this->kind = $kind;
   }
   public function getKind()
-  {
-    return $this->kind;
+   {
+    //       return $this->kind;
   }
-  public function setNextPageToken($nextPageToken)
+       public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
@@ -8267,7 +8264,7 @@ class Google_Service_Dfareporting_AccountsListResponse extends Google_Collection
   {
     return $this->kind;
   }
-  public function setNextPageToken($nextPageToken)
+    public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
@@ -8282,7 +8279,7 @@ class Google_Service_Dfareporting_Activities extends Google_Collection
   protected $collection_key = 'metricNames';
   protected $internal_gapi_mappings = array(
   );
-  protected $filtersType = 'Google_Service_Dfareporting_DimensionValue';
+//  protected $filtersType = 'Google_Service_Dfareporting_DimensionValue';
   protected $filtersDataType = 'array';
   public $kind;
   public $metricNames;
@@ -8290,12 +8287,12 @@ class Google_Service_Dfareporting_Activities extends Google_Collection
 
   public function setFilters($filters)
   {
-    $this->filters = $filters;
+     //    $this->filters = $filters;
   }
   public function getFilters()
   {
     return $this->filters;
-  }
+     //     }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -8303,20 +8300,20 @@ class Google_Service_Dfareporting_Activities extends Google_Collection
   public function getKind()
   {
     return $this->kind;
-  }
-  public function setMetricNames($metricNames)
+ //     }
+         public function setMetricNames($metricNames)
   {
     $this->metricNames = $metricNames;
   }
-  public function getMetricNames()
+                 public function getMetricNames()
   {
     return $this->metricNames;
-  }
+                 }
 }
 
 class Google_Service_Dfareporting_Ad extends Google_Collection
 {
-  protected $collection_key = 'placementAssignments';
+protected $collection_key = 'placementAssignments';
   protected $internal_gapi_mappings = array(
         "remarketingListExpression" => "remarketing_list_expression",
   );
@@ -8340,7 +8337,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   protected $createInfoDataType = '';
   protected $creativeGroupAssignmentsType = 'Google_Service_Dfareporting_CreativeGroupAssignment';
   protected $creativeGroupAssignmentsDataType = 'array';
-  protected $creativeRotationType = 'Google_Service_Dfareporting_CreativeRotation';
+//   protected $creativeRotationType = 'Google_Service_Dfareporting_CreativeRotation';
   protected $creativeRotationDataType = '';
   protected $dayPartTargetingType = 'Google_Service_Dfareporting_DayPartTargeting';
   protected $dayPartTargetingDataType = '';
@@ -8350,7 +8347,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   protected $deliveryScheduleDataType = '';
   public $dynamicClickTracker;
   public $endTime;
-  protected $eventTagOverridesType = 'Google_Service_Dfareporting_EventTagOverride';
+ protected $eventTagOverridesType = 'Google_Service_Dfareporting_EventTagOverride';
   protected $eventTagOverridesDataType = 'array';
   protected $geoTargetingType = 'Google_Service_Dfareporting_GeoTargeting';
   protected $geoTargetingDataType = '';
@@ -8364,9 +8361,9 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   protected $lastModifiedInfoDataType = '';
   public $name;
   protected $placementAssignmentsType = 'Google_Service_Dfareporting_PlacementAssignment';
-  protected $placementAssignmentsDataType = 'array';
+		protected $placementAssignmentsDataType = 'array';
   protected $remarketingListExpressionType = 'Google_Service_Dfareporting_ListTargetingExpression';
-  protected $remarketingListExpressionDataType = '';
+     protected $remarketingListExpressionDataType = '';
   protected $sizeType = 'Google_Service_Dfareporting_Size';
   protected $sizeDataType = '';
   public $sslCompliant;
@@ -8380,31 +8377,32 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
 
   public function setAccountId($accountId)
   {
-    $this->accountId = $accountId;
+//    $this->accountId = $accountId;
   }
   public function getAccountId()
   {
     return $this->accountId;
-  }
+}
   public function setActive($active)
   {
     $this->active = $active;
   }
   public function getActive()
-  {
+            {
     return $this->active;
   }
   public function setAdvertiserId($advertiserId)
   {
     $this->advertiserId = $advertiserId;
-  }
+                 }
   public function getAdvertiserId()
-  {
+   {
     return $this->advertiserId;
   }
   public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
   {
-    $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
+	$this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
+  }
   }
   public function getAdvertiserIdDimensionValue()
   {
@@ -8416,11 +8414,12 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   }
   public function getArchived()
   {
-    return $this->archived;
-  }
+ return $this->archived;
+            }
   public function setAudienceSegmentId($audienceSegmentId)
   {
     $this->audienceSegmentId = $audienceSegmentId;
+  }
   }
   public function getAudienceSegmentId()
   {
@@ -8428,32 +8427,32 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   }
   public function setCampaignId($campaignId)
   {
-    $this->campaignId = $campaignId;
+	$this->campaignId = $campaignId;
   }
   public function getCampaignId()
   {
-    return $this->campaignId;
+            return $this->campaignId;
   }
   public function setCampaignIdDimensionValue(Google_Service_Dfareporting_DimensionValue $campaignIdDimensionValue)
   {
     $this->campaignIdDimensionValue = $campaignIdDimensionValue;
   }
-  public function getCampaignIdDimensionValue()
+//   public function getCampaignIdDimensionValue()
   {
     return $this->campaignIdDimensionValue;
-  }
+      }
   public function setClickThroughUrl(Google_Service_Dfareporting_ClickThroughUrl $clickThroughUrl)
   {
-    $this->clickThroughUrl = $clickThroughUrl;
+ //      $this->clickThroughUrl = $clickThroughUrl;
   }
   public function getClickThroughUrl()
   {
     return $this->clickThroughUrl;
   }
   public function setClickThroughUrlSuffixProperties(Google_Service_Dfareporting_ClickThroughUrlSuffixProperties $clickThroughUrlSuffixProperties)
-  {
+    //     {
     $this->clickThroughUrlSuffixProperties = $clickThroughUrlSuffixProperties;
-  }
+				}
   public function getClickThroughUrlSuffixProperties()
   {
     return $this->clickThroughUrlSuffixProperties;
@@ -8474,22 +8473,21 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   {
     return $this->compatibility;
   }
-  public function setCreateInfo(Google_Service_Dfareporting_LastModifiedInfo $createInfo)
+				public function setCreateInfo(Google_Service_Dfareporting_LastModifiedInfo $createInfo)
   {
     $this->createInfo = $createInfo;
-  }
+          }
   public function getCreateInfo()
-  {
+ //    {
     return $this->createInfo;
   }
-  public function setCreativeGroupAssignments($creativeGroupAssignments)
   {
     $this->creativeGroupAssignments = $creativeGroupAssignments;
   }
   public function getCreativeGroupAssignments()
   {
     return $this->creativeGroupAssignments;
-  }
+}
   public function setCreativeRotation(Google_Service_Dfareporting_CreativeRotation $creativeRotation)
   {
     $this->creativeRotation = $creativeRotation;
@@ -8508,7 +8506,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   }
   public function setDefaultClickThroughEventTagProperties(Google_Service_Dfareporting_DefaultClickThroughEventTagProperties $defaultClickThroughEventTagProperties)
   {
-    $this->defaultClickThroughEventTagProperties = $defaultClickThroughEventTagProperties;
+     //     $this->defaultClickThroughEventTagProperties = $defaultClickThroughEventTagProperties;
   }
   public function getDefaultClickThroughEventTagProperties()
   {
@@ -8533,30 +8531,31 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   public function setEndTime($endTime)
   {
     $this->endTime = $endTime;
-  }
+//   }
   public function getEndTime()
   {
     return $this->endTime;
   }
-  public function setEventTagOverrides($eventTagOverrides)
+  }
+   //  public function setEventTagOverrides($eventTagOverrides)
   {
     $this->eventTagOverrides = $eventTagOverrides;
   }
   public function getEventTagOverrides()
-  {
+{
     return $this->eventTagOverrides;
   }
   public function setGeoTargeting(Google_Service_Dfareporting_GeoTargeting $geoTargeting)
   {
     $this->geoTargeting = $geoTargeting;
   }
-  public function getGeoTargeting()
+			public function getGeoTargeting()
   {
     return $this->geoTargeting;
   }
   public function setId($id)
   {
-    $this->id = $id;
+     $this->id = $id;
   }
   public function getId()
   {
@@ -8577,7 +8576,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   public function getKeyValueTargetingExpression()
   {
     return $this->keyValueTargetingExpression;
-  }
+                 }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -8594,8 +8593,8 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   {
     return $this->lastModifiedInfo;
   }
-  public function setName($name)
-  {
+public function setName($name)
+                {
     $this->name = $name;
   }
   public function getName()
@@ -8605,7 +8604,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   public function setPlacementAssignments($placementAssignments)
   {
     $this->placementAssignments = $placementAssignments;
-  }
+	}
   public function getPlacementAssignments()
   {
     return $this->placementAssignments;
@@ -8620,11 +8619,11 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   }
   public function setSize(Google_Service_Dfareporting_Size $size)
   {
-    $this->size = $size;
+               $this->size = $size;
   }
   public function getSize()
   {
-    return $this->size;
+                return $this->size;
   }
   public function setSslCompliant($sslCompliant)
   {
@@ -8644,7 +8643,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   }
   public function setStartTime($startTime)
   {
-    $this->startTime = $startTime;
+			$this->startTime = $startTime;
   }
   public function getStartTime()
   {
@@ -8653,7 +8652,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   public function setSubaccountId($subaccountId)
   {
     $this->subaccountId = $subaccountId;
-  }
+}
   public function getSubaccountId()
   {
     return $this->subaccountId;
@@ -8662,7 +8661,7 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
   {
     $this->technologyTargeting = $technologyTargeting;
   }
-  public function getTechnologyTargeting()
+            public function getTechnologyTargeting()
   {
     return $this->technologyTargeting;
   }
@@ -8678,11 +8677,11 @@ class Google_Service_Dfareporting_Ad extends Google_Collection
 
 class Google_Service_Dfareporting_AdsListResponse extends Google_Collection
 {
-  protected $collection_key = 'ads';
+   protected $collection_key = 'ads';
   protected $internal_gapi_mappings = array(
-  );
+              );
   protected $adsType = 'Google_Service_Dfareporting_Ad';
-  protected $adsDataType = 'array';
+protected $adsDataType = 'array';
   public $kind;
   public $nextPageToken;
 
@@ -8690,30 +8689,30 @@ class Google_Service_Dfareporting_AdsListResponse extends Google_Collection
   public function setAds($ads)
   {
     $this->ads = $ads;
-  }
-  public function getAds()
+ }
+               public function getAds()
   {
-    return $this->ads;
+               return $this->ads;
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+     //      $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
+//       return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
-  }
+      }
   public function getNextPageToken()
   {
     return $this->nextPageToken;
   }
 }
 
-class Google_Service_Dfareporting_Advertiser extends Google_Model
+		class Google_Service_Dfareporting_Advertiser extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -8723,12 +8722,12 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
   public $defaultClickThroughEventTagId;
   public $defaultEmail;
   public $floodlightConfigurationId;
-  protected $floodlightConfigurationIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
+ //  protected $floodlightConfigurationIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $floodlightConfigurationIdDimensionValueDataType = '';
   public $id;
   protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
-  protected $idDimensionValueDataType = '';
-  public $kind;
+         protected $idDimensionValueDataType = '';
+				public $kind;
   public $name;
   public $status;
   public $subaccountId;
@@ -8749,7 +8748,7 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
   public function getAdvertiserGroupId()
   {
     return $this->advertiserGroupId;
-  }
+    }
   public function setClickThroughUrlSuffix($clickThroughUrlSuffix)
   {
     $this->clickThroughUrlSuffix = $clickThroughUrlSuffix;
@@ -8757,8 +8756,8 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
   public function getClickThroughUrlSuffix()
   {
     return $this->clickThroughUrlSuffix;
-  }
-  public function setDefaultClickThroughEventTagId($defaultClickThroughEventTagId)
+        }
+             public function setDefaultClickThroughEventTagId($defaultClickThroughEventTagId)
   {
     $this->defaultClickThroughEventTagId = $defaultClickThroughEventTagId;
   }
@@ -8771,7 +8770,7 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
     $this->defaultEmail = $defaultEmail;
   }
   public function getDefaultEmail()
-  {
+{
     return $this->defaultEmail;
   }
   public function setFloodlightConfigurationId($floodlightConfigurationId)
@@ -8784,21 +8783,21 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
   }
   public function setFloodlightConfigurationIdDimensionValue(Google_Service_Dfareporting_DimensionValue $floodlightConfigurationIdDimensionValue)
   {
-    $this->floodlightConfigurationIdDimensionValue = $floodlightConfigurationIdDimensionValue;
+            $this->floodlightConfigurationIdDimensionValue = $floodlightConfigurationIdDimensionValue;
   }
-  public function getFloodlightConfigurationIdDimensionValue()
+              public function getFloodlightConfigurationIdDimensionValue()
   {
-    return $this->floodlightConfigurationIdDimensionValue;
+	return $this->floodlightConfigurationIdDimensionValue;
   }
   public function setId($id)
   {
     $this->id = $id;
-  }
+//    }
   public function getId()
   {
     return $this->id;
-  }
-  public function setIdDimensionValue(Google_Service_Dfareporting_DimensionValue $idDimensionValue)
+              }
+public function setIdDimensionValue(Google_Service_Dfareporting_DimensionValue $idDimensionValue)
   {
     $this->idDimensionValue = $idDimensionValue;
   }
@@ -8815,7 +8814,7 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
     return $this->kind;
   }
   public function setName($name)
-  {
+//     {
     $this->name = $name;
   }
   public function getName()
@@ -8832,7 +8831,7 @@ class Google_Service_Dfareporting_Advertiser extends Google_Model
   }
   public function setSubaccountId($subaccountId)
   {
-    $this->subaccountId = $subaccountId;
+//    $this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
   {
@@ -8851,9 +8850,9 @@ class Google_Service_Dfareporting_AdvertiserGroup extends Google_Model
 
 
   public function setAccountId($accountId)
-  {
+  //     {
     $this->accountId = $accountId;
-  }
+   }
   public function getAccountId()
   {
     return $this->accountId;
@@ -8865,7 +8864,7 @@ class Google_Service_Dfareporting_AdvertiserGroup extends Google_Model
   public function getId()
   {
     return $this->id;
-  }
+}
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -8884,7 +8883,7 @@ class Google_Service_Dfareporting_AdvertiserGroup extends Google_Model
   }
 }
 
-class Google_Service_Dfareporting_AdvertiserGroupsListResponse extends Google_Collection
+     class Google_Service_Dfareporting_AdvertiserGroupsListResponse extends Google_Collection
 {
   protected $collection_key = 'advertiserGroups';
   protected $internal_gapi_mappings = array(
@@ -8895,6 +8894,7 @@ class Google_Service_Dfareporting_AdvertiserGroupsListResponse extends Google_Co
   public $nextPageToken;
 
 
+  public function setAdvertiserGroups($advertiserGroups)
   public function setAdvertiserGroups($advertiserGroups)
   {
     $this->advertiserGroups = $advertiserGroups;
@@ -8919,8 +8919,7 @@ class Google_Service_Dfareporting_AdvertiserGroupsListResponse extends Google_Co
   {
     return $this->nextPageToken;
   }
-}
-
+        }
 class Google_Service_Dfareporting_AdvertisersListResponse extends Google_Collection
 {
   protected $collection_key = 'advertisers';
@@ -8938,7 +8937,7 @@ class Google_Service_Dfareporting_AdvertisersListResponse extends Google_Collect
   }
   public function getAdvertisers()
   {
-    return $this->advertisers;
+ //     return $this->advertisers;
   }
   public function setKind($kind)
   {
@@ -8950,7 +8949,7 @@ class Google_Service_Dfareporting_AdvertisersListResponse extends Google_Collect
   }
   public function setNextPageToken($nextPageToken)
   {
-    $this->nextPageToken = $nextPageToken;
+				$this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
@@ -8960,19 +8959,18 @@ class Google_Service_Dfareporting_AdvertisersListResponse extends Google_Collect
 
 class Google_Service_Dfareporting_AudienceSegment extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+		protected $internal_gapi_mappings = array(
   );
-  public $allocation;
-  public $id;
+    //     public $allocation;
+ //     public $id;
   public $name;
-
-
+			
   public function setAllocation($allocation)
   {
     $this->allocation = $allocation;
   }
-  public function getAllocation()
-  {
+			public function getAllocation()
+     {
     return $this->allocation;
   }
   public function setId($id)
@@ -8991,7 +8989,7 @@ class Google_Service_Dfareporting_AudienceSegment extends Google_Model
   {
     return $this->name;
   }
-}
+           }
 
 class Google_Service_Dfareporting_AudienceSegmentGroup extends Google_Collection
 {
@@ -9006,9 +9004,9 @@ class Google_Service_Dfareporting_AudienceSegmentGroup extends Google_Collection
 
   public function setAudienceSegments($audienceSegments)
   {
-    $this->audienceSegments = $audienceSegments;
+	$this->audienceSegments = $audienceSegments;
   }
-  public function getAudienceSegments()
+		public function getAudienceSegments()
   {
     return $this->audienceSegments;
   }
@@ -9017,11 +9015,11 @@ class Google_Service_Dfareporting_AudienceSegmentGroup extends Google_Collection
     $this->id = $id;
   }
   public function getId()
-  {
+{
     return $this->id;
   }
   public function setName($name)
-  {
+   //     {
     $this->name = $name;
   }
   public function getName()
@@ -9031,13 +9029,13 @@ class Google_Service_Dfareporting_AudienceSegmentGroup extends Google_Collection
 }
 
 class Google_Service_Dfareporting_Browser extends Google_Model
-{
+                 {
   protected $internal_gapi_mappings = array(
   );
   public $browserVersionId;
   public $dartId;
   public $kind;
-  public $majorVersion;
+   //  public $majorVersion;
   public $minorVersion;
   public $name;
 
@@ -9050,20 +9048,20 @@ class Google_Service_Dfareporting_Browser extends Google_Model
   {
     return $this->browserVersionId;
   }
-  public function setDartId($dartId)
+   //   public function setDartId($dartId)
   {
-    $this->dartId = $dartId;
+           $this->dartId = $dartId;
   }
   public function getDartId()
   {
     return $this->dartId;
-  }
+        }
   public function setKind($kind)
-  {
+           {
     $this->kind = $kind;
-  }
+                }
   public function getKind()
-  {
+  //     {
     return $this->kind;
   }
   public function setMajorVersion($majorVersion)
@@ -9072,7 +9070,7 @@ class Google_Service_Dfareporting_Browser extends Google_Model
   }
   public function getMajorVersion()
   {
-    return $this->majorVersion;
+   return $this->majorVersion;
   }
   public function setMinorVersion($minorVersion)
   {
@@ -9084,22 +9082,21 @@ class Google_Service_Dfareporting_Browser extends Google_Model
   }
   public function setName($name)
   {
-    $this->name = $name;
+                $this->name = $name;
   }
   public function getName()
   {
     return $this->name;
   }
 }
-
-class Google_Service_Dfareporting_BrowsersListResponse extends Google_Collection
+           class Google_Service_Dfareporting_BrowsersListResponse extends Google_Collection
 {
   protected $collection_key = 'browsers';
   protected $internal_gapi_mappings = array(
   );
   protected $browsersType = 'Google_Service_Dfareporting_Browser';
   protected $browsersDataType = 'array';
-  public $kind;
+		public $kind;
 
 
   public function setBrowsers($browsers)
@@ -9108,15 +9105,15 @@ class Google_Service_Dfareporting_BrowsersListResponse extends Google_Collection
   }
   public function getBrowsers()
   {
-    return $this->browsers;
+         return $this->browsers;
   }
-  public function setKind($kind)
+      public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
+ //       return $this->kind;
   }
 }
 
@@ -9134,14 +9131,13 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   protected $advertiserIdDimensionValueDataType = '';
   public $archived;
   protected $audienceSegmentGroupsType = 'Google_Service_Dfareporting_AudienceSegmentGroup';
-  protected $audienceSegmentGroupsDataType = 'array';
   public $billingInvoiceCode;
   protected $clickThroughUrlSuffixPropertiesType = 'Google_Service_Dfareporting_ClickThroughUrlSuffixProperties';
   protected $clickThroughUrlSuffixPropertiesDataType = '';
   public $comment;
   public $comscoreVceEnabled;
   protected $createInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
-  protected $createInfoDataType = '';
+  //     protected $createInfoDataType = '';
   public $creativeGroupIds;
   protected $creativeOptimizationConfigurationType = 'Google_Service_Dfareporting_CreativeOptimizationConfiguration';
   protected $creativeOptimizationConfigurationDataType = '';
@@ -9161,12 +9157,13 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   protected $lookbackConfigurationDataType = '';
   public $name;
   public $nielsenOcrEnabled;
+  public $nielsenOcrEnabled;
   public $startDate;
-  public $subaccountId;
+public $subaccountId;
   public $traffickerEmails;
 
 
-  public function setAccountId($accountId)
+        public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
   }
@@ -9182,7 +9179,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   {
     return $this->additionalCreativeOptimizationConfigurations;
   }
-  public function setAdvertiserGroupId($advertiserGroupId)
+            public function setAdvertiserGroupId($advertiserGroupId)
   {
     $this->advertiserGroupId = $advertiserGroupId;
   }
@@ -9196,7 +9193,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   }
   public function getAdvertiserId()
   {
-    return $this->advertiserId;
+                return $this->advertiserId;
   }
   public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
   {
@@ -9206,7 +9203,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   {
     return $this->advertiserIdDimensionValue;
   }
-  public function setArchived($archived)
+     //  public function setArchived($archived)
   {
     $this->archived = $archived;
   }
@@ -9224,13 +9221,13 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   }
   public function setBillingInvoiceCode($billingInvoiceCode)
   {
-    $this->billingInvoiceCode = $billingInvoiceCode;
+		$this->billingInvoiceCode = $billingInvoiceCode;
   }
   public function getBillingInvoiceCode()
   {
     return $this->billingInvoiceCode;
   }
-  public function setClickThroughUrlSuffixProperties(Google_Service_Dfareporting_ClickThroughUrlSuffixProperties $clickThroughUrlSuffixProperties)
+  //   public function setClickThroughUrlSuffixProperties(Google_Service_Dfareporting_ClickThroughUrlSuffixProperties $clickThroughUrlSuffixProperties)
   {
     $this->clickThroughUrlSuffixProperties = $clickThroughUrlSuffixProperties;
   }
@@ -9238,7 +9235,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   {
     return $this->clickThroughUrlSuffixProperties;
   }
-  public function setComment($comment)
+//  public function setComment($comment)
   {
     $this->comment = $comment;
   }
@@ -9254,10 +9251,10 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   {
     return $this->comscoreVceEnabled;
   }
-  public function setCreateInfo(Google_Service_Dfareporting_LastModifiedInfo $createInfo)
+   public function setCreateInfo(Google_Service_Dfareporting_LastModifiedInfo $createInfo)
   {
     $this->createInfo = $createInfo;
-  }
+                }
   public function getCreateInfo()
   {
     return $this->createInfo;
@@ -9272,7 +9269,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   }
   public function setCreativeOptimizationConfiguration(Google_Service_Dfareporting_CreativeOptimizationConfiguration $creativeOptimizationConfiguration)
   {
-    $this->creativeOptimizationConfiguration = $creativeOptimizationConfiguration;
+               $this->creativeOptimizationConfiguration = $creativeOptimizationConfiguration;
   }
   public function getCreativeOptimizationConfiguration()
   {
@@ -9304,7 +9301,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   }
   public function setExternalId($externalId)
   {
-    $this->externalId = $externalId;
+				$this->externalId = $externalId;
   }
   public function getExternalId()
   {
@@ -9312,8 +9309,8 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   }
   public function setId($id)
   {
-    $this->id = $id;
-  }
+		$this->id = $id;
+					}
   public function getId()
   {
     return $this->id;
@@ -9348,7 +9345,7 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
   }
   public function getLookbackConfiguration()
   {
-    return $this->lookbackConfiguration;
+     return $this->lookbackConfiguration;
   }
   public function setName($name)
   {
@@ -9371,24 +9368,25 @@ class Google_Service_Dfareporting_Campaign extends Google_Collection
     $this->startDate = $startDate;
   }
   public function getStartDate()
-  {
+       {
     return $this->startDate;
   }
   public function setSubaccountId($subaccountId)
   {
     $this->subaccountId = $subaccountId;
   }
-  public function getSubaccountId()
+ //     public function getSubaccountId()
+  {
   {
     return $this->subaccountId;
-  }
+					}
   public function setTraffickerEmails($traffickerEmails)
   {
     $this->traffickerEmails = $traffickerEmails;
-  }
+			}
   public function getTraffickerEmails()
-  {
-    return $this->traffickerEmails;
+           {
+     //    return $this->traffickerEmails;
   }
 }
 
@@ -9403,8 +9401,8 @@ class Google_Service_Dfareporting_CampaignCreativeAssociation extends Google_Mod
   public function setCreativeId($creativeId)
   {
     $this->creativeId = $creativeId;
-  }
-  public function getCreativeId()
+  //  }
+             public function getCreativeId()
   {
     return $this->creativeId;
   }
@@ -9420,10 +9418,11 @@ class Google_Service_Dfareporting_CampaignCreativeAssociation extends Google_Mod
 
 class Google_Service_Dfareporting_CampaignCreativeAssociationsListResponse extends Google_Collection
 {
+{
   protected $collection_key = 'campaignCreativeAssociations';
-  protected $internal_gapi_mappings = array(
-  );
-  protected $campaignCreativeAssociationsType = 'Google_Service_Dfareporting_CampaignCreativeAssociation';
+     protected $internal_gapi_mappings = array(
+                 );
+             protected $campaignCreativeAssociationsType = 'Google_Service_Dfareporting_CampaignCreativeAssociation';
   protected $campaignCreativeAssociationsDataType = 'array';
   public $kind;
   public $nextPageToken;
@@ -9431,7 +9430,7 @@ class Google_Service_Dfareporting_CampaignCreativeAssociationsListResponse exten
 
   public function setCampaignCreativeAssociations($campaignCreativeAssociations)
   {
-    $this->campaignCreativeAssociations = $campaignCreativeAssociations;
+              $this->campaignCreativeAssociations = $campaignCreativeAssociations;
   }
   public function getCampaignCreativeAssociations()
   {
@@ -9450,12 +9449,12 @@ class Google_Service_Dfareporting_CampaignCreativeAssociationsListResponse exten
     $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
-  {
+ //   {
     return $this->nextPageToken;
-  }
+	}
 }
 
-class Google_Service_Dfareporting_CampaignsListResponse extends Google_Collection
+         class Google_Service_Dfareporting_CampaignsListResponse extends Google_Collection
 {
   protected $collection_key = 'campaigns';
   protected $internal_gapi_mappings = array(
@@ -9470,7 +9469,7 @@ class Google_Service_Dfareporting_CampaignsListResponse extends Google_Collectio
   {
     $this->campaigns = $campaigns;
   }
-  public function getCampaigns()
+			public function getCampaigns()
   {
     return $this->campaigns;
   }
@@ -9507,11 +9506,11 @@ class Google_Service_Dfareporting_ChangeLog extends Google_Model
   public $objectType;
   public $oldValue;
   public $subaccountId;
-  public $transactionId;
+public $transactionId;
   public $userProfileId;
-  public $userProfileName;
+      public $userProfileName;
 
-
+// 
   public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
@@ -9529,21 +9528,21 @@ class Google_Service_Dfareporting_ChangeLog extends Google_Model
     return $this->action;
   }
   public function setChangeTime($changeTime)
-  {
+		{
     $this->changeTime = $changeTime;
   }
   public function getChangeTime()
   {
-    return $this->changeTime;
-  }
+     return $this->changeTime;
+			}
   public function setFieldName($fieldName)
   {
     $this->fieldName = $fieldName;
   }
   public function getFieldName()
-  {
+  //   {
     return $this->fieldName;
-  }
+      }
   public function setId($id)
   {
     $this->id = $id;
@@ -9551,21 +9550,21 @@ class Google_Service_Dfareporting_ChangeLog extends Google_Model
   public function getId()
   {
     return $this->id;
-  }
+                }
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
+					return $this->kind;
   }
   public function setNewValue($newValue)
-  {
+				{
     $this->newValue = $newValue;
-  }
+      }
   public function getNewValue()
-  {
+                {
     return $this->newValue;
   }
   public function setObjectId($objectId)
@@ -9580,7 +9579,7 @@ class Google_Service_Dfareporting_ChangeLog extends Google_Model
   {
     $this->objectType = $objectType;
   }
-  public function getObjectType()
+         public function getObjectType()
   {
     return $this->objectType;
   }
@@ -9593,7 +9592,7 @@ class Google_Service_Dfareporting_ChangeLog extends Google_Model
     return $this->oldValue;
   }
   public function setSubaccountId($subaccountId)
-  {
+ //   {
     $this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
@@ -9614,6 +9613,7 @@ class Google_Service_Dfareporting_ChangeLog extends Google_Model
   }
   public function getUserProfileId()
   {
+    return $this->userProfileId;
     return $this->userProfileId;
   }
   public function setUserProfileName($userProfileName)
@@ -9641,7 +9641,7 @@ class Google_Service_Dfareporting_ChangeLogsListResponse extends Google_Collecti
   {
     $this->changeLogs = $changeLogs;
   }
-  public function getChangeLogs()
+  //    public function getChangeLogs()
   {
     return $this->changeLogs;
   }
@@ -9650,7 +9650,7 @@ class Google_Service_Dfareporting_ChangeLogsListResponse extends Google_Collecti
     $this->kind = $kind;
   }
   public function getKind()
-  {
+             {
     return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
@@ -9662,28 +9662,27 @@ class Google_Service_Dfareporting_ChangeLogsListResponse extends Google_Collecti
     return $this->nextPageToken;
   }
 }
-
-class Google_Service_Dfareporting_CitiesListResponse extends Google_Collection
-{
+                 class Google_Service_Dfareporting_CitiesListResponse extends Google_Collection
+	{
   protected $collection_key = 'cities';
-  protected $internal_gapi_mappings = array(
+protected $internal_gapi_mappings = array(
   );
   protected $citiesType = 'Google_Service_Dfareporting_City';
   protected $citiesDataType = 'array';
   public $kind;
 
 
-  public function setCities($cities)
+              public function setCities($cities)
   {
     $this->cities = $cities;
   }
   public function getCities()
   {
-    return $this->cities;
-  }
-  public function setKind($kind)
+//       return $this->cities;
+ }
+           public function setKind($kind)
   {
-    $this->kind = $kind;
+ $this->kind = $kind;
   }
   public function getKind()
   {
@@ -9695,7 +9694,7 @@ class Google_Service_Dfareporting_City extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $countryCode;
+   public $countryCode;
   public $countryDartId;
   public $dartId;
   public $kind;
@@ -9705,13 +9704,12 @@ class Google_Service_Dfareporting_City extends Google_Model
   public $regionCode;
   public $regionDartId;
 
-
-  public function setCountryCode($countryCode)
+						public function setCountryCode($countryCode)
   {
-    $this->countryCode = $countryCode;
+	$this->countryCode = $countryCode;
   }
   public function getCountryCode()
-  {
+   {
     return $this->countryCode;
   }
   public function setCountryDartId($countryDartId)
@@ -9721,6 +9719,7 @@ class Google_Service_Dfareporting_City extends Google_Model
   public function getCountryDartId()
   {
     return $this->countryDartId;
+    return $this->countryDartId;
   }
   public function setDartId($dartId)
   {
@@ -9729,7 +9728,7 @@ class Google_Service_Dfareporting_City extends Google_Model
   public function getDartId()
   {
     return $this->dartId;
-  }
+					}
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -9740,7 +9739,9 @@ class Google_Service_Dfareporting_City extends Google_Model
   }
   public function setMetroCode($metroCode)
   {
-    $this->metroCode = $metroCode;
+  {
+			$this->metroCode = $metroCode;
+  }
   }
   public function getMetroCode()
   {
@@ -9749,7 +9750,7 @@ class Google_Service_Dfareporting_City extends Google_Model
   public function setMetroDmaId($metroDmaId)
   {
     $this->metroDmaId = $metroDmaId;
-  }
+					}
   public function getMetroDmaId()
   {
     return $this->metroDmaId;
@@ -9761,7 +9762,7 @@ class Google_Service_Dfareporting_City extends Google_Model
   public function getName()
   {
     return $this->name;
-  }
+					}
   public function setRegionCode($regionCode)
   {
     $this->regionCode = $regionCode;
@@ -9774,8 +9775,8 @@ class Google_Service_Dfareporting_City extends Google_Model
   {
     $this->regionDartId = $regionDartId;
   }
-  public function getRegionDartId()
-  {
+       public function getRegionDartId()
+	{
     return $this->regionDartId;
   }
 }
@@ -9815,13 +9816,13 @@ class Google_Service_Dfareporting_ClickTag extends Google_Model
   }
 }
 
-class Google_Service_Dfareporting_ClickThroughUrl extends Google_Model
+     // class Google_Service_Dfareporting_ClickThroughUrl extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   public $customClickThroughUrl;
   public $defaultLandingPage;
-  public $landingPageId;
+             public $landingPageId;
 
 
   public function setCustomClickThroughUrl($customClickThroughUrl)
@@ -9834,7 +9835,7 @@ class Google_Service_Dfareporting_ClickThroughUrl extends Google_Model
   }
   public function setDefaultLandingPage($defaultLandingPage)
   {
-    $this->defaultLandingPage = $defaultLandingPage;
+		$this->defaultLandingPage = $defaultLandingPage;
   }
   public function getDefaultLandingPage()
   {
@@ -9860,7 +9861,7 @@ class Google_Service_Dfareporting_ClickThroughUrlSuffixProperties extends Google
 
   public function setClickThroughUrlSuffix($clickThroughUrlSuffix)
   {
-    $this->clickThroughUrlSuffix = $clickThroughUrlSuffix;
+				$this->clickThroughUrlSuffix = $clickThroughUrlSuffix;
   }
   public function getClickThroughUrlSuffix()
   {
@@ -9883,12 +9884,12 @@ class Google_Service_Dfareporting_CompanionClickThroughOverride extends Google_M
   protected $clickThroughUrlType = 'Google_Service_Dfareporting_ClickThroughUrl';
   protected $clickThroughUrlDataType = '';
   public $creativeId;
-
+//   
 
   public function setClickThroughUrl(Google_Service_Dfareporting_ClickThroughUrl $clickThroughUrl)
   {
     $this->clickThroughUrl = $clickThroughUrl;
-  }
+  //   }
   public function getClickThroughUrl()
   {
     return $this->clickThroughUrl;
@@ -9896,32 +9897,32 @@ class Google_Service_Dfareporting_CompanionClickThroughOverride extends Google_M
   public function setCreativeId($creativeId)
   {
     $this->creativeId = $creativeId;
-  }
+             }
   public function getCreativeId()
   {
     return $this->creativeId;
   }
-}
+              }
 
 class Google_Service_Dfareporting_CompatibleFields extends Google_Model
-{
+			{
   protected $internal_gapi_mappings = array(
   );
   protected $crossDimensionReachReportCompatibleFieldsType = 'Google_Service_Dfareporting_CrossDimensionReachReportCompatibleFields';
-  protected $crossDimensionReachReportCompatibleFieldsDataType = '';
+				protected $crossDimensionReachReportCompatibleFieldsDataType = '';
   protected $floodlightReportCompatibleFieldsType = 'Google_Service_Dfareporting_FloodlightReportCompatibleFields';
   protected $floodlightReportCompatibleFieldsDataType = '';
-  public $kind;
+	public $kind;
   protected $pathToConversionReportCompatibleFieldsType = 'Google_Service_Dfareporting_PathToConversionReportCompatibleFields';
   protected $pathToConversionReportCompatibleFieldsDataType = '';
-  protected $reachReportCompatibleFieldsType = 'Google_Service_Dfareporting_ReachReportCompatibleFields';
+          protected $reachReportCompatibleFieldsType = 'Google_Service_Dfareporting_ReachReportCompatibleFields';
   protected $reachReportCompatibleFieldsDataType = '';
   protected $reportCompatibleFieldsType = 'Google_Service_Dfareporting_ReportCompatibleFields';
   protected $reportCompatibleFieldsDataType = '';
 
 
   public function setCrossDimensionReachReportCompatibleFields(Google_Service_Dfareporting_CrossDimensionReachReportCompatibleFields $crossDimensionReachReportCompatibleFields)
-  {
+{
     $this->crossDimensionReachReportCompatibleFields = $crossDimensionReachReportCompatibleFields;
   }
   public function getCrossDimensionReachReportCompatibleFields()
@@ -9955,7 +9956,7 @@ class Google_Service_Dfareporting_CompatibleFields extends Google_Model
   public function setReachReportCompatibleFields(Google_Service_Dfareporting_ReachReportCompatibleFields $reachReportCompatibleFields)
   {
     $this->reachReportCompatibleFields = $reachReportCompatibleFields;
-  }
+			}
   public function getReachReportCompatibleFields()
   {
     return $this->reachReportCompatibleFields;
@@ -9969,16 +9970,14 @@ class Google_Service_Dfareporting_CompatibleFields extends Google_Model
     return $this->reportCompatibleFields;
   }
 }
-
-class Google_Service_Dfareporting_ConnectionType extends Google_Model
+      class Google_Service_Dfareporting_ConnectionType extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   public $id;
-  public $kind;
+               public $kind;
   public $name;
-
-
+          
   public function setId($id)
   {
     $this->id = $id;
@@ -9990,7 +9989,7 @@ class Google_Service_Dfareporting_ConnectionType extends Google_Model
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+   //     }
   public function getKind()
   {
     return $this->kind;
@@ -10006,12 +10005,12 @@ class Google_Service_Dfareporting_ConnectionType extends Google_Model
 }
 
 class Google_Service_Dfareporting_ConnectionTypesListResponse extends Google_Collection
-{
+       {
   protected $collection_key = 'connectionTypes';
   protected $internal_gapi_mappings = array(
   );
   protected $connectionTypesType = 'Google_Service_Dfareporting_ConnectionType';
-  protected $connectionTypesDataType = 'array';
+   //     protected $connectionTypesDataType = 'array';
   public $kind;
 
 
@@ -10021,7 +10020,8 @@ class Google_Service_Dfareporting_ConnectionTypesListResponse extends Google_Col
   }
   public function getConnectionTypes()
   {
-    return $this->connectionTypes;
+                 return $this->connectionTypes;
+  }
   }
   public function setKind($kind)
   {
@@ -10029,11 +10029,10 @@ class Google_Service_Dfareporting_ConnectionTypesListResponse extends Google_Col
   }
   public function getKind()
   {
-    return $this->kind;
+			return $this->kind;
   }
 }
-
-class Google_Service_Dfareporting_ContentCategoriesListResponse extends Google_Collection
+             class Google_Service_Dfareporting_ContentCategoriesListResponse extends Google_Collection
 {
   protected $collection_key = 'contentCategories';
   protected $internal_gapi_mappings = array(
@@ -10047,8 +10046,8 @@ class Google_Service_Dfareporting_ContentCategoriesListResponse extends Google_C
   public function setContentCategories($contentCategories)
   {
     $this->contentCategories = $contentCategories;
-  }
-  public function getContentCategories()
+}
+   //     public function getContentCategories()
   {
     return $this->contentCategories;
   }
@@ -10076,13 +10075,13 @@ class Google_Service_Dfareporting_ContentCategory extends Google_Model
   );
   public $accountId;
   public $description;
-  public $id;
+     public $id;
   public $kind;
   public $name;
 
 
   public function setAccountId($accountId)
-  {
+                {
     $this->accountId = $accountId;
   }
   public function getAccountId()
@@ -10095,7 +10094,7 @@ class Google_Service_Dfareporting_ContentCategory extends Google_Model
   }
   public function getDescription()
   {
-    return $this->description;
+         return $this->description;
   }
   public function setId($id)
   {
@@ -10123,7 +10122,7 @@ class Google_Service_Dfareporting_ContentCategory extends Google_Model
   }
 }
 
-class Google_Service_Dfareporting_CountriesListResponse extends Google_Collection
+				class Google_Service_Dfareporting_CountriesListResponse extends Google_Collection
 {
   protected $collection_key = 'countries';
   protected $internal_gapi_mappings = array(
@@ -10139,7 +10138,7 @@ class Google_Service_Dfareporting_CountriesListResponse extends Google_Collectio
   }
   public function getCountries()
   {
-    return $this->countries;
+ return $this->countries;
   }
   public function setKind($kind)
   {
@@ -10155,13 +10154,13 @@ class Google_Service_Dfareporting_Country extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $countryCode;
+        public $countryCode;
   public $dartId;
-  public $kind;
+     //    public $kind;
   public $name;
   public $sslEnabled;
 
-
+     //  
   public function setCountryCode($countryCode)
   {
     $this->countryCode = $countryCode;
@@ -10184,6 +10183,7 @@ class Google_Service_Dfareporting_Country extends Google_Model
   }
   public function getKind()
   {
+  {
     return $this->kind;
   }
   public function setName($name)
@@ -10199,9 +10199,9 @@ class Google_Service_Dfareporting_Country extends Google_Model
     $this->sslEnabled = $sslEnabled;
   }
   public function getSslEnabled()
-  {
-    return $this->sslEnabled;
-  }
+              {
+	return $this->sslEnabled;
+             }
 }
 
 class Google_Service_Dfareporting_Creative extends Google_Collection
@@ -10219,7 +10219,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public $archived;
   public $artworkType;
   public $authoringTool;
-  public $autoAdvanceImages;
+public $autoAdvanceImages;
   public $backgroundColor;
   public $backupImageClickThroughUrl;
   public $backupImageFeatures;
@@ -10234,11 +10234,11 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   protected $counterCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
   protected $counterCustomEventsDataType = 'array';
   protected $creativeAssetsType = 'Google_Service_Dfareporting_CreativeAsset';
-  protected $creativeAssetsDataType = 'array';
+	protected $creativeAssetsDataType = 'array';
   protected $creativeFieldAssignmentsType = 'Google_Service_Dfareporting_CreativeFieldAssignment';
   protected $creativeFieldAssignmentsDataType = 'array';
   public $customKeyValues;
-  protected $exitCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
+protected $exitCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
   protected $exitCustomEventsDataType = 'array';
   protected $fsCommandType = 'Google_Service_Dfareporting_FsCommand';
   protected $fsCommandDataType = '';
@@ -10246,9 +10246,9 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public $htmlCodeLocked;
   public $id;
   protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
-  protected $idDimensionValueDataType = '';
+ //    protected $idDimensionValueDataType = '';
   public $kind;
-  protected $lastModifiedInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
+				protected $lastModifiedInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
   protected $lastModifiedInfoDataType = '';
   public $latestTraffickedCreativeId;
   public $name;
@@ -10263,17 +10263,17 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   protected $sizeDataType = '';
   public $skippable;
   public $sslCompliant;
-  public $studioAdvertiserId;
+             public $studioAdvertiserId;
   public $studioCreativeId;
   public $studioTraffickedCreativeId;
   public $subaccountId;
   public $thirdPartyBackupImageImpressionsUrl;
-  public $thirdPartyRichMediaImpressionsUrl;
+              public $thirdPartyRichMediaImpressionsUrl;
   protected $thirdPartyUrlsType = 'Google_Service_Dfareporting_ThirdPartyTrackingUrl';
   protected $thirdPartyUrlsDataType = 'array';
   protected $timerCustomEventsType = 'Google_Service_Dfareporting_CreativeCustomEvent';
-  protected $timerCustomEventsDataType = 'array';
-  public $totalFileSize;
+     //   protected $timerCustomEventsDataType = 'array';
+    //     public $totalFileSize;
   public $type;
   public $version;
   public $videoDescription;
@@ -10293,7 +10293,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     $this->active = $active;
   }
   public function getActive()
-  {
+   //     {
     return $this->active;
   }
   public function setAdParameters($adParameters)
@@ -10325,10 +10325,9 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     $this->allowScriptAccess = $allowScriptAccess;
   }
   public function getAllowScriptAccess()
-  {
+		{
     return $this->allowScriptAccess;
   }
-  public function setArchived($archived)
   {
     $this->archived = $archived;
   }
@@ -10339,7 +10338,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function setArtworkType($artworkType)
   {
     $this->artworkType = $artworkType;
-  }
+   }
   public function getArtworkType()
   {
     return $this->artworkType;
@@ -10351,7 +10350,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function getAuthoringTool()
   {
     return $this->authoringTool;
-  }
+		}
   public function setAutoAdvanceImages($autoAdvanceImages)
   {
     $this->autoAdvanceImages = $autoAdvanceImages;
@@ -10372,7 +10371,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     $this->backupImageClickThroughUrl = $backupImageClickThroughUrl;
   }
-  public function getBackupImageClickThroughUrl()
+			public function getBackupImageClickThroughUrl()
   {
     return $this->backupImageClickThroughUrl;
   }
@@ -10396,7 +10395,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     $this->backupImageTargetWindow = $backupImageTargetWindow;
   }
-  public function getBackupImageTargetWindow()
+            public function getBackupImageTargetWindow()
   {
     return $this->backupImageTargetWindow;
   }
@@ -10405,13 +10404,12 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     $this->clickTags = $clickTags;
   }
   public function getClickTags()
-  {
+{
     return $this->clickTags;
   }
   public function setCommercialId($commercialId)
   {
     $this->commercialId = $commercialId;
-  }
   public function getCommercialId()
   {
     return $this->commercialId;
@@ -10426,7 +10424,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function setCompatibility($compatibility)
   {
-    $this->compatibility = $compatibility;
+				$this->compatibility = $compatibility;
   }
   public function getCompatibility()
   {
@@ -10437,13 +10435,13 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     $this->counterCustomEvents = $counterCustomEvents;
   }
   public function getCounterCustomEvents()
-  {
+{
     return $this->counterCustomEvents;
   }
   public function setCreativeAssets($creativeAssets)
   {
-    $this->creativeAssets = $creativeAssets;
-  }
+  //     $this->creativeAssets = $creativeAssets;
+ }
   public function getCreativeAssets()
   {
     return $this->creativeAssets;
@@ -10454,7 +10452,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function getCreativeFieldAssignments()
   {
-    return $this->creativeFieldAssignments;
+     return $this->creativeFieldAssignments;
   }
   public function setCustomKeyValues($customKeyValues)
   {
@@ -10476,14 +10474,14 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     $this->fsCommand = $fsCommand;
   }
-  public function getFsCommand()
+              public function getFsCommand()
   {
     return $this->fsCommand;
   }
   public function setHtmlCode($htmlCode)
   {
     $this->htmlCode = $htmlCode;
-  }
+ //    }
   public function getHtmlCode()
   {
     return $this->htmlCode;
@@ -10492,7 +10490,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     $this->htmlCodeLocked = $htmlCodeLocked;
   }
-  public function getHtmlCodeLocked()
+          public function getHtmlCodeLocked()
   {
     return $this->htmlCodeLocked;
   }
@@ -10515,9 +10513,9 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+             }
   public function getKind()
-  {
+			{
     return $this->kind;
   }
   public function setLastModifiedInfo(Google_Service_Dfareporting_LastModifiedInfo $lastModifiedInfo)
@@ -10526,19 +10524,20 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function getLastModifiedInfo()
   {
-    return $this->lastModifiedInfo;
+	return $this->lastModifiedInfo;
   }
   public function setLatestTraffickedCreativeId($latestTraffickedCreativeId)
   {
     $this->latestTraffickedCreativeId = $latestTraffickedCreativeId;
   }
   public function getLatestTraffickedCreativeId()
-  {
-    return $this->latestTraffickedCreativeId;
+             {
+   //     return $this->latestTraffickedCreativeId;
   }
   public function setName($name)
+  public function setName($name)
   {
-    $this->name = $name;
+   $this->name = $name;
   }
   public function getName()
   {
@@ -10558,11 +10557,11 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function getRedirectUrl()
   {
-    return $this->redirectUrl;
+ //    return $this->redirectUrl;
   }
   public function setRenderingId($renderingId)
   {
-    $this->renderingId = $renderingId;
+$this->renderingId = $renderingId;
   }
   public function getRenderingId()
   {
@@ -10570,7 +10569,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function setRenderingIdDimensionValue(Google_Service_Dfareporting_DimensionValue $renderingIdDimensionValue)
   {
-    $this->renderingIdDimensionValue = $renderingIdDimensionValue;
+  $this->renderingIdDimensionValue = $renderingIdDimensionValue;
   }
   public function getRenderingIdDimensionValue()
   {
@@ -10581,20 +10580,19 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     $this->requiredFlashPluginVersion = $requiredFlashPluginVersion;
   }
   public function getRequiredFlashPluginVersion()
-  {
-    return $this->requiredFlashPluginVersion;
+    {
+		return $this->requiredFlashPluginVersion;
   }
   public function setRequiredFlashVersion($requiredFlashVersion)
   {
     $this->requiredFlashVersion = $requiredFlashVersion;
-  }
+//   }
   public function getRequiredFlashVersion()
   {
     return $this->requiredFlashVersion;
   }
-  public function setSize(Google_Service_Dfareporting_Size $size)
+         public function setSize(Google_Service_Dfareporting_Size $size)
   {
-    $this->size = $size;
   }
   public function getSize()
   {
@@ -10604,16 +10602,17 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     $this->skippable = $skippable;
   }
-  public function getSkippable()
+  }
+          public function getSkippable()
   {
     return $this->skippable;
   }
   public function setSslCompliant($sslCompliant)
-  {
+      {
     $this->sslCompliant = $sslCompliant;
   }
   public function getSslCompliant()
-  {
+ //  {
     return $this->sslCompliant;
   }
   public function setStudioAdvertiserId($studioAdvertiserId)
@@ -10621,7 +10620,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     $this->studioAdvertiserId = $studioAdvertiserId;
   }
   public function getStudioAdvertiserId()
-  {
+				{
     return $this->studioAdvertiserId;
   }
   public function setStudioCreativeId($studioCreativeId)
@@ -10639,7 +10638,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function getStudioTraffickedCreativeId()
   {
     return $this->studioTraffickedCreativeId;
-  }
+				}
   public function setSubaccountId($subaccountId)
   {
     $this->subaccountId = $subaccountId;
@@ -10658,6 +10657,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function setThirdPartyRichMediaImpressionsUrl($thirdPartyRichMediaImpressionsUrl)
   {
+  {
     $this->thirdPartyRichMediaImpressionsUrl = $thirdPartyRichMediaImpressionsUrl;
   }
   public function getThirdPartyRichMediaImpressionsUrl()
@@ -10666,6 +10666,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   }
   public function setThirdPartyUrls($thirdPartyUrls)
   {
+  {
     $this->thirdPartyUrls = $thirdPartyUrls;
   }
   public function getThirdPartyUrls()
@@ -10673,7 +10674,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     return $this->thirdPartyUrls;
   }
   public function setTimerCustomEvents($timerCustomEvents)
-  {
+		{
     $this->timerCustomEvents = $timerCustomEvents;
   }
   public function getTimerCustomEvents()
@@ -10692,11 +10693,11 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     $this->type = $type;
   }
-  public function getType()
+    public function getType()
   {
     return $this->type;
   }
-  public function setVersion($version)
+				public function setVersion($version)
   {
     $this->version = $version;
   }
@@ -10705,7 +10706,7 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
     return $this->version;
   }
   public function setVideoDescription($videoDescription)
-  {
+     //    {
     $this->videoDescription = $videoDescription;
   }
   public function getVideoDescription()
@@ -10727,8 +10728,8 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   protected $collection_key = 'detectedFeatures';
   protected $internal_gapi_mappings = array(
   );
-  public $actionScript3;
-  public $active;
+             public $actionScript3;
+   public $active;
   public $alignment;
   public $artworkType;
   protected $assetIdentifierType = 'Google_Service_Dfareporting_CreativeAssetId';
@@ -10743,7 +10744,7 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   public $detectedFeatures;
   public $displayType;
   public $duration;
-  public $durationType;
+     //    public $durationType;
   protected $expandedDimensionType = 'Google_Service_Dfareporting_Size';
   protected $expandedDimensionDataType = '';
   public $fileSize;
@@ -10756,23 +10757,24 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   protected $offsetType = 'Google_Service_Dfareporting_OffsetPosition';
   protected $offsetDataType = '';
   public $originalBackup;
+  public $originalBackup;
   protected $positionType = 'Google_Service_Dfareporting_OffsetPosition';
   protected $positionDataType = '';
   public $positionLeftUnit;
   public $positionTopUnit;
   public $progressiveServingUrl;
   public $pushdown;
-  public $pushdownDuration;
+     public $pushdownDuration;
   public $role;
   protected $sizeType = 'Google_Service_Dfareporting_Size';
   protected $sizeDataType = '';
   public $sslCompliant;
   public $startTimeType;
-  public $streamingServingUrl;
+public $streamingServingUrl;
   public $transparency;
   public $verticallyLocked;
   public $videoDuration;
-  public $windowMode;
+   public $windowMode;
   public $zIndex;
   public $zipFilename;
   public $zipFilesize;
@@ -10780,7 +10782,6 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
 
   public function setActionScript3($actionScript3)
   {
-    $this->actionScript3 = $actionScript3;
   }
   public function getActionScript3()
   {
@@ -10789,7 +10790,7 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   public function setActive($active)
   {
     $this->active = $active;
-  }
+}
   public function getActive()
   {
     return $this->active;
@@ -10799,6 +10800,7 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
     $this->alignment = $alignment;
   }
   public function getAlignment()
+  public function getAlignment()
   {
     return $this->alignment;
   }
@@ -10806,8 +10808,8 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   {
     $this->artworkType = $artworkType;
   }
-  public function getArtworkType()
-  {
+              public function getArtworkType()
+     {
     return $this->artworkType;
   }
   public function setAssetIdentifier(Google_Service_Dfareporting_CreativeAssetId $assetIdentifier)
@@ -10816,14 +10818,14 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function getAssetIdentifier()
   {
-    return $this->assetIdentifier;
+              return $this->assetIdentifier;
   }
   public function setBackupImageExit(Google_Service_Dfareporting_CreativeCustomEvent $backupImageExit)
-  {
+	{
     $this->backupImageExit = $backupImageExit;
   }
   public function getBackupImageExit()
-  {
+          {
     return $this->backupImageExit;
   }
   public function setBitRate($bitRate)
@@ -10840,7 +10842,7 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function getChildAssetType()
   {
-    return $this->childAssetType;
+   //       return $this->childAssetType;
   }
   public function setCollapsedSize(Google_Service_Dfareporting_Size $collapsedSize)
   {
@@ -10855,14 +10857,14 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
     $this->customStartTimeValue = $customStartTimeValue;
   }
   public function getCustomStartTimeValue()
-  {
-    return $this->customStartTimeValue;
+{
+ //     return $this->customStartTimeValue;
   }
   public function setDetectedFeatures($detectedFeatures)
-  {
+     //   {
     $this->detectedFeatures = $detectedFeatures;
   }
-  public function getDetectedFeatures()
+				public function getDetectedFeatures()
   {
     return $this->detectedFeatures;
   }
@@ -10885,9 +10887,9 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   public function setDurationType($durationType)
   {
     $this->durationType = $durationType;
-  }
+}
   public function getDurationType()
-  {
+ {
     return $this->durationType;
   }
   public function setExpandedDimension(Google_Service_Dfareporting_Size $expandedDimension)
@@ -10899,11 +10901,12 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
     return $this->expandedDimension;
   }
   public function setFileSize($fileSize)
-  {
+    //   {
     $this->fileSize = $fileSize;
   }
-  public function getFileSize()
+    public function getFileSize()
   {
+    return $this->fileSize;
     return $this->fileSize;
   }
   public function setFlashVersion($flashVersion)
@@ -10932,10 +10935,10 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function setHorizontallyLocked($horizontallyLocked)
   {
-    $this->horizontallyLocked = $horizontallyLocked;
+					$this->horizontallyLocked = $horizontallyLocked;
   }
   public function getHorizontallyLocked()
-  {
+			{
     return $this->horizontallyLocked;
   }
   public function setId($id)
@@ -10948,7 +10951,7 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function setMimeType($mimeType)
   {
-    $this->mimeType = $mimeType;
+		$this->mimeType = $mimeType;
   }
   public function getMimeType()
   {
@@ -10956,19 +10959,18 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function setOffset(Google_Service_Dfareporting_OffsetPosition $offset)
   {
-    $this->offset = $offset;
+             $this->offset = $offset;
   }
   public function getOffset()
   {
     return $this->offset;
   }
-  public function setOriginalBackup($originalBackup)
   {
-    $this->originalBackup = $originalBackup;
+     $this->originalBackup = $originalBackup;
   }
   public function getOriginalBackup()
   {
-    return $this->originalBackup;
+					return $this->originalBackup;
   }
   public function setPosition(Google_Service_Dfareporting_OffsetPosition $position)
   {
@@ -10979,17 +10981,16 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
     return $this->position;
   }
   public function setPositionLeftUnit($positionLeftUnit)
-  {
+      {
     $this->positionLeftUnit = $positionLeftUnit;
   }
   public function getPositionLeftUnit()
-  {
-    return $this->positionLeftUnit;
+      {
   }
   public function setPositionTopUnit($positionTopUnit)
   {
     $this->positionTopUnit = $positionTopUnit;
-  }
+					}
   public function getPositionTopUnit()
   {
     return $this->positionTopUnit;
@@ -10997,11 +10998,11 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   public function setProgressiveServingUrl($progressiveServingUrl)
   {
     $this->progressiveServingUrl = $progressiveServingUrl;
-  }
+     //   }
   public function getProgressiveServingUrl()
   {
     return $this->progressiveServingUrl;
-  }
+  //    }
   public function setPushdown($pushdown)
   {
     $this->pushdown = $pushdown;
@@ -11012,20 +11013,19 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function setPushdownDuration($pushdownDuration)
   {
-    $this->pushdownDuration = $pushdownDuration;
-  }
-  public function getPushdownDuration()
+                 }
+ //    public function getPushdownDuration()
   {
     return $this->pushdownDuration;
-  }
-  public function setRole($role)
+               }
+			public function setRole($role)
   {
     $this->role = $role;
   }
   public function getRole()
   {
     return $this->role;
-  }
+	}
   public function setSize(Google_Service_Dfareporting_Size $size)
   {
     $this->size = $size;
@@ -11063,14 +11063,14 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
     $this->transparency = $transparency;
   }
   public function getTransparency()
-  {
+     //    {
     return $this->transparency;
   }
   public function setVerticallyLocked($verticallyLocked)
   {
-    $this->verticallyLocked = $verticallyLocked;
+ $this->verticallyLocked = $verticallyLocked;
   }
-  public function getVerticallyLocked()
+			public function getVerticallyLocked()
   {
     return $this->verticallyLocked;
   }
@@ -11084,14 +11084,14 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   }
   public function setWindowMode($windowMode)
   {
-    $this->windowMode = $windowMode;
+           $this->windowMode = $windowMode;
   }
   public function getWindowMode()
   {
     return $this->windowMode;
   }
   public function setZIndex($zIndex)
-  {
+    {
     $this->zIndex = $zIndex;
   }
   public function getZIndex()
@@ -11106,7 +11106,7 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
   {
     return $this->zipFilename;
   }
-  public function setZipFilesize($zipFilesize)
+                 public function setZipFilesize($zipFilesize)
   {
     $this->zipFilesize = $zipFilesize;
   }
@@ -11117,10 +11117,10 @@ class Google_Service_Dfareporting_CreativeAsset extends Google_Collection
 }
 
 class Google_Service_Dfareporting_CreativeAssetId extends Google_Model
-{
+ //   {
   protected $internal_gapi_mappings = array(
   );
-  public $name;
+//    public $name;
   public $type;
 
 
@@ -11138,11 +11138,11 @@ class Google_Service_Dfareporting_CreativeAssetId extends Google_Model
   }
   public function getType()
   {
-    return $this->type;
-  }
+               return $this->type;
+}
 }
 
-class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collection
+                class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collection
 {
   protected $collection_key = 'warnedValidationRules';
   protected $internal_gapi_mappings = array(
@@ -11159,7 +11159,7 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   public function setAssetIdentifier(Google_Service_Dfareporting_CreativeAssetId $assetIdentifier)
   {
     $this->assetIdentifier = $assetIdentifier;
-  }
+			}
   public function getAssetIdentifier()
   {
     return $this->assetIdentifier;
@@ -11168,7 +11168,7 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   {
     $this->clickTags = $clickTags;
   }
-  public function getClickTags()
+           public function getClickTags()
   {
     return $this->clickTags;
   }
@@ -11180,17 +11180,17 @@ class Google_Service_Dfareporting_CreativeAssetMetadata extends Google_Collectio
   {
     return $this->detectedFeatures;
   }
-  public function setKind($kind)
+             public function setKind($kind)
   {
     $this->kind = $kind;
   }
-  public function getKind()
+public function getKind()
   {
     return $this->kind;
   }
   public function setWarnedValidationRules($warnedValidationRules)
   {
-    $this->warnedValidationRules = $warnedValidationRules;
+                $this->warnedValidationRules = $warnedValidationRules;
   }
   public function getWarnedValidationRules()
   {
@@ -11202,8 +11202,8 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
 {
   protected $collection_key = 'richMediaExitOverrides';
   protected $internal_gapi_mappings = array(
-  );
-  public $active;
+              );
+      public $active;
   public $applyEventTags;
   protected $clickThroughUrlType = 'Google_Service_Dfareporting_ClickThroughUrl';
   protected $clickThroughUrlDataType = '';
@@ -11217,13 +11217,13 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
   public $endTime;
   protected $richMediaExitOverridesType = 'Google_Service_Dfareporting_RichMediaExitOverride';
   protected $richMediaExitOverridesDataType = 'array';
-  public $sequence;
+public $sequence;
   public $sslCompliant;
   public $startTime;
   public $weight;
+//   
 
-
-  public function setActive($active)
+          public function setActive($active)
   {
     $this->active = $active;
   }
@@ -11246,9 +11246,9 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
   public function getClickThroughUrl()
   {
     return $this->clickThroughUrl;
-  }
+    }
   public function setCompanionCreativeOverrides($companionCreativeOverrides)
-  {
+           {
     $this->companionCreativeOverrides = $companionCreativeOverrides;
   }
   public function getCompanionCreativeOverrides()
@@ -11258,7 +11258,7 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
   public function setCreativeGroupAssignments($creativeGroupAssignments)
   {
     $this->creativeGroupAssignments = $creativeGroupAssignments;
-  }
+            }
   public function getCreativeGroupAssignments()
   {
     return $this->creativeGroupAssignments;
@@ -11266,16 +11266,17 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
   public function setCreativeId($creativeId)
   {
     $this->creativeId = $creativeId;
+    $this->creativeId = $creativeId;
   }
   public function getCreativeId()
   {
-    return $this->creativeId;
+return $this->creativeId;
   }
   public function setCreativeIdDimensionValue(Google_Service_Dfareporting_DimensionValue $creativeIdDimensionValue)
   {
     $this->creativeIdDimensionValue = $creativeIdDimensionValue;
   }
-  public function getCreativeIdDimensionValue()
+ //   public function getCreativeIdDimensionValue()
   {
     return $this->creativeIdDimensionValue;
   }
@@ -11284,18 +11285,18 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
     $this->endTime = $endTime;
   }
   public function getEndTime()
-  {
-    return $this->endTime;
+    {
+			return $this->endTime;
   }
   public function setRichMediaExitOverrides($richMediaExitOverrides)
   {
     $this->richMediaExitOverrides = $richMediaExitOverrides;
   }
-  public function getRichMediaExitOverrides()
+ public function getRichMediaExitOverrides()
   {
     return $this->richMediaExitOverrides;
   }
-  public function setSequence($sequence)
+                 public function setSequence($sequence)
   {
     $this->sequence = $sequence;
   }
@@ -11310,44 +11311,44 @@ class Google_Service_Dfareporting_CreativeAssignment extends Google_Collection
   public function getSslCompliant()
   {
     return $this->sslCompliant;
-  }
+                }
   public function setStartTime($startTime)
   {
     $this->startTime = $startTime;
   }
   public function getStartTime()
-  {
+    {
     return $this->startTime;
   }
   public function setWeight($weight)
   {
-    $this->weight = $weight;
-  }
+      $this->weight = $weight;
+  //  }
   public function getWeight()
   {
     return $this->weight;
   }
 }
 
-class Google_Service_Dfareporting_CreativeCustomEvent extends Google_Model
+          class Google_Service_Dfareporting_CreativeCustomEvent extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $active;
+public $active;
   public $advertiserCustomEventName;
   public $advertiserCustomEventType;
-  public $artworkLabel;
-  public $artworkType;
+		public $artworkLabel;
+                 public $artworkType;
   public $exitUrl;
-  public $id;
+             public $id;
   protected $popupWindowPropertiesType = 'Google_Service_Dfareporting_PopupWindowProperties';
   protected $popupWindowPropertiesDataType = '';
   public $targetType;
   public $videoReportingId;
 
 
-  public function setActive($active)
-  {
+         public function setActive($active)
+   {
     $this->active = $active;
   }
   public function getActive()
@@ -11368,7 +11369,7 @@ class Google_Service_Dfareporting_CreativeCustomEvent extends Google_Model
   }
   public function getAdvertiserCustomEventType()
   {
-    return $this->advertiserCustomEventType;
+           return $this->advertiserCustomEventType;
   }
   public function setArtworkLabel($artworkLabel)
   {
@@ -11378,7 +11379,7 @@ class Google_Service_Dfareporting_CreativeCustomEvent extends Google_Model
   {
     return $this->artworkLabel;
   }
-  public function setArtworkType($artworkType)
+      public function setArtworkType($artworkType)
   {
     $this->artworkType = $artworkType;
   }
@@ -11420,7 +11421,7 @@ class Google_Service_Dfareporting_CreativeCustomEvent extends Google_Model
   }
   public function setVideoReportingId($videoReportingId)
   {
-    $this->videoReportingId = $videoReportingId;
+//     $this->videoReportingId = $videoReportingId;
   }
   public function getVideoReportingId()
   {
@@ -11429,11 +11430,11 @@ class Google_Service_Dfareporting_CreativeCustomEvent extends Google_Model
 }
 
 class Google_Service_Dfareporting_CreativeField extends Google_Model
-{
+    //   {
   protected $internal_gapi_mappings = array(
   );
   public $accountId;
-  public $advertiserId;
+   //  public $advertiserId;
   protected $advertiserIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $advertiserIdDimensionValueDataType = '';
   public $id;
@@ -11442,13 +11443,13 @@ class Google_Service_Dfareporting_CreativeField extends Google_Model
   public $subaccountId;
 
 
-  public function setAccountId($accountId)
+            public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
   }
   public function getAccountId()
   {
-    return $this->accountId;
+                 return $this->accountId;
   }
   public function setAdvertiserId($advertiserId)
   {
@@ -11456,16 +11457,16 @@ class Google_Service_Dfareporting_CreativeField extends Google_Model
   }
   public function getAdvertiserId()
   {
-    return $this->advertiserId;
+        return $this->advertiserId;
   }
-  public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
+				public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
   {
     $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
   }
   public function getAdvertiserIdDimensionValue()
   {
     return $this->advertiserIdDimensionValue;
-  }
+    }
   public function setId($id)
   {
     $this->id = $id;
@@ -11473,7 +11474,7 @@ class Google_Service_Dfareporting_CreativeField extends Google_Model
   public function getId()
   {
     return $this->id;
-  }
+     }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -11481,9 +11482,9 @@ class Google_Service_Dfareporting_CreativeField extends Google_Model
   public function getKind()
   {
     return $this->kind;
-  }
-  public function setName($name)
-  {
+	}
+  //  public function setName($name)
+				{
     $this->name = $name;
   }
   public function getName()
@@ -11498,7 +11499,7 @@ class Google_Service_Dfareporting_CreativeField extends Google_Model
   {
     return $this->subaccountId;
   }
-}
+  }
 
 class Google_Service_Dfareporting_CreativeFieldAssignment extends Google_Model
 {
@@ -11510,8 +11511,8 @@ class Google_Service_Dfareporting_CreativeFieldAssignment extends Google_Model
 
   public function setCreativeFieldId($creativeFieldId)
   {
-    $this->creativeFieldId = $creativeFieldId;
-  }
+ //     $this->creativeFieldId = $creativeFieldId;
+    //    }
   public function getCreativeFieldId()
   {
     return $this->creativeFieldId;
@@ -11521,39 +11522,38 @@ class Google_Service_Dfareporting_CreativeFieldAssignment extends Google_Model
     $this->creativeFieldValueId = $creativeFieldValueId;
   }
   public function getCreativeFieldValueId()
-  {
+{
     return $this->creativeFieldValueId;
-  }
 }
 
 class Google_Service_Dfareporting_CreativeFieldValue extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+					protected $internal_gapi_mappings = array(
   );
   public $id;
   public $kind;
   public $value;
 
-
+    //
   public function setId($id)
   {
     $this->id = $id;
   }
   public function getId()
-  {
+              {
     return $this->id;
   }
-  public function setKind($kind)
+			public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+   //     }
   public function getKind()
   {
     return $this->kind;
-  }
+					}
   public function setValue($value)
   {
-    $this->value = $value;
+$this->value = $value;
   }
   public function getValue()
   {
@@ -11588,31 +11588,32 @@ class Google_Service_Dfareporting_CreativeFieldValuesListResponse extends Google
   {
     return $this->kind;
   }
-  public function setNextPageToken($nextPageToken)
+                public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
-    return $this->nextPageToken;
+           return $this->nextPageToken;
   }
 }
 
 class Google_Service_Dfareporting_CreativeFieldsListResponse extends Google_Collection
-{
+     {
   protected $collection_key = 'creativeFields';
   protected $internal_gapi_mappings = array(
   );
   protected $creativeFieldsType = 'Google_Service_Dfareporting_CreativeField';
   protected $creativeFieldsDataType = 'array';
   public $kind;
-  public $nextPageToken;
+   public $nextPageToken;
 
 
   public function setCreativeFields($creativeFields)
   {
     $this->creativeFields = $creativeFields;
   }
+  public function getCreativeFields()
   public function getCreativeFields()
   {
     return $this->creativeFields;
@@ -11631,13 +11632,13 @@ class Google_Service_Dfareporting_CreativeFieldsListResponse extends Google_Coll
   }
   public function getNextPageToken()
   {
-    return $this->nextPageToken;
+			return $this->nextPageToken;
   }
 }
 
 class Google_Service_Dfareporting_CreativeGroup extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+   //  protected $internal_gapi_mappings = array(
   );
   public $accountId;
   public $advertiserId;
@@ -11652,7 +11653,7 @@ class Google_Service_Dfareporting_CreativeGroup extends Google_Model
 
   public function setAccountId($accountId)
   {
-    $this->accountId = $accountId;
+       $this->accountId = $accountId;
   }
   public function getAccountId()
   {
@@ -11668,7 +11669,7 @@ class Google_Service_Dfareporting_CreativeGroup extends Google_Model
   }
   public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
   {
-    $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
+				$this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
   }
   public function getAdvertiserIdDimensionValue()
   {
@@ -11680,7 +11681,6 @@ class Google_Service_Dfareporting_CreativeGroup extends Google_Model
   }
   public function getGroupNumber()
   {
-    return $this->groupNumber;
   }
   public function setId($id)
   {
@@ -11707,7 +11707,7 @@ class Google_Service_Dfareporting_CreativeGroup extends Google_Model
     return $this->name;
   }
   public function setSubaccountId($subaccountId)
-  {
+{
     $this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
@@ -11716,7 +11716,7 @@ class Google_Service_Dfareporting_CreativeGroup extends Google_Model
   }
 }
 
-class Google_Service_Dfareporting_CreativeGroupAssignment extends Google_Model
+	class Google_Service_Dfareporting_CreativeGroupAssignment extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -11724,18 +11724,18 @@ class Google_Service_Dfareporting_CreativeGroupAssignment extends Google_Model
   public $creativeGroupNumber;
 
 
-  public function setCreativeGroupId($creativeGroupId)
+					public function setCreativeGroupId($creativeGroupId)
   {
     $this->creativeGroupId = $creativeGroupId;
   }
   public function getCreativeGroupId()
   {
-    return $this->creativeGroupId;
+      return $this->creativeGroupId;
   }
   public function setCreativeGroupNumber($creativeGroupNumber)
   {
     $this->creativeGroupNumber = $creativeGroupNumber;
-  }
+       }
   public function getCreativeGroupNumber()
   {
     return $this->creativeGroupNumber;
@@ -11748,7 +11748,7 @@ class Google_Service_Dfareporting_CreativeGroupsListResponse extends Google_Coll
   protected $internal_gapi_mappings = array(
   );
   protected $creativeGroupsType = 'Google_Service_Dfareporting_CreativeGroup';
-  protected $creativeGroupsDataType = 'array';
+               protected $creativeGroupsDataType = 'array';
   public $kind;
   public $nextPageToken;
 
@@ -11791,7 +11791,7 @@ class Google_Service_Dfareporting_CreativeOptimizationConfiguration extends Goog
   public $optimizationModel;
 
 
-  public function setId($id)
+      public function setId($id)
   {
     $this->id = $id;
   }
@@ -11811,7 +11811,7 @@ class Google_Service_Dfareporting_CreativeOptimizationConfiguration extends Goog
   {
     $this->optimizationActivitys = $optimizationActivitys;
   }
-  public function getOptimizationActivitys()
+                 public function getOptimizationActivitys()
   {
     return $this->optimizationActivitys;
   }
@@ -11842,7 +11842,7 @@ class Google_Service_Dfareporting_CreativeRotation extends Google_Collection
     $this->creativeAssignments = $creativeAssignments;
   }
   public function getCreativeAssignments()
-  {
+				{
     return $this->creativeAssignments;
   }
   public function setCreativeOptimizationConfigurationId($creativeOptimizationConfigurationId)
@@ -11857,7 +11857,7 @@ class Google_Service_Dfareporting_CreativeRotation extends Google_Collection
   {
     $this->type = $type;
   }
-  public function getType()
+              public function getType()
   {
     return $this->type;
   }
@@ -11880,7 +11880,7 @@ class Google_Service_Dfareporting_CreativeSettings extends Google_Model
 
 
   public function setIFrameFooter($iFrameFooter)
-  {
+    {
     $this->iFrameFooter = $iFrameFooter;
   }
   public function getIFrameFooter()
@@ -11900,16 +11900,16 @@ class Google_Service_Dfareporting_CreativeSettings extends Google_Model
 class Google_Service_Dfareporting_CreativesListResponse extends Google_Collection
 {
   protected $collection_key = 'creatives';
-  protected $internal_gapi_mappings = array(
-  );
+protected $internal_gapi_mappings = array(
+   //    );
   protected $creativesType = 'Google_Service_Dfareporting_Creative';
   protected $creativesDataType = 'array';
-  public $kind;
+public $kind;
   public $nextPageToken;
 
 
   public function setCreatives($creatives)
-  {
+             {
     $this->creatives = $creatives;
   }
   public function getCreatives()
@@ -11926,7 +11926,7 @@ class Google_Service_Dfareporting_CreativesListResponse extends Google_Collectio
   }
   public function setNextPageToken($nextPageToken)
   {
-    $this->nextPageToken = $nextPageToken;
+      $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
@@ -11936,7 +11936,7 @@ class Google_Service_Dfareporting_CreativesListResponse extends Google_Collectio
 
 class Google_Service_Dfareporting_CrossDimensionReachReportCompatibleFields extends Google_Collection
 {
-  protected $collection_key = 'overlapMetrics';
+    //    protected $collection_key = 'overlapMetrics';
   protected $internal_gapi_mappings = array(
   );
   protected $breakdownType = 'Google_Service_Dfareporting_Dimension';
@@ -11950,7 +11950,7 @@ class Google_Service_Dfareporting_CrossDimensionReachReportCompatibleFields exte
   protected $overlapMetricsDataType = 'array';
 
 
-  public function setBreakdown($breakdown)
+               public function setBreakdown($breakdown)
   {
     $this->breakdown = $breakdown;
   }
@@ -11970,9 +11970,9 @@ class Google_Service_Dfareporting_CrossDimensionReachReportCompatibleFields exte
   {
     $this->kind = $kind;
   }
-  public function getKind()
+ //   public function getKind()
   {
-    return $this->kind;
+		return $this->kind;
   }
   public function setMetrics($metrics)
   {
@@ -11987,17 +11987,18 @@ class Google_Service_Dfareporting_CrossDimensionReachReportCompatibleFields exte
     $this->overlapMetrics = $overlapMetrics;
   }
   public function getOverlapMetrics()
+  public function getOverlapMetrics()
   {
     return $this->overlapMetrics;
   }
 }
 
 class Google_Service_Dfareporting_CustomRichMediaEvents extends Google_Collection
-{
+  {
   protected $collection_key = 'filteredEventIds';
-  protected $internal_gapi_mappings = array(
+                 protected $internal_gapi_mappings = array(
   );
-  protected $filteredEventIdsType = 'Google_Service_Dfareporting_DimensionValue';
+    //     protected $filteredEventIdsType = 'Google_Service_Dfareporting_DimensionValue';
   protected $filteredEventIdsDataType = 'array';
   public $kind;
 
@@ -12037,7 +12038,7 @@ class Google_Service_Dfareporting_DateRange extends Google_Model
   public function getEndDate()
   {
     return $this->endDate;
-  }
+               }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -12048,11 +12049,11 @@ class Google_Service_Dfareporting_DateRange extends Google_Model
   }
   public function setRelativeDateRange($relativeDateRange)
   {
-    $this->relativeDateRange = $relativeDateRange;
+			$this->relativeDateRange = $relativeDateRange;
   }
   public function getRelativeDateRange()
   {
-    return $this->relativeDateRange;
+ return $this->relativeDateRange;
   }
   public function setStartDate($startDate)
   {
@@ -12060,13 +12061,13 @@ class Google_Service_Dfareporting_DateRange extends Google_Model
   }
   public function getStartDate()
   {
-    return $this->startDate;
+   return $this->startDate;
   }
 }
 
 class Google_Service_Dfareporting_DayPartTargeting extends Google_Collection
 {
-  protected $collection_key = 'hoursOfDay';
+ protected $collection_key = 'hoursOfDay';
   protected $internal_gapi_mappings = array(
   );
   public $daysOfWeek;
@@ -12091,7 +12092,7 @@ class Google_Service_Dfareporting_DayPartTargeting extends Google_Collection
     return $this->hoursOfDay;
   }
   public function setUserLocalTime($userLocalTime)
-  {
+                 {
     $this->userLocalTime = $userLocalTime;
   }
   public function getUserLocalTime()
@@ -12102,21 +12103,20 @@ class Google_Service_Dfareporting_DayPartTargeting extends Google_Collection
 
 class Google_Service_Dfareporting_DefaultClickThroughEventTagProperties extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+               protected $internal_gapi_mappings = array(
   );
   public $defaultClickThroughEventTagId;
   public $overrideInheritedEventTag;
 
-
-  public function setDefaultClickThroughEventTagId($defaultClickThroughEventTagId)
+	  public function setDefaultClickThroughEventTagId($defaultClickThroughEventTagId)
   {
     $this->defaultClickThroughEventTagId = $defaultClickThroughEventTagId;
   }
   public function getDefaultClickThroughEventTagId()
-  {
+        {
     return $this->defaultClickThroughEventTagId;
   }
-  public function setOverrideInheritedEventTag($overrideInheritedEventTag)
+				public function setOverrideInheritedEventTag($overrideInheritedEventTag)
   {
     $this->overrideInheritedEventTag = $overrideInheritedEventTag;
   }
@@ -12132,12 +12132,11 @@ class Google_Service_Dfareporting_DeliverySchedule extends Google_Model
   );
   protected $frequencyCapType = 'Google_Service_Dfareporting_FrequencyCap';
   protected $frequencyCapDataType = '';
-  public $hardCutoff;
+	public $hardCutoff;
   public $impressionRatio;
   public $priority;
 
-
-  public function setFrequencyCap(Google_Service_Dfareporting_FrequencyCap $frequencyCap)
+				  public function setFrequencyCap(Google_Service_Dfareporting_FrequencyCap $frequencyCap)
   {
     $this->frequencyCap = $frequencyCap;
   }
@@ -12176,11 +12175,11 @@ class Google_Service_Dfareporting_DfareportingFile extends Google_Model
   protected $internal_gapi_mappings = array(
   );
   protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
-  protected $dateRangeDataType = '';
+	protected $dateRangeDataType = '';
   public $etag;
   public $fileName;
   public $format;
-  public $id;
+    //     public $id;
   public $kind;
   public $lastModifiedTime;
   public $reportId;
@@ -12190,7 +12189,7 @@ class Google_Service_Dfareporting_DfareportingFile extends Google_Model
 
 
   public function setDateRange(Google_Service_Dfareporting_DateRange $dateRange)
-  {
+    //    {
     $this->dateRange = $dateRange;
   }
   public function getDateRange()
@@ -12216,7 +12215,7 @@ class Google_Service_Dfareporting_DfareportingFile extends Google_Model
   public function setFormat($format)
   {
     $this->format = $format;
-  }
+     }
   public function getFormat()
   {
     return $this->format;
@@ -12229,7 +12228,7 @@ class Google_Service_Dfareporting_DfareportingFile extends Google_Model
   {
     return $this->id;
   }
-  public function setKind($kind)
+    //   public function setKind($kind)
   {
     $this->kind = $kind;
   }
@@ -12258,40 +12257,38 @@ class Google_Service_Dfareporting_DfareportingFile extends Google_Model
     $this->status = $status;
   }
   public function getStatus()
-  {
-    return $this->status;
+              {
+             return $this->status;
   }
   public function setUrls(Google_Service_Dfareporting_DfareportingFileUrls $urls)
   {
     $this->urls = $urls;
   }
-  public function getUrls()
-  {
+    //     public function getUrls()
+			{
     return $this->urls;
-  }
+}
 }
 
 class Google_Service_Dfareporting_DfareportingFileUrls extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+           );
   public $apiUrl;
   public $browserUrl;
-
-
-  public function setApiUrl($apiUrl)
+              	  public function setApiUrl($apiUrl)
   {
     $this->apiUrl = $apiUrl;
   }
   public function getApiUrl()
   {
-    return $this->apiUrl;
-  }
+					return $this->apiUrl;
+      }
   public function setBrowserUrl($browserUrl)
-  {
+                {
     $this->browserUrl = $browserUrl;
   }
-  public function getBrowserUrl()
+			public function getBrowserUrl()
   {
     return $this->browserUrl;
   }
@@ -12309,11 +12306,10 @@ class Google_Service_Dfareporting_DfpSettings extends Google_Model
   public $pubPaidPlacementAccepted;
   public $publisherPortalOnly;
 
-
-  public function setDfpNetworkCode($dfpNetworkCode)
+		        public function setDfpNetworkCode($dfpNetworkCode)
   {
     $this->dfpNetworkCode = $dfpNetworkCode;
-  }
+ //  }
   public function getDfpNetworkCode()
   {
     return $this->dfpNetworkCode;
@@ -12331,7 +12327,7 @@ class Google_Service_Dfareporting_DfpSettings extends Google_Model
     $this->programmaticPlacementAccepted = $programmaticPlacementAccepted;
   }
   public function getProgrammaticPlacementAccepted()
-  {
+                {
     return $this->programmaticPlacementAccepted;
   }
   public function setPubPaidPlacementAccepted($pubPaidPlacementAccepted)
@@ -12343,14 +12339,14 @@ class Google_Service_Dfareporting_DfpSettings extends Google_Model
     return $this->pubPaidPlacementAccepted;
   }
   public function setPublisherPortalOnly($publisherPortalOnly)
-  {
+           {
     $this->publisherPortalOnly = $publisherPortalOnly;
   }
   public function getPublisherPortalOnly()
   {
     return $this->publisherPortalOnly;
   }
-}
+					}
 
 class Google_Service_Dfareporting_Dimension extends Google_Model
 {
@@ -12358,12 +12354,12 @@ class Google_Service_Dfareporting_Dimension extends Google_Model
   );
   public $kind;
   public $name;
-
+ //
 
   public function setKind($kind)
   {
-    $this->kind = $kind;
-  }
+            $this->kind = $kind;
+           }
   public function getKind()
   {
     return $this->kind;
@@ -12380,7 +12376,7 @@ class Google_Service_Dfareporting_Dimension extends Google_Model
 
 class Google_Service_Dfareporting_DimensionFilter extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+       protected $internal_gapi_mappings = array(
   );
   public $dimensionName;
   public $kind;
@@ -12389,7 +12385,7 @@ class Google_Service_Dfareporting_DimensionFilter extends Google_Model
 
   public function setDimensionName($dimensionName)
   {
-    $this->dimensionName = $dimensionName;
+  //     $this->dimensionName = $dimensionName;
   }
   public function getDimensionName()
   {
@@ -12418,18 +12414,19 @@ class Google_Service_Dfareporting_DimensionValue extends Google_Model
   protected $internal_gapi_mappings = array(
   );
   public $dimensionName;
-  public $etag;
+//  public $etag;
   public $id;
+  public $kind;
   public $kind;
   public $matchType;
   public $value;
 
 
-  public function setDimensionName($dimensionName)
-  {
+    //   public function setDimensionName($dimensionName)
+     //   {
     $this->dimensionName = $dimensionName;
   }
-  public function getDimensionName()
+	public function getDimensionName()
   {
     return $this->dimensionName;
   }
@@ -12439,9 +12436,9 @@ class Google_Service_Dfareporting_DimensionValue extends Google_Model
   }
   public function getEtag()
   {
-    return $this->etag;
+ //      return $this->etag;
   }
-  public function setId($id)
+   public function setId($id)
   {
     $this->id = $id;
   }
@@ -12451,6 +12448,7 @@ class Google_Service_Dfareporting_DimensionValue extends Google_Model
   }
   public function setKind($kind)
   {
+    $this->kind = $kind;
     $this->kind = $kind;
   }
   public function getKind()
@@ -12469,18 +12467,19 @@ class Google_Service_Dfareporting_DimensionValue extends Google_Model
   {
     $this->value = $value;
   }
-  public function getValue()
+            public function getValue()
   {
-    return $this->value;
+return $this->value;
   }
 }
 
-class Google_Service_Dfareporting_DimensionValueList extends Google_Collection
+            class Google_Service_Dfareporting_DimensionValueList extends Google_Collection
 {
-  protected $collection_key = 'items';
+					protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
   );
   public $etag;
+  protected $itemsType = 'Google_Service_Dfareporting_DimensionValue';
   protected $itemsType = 'Google_Service_Dfareporting_DimensionValue';
   protected $itemsDataType = 'array';
   public $kind;
@@ -12490,7 +12489,7 @@ class Google_Service_Dfareporting_DimensionValueList extends Google_Collection
   public function setEtag($etag)
   {
     $this->etag = $etag;
-  }
+         }
   public function getEtag()
   {
     return $this->etag;
@@ -12499,7 +12498,7 @@ class Google_Service_Dfareporting_DimensionValueList extends Google_Collection
   {
     $this->items = $items;
   }
-  public function getItems()
+      public function getItems()
   {
     return $this->items;
   }
@@ -12510,7 +12509,7 @@ class Google_Service_Dfareporting_DimensionValueList extends Google_Collection
   public function getKind()
   {
     return $this->kind;
-  }
+ }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
@@ -12528,13 +12527,13 @@ class Google_Service_Dfareporting_DimensionValueRequest extends Google_Collectio
   );
   public $dimensionName;
   public $endDate;
-  protected $filtersType = 'Google_Service_Dfareporting_DimensionFilter';
+   //     protected $filtersType = 'Google_Service_Dfareporting_DimensionFilter';
   protected $filtersDataType = 'array';
   public $kind;
   public $startDate;
 
 
-  public function setDimensionName($dimensionName)
+              public function setDimensionName($dimensionName)
   {
     $this->dimensionName = $dimensionName;
   }
@@ -12543,7 +12542,7 @@ class Google_Service_Dfareporting_DimensionValueRequest extends Google_Collectio
     return $this->dimensionName;
   }
   public function setEndDate($endDate)
-  {
+ //    {
     $this->endDate = $endDate;
   }
   public function getEndDate()
@@ -12551,7 +12550,7 @@ class Google_Service_Dfareporting_DimensionValueRequest extends Google_Collectio
     return $this->endDate;
   }
   public function setFilters($filters)
-  {
+                {
     $this->filters = $filters;
   }
   public function getFilters()
@@ -12566,8 +12565,8 @@ class Google_Service_Dfareporting_DimensionValueRequest extends Google_Collectio
   {
     return $this->kind;
   }
-  public function setStartDate($startDate)
-  {
+              public function setStartDate($startDate)
+				{
     $this->startDate = $startDate;
   }
   public function getStartDate()
@@ -12575,14 +12574,13 @@ class Google_Service_Dfareporting_DimensionValueRequest extends Google_Collectio
     return $this->startDate;
   }
 }
-
-class Google_Service_Dfareporting_DirectorySite extends Google_Collection
+            class Google_Service_Dfareporting_DirectorySite extends Google_Collection
 {
   protected $collection_key = 'interstitialTagFormats';
   protected $internal_gapi_mappings = array(
-  );
+        );
   public $active;
-  protected $contactAssignmentsType = 'Google_Service_Dfareporting_DirectorySiteContactAssignment';
+ //  protected $contactAssignmentsType = 'Google_Service_Dfareporting_DirectorySiteContactAssignment';
   protected $contactAssignmentsDataType = 'array';
   public $countryId;
   public $currencyId;
@@ -12592,22 +12590,21 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   protected $idDimensionValueDataType = '';
   public $inpageTagFormats;
   public $interstitialTagFormats;
-  public $kind;
+               public $kind;
   public $name;
   public $parentId;
   protected $settingsType = 'Google_Service_Dfareporting_DirectorySiteSettings';
   protected $settingsDataType = '';
   public $url;
 
-
-  public function setActive($active)
+        public function setActive($active)
   {
     $this->active = $active;
   }
   public function getActive()
   {
     return $this->active;
-  }
+             }
   public function setContactAssignments($contactAssignments)
   {
     $this->contactAssignments = $contactAssignments;
@@ -12615,7 +12612,7 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   public function getContactAssignments()
   {
     return $this->contactAssignments;
-  }
+      }
   public function setCountryId($countryId)
   {
     $this->countryId = $countryId;
@@ -12634,7 +12631,6 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   }
   public function setDescription($description)
   {
-    $this->description = $description;
   }
   public function getDescription()
   {
@@ -12650,13 +12646,13 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   }
   public function setIdDimensionValue(Google_Service_Dfareporting_DimensionValue $idDimensionValue)
   {
-    $this->idDimensionValue = $idDimensionValue;
+//      $this->idDimensionValue = $idDimensionValue;
   }
   public function getIdDimensionValue()
-  {
+                {
     return $this->idDimensionValue;
   }
-  public function setInpageTagFormats($inpageTagFormats)
+					public function setInpageTagFormats($inpageTagFormats)
   {
     $this->inpageTagFormats = $inpageTagFormats;
   }
@@ -12665,20 +12661,20 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
     return $this->inpageTagFormats;
   }
   public function setInterstitialTagFormats($interstitialTagFormats)
-  {
+{
     $this->interstitialTagFormats = $interstitialTagFormats;
-  }
+    //    }
   public function getInterstitialTagFormats()
   {
     return $this->interstitialTagFormats;
-  }
+        }
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
+return $this->kind;
   }
   public function setName($name)
   {
@@ -12689,13 +12685,13 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
     return $this->name;
   }
   public function setParentId($parentId)
-  {
-    $this->parentId = $parentId;
+ {
+            $this->parentId = $parentId;
   }
   public function getParentId()
   {
     return $this->parentId;
-  }
+			}
   public function setSettings(Google_Service_Dfareporting_DirectorySiteSettings $settings)
   {
     $this->settings = $settings;
@@ -12714,7 +12710,7 @@ class Google_Service_Dfareporting_DirectorySite extends Google_Collection
   }
 }
 
-class Google_Service_Dfareporting_DirectorySiteContact extends Google_Model
+            class Google_Service_Dfareporting_DirectorySiteContact extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -12754,7 +12750,7 @@ class Google_Service_Dfareporting_DirectorySiteContact extends Google_Model
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+	}
   public function getKind()
   {
     return $this->kind;
@@ -12762,11 +12758,11 @@ class Google_Service_Dfareporting_DirectorySiteContact extends Google_Model
   public function setLastName($lastName)
   {
     $this->lastName = $lastName;
-  }
+   }
   public function getLastName()
   {
     return $this->lastName;
-  }
+					}
   public function setRole($role)
   {
     $this->role = $role;
@@ -12775,6 +12771,7 @@ class Google_Service_Dfareporting_DirectorySiteContact extends Google_Model
   {
     return $this->role;
   }
+  public function setType($type)
   public function setType($type)
   {
     $this->type = $type;
@@ -12796,6 +12793,7 @@ class Google_Service_Dfareporting_DirectorySiteContactAssignment extends Google_
   public function setContactId($contactId)
   {
     $this->contactId = $contactId;
+    $this->contactId = $contactId;
   }
   public function getContactId()
   {
@@ -12816,18 +12814,18 @@ class Google_Service_Dfareporting_DirectorySiteContactsListResponse extends Goog
   protected $collection_key = 'directorySiteContacts';
   protected $internal_gapi_mappings = array(
   );
-  protected $directorySiteContactsType = 'Google_Service_Dfareporting_DirectorySiteContact';
+					protected $directorySiteContactsType = 'Google_Service_Dfareporting_DirectorySiteContact';
   protected $directorySiteContactsDataType = 'array';
   public $kind;
   public $nextPageToken;
 
 
-  public function setDirectorySiteContacts($directorySiteContacts)
+      public function setDirectorySiteContacts($directorySiteContacts)
   {
     $this->directorySiteContacts = $directorySiteContacts;
   }
   public function getDirectorySiteContacts()
-  {
+ //  {
     return $this->directorySiteContacts;
   }
   public function setKind($kind)
@@ -12836,7 +12834,7 @@ class Google_Service_Dfareporting_DirectorySiteContactsListResponse extends Goog
   }
   public function getKind()
   {
-    return $this->kind;
+	return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
@@ -12850,7 +12848,7 @@ class Google_Service_Dfareporting_DirectorySiteContactsListResponse extends Goog
 
 class Google_Service_Dfareporting_DirectorySiteSettings extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+          protected $internal_gapi_mappings = array(
         "dfpSettings" => "dfp_settings",
         "instreamVideoPlacementAccepted" => "instream_video_placement_accepted",
   );
@@ -12858,24 +12856,24 @@ class Google_Service_Dfareporting_DirectorySiteSettings extends Google_Model
   protected $dfpSettingsType = 'Google_Service_Dfareporting_DfpSettings';
   protected $dfpSettingsDataType = '';
   public $instreamVideoPlacementAccepted;
-  public $interstitialPlacementAccepted;
+     //  public $interstitialPlacementAccepted;
   public $nielsenOcrOptOut;
   public $verificationTagOptOut;
   public $videoActiveViewOptOut;
 
 
   public function setActiveViewOptOut($activeViewOptOut)
-  {
+     {
     $this->activeViewOptOut = $activeViewOptOut;
   }
   public function getActiveViewOptOut()
   {
     return $this->activeViewOptOut;
-  }
+           }
   public function setDfpSettings(Google_Service_Dfareporting_DfpSettings $dfpSettings)
   {
     $this->dfpSettings = $dfpSettings;
-  }
+	}
   public function getDfpSettings()
   {
     return $this->dfpSettings;
@@ -12900,19 +12898,19 @@ class Google_Service_Dfareporting_DirectorySiteSettings extends Google_Model
   {
     $this->nielsenOcrOptOut = $nielsenOcrOptOut;
   }
-  public function getNielsenOcrOptOut()
+              public function getNielsenOcrOptOut()
   {
     return $this->nielsenOcrOptOut;
   }
   public function setVerificationTagOptOut($verificationTagOptOut)
   {
     $this->verificationTagOptOut = $verificationTagOptOut;
-  }
-  public function getVerificationTagOptOut()
+   //    }
+       public function getVerificationTagOptOut()
   {
     return $this->verificationTagOptOut;
   }
-  public function setVideoActiveViewOptOut($videoActiveViewOptOut)
+public function setVideoActiveViewOptOut($videoActiveViewOptOut)
   {
     $this->videoActiveViewOptOut = $videoActiveViewOptOut;
   }
@@ -12935,7 +12933,7 @@ class Google_Service_Dfareporting_DirectorySitesListResponse extends Google_Coll
 
   public function setDirectorySites($directorySites)
   {
-    $this->directorySites = $directorySites;
+     $this->directorySites = $directorySites;
   }
   public function getDirectorySites()
   {
@@ -12948,21 +12946,22 @@ class Google_Service_Dfareporting_DirectorySitesListResponse extends Google_Coll
   public function getKind()
   {
     return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
+           }
+	public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
-    return $this->nextPageToken;
-  }
+	return $this->nextPageToken;
+  //     }
 }
 
 class Google_Service_Dfareporting_EventTag extends Google_Collection
 {
   protected $collection_key = 'siteIds';
   protected $internal_gapi_mappings = array(
+  );
   );
   public $accountId;
   public $advertiserId;
@@ -12971,12 +12970,12 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   public $campaignId;
   protected $campaignIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $campaignIdDimensionValueDataType = '';
-  public $enabledByDefault;
+     public $enabledByDefault;
   public $id;
   public $kind;
   public $name;
   public $siteFilterType;
-  public $siteIds;
+   public $siteIds;
   public $sslCompliant;
   public $status;
   public $subaccountId;
@@ -12995,7 +12994,7 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   }
   public function setAdvertiserId($advertiserId)
   {
-    $this->advertiserId = $advertiserId;
+				$this->advertiserId = $advertiserId;
   }
   public function getAdvertiserId()
   {
@@ -13015,7 +13014,7 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   }
   public function getCampaignId()
   {
-    return $this->campaignId;
+         return $this->campaignId;
   }
   public function setCampaignIdDimensionValue(Google_Service_Dfareporting_DimensionValue $campaignIdDimensionValue)
   {
@@ -13023,7 +13022,7 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   }
   public function getCampaignIdDimensionValue()
   {
-    return $this->campaignIdDimensionValue;
+   return $this->campaignIdDimensionValue;
   }
   public function setEnabledByDefault($enabledByDefault)
   {
@@ -13051,7 +13050,7 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   }
   public function setName($name)
   {
-    $this->name = $name;
+  $this->name = $name;
   }
   public function getName()
   {
@@ -13059,13 +13058,13 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   }
   public function setSiteFilterType($siteFilterType)
   {
-    $this->siteFilterType = $siteFilterType;
-  }
+            $this->siteFilterType = $siteFilterType;
+               }
   public function getSiteFilterType()
   {
     return $this->siteFilterType;
   }
-  public function setSiteIds($siteIds)
+			public function setSiteIds($siteIds)
   {
     $this->siteIds = $siteIds;
   }
@@ -13073,21 +13072,21 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   {
     return $this->siteIds;
   }
-  public function setSslCompliant($sslCompliant)
+       public function setSslCompliant($sslCompliant)
   {
     $this->sslCompliant = $sslCompliant;
   }
   public function getSslCompliant()
   {
     return $this->sslCompliant;
-  }
-  public function setStatus($status)
+				}
+     //     public function setStatus($status)
   {
-    $this->status = $status;
+               $this->status = $status;
   }
-  public function getStatus()
-  {
+				public function getStatus()
     return $this->status;
+  }
   }
   public function setSubaccountId($subaccountId)
   {
@@ -13099,18 +13098,19 @@ class Google_Service_Dfareporting_EventTag extends Google_Collection
   }
   public function setType($type)
   {
-    $this->type = $type;
+		$this->type = $type;
   }
-  public function getType()
+   public function getType()
   {
-    return $this->type;
+  {
+			return $this->type;
   }
   public function setUrl($url)
   {
     $this->url = $url;
   }
-  public function getUrl()
-  {
+    //  public function getUrl()
+    {
     return $this->url;
   }
   public function setUrlEscapeLevels($urlEscapeLevels)
@@ -13169,20 +13169,20 @@ class Google_Service_Dfareporting_EventTagsListResponse extends Google_Collectio
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+		$this->kind = $kind;
   }
-  public function getKind()
+		public function getKind()
   {
     return $this->kind;
   }
 }
-
+//
 class Google_Service_Dfareporting_FileList extends Google_Collection
 {
-  protected $collection_key = 'items';
+		protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
   );
-  public $etag;
+			public $etag;
   protected $itemsType = 'Google_Service_Dfareporting_DfareportingFile';
   protected $itemsDataType = 'array';
   public $kind;
@@ -13211,7 +13211,7 @@ class Google_Service_Dfareporting_FileList extends Google_Collection
   }
   public function getKind()
   {
-    return $this->kind;
+              return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
@@ -13220,18 +13220,16 @@ class Google_Service_Dfareporting_FileList extends Google_Collection
   public function getNextPageToken()
   {
     return $this->nextPageToken;
-  }
+			}
 }
 
 class Google_Service_Dfareporting_FloodlightActivitiesGenerateTagResponse extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
   public $floodlightActivityTag;
   public $kind;
 
-
-  public function setFloodlightActivityTag($floodlightActivityTag)
+         public function setFloodlightActivityTag($floodlightActivityTag)
   {
     $this->floodlightActivityTag = $floodlightActivityTag;
   }
@@ -13249,17 +13247,16 @@ class Google_Service_Dfareporting_FloodlightActivitiesGenerateTagResponse extend
   }
 }
 
-class Google_Service_Dfareporting_FloodlightActivitiesListResponse extends Google_Collection
+  class Google_Service_Dfareporting_FloodlightActivitiesListResponse extends Google_Collection
 {
   protected $collection_key = 'floodlightActivities';
   protected $internal_gapi_mappings = array(
   );
   protected $floodlightActivitiesType = 'Google_Service_Dfareporting_FloodlightActivity';
   protected $floodlightActivitiesDataType = 'array';
-  public $kind;
+      public $kind;
   public $nextPageToken;
-
-
+          
   public function setFloodlightActivities($floodlightActivities)
   {
     $this->floodlightActivities = $floodlightActivities;
@@ -13286,7 +13283,7 @@ class Google_Service_Dfareporting_FloodlightActivitiesListResponse extends Googl
   }
 }
 
-class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
+  class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
 {
   protected $collection_key = 'userDefinedVariableTypes';
   protected $internal_gapi_mappings = array(
@@ -13298,7 +13295,7 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   public $cacheBustingType;
   public $countingMethod;
   protected $defaultTagsType = 'Google_Service_Dfareporting_FloodlightActivityDynamicTag';
-  protected $defaultTagsDataType = 'array';
+protected $defaultTagsDataType = 'array';
   public $expectedUrl;
   public $floodlightActivityGroupId;
   public $floodlightActivityGroupName;
@@ -13320,38 +13317,38 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   public $secure;
   public $sslCompliant;
   public $sslRequired;
-  public $subaccountId;
+        public $subaccountId;
   public $tagFormat;
   public $tagString;
-  public $userDefinedVariableTypes;
+        public $userDefinedVariableTypes;
 
 
   public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
-  }
+			}
   public function getAccountId()
   {
-    return $this->accountId;
+    //       return $this->accountId;
   }
   public function setAdvertiserId($advertiserId)
   {
     $this->advertiserId = $advertiserId;
-  }
+     }
   public function getAdvertiserId()
   {
-    return $this->advertiserId;
+		return $this->advertiserId;
   }
   public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
   {
     $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
-  }
+}
   public function getAdvertiserIdDimensionValue()
   {
     return $this->advertiserIdDimensionValue;
   }
   public function setCacheBustingType($cacheBustingType)
-  {
+				{
     $this->cacheBustingType = $cacheBustingType;
   }
   public function getCacheBustingType()
@@ -13360,18 +13357,17 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   }
   public function setCountingMethod($countingMethod)
   {
-    $this->countingMethod = $countingMethod;
-  }
-  public function getCountingMethod()
+					$this->countingMethod = $countingMethod;
+            }
+           public function getCountingMethod()
   {
     return $this->countingMethod;
   }
   public function setDefaultTags($defaultTags)
-  {
+			{
     $this->defaultTags = $defaultTags;
   }
   public function getDefaultTags()
-  {
     return $this->defaultTags;
   }
   public function setExpectedUrl($expectedUrl)
@@ -13387,13 +13383,13 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
     $this->floodlightActivityGroupId = $floodlightActivityGroupId;
   }
   public function getFloodlightActivityGroupId()
-  {
+           {
     return $this->floodlightActivityGroupId;
   }
   public function setFloodlightActivityGroupName($floodlightActivityGroupName)
   {
     $this->floodlightActivityGroupName = $floodlightActivityGroupName;
-  }
+               }
   public function getFloodlightActivityGroupName()
   {
     return $this->floodlightActivityGroupName;
@@ -13407,7 +13403,7 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
     return $this->floodlightActivityGroupTagString;
   }
   public function setFloodlightActivityGroupType($floodlightActivityGroupType)
-  {
+			{
     $this->floodlightActivityGroupType = $floodlightActivityGroupType;
   }
   public function getFloodlightActivityGroupType()
@@ -13433,7 +13429,7 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   public function setHidden($hidden)
   {
     $this->hidden = $hidden;
-  }
+					}
   public function getHidden()
   {
     return $this->hidden;
@@ -13442,15 +13438,15 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   {
     $this->id = $id;
   }
-  public function getId()
+                public function getId()
   {
     return $this->id;
-  }
-  public function setIdDimensionValue(Google_Service_Dfareporting_DimensionValue $idDimensionValue)
-  {
+                 }
+ public function setIdDimensionValue(Google_Service_Dfareporting_DimensionValue $idDimensionValue)
+ {
     $this->idDimensionValue = $idDimensionValue;
   }
-  public function getIdDimensionValue()
+			public function getIdDimensionValue()
   {
     return $this->idDimensionValue;
   }
@@ -13485,6 +13481,7 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   public function getNotes()
   {
     return $this->notes;
+    return $this->notes;
   }
   public function setPublisherTags($publisherTags)
   {
@@ -13499,7 +13496,7 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
     $this->secure = $secure;
   }
   public function getSecure()
-  {
+					{
     return $this->secure;
   }
   public function setSslCompliant($sslCompliant)
@@ -13510,12 +13507,12 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   {
     return $this->sslCompliant;
   }
-  public function setSslRequired($sslRequired)
+     //     public function setSslRequired($sslRequired)
   {
     $this->sslRequired = $sslRequired;
   }
   public function getSslRequired()
-  {
+              {
     return $this->sslRequired;
   }
   public function setSubaccountId($subaccountId)
@@ -13552,8 +13549,8 @@ class Google_Service_Dfareporting_FloodlightActivity extends Google_Collection
   }
 }
 
-class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Model
-{
+		class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Model
+   //{
   protected $internal_gapi_mappings = array(
   );
   public $id;
@@ -13561,7 +13558,7 @@ class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Mo
   public $tag;
 
 
-  public function setId($id)
+          public function setId($id)
   {
     $this->id = $id;
   }
@@ -13574,7 +13571,7 @@ class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Mo
     $this->name = $name;
   }
   public function getName()
-  {
+{
     return $this->name;
   }
   public function setTag($tag)
@@ -13585,12 +13582,12 @@ class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Mo
   {
     return $this->tag;
   }
-}
+	}
 
 class Google_Service_Dfareporting_FloodlightActivityGroup extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+//  );
   public $accountId;
   public $advertiserId;
   protected $advertiserIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
@@ -13606,28 +13603,27 @@ class Google_Service_Dfareporting_FloodlightActivityGroup extends Google_Model
   public $subaccountId;
   public $tagString;
   public $type;
-
-
-  public function setAccountId($accountId)
-  {
+                     public function setAccountId($accountId)
+		{
     $this->accountId = $accountId;
-  }
+			}
   public function getAccountId()
   {
     return $this->accountId;
   }
   public function setAdvertiserId($advertiserId)
-  {
+      {
+    $this->advertiserId = $advertiserId;
     $this->advertiserId = $advertiserId;
   }
   public function getAdvertiserId()
   {
     return $this->advertiserId;
-  }
+               }
   public function setAdvertiserIdDimensionValue(Google_Service_Dfareporting_DimensionValue $advertiserIdDimensionValue)
   {
     $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
-  }
+				}
   public function getAdvertiserIdDimensionValue()
   {
     return $this->advertiserIdDimensionValue;
@@ -13639,11 +13635,11 @@ class Google_Service_Dfareporting_FloodlightActivityGroup extends Google_Model
   public function getFloodlightConfigurationId()
   {
     return $this->floodlightConfigurationId;
-  }
+          }
   public function setFloodlightConfigurationIdDimensionValue(Google_Service_Dfareporting_DimensionValue $floodlightConfigurationIdDimensionValue)
   {
     $this->floodlightConfigurationIdDimensionValue = $floodlightConfigurationIdDimensionValue;
-  }
+			}
   public function getFloodlightConfigurationIdDimensionValue()
   {
     return $this->floodlightConfigurationIdDimensionValue;
@@ -13691,10 +13687,10 @@ class Google_Service_Dfareporting_FloodlightActivityGroup extends Google_Model
   public function setTagString($tagString)
   {
     $this->tagString = $tagString;
-  }
+					}
   public function getTagString()
   {
-    return $this->tagString;
+               return $this->tagString;
   }
   public function setType($type)
   {
@@ -13703,7 +13699,7 @@ class Google_Service_Dfareporting_FloodlightActivityGroup extends Google_Model
   public function getType()
   {
     return $this->type;
-  }
+					}
 }
 
 class Google_Service_Dfareporting_FloodlightActivityGroupsListResponse extends Google_Collection
@@ -13732,12 +13728,12 @@ class Google_Service_Dfareporting_FloodlightActivityGroupsListResponse extends G
   public function getKind()
   {
     return $this->kind;
-  }
+ }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken()
+             public function getNextPageToken()
   {
     return $this->nextPageToken;
   }
@@ -13766,7 +13762,7 @@ class Google_Service_Dfareporting_FloodlightActivityPublisherDynamicTag extends 
     return $this->clickThrough;
   }
   public function setDirectorySiteId($directorySiteId)
-  {
+    {
     $this->directorySiteId = $directorySiteId;
   }
   public function getDirectorySiteId()
@@ -13784,18 +13780,19 @@ class Google_Service_Dfareporting_FloodlightActivityPublisherDynamicTag extends 
   public function setSiteId($siteId)
   {
     $this->siteId = $siteId;
+    $this->siteId = $siteId;
   }
   public function getSiteId()
   {
     return $this->siteId;
   }
   public function setSiteIdDimensionValue(Google_Service_Dfareporting_DimensionValue $siteIdDimensionValue)
-  {
+  //     {
     $this->siteIdDimensionValue = $siteIdDimensionValue;
   }
-  public function getSiteIdDimensionValue()
-  {
-    return $this->siteIdDimensionValue;
+               public function getSiteIdDimensionValue()
+             {
+return $this->siteIdDimensionValue;
   }
   public function setViewThrough($viewThrough)
   {
@@ -13813,7 +13810,7 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
   protected $internal_gapi_mappings = array(
   );
   public $accountId;
-  public $advertiserId;
+public $advertiserId;
   protected $advertiserIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $advertiserIdDimensionValueDataType = '';
   public $analyticsDataSharingEnabled;
@@ -13836,7 +13833,6 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
   protected $userDefinedVariableConfigurationsType = 'Google_Service_Dfareporting_UserDefinedVariableConfiguration';
   protected $userDefinedVariableConfigurationsDataType = 'array';
 
-
   public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
@@ -13844,10 +13840,11 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
   public function getAccountId()
   {
     return $this->accountId;
+    return $this->accountId;
   }
   public function setAdvertiserId($advertiserId)
-  {
-    $this->advertiserId = $advertiserId;
+                 {
+			$this->advertiserId = $advertiserId;
   }
   public function getAdvertiserId()
   {
@@ -13888,9 +13885,9 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
   public function setId($id)
   {
     $this->id = $id;
-  }
-  public function getId()
-  {
+   }
+        public function getId()
+    //    {
     return $this->id;
   }
   public function setIdDimensionValue(Google_Service_Dfareporting_DimensionValue $idDimensionValue)
@@ -13899,7 +13896,7 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
   }
   public function getIdDimensionValue()
   {
-    return $this->idDimensionValue;
+               return $this->idDimensionValue;
   }
   public function setKind($kind)
   {
@@ -13907,35 +13904,35 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
   }
   public function getKind()
   {
-    return $this->kind;
+       return $this->kind;
   }
-  public function setLookbackConfiguration(Google_Service_Dfareporting_LookbackConfiguration $lookbackConfiguration)
+         public function setLookbackConfiguration(Google_Service_Dfareporting_LookbackConfiguration $lookbackConfiguration)
   {
-    $this->lookbackConfiguration = $lookbackConfiguration;
+$this->lookbackConfiguration = $lookbackConfiguration;
   }
   public function getLookbackConfiguration()
-  {
+              {
     return $this->lookbackConfiguration;
   }
-  public function setNaturalSearchConversionAttributionOption($naturalSearchConversionAttributionOption)
+    public function setNaturalSearchConversionAttributionOption($naturalSearchConversionAttributionOption)
   {
     $this->naturalSearchConversionAttributionOption = $naturalSearchConversionAttributionOption;
-  }
-  public function getNaturalSearchConversionAttributionOption()
-  {
+      }
+			public function getNaturalSearchConversionAttributionOption()
+				{
     return $this->naturalSearchConversionAttributionOption;
   }
   public function setOmnitureSettings(Google_Service_Dfareporting_OmnitureSettings $omnitureSettings)
-  {
+                {
     $this->omnitureSettings = $omnitureSettings;
   }
   public function getOmnitureSettings()
   {
-    return $this->omnitureSettings;
-  }
+   //      return $this->omnitureSettings;
+  //     }
   public function setSslRequired($sslRequired)
   {
-    $this->sslRequired = $sslRequired;
+					$this->sslRequired = $sslRequired;
   }
   public function getSslRequired()
   {
@@ -13970,9 +13967,9 @@ class Google_Service_Dfareporting_FloodlightConfiguration extends Google_Collect
     $this->userDefinedVariableConfigurations = $userDefinedVariableConfigurations;
   }
   public function getUserDefinedVariableConfigurations()
-  {
+        {
     return $this->userDefinedVariableConfigurations;
-  }
+         }
 }
 
 class Google_Service_Dfareporting_FloodlightConfigurationsListResponse extends Google_Collection
@@ -13980,21 +13977,21 @@ class Google_Service_Dfareporting_FloodlightConfigurationsListResponse extends G
   protected $collection_key = 'floodlightConfigurations';
   protected $internal_gapi_mappings = array(
   );
-  protected $floodlightConfigurationsType = 'Google_Service_Dfareporting_FloodlightConfiguration';
+	protected $floodlightConfigurationsType = 'Google_Service_Dfareporting_FloodlightConfiguration';
   protected $floodlightConfigurationsDataType = 'array';
-  public $kind;
+   public $kind;
 
 
   public function setFloodlightConfigurations($floodlightConfigurations)
   {
     $this->floodlightConfigurations = $floodlightConfigurations;
   }
-  public function getFloodlightConfigurations()
+          public function getFloodlightConfigurations()
   {
     return $this->floodlightConfigurations;
   }
-  public function setKind($kind)
-  {
+     //  public function setKind($kind)
+            {
     $this->kind = $kind;
   }
   public function getKind()
@@ -14008,7 +14005,7 @@ class Google_Service_Dfareporting_FloodlightReportCompatibleFields extends Googl
   protected $collection_key = 'metrics';
   protected $internal_gapi_mappings = array(
   );
-  protected $dimensionFiltersType = 'Google_Service_Dfareporting_Dimension';
+   //     protected $dimensionFiltersType = 'Google_Service_Dfareporting_Dimension';
   protected $dimensionFiltersDataType = 'array';
   protected $dimensionsType = 'Google_Service_Dfareporting_Dimension';
   protected $dimensionsDataType = 'array';
@@ -14026,13 +14023,13 @@ class Google_Service_Dfareporting_FloodlightReportCompatibleFields extends Googl
     return $this->dimensionFilters;
   }
   public function setDimensions($dimensions)
-  {
+			{
     $this->dimensions = $dimensions;
-  }
+      }
   public function getDimensions()
   {
     return $this->dimensions;
-  }
+  //   }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -14045,13 +14042,13 @@ class Google_Service_Dfareporting_FloodlightReportCompatibleFields extends Googl
   {
     $this->metrics = $metrics;
   }
-  public function getMetrics()
+                public function getMetrics()
   {
     return $this->metrics;
   }
 }
 
-class Google_Service_Dfareporting_FrequencyCap extends Google_Model
+  //   class Google_Service_Dfareporting_FrequencyCap extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -14072,15 +14069,15 @@ class Google_Service_Dfareporting_FrequencyCap extends Google_Model
     $this->impressions = $impressions;
   }
   public function getImpressions()
-  {
+  //   {
     return $this->impressions;
-  }
-}
+				}
+ }
 
 class Google_Service_Dfareporting_FsCommand extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+//     );
   public $left;
   public $positionOption;
   public $top;
@@ -14108,12 +14105,12 @@ class Google_Service_Dfareporting_FsCommand extends Google_Model
   {
     $this->top = $top;
   }
-  public function getTop()
-  {
+   public function getTop()
+   {
     return $this->top;
   }
   public function setWindowHeight($windowHeight)
-  {
+        {
     $this->windowHeight = $windowHeight;
   }
   public function getWindowHeight()
@@ -14139,7 +14136,7 @@ class Google_Service_Dfareporting_GeoTargeting extends Google_Collection
   protected $citiesDataType = 'array';
   protected $countriesType = 'Google_Service_Dfareporting_Country';
   protected $countriesDataType = 'array';
-  public $excludeCountries;
+   //     public $excludeCountries;
   protected $metrosType = 'Google_Service_Dfareporting_Metro';
   protected $metrosDataType = 'array';
   protected $postalCodesType = 'Google_Service_Dfareporting_PostalCode';
@@ -14151,13 +14148,13 @@ class Google_Service_Dfareporting_GeoTargeting extends Google_Collection
   public function setCities($cities)
   {
     $this->cities = $cities;
-  }
+            }
   public function getCities()
   {
     return $this->cities;
   }
   public function setCountries($countries)
-  {
+//   {
     $this->countries = $countries;
   }
   public function getCountries()
@@ -14168,18 +14165,18 @@ class Google_Service_Dfareporting_GeoTargeting extends Google_Collection
   {
     $this->excludeCountries = $excludeCountries;
   }
-  public function getExcludeCountries()
+     public function getExcludeCountries()
   {
     return $this->excludeCountries;
-  }
+      }
   public function setMetros($metros)
   {
-    $this->metros = $metros;
+			$this->metros = $metros;
   }
   public function getMetros()
   {
     return $this->metros;
-  }
+      }
   public function setPostalCodes($postalCodes)
   {
     $this->postalCodes = $postalCodes;
@@ -14197,20 +14194,18 @@ class Google_Service_Dfareporting_GeoTargeting extends Google_Collection
     return $this->regions;
   }
 }
-
-class Google_Service_Dfareporting_KeyValueTargetingExpression extends Google_Model
+   class Google_Service_Dfareporting_KeyValueTargetingExpression extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   public $expression;
-
-
+		
   public function setExpression($expression)
   {
     $this->expression = $expression;
   }
   public function getExpression()
-  {
+     {
     return $this->expression;
   }
 }
@@ -14219,7 +14214,7 @@ class Google_Service_Dfareporting_LandingPage extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $default;
+    public $default;
   public $id;
   public $kind;
   public $name;
@@ -14228,9 +14223,10 @@ class Google_Service_Dfareporting_LandingPage extends Google_Model
 
   public function setDefault($default)
   {
+  {
     $this->default = $default;
-  }
-  public function getDefault()
+	}
+         public function getDefault()
   {
     return $this->default;
   }
@@ -14245,17 +14241,17 @@ class Google_Service_Dfareporting_LandingPage extends Google_Model
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+				}
   public function getKind()
-  {
+			{
     return $this->kind;
   }
-  public function setName($name)
+   public function setName($name)
   {
     $this->name = $name;
   }
   public function getName()
-  {
+ //    {
     return $this->name;
   }
   public function setUrl($url)
@@ -14277,57 +14273,54 @@ class Google_Service_Dfareporting_LandingPagesListResponse extends Google_Collec
   protected $landingPagesType = 'Google_Service_Dfareporting_LandingPage';
   protected $landingPagesDataType = 'array';
 
-
-  public function setKind($kind)
+			  public function setKind($kind)
   {
-    $this->kind = $kind;
+				$this->kind = $kind;
   }
-  public function getKind()
+   //  public function getKind()
   {
     return $this->kind;
   }
   public function setLandingPages($landingPages)
   {
     $this->landingPages = $landingPages;
-  }
+				}
   public function getLandingPages()
-  {
+   //  {
     return $this->landingPages;
   }
 }
 
 class Google_Service_Dfareporting_LastModifiedInfo extends Google_Model
-{
+			{
   protected $internal_gapi_mappings = array(
   );
   public $time;
 
-
-  public function setTime($time)
+              public function setTime($time)
   {
     $this->time = $time;
   }
   public function getTime()
   {
     return $this->time;
-  }
+      }
 }
-
-class Google_Service_Dfareporting_ListTargetingExpression extends Google_Model
+                      class Google_Service_Dfareporting_ListTargetingExpression extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+    );
   public $expression;
 
 
-  public function setExpression($expression)
-  {
+     //     public function setExpression($expression)
+                 {
     $this->expression = $expression;
   }
   public function getExpression()
   {
     return $this->expression;
-  }
+			}
 }
 
 class Google_Service_Dfareporting_LookbackConfiguration extends Google_Model
@@ -14341,6 +14334,7 @@ class Google_Service_Dfareporting_LookbackConfiguration extends Google_Model
   public function setClickDuration($clickDuration)
   {
     $this->clickDuration = $clickDuration;
+    $this->clickDuration = $clickDuration;
   }
   public function getClickDuration()
   {
@@ -14349,7 +14343,7 @@ class Google_Service_Dfareporting_LookbackConfiguration extends Google_Model
   public function setPostImpressionActivitiesDuration($postImpressionActivitiesDuration)
   {
     $this->postImpressionActivitiesDuration = $postImpressionActivitiesDuration;
-  }
+         }
   public function getPostImpressionActivitiesDuration()
   {
     return $this->postImpressionActivitiesDuration;
@@ -14376,14 +14370,15 @@ class Google_Service_Dfareporting_Metric extends Google_Model
   {
     $this->name = $name;
   }
-  public function getName()
+     //    public function getName()
   {
     return $this->name;
-  }
+   }
 }
 
 class Google_Service_Dfareporting_Metro extends Google_Model
-{
+class Google_Service_Dfareporting_Metro extends Google_Model
+  //  {
   protected $internal_gapi_mappings = array(
   );
   public $countryCode;
@@ -14397,7 +14392,7 @@ class Google_Service_Dfareporting_Metro extends Google_Model
 
   public function setCountryCode($countryCode)
   {
-    $this->countryCode = $countryCode;
+   $this->countryCode = $countryCode;
   }
   public function getCountryCode()
   {
@@ -14409,8 +14404,8 @@ class Google_Service_Dfareporting_Metro extends Google_Model
   }
   public function getCountryDartId()
   {
-    return $this->countryDartId;
-  }
+    //     return $this->countryDartId;
+					}
   public function setDartId($dartId)
   {
     $this->dartId = $dartId;
@@ -14426,19 +14421,19 @@ class Google_Service_Dfareporting_Metro extends Google_Model
   public function getDmaId()
   {
     return $this->dmaId;
-  }
+			}
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
+ //      return $this->kind;
   }
   public function setMetroCode($metroCode)
   {
     $this->metroCode = $metroCode;
-  }
+                 }
   public function getMetroCode()
   {
     return $this->metroCode;
@@ -14446,13 +14441,12 @@ class Google_Service_Dfareporting_Metro extends Google_Model
   public function setName($name)
   {
     $this->name = $name;
-  }
-  public function getName()
+             }
+    //    public function getName()
   {
     return $this->name;
   }
 }
-
 class Google_Service_Dfareporting_MetrosListResponse extends Google_Collection
 {
   protected $collection_key = 'metros';
@@ -14467,7 +14461,7 @@ class Google_Service_Dfareporting_MetrosListResponse extends Google_Collection
   {
     $this->kind = $kind;
   }
-  public function getKind()
+                 public function getKind()
   {
     return $this->kind;
   }
@@ -14477,22 +14471,22 @@ class Google_Service_Dfareporting_MetrosListResponse extends Google_Collection
   }
   public function getMetros()
   {
-    return $this->metros;
+			return $this->metros;
   }
 }
 
 class Google_Service_Dfareporting_MobileCarrier extends Google_Model
-{
+                {
   protected $internal_gapi_mappings = array(
   );
   public $countryCode;
   public $countryDartId;
   public $id;
-  public $kind;
+          public $kind;
   public $name;
 
 
-  public function setCountryCode($countryCode)
+               public function setCountryCode($countryCode)
   {
     $this->countryCode = $countryCode;
   }
@@ -14504,10 +14498,10 @@ class Google_Service_Dfareporting_MobileCarrier extends Google_Model
   {
     $this->countryDartId = $countryDartId;
   }
-  public function getCountryDartId()
+    public function getCountryDartId()
   {
     return $this->countryDartId;
-  }
+     //   }
   public function setId($id)
   {
     $this->id = $id;
@@ -14517,7 +14511,7 @@ class Google_Service_Dfareporting_MobileCarrier extends Google_Model
     return $this->id;
   }
   public function setKind($kind)
-  {
+				{
     $this->kind = $kind;
   }
   public function getKind()
@@ -14541,6 +14535,7 @@ class Google_Service_Dfareporting_MobileCarriersListResponse extends Google_Coll
   );
   public $kind;
   protected $mobileCarriersType = 'Google_Service_Dfareporting_MobileCarrier';
+  protected $mobileCarriersType = 'Google_Service_Dfareporting_MobileCarrier';
   protected $mobileCarriersDataType = 'array';
 
 
@@ -14551,24 +14546,23 @@ class Google_Service_Dfareporting_MobileCarriersListResponse extends Google_Coll
   public function getKind()
   {
     return $this->kind;
-  }
+    }
   public function setMobileCarriers($mobileCarriers)
-  {
+        {
     $this->mobileCarriers = $mobileCarriers;
   }
   public function getMobileCarriers()
-  {
+            {
     return $this->mobileCarriers;
   }
 }
-
 class Google_Service_Dfareporting_ObjectFilter extends Google_Collection
 {
   protected $collection_key = 'objectIds';
   protected $internal_gapi_mappings = array(
   );
   public $kind;
-  public $objectIds;
+//    public $objectIds;
   public $status;
 
 
@@ -14578,18 +14572,18 @@ class Google_Service_Dfareporting_ObjectFilter extends Google_Collection
   }
   public function getKind()
   {
-    return $this->kind;
+return $this->kind;
   }
-  public function setObjectIds($objectIds)
-  {
-    $this->objectIds = $objectIds;
+       public function setObjectIds($objectIds)
+		{
+$this->objectIds = $objectIds;
   }
   public function getObjectIds()
   {
     return $this->objectIds;
   }
   public function setStatus($status)
-  {
+    //  {
     $this->status = $status;
   }
   public function getStatus()
@@ -14599,17 +14593,15 @@ class Google_Service_Dfareporting_ObjectFilter extends Google_Collection
 }
 
 class Google_Service_Dfareporting_OffsetPosition extends Google_Model
-{
   protected $internal_gapi_mappings = array(
   );
   public $left;
   public $top;
-
-
+			
   public function setLeft($left)
   {
     $this->left = $left;
-  }
+     //  }
   public function getLeft()
   {
     return $this->left;
@@ -14630,8 +14622,7 @@ class Google_Service_Dfareporting_OmnitureSettings extends Google_Model
   );
   public $omnitureCostDataEnabled;
   public $omnitureIntegrationEnabled;
-
-
+    
   public function setOmnitureCostDataEnabled($omnitureCostDataEnabled)
   {
     $this->omnitureCostDataEnabled = $omnitureCostDataEnabled;
@@ -14649,8 +14640,7 @@ class Google_Service_Dfareporting_OmnitureSettings extends Google_Model
     return $this->omnitureIntegrationEnabled;
   }
 }
-
-class Google_Service_Dfareporting_OperatingSystem extends Google_Model
+					class Google_Service_Dfareporting_OperatingSystem extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -14661,7 +14651,7 @@ class Google_Service_Dfareporting_OperatingSystem extends Google_Model
   public $name;
 
 
-  public function setDartId($dartId)
+			public function setDartId($dartId)
   {
     $this->dartId = $dartId;
   }
@@ -14669,7 +14659,7 @@ class Google_Service_Dfareporting_OperatingSystem extends Google_Model
   {
     return $this->dartId;
   }
-  public function setDesktop($desktop)
+public function setDesktop($desktop)
   {
     $this->desktop = $desktop;
   }
@@ -14680,8 +14670,8 @@ class Google_Service_Dfareporting_OperatingSystem extends Google_Model
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
-  public function getKind()
+	}
+     //    public function getKind()
   {
     return $this->kind;
   }
@@ -14691,7 +14681,7 @@ class Google_Service_Dfareporting_OperatingSystem extends Google_Model
   }
   public function getMobile()
   {
-    return $this->mobile;
+ return $this->mobile;
   }
   public function setName($name)
   {
@@ -14704,7 +14694,7 @@ class Google_Service_Dfareporting_OperatingSystem extends Google_Model
 }
 
 class Google_Service_Dfareporting_OperatingSystemVersion extends Google_Model
-{
+				{
   protected $internal_gapi_mappings = array(
   );
   public $id;
@@ -14720,18 +14710,18 @@ class Google_Service_Dfareporting_OperatingSystemVersion extends Google_Model
   {
     $this->id = $id;
   }
-  public function getId()
+   public function getId()
   {
     return $this->id;
   }
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
-  public function getKind()
+               }
+     //     public function getKind()
   {
     return $this->kind;
-  }
+			}
   public function setMajorVersion($majorVersion)
   {
     $this->majorVersion = $majorVersion;
@@ -14743,17 +14733,17 @@ class Google_Service_Dfareporting_OperatingSystemVersion extends Google_Model
   public function setMinorVersion($minorVersion)
   {
     $this->minorVersion = $minorVersion;
-  }
+					}
   public function getMinorVersion()
   {
     return $this->minorVersion;
   }
   public function setName($name)
   {
-    $this->name = $name;
+               $this->name = $name;
   }
   public function getName()
-  {
+		{
     return $this->name;
   }
   public function setOperatingSystem(Google_Service_Dfareporting_OperatingSystem $operatingSystem)
@@ -14772,12 +14762,12 @@ class Google_Service_Dfareporting_OperatingSystemVersionsListResponse extends Go
   protected $internal_gapi_mappings = array(
   );
   public $kind;
-  protected $operatingSystemVersionsType = 'Google_Service_Dfareporting_OperatingSystemVersion';
+       protected $operatingSystemVersionsType = 'Google_Service_Dfareporting_OperatingSystemVersion';
   protected $operatingSystemVersionsDataType = 'array';
 
 
   public function setKind($kind)
-  {
+					{
     $this->kind = $kind;
   }
   public function getKind()
@@ -14809,7 +14799,7 @@ class Google_Service_Dfareporting_OperatingSystemsListResponse extends Google_Co
     $this->kind = $kind;
   }
   public function getKind()
-  {
+				{
     return $this->kind;
   }
   public function setOperatingSystems($operatingSystems)
@@ -14821,13 +14811,12 @@ class Google_Service_Dfareporting_OperatingSystemsListResponse extends Google_Co
     return $this->operatingSystems;
   }
 }
-
-class Google_Service_Dfareporting_OptimizationActivity extends Google_Model
+   //class Google_Service_Dfareporting_OptimizationActivity extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   public $floodlightActivityId;
-  protected $floodlightActivityIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
+    protected $floodlightActivityIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $floodlightActivityIdDimensionValueDataType = '';
   public $weight;
 
@@ -14837,7 +14826,6 @@ class Google_Service_Dfareporting_OptimizationActivity extends Google_Model
     $this->floodlightActivityId = $floodlightActivityId;
   }
   public function getFloodlightActivityId()
-  {
     return $this->floodlightActivityId;
   }
   public function setFloodlightActivityIdDimensionValue(Google_Service_Dfareporting_DimensionValue $floodlightActivityIdDimensionValue)
@@ -14845,6 +14833,7 @@ class Google_Service_Dfareporting_OptimizationActivity extends Google_Model
     $this->floodlightActivityIdDimensionValue = $floodlightActivityIdDimensionValue;
   }
   public function getFloodlightActivityIdDimensionValue()
+  {
   {
     return $this->floodlightActivityIdDimensionValue;
   }
@@ -14863,7 +14852,7 @@ class Google_Service_Dfareporting_PathToConversionReportCompatibleFields extends
   protected $collection_key = 'perInteractionDimensions';
   protected $internal_gapi_mappings = array(
   );
-  protected $conversionDimensionsType = 'Google_Service_Dfareporting_Dimension';
+         protected $conversionDimensionsType = 'Google_Service_Dfareporting_Dimension';
   protected $conversionDimensionsDataType = 'array';
   protected $customFloodlightVariablesType = 'Google_Service_Dfareporting_Dimension';
   protected $customFloodlightVariablesDataType = 'array';
@@ -14909,7 +14898,7 @@ class Google_Service_Dfareporting_PathToConversionReportCompatibleFields extends
   public function setPerInteractionDimensions($perInteractionDimensions)
   {
     $this->perInteractionDimensions = $perInteractionDimensions;
-  }
+ //  }
   public function getPerInteractionDimensions()
   {
     return $this->perInteractionDimensions;
@@ -14917,10 +14906,11 @@ class Google_Service_Dfareporting_PathToConversionReportCompatibleFields extends
 }
 
 class Google_Service_Dfareporting_Placement extends Google_Collection
+class Google_Service_Dfareporting_Placement extends Google_Collection
 {
-  protected $collection_key = 'tagFormats';
+					protected $collection_key = 'tagFormats';
   protected $internal_gapi_mappings = array(
-  );
+     );
   public $accountId;
   public $advertiserId;
   protected $advertiserIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
@@ -14930,7 +14920,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   protected $campaignIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $campaignIdDimensionValueDataType = '';
   public $comment;
-  public $compatibility;
+    public $compatibility;
   public $contentCategoryId;
   protected $createInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
   protected $createInfoDataType = '';
@@ -14938,8 +14928,8 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   protected $directorySiteIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $directorySiteIdDimensionValueDataType = '';
   public $externalId;
-  public $id;
-  protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
+            public $id;
+					protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $idDimensionValueDataType = '';
   public $keyName;
   public $kind;
@@ -14947,12 +14937,12 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   protected $lastModifiedInfoDataType = '';
   protected $lookbackConfigurationType = 'Google_Service_Dfareporting_LookbackConfiguration';
   protected $lookbackConfigurationDataType = '';
-  public $name;
+	public $name;
   public $paymentApproved;
   public $paymentSource;
   public $placementGroupId;
   protected $placementGroupIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
-  protected $placementGroupIdDimensionValueDataType = '';
+        protected $placementGroupIdDimensionValueDataType = '';
   public $placementStrategyId;
   protected $pricingScheduleType = 'Google_Service_Dfareporting_PricingSchedule';
   protected $pricingScheduleDataType = '';
@@ -14972,7 +14962,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   protected $tagSettingDataType = '';
 
 
-  public function setAccountId($accountId)
+         public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
   }
@@ -14992,7 +14982,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   {
     $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
   }
-  public function getAdvertiserIdDimensionValue()
+ //  public function getAdvertiserIdDimensionValue()
   {
     return $this->advertiserIdDimensionValue;
   }
@@ -15002,6 +14992,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   }
   public function getArchived()
   {
+    return $this->archived;
     return $this->archived;
   }
   public function setCampaignId($campaignId)
@@ -15015,6 +15006,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   public function setCampaignIdDimensionValue(Google_Service_Dfareporting_DimensionValue $campaignIdDimensionValue)
   {
     $this->campaignIdDimensionValue = $campaignIdDimensionValue;
+    $this->campaignIdDimensionValue = $campaignIdDimensionValue;
   }
   public function getCampaignIdDimensionValue()
   {
@@ -15023,7 +15015,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   public function setComment($comment)
   {
     $this->comment = $comment;
-  }
+     //    }
   public function getComment()
   {
     return $this->comment;
@@ -15033,24 +15025,24 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
     $this->compatibility = $compatibility;
   }
   public function getCompatibility()
-  {
+                {
     return $this->compatibility;
   }
   public function setContentCategoryId($contentCategoryId)
   {
     $this->contentCategoryId = $contentCategoryId;
   }
-  public function getContentCategoryId()
-  {
+		public function getContentCategoryId()
+        {
     return $this->contentCategoryId;
   }
   public function setCreateInfo(Google_Service_Dfareporting_LastModifiedInfo $createInfo)
-  {
+			{
     $this->createInfo = $createInfo;
   }
   public function getCreateInfo()
   {
-    return $this->createInfo;
+   //      return $this->createInfo;
   }
   public function setDirectorySiteId($directorySiteId)
   {
@@ -15063,7 +15055,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   public function setDirectorySiteIdDimensionValue(Google_Service_Dfareporting_DimensionValue $directorySiteIdDimensionValue)
   {
     $this->directorySiteIdDimensionValue = $directorySiteIdDimensionValue;
-  }
+           }
   public function getDirectorySiteIdDimensionValue()
   {
     return $this->directorySiteIdDimensionValue;
@@ -15094,7 +15086,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   }
   public function setKeyName($keyName)
   {
-    $this->keyName = $keyName;
+   $this->keyName = $keyName;
   }
   public function getKeyName()
   {
@@ -15108,19 +15100,20 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   {
     return $this->kind;
   }
-  public function setLastModifiedInfo(Google_Service_Dfareporting_LastModifiedInfo $lastModifiedInfo)
+            public function setLastModifiedInfo(Google_Service_Dfareporting_LastModifiedInfo $lastModifiedInfo)
   {
     $this->lastModifiedInfo = $lastModifiedInfo;
   }
   public function getLastModifiedInfo()
   {
     return $this->lastModifiedInfo;
-  }
+}
   public function setLookbackConfiguration(Google_Service_Dfareporting_LookbackConfiguration $lookbackConfiguration)
   {
     $this->lookbackConfiguration = $lookbackConfiguration;
+    $this->lookbackConfiguration = $lookbackConfiguration;
   }
-  public function getLookbackConfiguration()
+      public function getLookbackConfiguration()
   {
     return $this->lookbackConfiguration;
   }
@@ -15136,15 +15129,15 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   {
     $this->paymentApproved = $paymentApproved;
   }
-  public function getPaymentApproved()
-  {
+	public function getPaymentApproved()
+	{
     return $this->paymentApproved;
   }
   public function setPaymentSource($paymentSource)
   {
-    $this->paymentSource = $paymentSource;
+   //     $this->paymentSource = $paymentSource;
   }
-  public function getPaymentSource()
+          public function getPaymentSource()
   {
     return $this->paymentSource;
   }
@@ -15156,18 +15149,18 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   {
     return $this->placementGroupId;
   }
-  public function setPlacementGroupIdDimensionValue(Google_Service_Dfareporting_DimensionValue $placementGroupIdDimensionValue)
+         public function setPlacementGroupIdDimensionValue(Google_Service_Dfareporting_DimensionValue $placementGroupIdDimensionValue)
   {
     $this->placementGroupIdDimensionValue = $placementGroupIdDimensionValue;
   }
   public function getPlacementGroupIdDimensionValue()
   {
     return $this->placementGroupIdDimensionValue;
-  }
+               }
   public function setPlacementStrategyId($placementStrategyId)
   {
     $this->placementStrategyId = $placementStrategyId;
-  }
+            }
   public function getPlacementStrategyId()
   {
     return $this->placementStrategyId;
@@ -15181,10 +15174,10 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
     return $this->pricingSchedule;
   }
   public function setPrimary($primary)
-  {
+					{
     $this->primary = $primary;
   }
-  public function getPrimary()
+     //     public function getPrimary()
   {
     return $this->primary;
   }
@@ -15196,7 +15189,7 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   {
     return $this->publisherUpdateInfo;
   }
-  public function setSiteId($siteId)
+public function setSiteId($siteId)
   {
     $this->siteId = $siteId;
   }
@@ -15215,11 +15208,11 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
   public function setSize(Google_Service_Dfareporting_Size $size)
   {
     $this->size = $size;
-  }
+     }
   public function getSize()
   {
     return $this->size;
-  }
+		}
   public function setSslRequired($sslRequired)
   {
     $this->sslRequired = $sslRequired;
@@ -15241,12 +15234,12 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
     $this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
-  {
+     {
     return $this->subaccountId;
-  }
+      }
   public function setTagFormats($tagFormats)
   {
-    $this->tagFormats = $tagFormats;
+     //     $this->tagFormats = $tagFormats;
   }
   public function getTagFormats()
   {
@@ -15261,11 +15254,11 @@ class Google_Service_Dfareporting_Placement extends Google_Collection
     return $this->tagSetting;
   }
 }
-
-class Google_Service_Dfareporting_PlacementAssignment extends Google_Model
+				class Google_Service_Dfareporting_PlacementAssignment extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
+  public $active;
   public $active;
   public $placementId;
   protected $placementIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
@@ -15283,10 +15276,10 @@ class Google_Service_Dfareporting_PlacementAssignment extends Google_Model
   }
   public function setPlacementId($placementId)
   {
-    $this->placementId = $placementId;
+$this->placementId = $placementId;
   }
   public function getPlacementId()
-  {
+		{
     return $this->placementId;
   }
   public function setPlacementIdDimensionValue(Google_Service_Dfareporting_DimensionValue $placementIdDimensionValue)
@@ -15301,11 +15294,11 @@ class Google_Service_Dfareporting_PlacementAssignment extends Google_Model
   {
     $this->sslRequired = $sslRequired;
   }
-  public function getSslRequired()
-  {
+               public function getSslRequired()
+          {
     return $this->sslRequired;
   }
-}
+     }
 
 class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
 {
@@ -15321,18 +15314,18 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   protected $campaignIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $campaignIdDimensionValueDataType = '';
   public $childPlacementIds;
-  public $comment;
+               public $comment;
   public $contentCategoryId;
   protected $createInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
   protected $createInfoDataType = '';
   public $directorySiteId;
-  protected $directorySiteIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
+       protected $directorySiteIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $directorySiteIdDimensionValueDataType = '';
   public $externalId;
   public $id;
   protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $idDimensionValueDataType = '';
-  public $kind;
+          public $kind;
   protected $lastModifiedInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
   protected $lastModifiedInfoDataType = '';
   public $name;
@@ -15348,7 +15341,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   public $siteId;
   protected $siteIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $siteIdDimensionValueDataType = '';
-  public $subaccountId;
+				public $subaccountId;
 
 
   public function setAccountId($accountId)
@@ -15357,13 +15350,13 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   }
   public function getAccountId()
   {
-    return $this->accountId;
+               return $this->accountId;
   }
   public function setAdvertiserId($advertiserId)
   {
     $this->advertiserId = $advertiserId;
   }
-  public function getAdvertiserId()
+     //  public function getAdvertiserId()
   {
     return $this->advertiserId;
   }
@@ -15372,21 +15365,21 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
     $this->advertiserIdDimensionValue = $advertiserIdDimensionValue;
   }
   public function getAdvertiserIdDimensionValue()
-  {
+             {
     return $this->advertiserIdDimensionValue;
   }
   public function setArchived($archived)
   {
     $this->archived = $archived;
   }
-  public function getArchived()
+   public function getArchived()
   {
     return $this->archived;
-  }
+    //  }
   public function setCampaignId($campaignId)
   {
     $this->campaignId = $campaignId;
-  }
+   //    }
   public function getCampaignId()
   {
     return $this->campaignId;
@@ -15394,7 +15387,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   public function setCampaignIdDimensionValue(Google_Service_Dfareporting_DimensionValue $campaignIdDimensionValue)
   {
     $this->campaignIdDimensionValue = $campaignIdDimensionValue;
-  }
+                }
   public function getCampaignIdDimensionValue()
   {
     return $this->campaignIdDimensionValue;
@@ -15403,7 +15396,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   {
     $this->childPlacementIds = $childPlacementIds;
   }
-  public function getChildPlacementIds()
+                 public function getChildPlacementIds()
   {
     return $this->childPlacementIds;
   }
@@ -15431,7 +15424,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   {
     return $this->createInfo;
   }
-  public function setDirectorySiteId($directorySiteId)
+ //   public function setDirectorySiteId($directorySiteId)
   {
     $this->directorySiteId = $directorySiteId;
   }
@@ -15444,22 +15437,22 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
     $this->directorySiteIdDimensionValue = $directorySiteIdDimensionValue;
   }
   public function getDirectorySiteIdDimensionValue()
-  {
+                {
     return $this->directorySiteIdDimensionValue;
   }
-  public function setExternalId($externalId)
+      public function setExternalId($externalId)
   {
     $this->externalId = $externalId;
   }
   public function getExternalId()
   {
     return $this->externalId;
-  }
+   }
   public function setId($id)
   {
     $this->id = $id;
   }
-  public function getId()
+	public function getId()
   {
     return $this->id;
   }
@@ -15485,7 +15478,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   }
   public function getLastModifiedInfo()
   {
-    return $this->lastModifiedInfo;
+           return $this->lastModifiedInfo;
   }
   public function setName($name)
   {
@@ -15493,16 +15486,16 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   }
   public function getName()
   {
-    return $this->name;
-  }
+	return $this->name;
+         }
   public function setPlacementGroupType($placementGroupType)
   {
     $this->placementGroupType = $placementGroupType;
-  }
+//   }
   public function getPlacementGroupType()
   {
     return $this->placementGroupType;
-  }
+ }
   public function setPlacementStrategyId($placementStrategyId)
   {
     $this->placementStrategyId = $placementStrategyId;
@@ -15521,7 +15514,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   }
   public function setPrimaryPlacementId($primaryPlacementId)
   {
-    $this->primaryPlacementId = $primaryPlacementId;
+                 $this->primaryPlacementId = $primaryPlacementId;
   }
   public function getPrimaryPlacementId()
   {
@@ -15529,7 +15522,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   }
   public function setPrimaryPlacementIdDimensionValue(Google_Service_Dfareporting_DimensionValue $primaryPlacementIdDimensionValue)
   {
-    $this->primaryPlacementIdDimensionValue = $primaryPlacementIdDimensionValue;
+		$this->primaryPlacementIdDimensionValue = $primaryPlacementIdDimensionValue;
   }
   public function getPrimaryPlacementIdDimensionValue()
   {
@@ -15537,7 +15530,7 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   }
   public function setProgrammaticSetting(Google_Service_Dfareporting_ProgrammaticSetting $programmaticSetting)
   {
-    $this->programmaticSetting = $programmaticSetting;
+    //       $this->programmaticSetting = $programmaticSetting;
   }
   public function getProgrammaticSetting()
   {
@@ -15546,14 +15539,14 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   public function setSiteId($siteId)
   {
     $this->siteId = $siteId;
-  }
+    }
   public function getSiteId()
   {
     return $this->siteId;
   }
   public function setSiteIdDimensionValue(Google_Service_Dfareporting_DimensionValue $siteIdDimensionValue)
   {
-    $this->siteIdDimensionValue = $siteIdDimensionValue;
+     //    $this->siteIdDimensionValue = $siteIdDimensionValue;
   }
   public function getSiteIdDimensionValue()
   {
@@ -15566,14 +15559,14 @@ class Google_Service_Dfareporting_PlacementGroup extends Google_Collection
   public function getSubaccountId()
   {
     return $this->subaccountId;
-  }
+					}
 }
-
+     //
 class Google_Service_Dfareporting_PlacementGroupsListResponse extends Google_Collection
 {
   protected $collection_key = 'placementGroups';
   protected $internal_gapi_mappings = array(
-  );
+//  );
   public $kind;
   public $nextPageToken;
   protected $placementGroupsType = 'Google_Service_Dfareporting_PlacementGroup';
@@ -15589,13 +15582,13 @@ class Google_Service_Dfareporting_PlacementGroupsListResponse extends Google_Col
     return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
-  {
+	{
     $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
     return $this->nextPageToken;
-  }
+        }
   public function setPlacementGroups($placementGroups)
   {
     $this->placementGroups = $placementGroups;
@@ -15605,26 +15598,25 @@ class Google_Service_Dfareporting_PlacementGroupsListResponse extends Google_Col
     return $this->placementGroups;
   }
 }
-
-class Google_Service_Dfareporting_PlacementStrategiesListResponse extends Google_Collection
+			class Google_Service_Dfareporting_PlacementStrategiesListResponse extends Google_Collection
 {
   protected $collection_key = 'placementStrategies';
   protected $internal_gapi_mappings = array(
   );
-  public $kind;
+	public $kind;
+  public $nextPageToken;
   public $nextPageToken;
   protected $placementStrategiesType = 'Google_Service_Dfareporting_PlacementStrategy';
   protected $placementStrategiesDataType = 'array';
-
-
-  public function setKind($kind)
+    
+		public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
   {
     return $this->kind;
-  }
+ //  }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
@@ -15652,34 +15644,34 @@ class Google_Service_Dfareporting_PlacementStrategy extends Google_Model
   public $kind;
   public $name;
 
-
-  public function setAccountId($accountId)
+           public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
+  }
   }
   public function getAccountId()
   {
     return $this->accountId;
-  }
+		}
   public function setId($id)
   {
     $this->id = $id;
-  }
+		}
   public function getId()
-  {
+    //    {
     return $this->id;
   }
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+  //    }
   public function getKind()
   {
     return $this->kind;
-  }
+				}
   public function setName($name)
   {
-    $this->name = $name;
+				$this->name = $name;
   }
   public function getName()
   {
@@ -15699,7 +15691,7 @@ class Google_Service_Dfareporting_PlacementTag extends Google_Collection
 
   public function setPlacementId($placementId)
   {
-    $this->placementId = $placementId;
+					$this->placementId = $placementId;
   }
   public function getPlacementId()
   {
@@ -15710,7 +15702,7 @@ class Google_Service_Dfareporting_PlacementTag extends Google_Collection
     $this->tagDatas = $tagDatas;
   }
   public function getTagDatas()
-  {
+					{
     return $this->tagDatas;
   }
 }
@@ -15738,25 +15730,25 @@ class Google_Service_Dfareporting_PlacementsGenerateTagsResponse extends Google_
     $this->placementTags = $placementTags;
   }
   public function getPlacementTags()
-  {
+              {
     return $this->placementTags;
-  }
+     //     }
 }
 
 class Google_Service_Dfareporting_PlacementsListResponse extends Google_Collection
 {
   protected $collection_key = 'placements';
   protected $internal_gapi_mappings = array(
-  );
+	);
   public $kind;
   public $nextPageToken;
-  protected $placementsType = 'Google_Service_Dfareporting_Placement';
+        protected $placementsType = 'Google_Service_Dfareporting_Placement';
   protected $placementsDataType = 'array';
 
 
   public function setKind($kind)
   {
-    $this->kind = $kind;
+$this->kind = $kind;
   }
   public function getKind()
   {
@@ -15772,7 +15764,7 @@ class Google_Service_Dfareporting_PlacementsListResponse extends Google_Collecti
   }
   public function setPlacements($placements)
   {
-    $this->placements = $placements;
+  //       $this->placements = $placements;
   }
   public function getPlacements()
   {
@@ -15782,11 +15774,11 @@ class Google_Service_Dfareporting_PlacementsListResponse extends Google_Collecti
 
 class Google_Service_Dfareporting_PlatformType extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+         protected $internal_gapi_mappings = array(
   );
   public $id;
   public $kind;
-  public $name;
+     //    public $name;
 
 
   public function setId($id)
@@ -15801,9 +15793,9 @@ class Google_Service_Dfareporting_PlatformType extends Google_Model
   {
     $this->kind = $kind;
   }
-  public function getKind()
+				public function getKind()
   {
-    return $this->kind;
+			return $this->kind;
   }
   public function setName($name)
   {
@@ -15830,9 +15822,9 @@ class Google_Service_Dfareporting_PlatformTypesListResponse extends Google_Colle
     $this->kind = $kind;
   }
   public function getKind()
-  {
+        {
     return $this->kind;
-  }
+               }
   public function setPlatformTypes($platformTypes)
   {
     $this->platformTypes = $platformTypes;
@@ -15849,7 +15841,7 @@ class Google_Service_Dfareporting_PopupWindowProperties extends Google_Model
   );
   protected $dimensionType = 'Google_Service_Dfareporting_Size';
   protected $dimensionDataType = '';
-  protected $offsetType = 'Google_Service_Dfareporting_OffsetPosition';
+   protected $offsetType = 'Google_Service_Dfareporting_OffsetPosition';
   protected $offsetDataType = '';
   public $positionType;
   public $showAddressBar;
@@ -15865,8 +15857,9 @@ class Google_Service_Dfareporting_PopupWindowProperties extends Google_Model
     $this->dimension = $dimension;
   }
   public function getDimension()
-  {
-    return $this->dimension;
+  public function getDimension()
+		{
+           return $this->dimension;
   }
   public function setOffset(Google_Service_Dfareporting_OffsetPosition $offset)
   {
@@ -15875,9 +15868,9 @@ class Google_Service_Dfareporting_PopupWindowProperties extends Google_Model
   public function getOffset()
   {
     return $this->offset;
-  }
+}
   public function setPositionType($positionType)
-  {
+ {
     $this->positionType = $positionType;
   }
   public function getPositionType()
@@ -15889,7 +15882,7 @@ class Google_Service_Dfareporting_PopupWindowProperties extends Google_Model
     $this->showAddressBar = $showAddressBar;
   }
   public function getShowAddressBar()
-  {
+      {
     return $this->showAddressBar;
   }
   public function setShowMenuBar($showMenuBar)
@@ -15904,9 +15897,9 @@ class Google_Service_Dfareporting_PopupWindowProperties extends Google_Model
   {
     $this->showScrollBar = $showScrollBar;
   }
-  public function getShowScrollBar()
+public function getShowScrollBar()
   {
-    return $this->showScrollBar;
+       return $this->showScrollBar;
   }
   public function setShowStatusBar($showStatusBar)
   {
@@ -15916,7 +15909,7 @@ class Google_Service_Dfareporting_PopupWindowProperties extends Google_Model
   {
     return $this->showStatusBar;
   }
-  public function setShowToolBar($showToolBar)
+          public function setShowToolBar($showToolBar)
   {
     $this->showToolBar = $showToolBar;
   }
@@ -15941,7 +15934,7 @@ class Google_Service_Dfareporting_PostalCode extends Google_Model
   public $countryCode;
   public $countryDartId;
   public $id;
-  public $kind;
+             public $kind;
 
 
   public function setCountryCode($countryCode)
@@ -15961,7 +15954,7 @@ class Google_Service_Dfareporting_PostalCode extends Google_Model
     return $this->countryDartId;
   }
   public function setId($id)
-  {
+     {
     $this->id = $id;
   }
   public function getId()
@@ -15970,7 +15963,7 @@ class Google_Service_Dfareporting_PostalCode extends Google_Model
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+			$this->kind = $kind;
   }
   public function getKind()
   {
@@ -15978,14 +15971,14 @@ class Google_Service_Dfareporting_PostalCode extends Google_Model
   }
 }
 
-class Google_Service_Dfareporting_PostalCodesListResponse extends Google_Collection
+           class Google_Service_Dfareporting_PostalCodesListResponse extends Google_Collection
 {
   protected $collection_key = 'postalCodes';
   protected $internal_gapi_mappings = array(
   );
-  public $kind;
+//     public $kind;
   protected $postalCodesType = 'Google_Service_Dfareporting_PostalCode';
-  protected $postalCodesDataType = 'array';
+   //    protected $postalCodesDataType = 'array';
 
 
   public function setKind($kind)
@@ -16005,15 +15998,14 @@ class Google_Service_Dfareporting_PostalCodesListResponse extends Google_Collect
     return $this->postalCodes;
   }
 }
-
-class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
+	class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
 {
   protected $collection_key = 'pricingPeriods';
   protected $internal_gapi_mappings = array(
   );
   public $capCostOption;
   public $disregardOverdelivery;
-  public $endDate;
+           public $endDate;
   public $flighted;
   public $floodlightActivityId;
   protected $pricingPeriodsType = 'Google_Service_Dfareporting_PricingSchedulePricingPeriod';
@@ -16032,7 +16024,7 @@ class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
     return $this->capCostOption;
   }
   public function setDisregardOverdelivery($disregardOverdelivery)
-  {
+                {
     $this->disregardOverdelivery = $disregardOverdelivery;
   }
   public function getDisregardOverdelivery()
@@ -16046,7 +16038,7 @@ class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
   public function getEndDate()
   {
     return $this->endDate;
-  }
+            }
   public function setFlighted($flighted)
   {
     $this->flighted = $flighted;
@@ -16072,18 +16064,18 @@ class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
     return $this->pricingPeriods;
   }
   public function setPricingType($pricingType)
-  {
+              {
     $this->pricingType = $pricingType;
   }
   public function getPricingType()
   {
     return $this->pricingType;
-  }
-  public function setStartDate($startDate)
+     }
+              public function setStartDate($startDate)
   {
     $this->startDate = $startDate;
   }
-  public function getStartDate()
+               public function getStartDate()
   {
     return $this->startDate;
   }
@@ -16110,7 +16102,7 @@ class Google_Service_Dfareporting_PricingSchedulePricingPeriod extends Google_Mo
 
   public function setEndDate($endDate)
   {
-    $this->endDate = $endDate;
+				$this->endDate = $endDate;
   }
   public function getEndDate()
   {
@@ -16124,7 +16116,7 @@ class Google_Service_Dfareporting_PricingSchedulePricingPeriod extends Google_Mo
   {
     return $this->pricingComment;
   }
-  public function setRateOrCostNanos($rateOrCostNanos)
+ public function setRateOrCostNanos($rateOrCostNanos)
   {
     $this->rateOrCostNanos = $rateOrCostNanos;
   }
@@ -16135,7 +16127,7 @@ class Google_Service_Dfareporting_PricingSchedulePricingPeriod extends Google_Mo
   public function setStartDate($startDate)
   {
     $this->startDate = $startDate;
-  }
+			}
   public function getStartDate()
   {
     return $this->startDate;
@@ -16146,7 +16138,7 @@ class Google_Service_Dfareporting_PricingSchedulePricingPeriod extends Google_Mo
   }
   public function getUnits()
   {
-    return $this->units;
+ //       return $this->units;
   }
 }
 
@@ -16171,7 +16163,7 @@ class Google_Service_Dfareporting_ProgrammaticSetting extends Google_Collection
   {
     return $this->adxDealIds;
   }
-  public function setInsertionOrderId($insertionOrderId)
+         public function setInsertionOrderId($insertionOrderId)
   {
     $this->insertionOrderId = $insertionOrderId;
   }
@@ -16185,7 +16177,7 @@ class Google_Service_Dfareporting_ProgrammaticSetting extends Google_Collection
   }
   public function getInsertionOrderIdStatus()
   {
-    return $this->insertionOrderIdStatus;
+					return $this->insertionOrderIdStatus;
   }
   public function setMediaCostNanos($mediaCostNanos)
   {
@@ -16195,8 +16187,8 @@ class Google_Service_Dfareporting_ProgrammaticSetting extends Google_Collection
   {
     return $this->mediaCostNanos;
   }
-  public function setProgrammatic($programmatic)
-  {
+	public function setProgrammatic($programmatic)
+ {
     $this->programmatic = $programmatic;
   }
   public function getProgrammatic()
@@ -16205,7 +16197,7 @@ class Google_Service_Dfareporting_ProgrammaticSetting extends Google_Collection
   }
   public function setTraffickerEmails($traffickerEmails)
   {
-    $this->traffickerEmails = $traffickerEmails;
+                 $this->traffickerEmails = $traffickerEmails;
   }
   public function getTraffickerEmails()
   {
@@ -16219,25 +16211,24 @@ class Google_Service_Dfareporting_ReachReportCompatibleFields extends Google_Col
   protected $internal_gapi_mappings = array(
   );
   protected $dimensionFiltersType = 'Google_Service_Dfareporting_Dimension';
-  protected $dimensionFiltersDataType = 'array';
+     //     protected $dimensionFiltersDataType = 'array';
   protected $dimensionsType = 'Google_Service_Dfareporting_Dimension';
   protected $dimensionsDataType = 'array';
   public $kind;
   protected $metricsType = 'Google_Service_Dfareporting_Metric';
   protected $metricsDataType = 'array';
   protected $pivotedActivityMetricsType = 'Google_Service_Dfareporting_Metric';
-  protected $pivotedActivityMetricsDataType = 'array';
-  protected $reachByFrequencyMetricsType = 'Google_Service_Dfareporting_Metric';
+					protected $pivotedActivityMetricsDataType = 'array';
+			protected $reachByFrequencyMetricsType = 'Google_Service_Dfareporting_Metric';
   protected $reachByFrequencyMetricsDataType = 'array';
-
-
+		
   public function setDimensionFilters($dimensionFilters)
   {
     $this->dimensionFilters = $dimensionFilters;
   }
   public function getDimensionFilters()
   {
-    return $this->dimensionFilters;
+  return $this->dimensionFilters;
   }
   public function setDimensions($dimensions)
   {
@@ -16252,7 +16243,6 @@ class Google_Service_Dfareporting_ReachReportCompatibleFields extends Google_Col
     $this->kind = $kind;
   }
   public function getKind()
-  {
     return $this->kind;
   }
   public function setMetrics($metrics)
@@ -16282,9 +16272,10 @@ class Google_Service_Dfareporting_ReachReportCompatibleFields extends Google_Col
 }
 
 class Google_Service_Dfareporting_Recipient extends Google_Model
-{
+   //{
   protected $internal_gapi_mappings = array(
-  );
+  //   );
+  public $deliveryType;
   public $deliveryType;
   public $email;
   public $kind;
@@ -16302,11 +16293,11 @@ class Google_Service_Dfareporting_Recipient extends Google_Model
   {
     $this->email = $email;
   }
-  public function getEmail()
+				public function getEmail()
   {
     return $this->email;
   }
-  public function setKind($kind)
+public function setKind($kind)
   {
     $this->kind = $kind;
   }
@@ -16323,27 +16314,26 @@ class Google_Service_Dfareporting_Region extends Google_Model
   public $countryCode;
   public $countryDartId;
   public $dartId;
-  public $kind;
+           public $kind;
   public $name;
   public $regionCode;
-
 
   public function setCountryCode($countryCode)
   {
     $this->countryCode = $countryCode;
   }
-  public function getCountryCode()
+public function getCountryCode()
   {
-    return $this->countryCode;
+		return $this->countryCode;
   }
   public function setCountryDartId($countryDartId)
   {
-    $this->countryDartId = $countryDartId;
+	$this->countryDartId = $countryDartId;
   }
   public function getCountryDartId()
   {
     return $this->countryDartId;
-  }
+    //   }
   public function setDartId($dartId)
   {
     $this->dartId = $dartId;
@@ -16354,13 +16344,12 @@ class Google_Service_Dfareporting_Region extends Google_Model
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+                $this->kind = $kind;
   }
-  public function getKind()
-  {
+ public function getKind()
     return $this->kind;
   }
-  public function setName($name)
+  //  public function setName($name)
   {
     $this->name = $name;
   }
@@ -16373,7 +16362,7 @@ class Google_Service_Dfareporting_Region extends Google_Model
     $this->regionCode = $regionCode;
   }
   public function getRegionCode()
-  {
+ {
     return $this->regionCode;
   }
 }
@@ -16405,16 +16394,15 @@ class Google_Service_Dfareporting_RegionsListResponse extends Google_Collection
     return $this->regions;
   }
 }
-
-class Google_Service_Dfareporting_Report extends Google_Model
+  class Google_Service_Dfareporting_Report extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   public $accountId;
-  protected $criteriaType = 'Google_Service_Dfareporting_ReportCriteria';
+//    protected $criteriaType = 'Google_Service_Dfareporting_ReportCriteria';
   protected $criteriaDataType = '';
-  protected $crossDimensionReachCriteriaType = 'Google_Service_Dfareporting_ReportCrossDimensionReachCriteria';
-  protected $crossDimensionReachCriteriaDataType = '';
+             protected $crossDimensionReachCriteriaType = 'Google_Service_Dfareporting_ReportCrossDimensionReachCriteria';
+					protected $crossDimensionReachCriteriaDataType = '';
   protected $deliveryType = 'Google_Service_Dfareporting_ReportDelivery';
   protected $deliveryDataType = '';
   public $etag;
@@ -16424,8 +16412,8 @@ class Google_Service_Dfareporting_Report extends Google_Model
   public $format;
   public $id;
   public $kind;
-  public $lastModifiedTime;
-  public $name;
+		public $lastModifiedTime;
+    public $name;
   public $ownerProfileId;
   protected $pathToConversionCriteriaType = 'Google_Service_Dfareporting_ReportPathToConversionCriteria';
   protected $pathToConversionCriteriaDataType = '';
@@ -16445,7 +16433,7 @@ class Google_Service_Dfareporting_Report extends Google_Model
   {
     return $this->accountId;
   }
-  public function setCriteria(Google_Service_Dfareporting_ReportCriteria $criteria)
+       public function setCriteria(Google_Service_Dfareporting_ReportCriteria $criteria)
   {
     $this->criteria = $criteria;
   }
@@ -16453,14 +16441,14 @@ class Google_Service_Dfareporting_Report extends Google_Model
   {
     return $this->criteria;
   }
-  public function setCrossDimensionReachCriteria(Google_Service_Dfareporting_ReportCrossDimensionReachCriteria $crossDimensionReachCriteria)
-  {
-    $this->crossDimensionReachCriteria = $crossDimensionReachCriteria;
-  }
+	public function setCrossDimensionReachCriteria(Google_Service_Dfareporting_ReportCrossDimensionReachCriteria $crossDimensionReachCriteria)
+     {
+        $this->crossDimensionReachCriteria = $crossDimensionReachCriteria;
+               }
   public function getCrossDimensionReachCriteria()
   {
-    return $this->crossDimensionReachCriteria;
-  }
+      return $this->crossDimensionReachCriteria;
+                }
   public function setDelivery(Google_Service_Dfareporting_ReportDelivery $delivery)
   {
     $this->delivery = $delivery;
@@ -16482,7 +16470,7 @@ class Google_Service_Dfareporting_Report extends Google_Model
     $this->fileName = $fileName;
   }
   public function getFileName()
-  {
+            {
     return $this->fileName;
   }
   public function setFloodlightCriteria(Google_Service_Dfareporting_ReportFloodlightCriteria $floodlightCriteria)
@@ -16490,7 +16478,7 @@ class Google_Service_Dfareporting_Report extends Google_Model
     $this->floodlightCriteria = $floodlightCriteria;
   }
   public function getFloodlightCriteria()
-  {
+               {
     return $this->floodlightCriteria;
   }
   public function setFormat($format)
@@ -16498,7 +16486,7 @@ class Google_Service_Dfareporting_Report extends Google_Model
     $this->format = $format;
   }
   public function getFormat()
-  {
+     //  {
     return $this->format;
   }
   public function setId($id)
@@ -16521,14 +16509,14 @@ class Google_Service_Dfareporting_Report extends Google_Model
   {
     $this->lastModifiedTime = $lastModifiedTime;
   }
-  public function getLastModifiedTime()
+					public function getLastModifiedTime()
   {
     return $this->lastModifiedTime;
   }
   public function setName($name)
   {
     $this->name = $name;
-  }
+     //  }
   public function getName()
   {
     return $this->name;
@@ -16536,19 +16524,19 @@ class Google_Service_Dfareporting_Report extends Google_Model
   public function setOwnerProfileId($ownerProfileId)
   {
     $this->ownerProfileId = $ownerProfileId;
-  }
+	}
   public function getOwnerProfileId()
   {
     return $this->ownerProfileId;
   }
   public function setPathToConversionCriteria(Google_Service_Dfareporting_ReportPathToConversionCriteria $pathToConversionCriteria)
   {
-    $this->pathToConversionCriteria = $pathToConversionCriteria;
+  //      $this->pathToConversionCriteria = $pathToConversionCriteria;
   }
   public function getPathToConversionCriteria()
   {
     return $this->pathToConversionCriteria;
-  }
+        }
   public function setReachCriteria(Google_Service_Dfareporting_ReportReachCriteria $reachCriteria)
   {
     $this->reachCriteria = $reachCriteria;
@@ -16565,10 +16553,10 @@ class Google_Service_Dfareporting_Report extends Google_Model
   {
     return $this->schedule;
   }
-  public function setSubAccountId($subAccountId)
-  {
+               public function setSubAccountId($subAccountId)
+     //    {
     $this->subAccountId = $subAccountId;
-  }
+		}
   public function getSubAccountId()
   {
     return $this->subAccountId;
@@ -16580,7 +16568,6 @@ class Google_Service_Dfareporting_Report extends Google_Model
   public function getType()
   {
     return $this->type;
-  }
 }
 
 class Google_Service_Dfareporting_ReportCompatibleFields extends Google_Collection
@@ -16589,7 +16576,7 @@ class Google_Service_Dfareporting_ReportCompatibleFields extends Google_Collecti
   protected $internal_gapi_mappings = array(
   );
   protected $dimensionFiltersType = 'Google_Service_Dfareporting_Dimension';
-  protected $dimensionFiltersDataType = 'array';
+    protected $dimensionFiltersDataType = 'array';
   protected $dimensionsType = 'Google_Service_Dfareporting_Dimension';
   protected $dimensionsDataType = 'array';
   public $kind;
@@ -16598,8 +16585,7 @@ class Google_Service_Dfareporting_ReportCompatibleFields extends Google_Collecti
   protected $pivotedActivityMetricsType = 'Google_Service_Dfareporting_Metric';
   protected $pivotedActivityMetricsDataType = 'array';
 
-
-  public function setDimensionFilters($dimensionFilters)
+    public function setDimensionFilters($dimensionFilters)
   {
     $this->dimensionFilters = $dimensionFilters;
   }
@@ -16609,14 +16595,14 @@ class Google_Service_Dfareporting_ReportCompatibleFields extends Google_Collecti
   }
   public function setDimensions($dimensions)
   {
-    $this->dimensions = $dimensions;
+           $this->dimensions = $dimensions;
   }
-  public function getDimensions()
+			public function getDimensions()
   {
     return $this->dimensions;
   }
   public function setKind($kind)
-  {
+                {
     $this->kind = $kind;
   }
   public function getKind()
@@ -16647,24 +16633,23 @@ class Google_Service_Dfareporting_ReportCriteria extends Google_Collection
   protected $internal_gapi_mappings = array(
   );
   protected $activitiesType = 'Google_Service_Dfareporting_Activities';
-  protected $activitiesDataType = '';
+     protected $activitiesDataType = '';
   protected $customRichMediaEventsType = 'Google_Service_Dfareporting_CustomRichMediaEvents';
-  protected $customRichMediaEventsDataType = '';
+//   protected $customRichMediaEventsDataType = '';
   protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
   protected $dateRangeDataType = '';
   protected $dimensionFiltersType = 'Google_Service_Dfareporting_DimensionValue';
-  protected $dimensionFiltersDataType = 'array';
-  protected $dimensionsType = 'Google_Service_Dfareporting_SortedDimension';
+    protected $dimensionFiltersDataType = 'array';
+ //   protected $dimensionsType = 'Google_Service_Dfareporting_SortedDimension';
   protected $dimensionsDataType = 'array';
   public $metricNames;
 
-
-  public function setActivities(Google_Service_Dfareporting_Activities $activities)
+					  public function setActivities(Google_Service_Dfareporting_Activities $activities)
   {
     $this->activities = $activities;
   }
   public function getActivities()
-  {
+            {
     return $this->activities;
   }
   public function setCustomRichMediaEvents(Google_Service_Dfareporting_CustomRichMediaEvents $customRichMediaEvents)
@@ -16673,14 +16658,14 @@ class Google_Service_Dfareporting_ReportCriteria extends Google_Collection
   }
   public function getCustomRichMediaEvents()
   {
-    return $this->customRichMediaEvents;
+					return $this->customRichMediaEvents;
   }
   public function setDateRange(Google_Service_Dfareporting_DateRange $dateRange)
   {
     $this->dateRange = $dateRange;
   }
   public function getDateRange()
-  {
+                {
     return $this->dateRange;
   }
   public function setDimensionFilters($dimensionFilters)
@@ -16688,27 +16673,26 @@ class Google_Service_Dfareporting_ReportCriteria extends Google_Collection
     $this->dimensionFilters = $dimensionFilters;
   }
   public function getDimensionFilters()
-  {
+	{
     return $this->dimensionFilters;
   }
   public function setDimensions($dimensions)
   {
     $this->dimensions = $dimensions;
   }
-  public function getDimensions()
+					public function getDimensions()
   {
     return $this->dimensions;
   }
-  public function setMetricNames($metricNames)
-  {
+      public function setMetricNames($metricNames)
+     {
     $this->metricNames = $metricNames;
-  }
+	}
   public function getMetricNames()
   {
     return $this->metricNames;
   }
-}
-
+                 }
 class Google_Service_Dfareporting_ReportCrossDimensionReachCriteria extends Google_Collection
 {
   protected $collection_key = 'overlapMetricNames';
@@ -16716,7 +16700,7 @@ class Google_Service_Dfareporting_ReportCrossDimensionReachCriteria extends Goog
   );
   protected $breakdownType = 'Google_Service_Dfareporting_SortedDimension';
   protected $breakdownDataType = 'array';
-  protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
+     //    protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
   protected $dateRangeDataType = '';
   public $dimension;
   protected $dimensionFiltersType = 'Google_Service_Dfareporting_DimensionValue';
@@ -16739,7 +16723,7 @@ class Google_Service_Dfareporting_ReportCrossDimensionReachCriteria extends Goog
     $this->dateRange = $dateRange;
   }
   public function getDateRange()
-  {
+    //  {
     return $this->dateRange;
   }
   public function setDimension($dimension)
@@ -16749,9 +16733,9 @@ class Google_Service_Dfareporting_ReportCrossDimensionReachCriteria extends Goog
   public function getDimension()
   {
     return $this->dimension;
-  }
-  public function setDimensionFilters($dimensionFilters)
-  {
+ }
+ public function setDimensionFilters($dimensionFilters)
+                {
     $this->dimensionFilters = $dimensionFilters;
   }
   public function getDimensionFilters()
@@ -16763,7 +16747,7 @@ class Google_Service_Dfareporting_ReportCrossDimensionReachCriteria extends Goog
     $this->metricNames = $metricNames;
   }
   public function getMetricNames()
-  {
+{
     return $this->metricNames;
   }
   public function setOverlapMetricNames($overlapMetricNames)
@@ -16771,14 +16755,14 @@ class Google_Service_Dfareporting_ReportCrossDimensionReachCriteria extends Goog
     $this->overlapMetricNames = $overlapMetricNames;
   }
   public function getOverlapMetricNames()
-  {
+					{
     return $this->overlapMetricNames;
   }
-  public function setPivoted($pivoted)
+             public function setPivoted($pivoted)
   {
     $this->pivoted = $pivoted;
-  }
-  public function getPivoted()
+ //   }
+   public function getPivoted()
   {
     return $this->pivoted;
   }
@@ -16798,7 +16782,7 @@ class Google_Service_Dfareporting_ReportDelivery extends Google_Collection
 
   public function setEmailOwner($emailOwner)
   {
-    $this->emailOwner = $emailOwner;
+					$this->emailOwner = $emailOwner;
   }
   public function getEmailOwner()
   {
@@ -16806,13 +16790,13 @@ class Google_Service_Dfareporting_ReportDelivery extends Google_Collection
   }
   public function setEmailOwnerDeliveryType($emailOwnerDeliveryType)
   {
-    $this->emailOwnerDeliveryType = $emailOwnerDeliveryType;
+   //       $this->emailOwnerDeliveryType = $emailOwnerDeliveryType;
   }
   public function getEmailOwnerDeliveryType()
   {
-    return $this->emailOwnerDeliveryType;
+                 return $this->emailOwnerDeliveryType;
   }
-  public function setMessage($message)
+   public function setMessage($message)
   {
     $this->message = $message;
   }
@@ -16832,10 +16816,10 @@ class Google_Service_Dfareporting_ReportDelivery extends Google_Collection
 
 class Google_Service_Dfareporting_ReportFloodlightCriteria extends Google_Collection
 {
-  protected $collection_key = 'metricNames';
+         protected $collection_key = 'metricNames';
   protected $internal_gapi_mappings = array(
   );
-  protected $customRichMediaEventsType = 'Google_Service_Dfareporting_DimensionValue';
+     //  protected $customRichMediaEventsType = 'Google_Service_Dfareporting_DimensionValue';
   protected $customRichMediaEventsDataType = 'array';
   protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
   protected $dateRangeDataType = '';
@@ -16843,7 +16827,7 @@ class Google_Service_Dfareporting_ReportFloodlightCriteria extends Google_Collec
   protected $dimensionFiltersDataType = 'array';
   protected $dimensionsType = 'Google_Service_Dfareporting_SortedDimension';
   protected $dimensionsDataType = 'array';
-  protected $floodlightConfigIdType = 'Google_Service_Dfareporting_DimensionValue';
+                protected $floodlightConfigIdType = 'Google_Service_Dfareporting_DimensionValue';
   protected $floodlightConfigIdDataType = '';
   public $metricNames;
   protected $reportPropertiesType = 'Google_Service_Dfareporting_ReportFloodlightCriteriaReportProperties';
@@ -16857,7 +16841,7 @@ class Google_Service_Dfareporting_ReportFloodlightCriteria extends Google_Collec
   public function getCustomRichMediaEvents()
   {
     return $this->customRichMediaEvents;
-  }
+}
   public function setDateRange(Google_Service_Dfareporting_DateRange $dateRange)
   {
     $this->dateRange = $dateRange;
@@ -16865,7 +16849,7 @@ class Google_Service_Dfareporting_ReportFloodlightCriteria extends Google_Collec
   public function getDateRange()
   {
     return $this->dateRange;
-  }
+       }
   public function setDimensionFilters($dimensionFilters)
   {
     $this->dimensionFilters = $dimensionFilters;
@@ -16873,15 +16857,15 @@ class Google_Service_Dfareporting_ReportFloodlightCriteria extends Google_Collec
   public function getDimensionFilters()
   {
     return $this->dimensionFilters;
-  }
-  public function setDimensions($dimensions)
+                 }
+            public function setDimensions($dimensions)
   {
     $this->dimensions = $dimensions;
   }
   public function getDimensions()
   {
     return $this->dimensions;
-  }
+     }
   public function setFloodlightConfigId(Google_Service_Dfareporting_DimensionValue $floodlightConfigId)
   {
     $this->floodlightConfigId = $floodlightConfigId;
@@ -16889,19 +16873,20 @@ class Google_Service_Dfareporting_ReportFloodlightCriteria extends Google_Collec
   public function getFloodlightConfigId()
   {
     return $this->floodlightConfigId;
-  }
+  //  }
+  public function setMetricNames($metricNames)
   public function setMetricNames($metricNames)
   {
     $this->metricNames = $metricNames;
   }
   public function getMetricNames()
   {
-    return $this->metricNames;
+      return $this->metricNames;
   }
   public function setReportProperties(Google_Service_Dfareporting_ReportFloodlightCriteriaReportProperties $reportProperties)
   {
     $this->reportProperties = $reportProperties;
-  }
+	}
   public function getReportProperties()
   {
     return $this->reportProperties;
@@ -16940,12 +16925,13 @@ class Google_Service_Dfareporting_ReportFloodlightCriteriaReportProperties exten
   public function getIncludeUnattributedIPConversions()
   {
     return $this->includeUnattributedIPConversions;
-  }
+      }
 }
 
 class Google_Service_Dfareporting_ReportList extends Google_Collection
 {
   protected $collection_key = 'items';
+  protected $internal_gapi_mappings = array(
   protected $internal_gapi_mappings = array(
   );
   public $etag;
@@ -16960,7 +16946,7 @@ class Google_Service_Dfareporting_ReportList extends Google_Collection
     $this->etag = $etag;
   }
   public function getEtag()
-  {
+	{
     return $this->etag;
   }
   public function setItems($items)
@@ -16975,10 +16961,10 @@ class Google_Service_Dfareporting_ReportList extends Google_Collection
   {
     $this->kind = $kind;
   }
-  public function getKind()
+  //  public function getKind()
   {
     return $this->kind;
-  }
+					}
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
@@ -16996,30 +16982,30 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteria extends Google_
   );
   protected $activityFiltersType = 'Google_Service_Dfareporting_DimensionValue';
   protected $activityFiltersDataType = 'array';
+  protected $activityFiltersDataType = 'array';
   protected $conversionDimensionsType = 'Google_Service_Dfareporting_SortedDimension';
   protected $conversionDimensionsDataType = 'array';
   protected $customFloodlightVariablesType = 'Google_Service_Dfareporting_SortedDimension';
-  protected $customFloodlightVariablesDataType = 'array';
   protected $customRichMediaEventsType = 'Google_Service_Dfareporting_DimensionValue';
   protected $customRichMediaEventsDataType = 'array';
-  protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
+				protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
   protected $dateRangeDataType = '';
   protected $floodlightConfigIdType = 'Google_Service_Dfareporting_DimensionValue';
   protected $floodlightConfigIdDataType = '';
   public $metricNames;
   protected $perInteractionDimensionsType = 'Google_Service_Dfareporting_SortedDimension';
   protected $perInteractionDimensionsDataType = 'array';
-  protected $reportPropertiesType = 'Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties';
+ //    protected $reportPropertiesType = 'Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties';
   protected $reportPropertiesDataType = '';
 
 
   public function setActivityFilters($activityFilters)
-  {
+     //  {
     $this->activityFilters = $activityFilters;
   }
-  public function getActivityFilters()
+//     public function getActivityFilters()
   {
-    return $this->activityFilters;
+     //       return $this->activityFilters;
   }
   public function setConversionDimensions($conversionDimensions)
   {
@@ -17035,7 +17021,7 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteria extends Google_
   }
   public function getCustomFloodlightVariables()
   {
-    return $this->customFloodlightVariables;
+                 return $this->customFloodlightVariables;
   }
   public function setCustomRichMediaEvents($customRichMediaEvents)
   {
@@ -17050,7 +17036,7 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteria extends Google_
     $this->dateRange = $dateRange;
   }
   public function getDateRange()
-  {
+             {
     return $this->dateRange;
   }
   public function setFloodlightConfigId(Google_Service_Dfareporting_DimensionValue $floodlightConfigId)
@@ -17063,8 +17049,8 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteria extends Google_
   }
   public function setMetricNames($metricNames)
   {
-    $this->metricNames = $metricNames;
-  }
+            $this->metricNames = $metricNames;
+ }
   public function getMetricNames()
   {
     return $this->metricNames;
@@ -17076,7 +17062,7 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteria extends Google_
   public function getPerInteractionDimensions()
   {
     return $this->perInteractionDimensions;
-  }
+         }
   public function setReportProperties(Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties $reportProperties)
   {
     $this->reportProperties = $reportProperties;
@@ -17098,11 +17084,10 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties
   public $includeUnattributedIPConversions;
   public $maximumClickInteractions;
   public $maximumImpressionInteractions;
-  public $maximumInteractionGap;
+//    public $maximumInteractionGap;
   public $pivotOnInteractionPath;
 
-
-  public function setClicksLookbackWindow($clicksLookbackWindow)
+     public function setClicksLookbackWindow($clicksLookbackWindow)
   {
     $this->clicksLookbackWindow = $clicksLookbackWindow;
   }
@@ -17114,12 +17099,12 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties
   {
     $this->impressionsLookbackWindow = $impressionsLookbackWindow;
   }
-  public function getImpressionsLookbackWindow()
+		public function getImpressionsLookbackWindow()
   {
     return $this->impressionsLookbackWindow;
   }
   public function setIncludeAttributedIPConversions($includeAttributedIPConversions)
-  {
+{
     $this->includeAttributedIPConversions = $includeAttributedIPConversions;
   }
   public function getIncludeAttributedIPConversions()
@@ -17129,7 +17114,7 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties
   public function setIncludeUnattributedCookieConversions($includeUnattributedCookieConversions)
   {
     $this->includeUnattributedCookieConversions = $includeUnattributedCookieConversions;
-  }
+          }
   public function getIncludeUnattributedCookieConversions()
   {
     return $this->includeUnattributedCookieConversions;
@@ -17142,21 +17127,22 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties
   {
     return $this->includeUnattributedIPConversions;
   }
-  public function setMaximumClickInteractions($maximumClickInteractions)
+               public function setMaximumClickInteractions($maximumClickInteractions)
   {
     $this->maximumClickInteractions = $maximumClickInteractions;
   }
+  public function getMaximumClickInteractions()
   public function getMaximumClickInteractions()
   {
     return $this->maximumClickInteractions;
   }
   public function setMaximumImpressionInteractions($maximumImpressionInteractions)
-  {
+ //     {
     $this->maximumImpressionInteractions = $maximumImpressionInteractions;
   }
-  public function getMaximumImpressionInteractions()
+			public function getMaximumImpressionInteractions()
   {
-    return $this->maximumImpressionInteractions;
+		return $this->maximumImpressionInteractions;
   }
   public function setMaximumInteractionGap($maximumInteractionGap)
   {
@@ -17165,7 +17151,7 @@ class Google_Service_Dfareporting_ReportPathToConversionCriteriaReportProperties
   public function getMaximumInteractionGap()
   {
     return $this->maximumInteractionGap;
-  }
+			}
   public function setPivotOnInteractionPath($pivotOnInteractionPath)
   {
     $this->pivotOnInteractionPath = $pivotOnInteractionPath;
@@ -17187,7 +17173,7 @@ class Google_Service_Dfareporting_ReportReachCriteria extends Google_Collection
   protected $customRichMediaEventsDataType = '';
   protected $dateRangeType = 'Google_Service_Dfareporting_DateRange';
   protected $dateRangeDataType = '';
-  protected $dimensionFiltersType = 'Google_Service_Dfareporting_DimensionValue';
+					protected $dimensionFiltersType = 'Google_Service_Dfareporting_DimensionValue';
   protected $dimensionFiltersDataType = 'array';
   protected $dimensionsType = 'Google_Service_Dfareporting_SortedDimension';
   protected $dimensionsDataType = 'array';
@@ -17197,7 +17183,7 @@ class Google_Service_Dfareporting_ReportReachCriteria extends Google_Collection
 
 
   public function setActivities(Google_Service_Dfareporting_Activities $activities)
-  {
+					{
     $this->activities = $activities;
   }
   public function getActivities()
@@ -17217,7 +17203,7 @@ class Google_Service_Dfareporting_ReportReachCriteria extends Google_Collection
     $this->dateRange = $dateRange;
   }
   public function getDateRange()
-  {
+			{
     return $this->dateRange;
   }
   public function setDimensionFilters($dimensionFilters)
@@ -17225,13 +17211,13 @@ class Google_Service_Dfareporting_ReportReachCriteria extends Google_Collection
     $this->dimensionFilters = $dimensionFilters;
   }
   public function getDimensionFilters()
-  {
-    return $this->dimensionFilters;
+   {
+			return $this->dimensionFilters;
   }
   public function setDimensions($dimensions)
   {
     $this->dimensions = $dimensions;
-  }
+}
   public function getDimensions()
   {
     return $this->dimensions;
@@ -17253,7 +17239,7 @@ class Google_Service_Dfareporting_ReportReachCriteria extends Google_Collection
     return $this->metricNames;
   }
   public function setReachByFrequencyMetricNames($reachByFrequencyMetricNames)
-  {
+           {
     $this->reachByFrequencyMetricNames = $reachByFrequencyMetricNames;
   }
   public function getReachByFrequencyMetricNames()
@@ -17273,12 +17259,12 @@ class Google_Service_Dfareporting_ReportSchedule extends Google_Collection
   public $repeats;
   public $repeatsOnWeekDays;
   public $runsOnDayOfMonth;
-  public $startDate;
+              public $startDate;
 
 
   public function setActive($active)
   {
-    $this->active = $active;
+                 $this->active = $active;
   }
   public function getActive()
   {
@@ -17288,7 +17274,7 @@ class Google_Service_Dfareporting_ReportSchedule extends Google_Collection
   {
     $this->every = $every;
   }
-  public function getEvery()
+public function getEvery()
   {
     return $this->every;
   }
@@ -17297,13 +17283,13 @@ class Google_Service_Dfareporting_ReportSchedule extends Google_Collection
     $this->expirationDate = $expirationDate;
   }
   public function getExpirationDate()
-  {
+   {
     return $this->expirationDate;
   }
   public function setRepeats($repeats)
   {
     $this->repeats = $repeats;
-  }
+    //    }
   public function getRepeats()
   {
     return $this->repeats;
@@ -17314,7 +17300,7 @@ class Google_Service_Dfareporting_ReportSchedule extends Google_Collection
   }
   public function getRepeatsOnWeekDays()
   {
-    return $this->repeatsOnWeekDays;
+                return $this->repeatsOnWeekDays;
   }
   public function setRunsOnDayOfMonth($runsOnDayOfMonth)
   {
@@ -17325,7 +17311,7 @@ class Google_Service_Dfareporting_ReportSchedule extends Google_Collection
     return $this->runsOnDayOfMonth;
   }
   public function setStartDate($startDate)
-  {
+           {
     $this->startDate = $startDate;
   }
   public function getStartDate()
@@ -17340,12 +17326,12 @@ class Google_Service_Dfareporting_ReportsConfiguration extends Google_Model
   );
   public $exposureToConversionEnabled;
   protected $lookbackConfigurationType = 'Google_Service_Dfareporting_LookbackConfiguration';
-  protected $lookbackConfigurationDataType = '';
+//   protected $lookbackConfigurationDataType = '';
   public $reportGenerationTimeZoneId;
 
 
   public function setExposureToConversionEnabled($exposureToConversionEnabled)
-  {
+				{
     $this->exposureToConversionEnabled = $exposureToConversionEnabled;
   }
   public function getExposureToConversionEnabled()
@@ -17383,7 +17369,7 @@ class Google_Service_Dfareporting_RichMediaExitOverride extends Google_Model
   {
     $this->customExitUrl = $customExitUrl;
   }
-  public function getCustomExitUrl()
+       public function getCustomExitUrl()
   {
     return $this->customExitUrl;
   }
@@ -17412,9 +17398,10 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   );
   public $accountId;
   public $approved;
+  public $approved;
   public $directorySiteId;
   protected $directorySiteIdDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
-  protected $directorySiteIdDimensionValueDataType = '';
+//     protected $directorySiteIdDimensionValueDataType = '';
   public $id;
   protected $idDimensionValueType = 'Google_Service_Dfareporting_DimensionValue';
   protected $idDimensionValueDataType = '';
@@ -17422,8 +17409,8 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   public $kind;
   public $name;
   protected $siteContactsType = 'Google_Service_Dfareporting_SiteContact';
-  protected $siteContactsDataType = 'array';
-  protected $siteSettingsType = 'Google_Service_Dfareporting_SiteSettings';
+					protected $siteContactsDataType = 'array';
+               protected $siteSettingsType = 'Google_Service_Dfareporting_SiteSettings';
   protected $siteSettingsDataType = '';
   public $subaccountId;
 
@@ -17431,14 +17418,15 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
-  }
+					}
   public function getAccountId()
   {
-    return $this->accountId;
+  {
+     //     return $this->accountId;
   }
   public function setApproved($approved)
   {
-    $this->approved = $approved;
+		$this->approved = $approved;
   }
   public function getApproved()
   {
@@ -17460,7 +17448,7 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   {
     return $this->directorySiteIdDimensionValue;
   }
-  public function setId($id)
+  //   public function setId($id)
   {
     $this->id = $id;
   }
@@ -17477,26 +17465,27 @@ class Google_Service_Dfareporting_Site extends Google_Collection
     return $this->idDimensionValue;
   }
   public function setKeyName($keyName)
-  {
-    $this->keyName = $keyName;
+   //   {
+    //       $this->keyName = $keyName;
+  }
   }
   public function getKeyName()
   {
     return $this->keyName;
-  }
+ }
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   public function getKind()
-  {
+          {
     return $this->kind;
   }
   public function setName($name)
   {
     $this->name = $name;
   }
-  public function getName()
+//     public function getName()
   {
     return $this->name;
   }
@@ -17507,17 +17496,17 @@ class Google_Service_Dfareporting_Site extends Google_Collection
   public function getSiteContacts()
   {
     return $this->siteContacts;
-  }
+   }
   public function setSiteSettings(Google_Service_Dfareporting_SiteSettings $siteSettings)
   {
     $this->siteSettings = $siteSettings;
-  }
+   //    }
   public function getSiteSettings()
   {
     return $this->siteSettings;
-  }
-  public function setSubaccountId($subaccountId)
-  {
+                }
+					public function setSubaccountId($subaccountId)
+                 {
     $this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
@@ -17527,7 +17516,7 @@ class Google_Service_Dfareporting_Site extends Google_Collection
 }
 
 class Google_Service_Dfareporting_SiteContact extends Google_Model
-{
+     {
   protected $internal_gapi_mappings = array(
   );
   public $contactType;
@@ -17546,7 +17535,7 @@ class Google_Service_Dfareporting_SiteContact extends Google_Model
     return $this->contactType;
   }
   public function setEmail($email)
-  {
+		{
     $this->email = $email;
   }
   public function getEmail()
@@ -17581,7 +17570,7 @@ class Google_Service_Dfareporting_SiteContact extends Google_Model
 
 class Google_Service_Dfareporting_SiteSettings extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+	protected $internal_gapi_mappings = array(
   );
   public $activeViewOptOut;
   protected $creativeSettingsType = 'Google_Service_Dfareporting_CreativeSettings';
@@ -17594,7 +17583,7 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
   protected $tagSettingDataType = '';
 
 
-  public function setActiveViewOptOut($activeViewOptOut)
+  //     public function setActiveViewOptOut($activeViewOptOut)
   {
     $this->activeViewOptOut = $activeViewOptOut;
   }
@@ -17605,11 +17594,11 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
   public function setCreativeSettings(Google_Service_Dfareporting_CreativeSettings $creativeSettings)
   {
     $this->creativeSettings = $creativeSettings;
-  }
+	}
   public function getCreativeSettings()
   {
     return $this->creativeSettings;
-  }
+   //     }
   public function setDisableBrandSafeAds($disableBrandSafeAds)
   {
     $this->disableBrandSafeAds = $disableBrandSafeAds;
@@ -17629,7 +17618,7 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
   public function setLookbackConfiguration(Google_Service_Dfareporting_LookbackConfiguration $lookbackConfiguration)
   {
     $this->lookbackConfiguration = $lookbackConfiguration;
-  }
+   //     }
   public function getLookbackConfiguration()
   {
     return $this->lookbackConfiguration;
@@ -17640,7 +17629,7 @@ class Google_Service_Dfareporting_SiteSettings extends Google_Model
   }
   public function getTagSetting()
   {
-    return $this->tagSetting;
+			return $this->tagSetting;
   }
 }
 
@@ -17661,7 +17650,7 @@ class Google_Service_Dfareporting_SitesListResponse extends Google_Collection
   }
   public function getKind()
   {
-    return $this->kind;
+       return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
@@ -17675,9 +17664,9 @@ class Google_Service_Dfareporting_SitesListResponse extends Google_Collection
   {
     $this->sites = $sites;
   }
-  public function getSites()
+    public function getSites()
   {
-    return $this->sites;
+			return $this->sites;
   }
 }
 
@@ -17691,8 +17680,7 @@ class Google_Service_Dfareporting_Size extends Google_Model
   public $kind;
   public $width;
 
-
-  public function setHeight($height)
+				  public function setHeight($height)
   {
     $this->height = $height;
   }
@@ -17705,20 +17693,20 @@ class Google_Service_Dfareporting_Size extends Google_Model
     $this->iab = $iab;
   }
   public function getIab()
-  {
+   //   {
     return $this->iab;
   }
   public function setId($id)
   {
-    $this->id = $id;
+	$this->id = $id;
   }
   public function getId()
-  {
+				{
     return $this->id;
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+ //      $this->kind = $kind;
   }
   public function getKind()
   {
@@ -17740,10 +17728,9 @@ class Google_Service_Dfareporting_SizesListResponse extends Google_Collection
   protected $internal_gapi_mappings = array(
   );
   public $kind;
-  protected $sizesType = 'Google_Service_Dfareporting_Size';
+        protected $sizesType = 'Google_Service_Dfareporting_Size';
   protected $sizesDataType = 'array';
-
-
+		
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -17757,7 +17744,7 @@ class Google_Service_Dfareporting_SizesListResponse extends Google_Collection
     $this->sizes = $sizes;
   }
   public function getSizes()
-  {
+				{
     return $this->sizes;
   }
 }
@@ -17766,12 +17753,13 @@ class Google_Service_Dfareporting_SortedDimension extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $kind;
+			public $kind;
   public $name;
   public $sortOrder;
 
 
-  public function setKind($kind)
+
+      public function setKind($kind)
   {
     $this->kind = $kind;
   }
@@ -17792,7 +17780,7 @@ class Google_Service_Dfareporting_SortedDimension extends Google_Model
     $this->sortOrder = $sortOrder;
   }
   public function getSortOrder()
-  {
+					{
     return $this->sortOrder;
   }
 }
@@ -17801,9 +17789,9 @@ class Google_Service_Dfareporting_Subaccount extends Google_Collection
 {
   protected $collection_key = 'availablePermissionIds';
   protected $internal_gapi_mappings = array(
-  );
+					);
   public $accountId;
-  public $availablePermissionIds;
+                 public $availablePermissionIds;
   public $id;
   public $kind;
   public $name;
@@ -17816,11 +17804,11 @@ class Google_Service_Dfareporting_Subaccount extends Google_Collection
   public function getAccountId()
   {
     return $this->accountId;
-  }
-  public function setAvailablePermissionIds($availablePermissionIds)
+                 }
+	public function setAvailablePermissionIds($availablePermissionIds)
   {
     $this->availablePermissionIds = $availablePermissionIds;
-  }
+					}
   public function getAvailablePermissionIds()
   {
     return $this->availablePermissionIds;
@@ -17834,10 +17822,10 @@ class Google_Service_Dfareporting_Subaccount extends Google_Collection
     return $this->id;
   }
   public function setKind($kind)
-  {
+				{
     $this->kind = $kind;
   }
-  public function getKind()
+  //  public function getKind()
   {
     return $this->kind;
   }
@@ -17847,11 +17835,11 @@ class Google_Service_Dfareporting_Subaccount extends Google_Collection
   }
   public function getName()
   {
-    return $this->name;
+    //     return $this->name;
   }
 }
-
-class Google_Service_Dfareporting_SubaccountsListResponse extends Google_Collection
+      class Google_Service_Dfareporting_SubaccountsListResponse extends Google_Collection
+{
 {
   protected $collection_key = 'subaccounts';
   protected $internal_gapi_mappings = array(
@@ -17868,7 +17856,7 @@ class Google_Service_Dfareporting_SubaccountsListResponse extends Google_Collect
   }
   public function getKind()
   {
-    return $this->kind;
+   //      return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
@@ -17878,11 +17866,11 @@ class Google_Service_Dfareporting_SubaccountsListResponse extends Google_Collect
   {
     return $this->nextPageToken;
   }
-  public function setSubaccounts($subaccounts)
+ //     public function setSubaccounts($subaccounts)
   {
-    $this->subaccounts = $subaccounts;
+        $this->subaccounts = $subaccounts;
   }
-  public function getSubaccounts()
+           public function getSubaccounts()
   {
     return $this->subaccounts;
   }
@@ -17893,17 +17881,17 @@ class Google_Service_Dfareporting_TagData extends Google_Model
   protected $internal_gapi_mappings = array(
   );
   public $adId;
-  public $clickTag;
+              public $clickTag;
   public $creativeId;
   public $format;
   public $impressionTag;
 
 
-  public function setAdId($adId)
+               public function setAdId($adId)
   {
     $this->adId = $adId;
   }
-  public function getAdId()
+                 public function getAdId()
   {
     return $this->adId;
   }
@@ -17922,7 +17910,7 @@ class Google_Service_Dfareporting_TagData extends Google_Model
   public function getCreativeId()
   {
     return $this->creativeId;
-  }
+            }
   public function setFormat($format)
   {
     $this->format = $format;
@@ -17930,7 +17918,7 @@ class Google_Service_Dfareporting_TagData extends Google_Model
   public function getFormat()
   {
     return $this->format;
-  }
+ //     }
   public function setImpressionTag($impressionTag)
   {
     $this->impressionTag = $impressionTag;
@@ -17939,7 +17927,7 @@ class Google_Service_Dfareporting_TagData extends Google_Model
   {
     return $this->impressionTag;
   }
-}
+                 }
 
 class Google_Service_Dfareporting_TagSetting extends Google_Model
 {
@@ -17950,18 +17938,17 @@ class Google_Service_Dfareporting_TagSetting extends Google_Model
   public $includeClickTracking;
   public $keywordOption;
 
-
-  public function setAdditionalKeyValues($additionalKeyValues)
+    public function setAdditionalKeyValues($additionalKeyValues)
   {
     $this->additionalKeyValues = $additionalKeyValues;
   }
   public function getAdditionalKeyValues()
   {
-    return $this->additionalKeyValues;
+        return $this->additionalKeyValues;
   }
   public function setIncludeClickThroughUrls($includeClickThroughUrls)
   {
-    $this->includeClickThroughUrls = $includeClickThroughUrls;
+              $this->includeClickThroughUrls = $includeClickThroughUrls;
   }
   public function getIncludeClickThroughUrls()
   {
@@ -17977,9 +17964,9 @@ class Google_Service_Dfareporting_TagSetting extends Google_Model
   }
   public function setKeywordOption($keywordOption)
   {
-    $this->keywordOption = $keywordOption;
+$this->keywordOption = $keywordOption;
   }
-  public function getKeywordOption()
+    public function getKeywordOption()
   {
     return $this->keywordOption;
   }
@@ -17992,13 +17979,13 @@ class Google_Service_Dfareporting_TagSettings extends Google_Model
   public $dynamicTagEnabled;
   public $imageTagEnabled;
 
-
+   //
   public function setDynamicTagEnabled($dynamicTagEnabled)
   {
     $this->dynamicTagEnabled = $dynamicTagEnabled;
   }
   public function getDynamicTagEnabled()
-  {
+	{
     return $this->dynamicTagEnabled;
   }
   public function setImageTagEnabled($imageTagEnabled)
@@ -18007,7 +17994,6 @@ class Google_Service_Dfareporting_TagSettings extends Google_Model
   }
   public function getImageTagEnabled()
   {
-    return $this->imageTagEnabled;
   }
 }
 
@@ -18023,7 +18009,7 @@ class Google_Service_Dfareporting_TargetWindow extends Google_Model
   {
     $this->customHtml = $customHtml;
   }
-  public function getCustomHtml()
+   //    public function getCustomHtml()
   {
     return $this->customHtml;
   }
@@ -18044,7 +18030,7 @@ class Google_Service_Dfareporting_TechnologyTargeting extends Google_Collection
   );
   protected $browsersType = 'Google_Service_Dfareporting_Browser';
   protected $browsersDataType = 'array';
-  protected $connectionTypesType = 'Google_Service_Dfareporting_ConnectionType';
+      protected $connectionTypesType = 'Google_Service_Dfareporting_ConnectionType';
   protected $connectionTypesDataType = 'array';
   protected $mobileCarriersType = 'Google_Service_Dfareporting_MobileCarrier';
   protected $mobileCarriersDataType = 'array';
@@ -18056,9 +18042,9 @@ class Google_Service_Dfareporting_TechnologyTargeting extends Google_Collection
   protected $platformTypesDataType = 'array';
 
 
-  public function setBrowsers($browsers)
+             public function setBrowsers($browsers)
   {
-    $this->browsers = $browsers;
+     //       $this->browsers = $browsers;
   }
   public function getBrowsers()
   {
@@ -18066,7 +18052,7 @@ class Google_Service_Dfareporting_TechnologyTargeting extends Google_Collection
   }
   public function setConnectionTypes($connectionTypes)
   {
-    $this->connectionTypes = $connectionTypes;
+          $this->connectionTypes = $connectionTypes;
   }
   public function getConnectionTypes()
   {
@@ -18079,7 +18065,7 @@ class Google_Service_Dfareporting_TechnologyTargeting extends Google_Collection
   public function getMobileCarriers()
   {
     return $this->mobileCarriers;
-  }
+}
   public function setOperatingSystemVersions($operatingSystemVersions)
   {
     $this->operatingSystemVersions = $operatingSystemVersions;
@@ -18087,31 +18073,30 @@ class Google_Service_Dfareporting_TechnologyTargeting extends Google_Collection
   public function getOperatingSystemVersions()
   {
     return $this->operatingSystemVersions;
-  }
+          }
   public function setOperatingSystems($operatingSystems)
   {
     $this->operatingSystems = $operatingSystems;
   }
   public function getOperatingSystems()
   {
-    return $this->operatingSystems;
+           return $this->operatingSystems;
   }
   public function setPlatformTypes($platformTypes)
-  {
+ {
     $this->platformTypes = $platformTypes;
   }
-  public function getPlatformTypes()
   {
     return $this->platformTypes;
   }
 }
 
-class Google_Service_Dfareporting_ThirdPartyTrackingUrl extends Google_Model
-{
+				class Google_Service_Dfareporting_ThirdPartyTrackingUrl extends Google_Model
+	{
   protected $internal_gapi_mappings = array(
   );
   public $thirdPartyUrlType;
-  public $url;
+	public $url;
 
 
   public function setThirdPartyUrlType($thirdPartyUrlType)
@@ -18140,8 +18125,7 @@ class Google_Service_Dfareporting_UserDefinedVariableConfiguration extends Googl
   public $reportName;
   public $variableType;
 
-
-  public function setDataType($dataType)
+      public function setDataType($dataType)
   {
     $this->dataType = $dataType;
   }
@@ -18161,19 +18145,19 @@ class Google_Service_Dfareporting_UserDefinedVariableConfiguration extends Googl
   {
     $this->variableType = $variableType;
   }
-  public function getVariableType()
+				public function getVariableType()
   {
     return $this->variableType;
   }
 }
 
 class Google_Service_Dfareporting_UserProfile extends Google_Model
-{
+           {
   protected $internal_gapi_mappings = array(
   );
   public $accountId;
   public $accountName;
-  public $etag;
+    public $etag;
   public $kind;
   public $profileId;
   public $subAccountId;
@@ -18184,7 +18168,7 @@ class Google_Service_Dfareporting_UserProfile extends Google_Model
   public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
-  }
+}
   public function getAccountId()
   {
     return $this->accountId;
@@ -18204,9 +18188,9 @@ class Google_Service_Dfareporting_UserProfile extends Google_Model
   public function getEtag()
   {
     return $this->etag;
-  }
+		}
   public function setKind($kind)
-  {
+        {
     $this->kind = $kind;
   }
   public function getKind()
@@ -18226,7 +18210,7 @@ class Google_Service_Dfareporting_UserProfile extends Google_Model
     $this->subAccountId = $subAccountId;
   }
   public function getSubAccountId()
-  {
+		{
     return $this->subAccountId;
   }
   public function setSubAccountName($subAccountName)
@@ -18237,7 +18221,7 @@ class Google_Service_Dfareporting_UserProfile extends Google_Model
   {
     return $this->subAccountName;
   }
-  public function setUserName($userName)
+          public function setUserName($userName)
   {
     $this->userName = $userName;
   }
@@ -18263,11 +18247,11 @@ class Google_Service_Dfareporting_UserProfileList extends Google_Collection
     $this->etag = $etag;
   }
   public function getEtag()
-  {
+ //   {
     return $this->etag;
-  }
+   }
   public function setItems($items)
-  {
+ //    {
     $this->items = $items;
   }
   public function getItems()
@@ -18290,10 +18274,10 @@ class Google_Service_Dfareporting_UserRole extends Google_Collection
   protected $internal_gapi_mappings = array(
   );
   public $accountId;
-  public $defaultUserRole;
+                public $defaultUserRole;
   public $id;
   public $kind;
-  public $name;
+ //  public $name;
   public $parentUserRoleId;
   protected $permissionsType = 'Google_Service_Dfareporting_UserRolePermission';
   protected $permissionsDataType = 'array';
@@ -18307,18 +18291,19 @@ class Google_Service_Dfareporting_UserRole extends Google_Collection
   public function getAccountId()
   {
     return $this->accountId;
-  }
+                 }
   public function setDefaultUserRole($defaultUserRole)
   {
     $this->defaultUserRole = $defaultUserRole;
-  }
-  public function getDefaultUserRole()
+}
+          public function getDefaultUserRole()
   {
     return $this->defaultUserRole;
   }
   public function setId($id)
   {
     $this->id = $id;
+  }
   }
   public function getId()
   {
@@ -18335,7 +18320,7 @@ class Google_Service_Dfareporting_UserRole extends Google_Collection
   public function setName($name)
   {
     $this->name = $name;
-  }
+		}
   public function getName()
   {
     return $this->name;
@@ -18343,7 +18328,6 @@ class Google_Service_Dfareporting_UserRole extends Google_Collection
   public function setParentUserRoleId($parentUserRoleId)
   {
     $this->parentUserRoleId = $parentUserRoleId;
-  }
   public function getParentUserRoleId()
   {
     return $this->parentUserRoleId;
@@ -18357,7 +18341,7 @@ class Google_Service_Dfareporting_UserRole extends Google_Collection
     return $this->permissions;
   }
   public function setSubaccountId($subaccountId)
-  {
+          {
     $this->subaccountId = $subaccountId;
   }
   public function getSubaccountId()
@@ -18384,9 +18368,9 @@ class Google_Service_Dfareporting_UserRolePermission extends Google_Model
   public function getAvailability()
   {
     return $this->availability;
-  }
+				}
   public function setId($id)
-  {
+ //     {
     $this->id = $id;
   }
   public function getId()
@@ -18406,23 +18390,23 @@ class Google_Service_Dfareporting_UserRolePermission extends Google_Model
     $this->name = $name;
   }
   public function getName()
-  {
+			{
     return $this->name;
   }
   public function setPermissionGroupId($permissionGroupId)
   {
     $this->permissionGroupId = $permissionGroupId;
   }
-  public function getPermissionGroupId()
+            public function getPermissionGroupId()
   {
     return $this->permissionGroupId;
   }
 }
 
 class Google_Service_Dfareporting_UserRolePermissionGroup extends Google_Model
-{
+          {
   protected $internal_gapi_mappings = array(
-  );
+             );
   public $id;
   public $kind;
   public $name;
@@ -18433,11 +18417,11 @@ class Google_Service_Dfareporting_UserRolePermissionGroup extends Google_Model
     $this->id = $id;
   }
   public function getId()
-  {
+    //  {
     return $this->id;
   }
   public function setKind($kind)
-  {
+{
     $this->kind = $kind;
   }
   public function getKind()
@@ -18449,13 +18433,13 @@ class Google_Service_Dfareporting_UserRolePermissionGroup extends Google_Model
     $this->name = $name;
   }
   public function getName()
-  {
+		{
     return $this->name;
   }
 }
 
-class Google_Service_Dfareporting_UserRolePermissionGroupsListResponse extends Google_Collection
-{
+			class Google_Service_Dfareporting_UserRolePermissionGroupsListResponse extends Google_Collection
+ // {
   protected $collection_key = 'userRolePermissionGroups';
   protected $internal_gapi_mappings = array(
   );
@@ -18463,12 +18447,11 @@ class Google_Service_Dfareporting_UserRolePermissionGroupsListResponse extends G
   protected $userRolePermissionGroupsType = 'Google_Service_Dfareporting_UserRolePermissionGroup';
   protected $userRolePermissionGroupsDataType = 'array';
 
-
-  public function setKind($kind)
+	  public function setKind($kind)
   {
     $this->kind = $kind;
   }
-  public function getKind()
+public function getKind()
   {
     return $this->kind;
   }
@@ -18478,9 +18461,9 @@ class Google_Service_Dfareporting_UserRolePermissionGroupsListResponse extends G
   }
   public function getUserRolePermissionGroups()
   {
-    return $this->userRolePermissionGroups;
+return $this->userRolePermissionGroups;
   }
-}
+  }
 
 class Google_Service_Dfareporting_UserRolePermissionsListResponse extends Google_Collection
 {
@@ -18507,7 +18490,7 @@ class Google_Service_Dfareporting_UserRolePermissionsListResponse extends Google
   public function getUserRolePermissions()
   {
     return $this->userRolePermissions;
-  }
+       }
 }
 
 class Google_Service_Dfareporting_UserRolesListResponse extends Google_Collection
@@ -18519,13 +18502,12 @@ class Google_Service_Dfareporting_UserRolesListResponse extends Google_Collectio
   public $nextPageToken;
   protected $userRolesType = 'Google_Service_Dfareporting_UserRole';
   protected $userRolesDataType = 'array';
-
-
+				
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
-  public function getKind()
+              public function getKind()
   {
     return $this->kind;
   }
@@ -18536,7 +18518,7 @@ class Google_Service_Dfareporting_UserRolesListResponse extends Google_Collectio
   public function getNextPageToken()
   {
     return $this->nextPageToken;
-  }
+				}
   public function setUserRoles($userRoles)
   {
     $this->userRoles = $userRoles;

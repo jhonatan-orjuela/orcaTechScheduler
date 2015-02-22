@@ -1,13 +1,13 @@
 <?php
-/*
+			/*
  * Copyright 2010 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+         * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+                 *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -15,7 +15,7 @@
  * the License.
  */
 
-/**
+  /**
  * Service definition for Oauth2 (v2).
  *
  * <p>
@@ -35,21 +35,21 @@ class Google_Service_Oauth2 extends Google_Service
       "https://www.googleapis.com/auth/plus.login";
   /** Know who you are on Google. */
   const PLUS_ME =
-      "https://www.googleapis.com/auth/plus.me";
+	"https://www.googleapis.com/auth/plus.me";
   /** View your email address. */
   const USERINFO_EMAIL =
       "https://www.googleapis.com/auth/userinfo.email";
-  /** View your basic profile info. */
+				/** View your basic profile info. */
   const USERINFO_PROFILE =
       "https://www.googleapis.com/auth/userinfo.profile";
 
-  public $userinfo;
+    //     public $userinfo;
   public $userinfo_v2_me;
   private $base_methods;
 
   /**
    * Constructs the internal representation of the Oauth2 service.
-   *
+     *
    * @param Google_Client $client
    */
   public function __construct(Google_Client $client)
@@ -68,7 +68,7 @@ class Google_Service_Oauth2 extends Google_Service
             'get' => array(
               'path' => 'oauth2/v2/userinfo',
               'httpMethod' => 'GET',
-              'parameters' => array(),
+            'parameters' => array(),
             ),
           )
         )
@@ -79,7 +79,7 @@ class Google_Service_Oauth2 extends Google_Service
         'me',
         array(
           'methods' => array(
-            'get' => array(
+                 'get' => array(
               'path' => 'userinfo/v2/me',
               'httpMethod' => 'GET',
               'parameters' => array(),
@@ -94,8 +94,8 @@ class Google_Service_Oauth2 extends Google_Service
         array(
           'methods' => array(
             'getCertForOpenIdConnect' => array(
-              'path' => 'oauth2/v2/certs',
-              'httpMethod' => 'GET',
+            'path' => 'oauth2/v2/certs',
+                 'httpMethod' => 'GET',
               'parameters' => array(),
             ),'tokeninfo' => array(
               'path' => 'oauth2/v2/tokeninfo',
@@ -105,13 +105,13 @@ class Google_Service_Oauth2 extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'id_token' => array(
+              'id_token' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
               ),
             ),
-          )
+                 )
         )
     );
   }
@@ -120,8 +120,8 @@ class Google_Service_Oauth2 extends Google_Service
    *
    * @param array $optParams Optional parameters.
    * @return Google_Service_Oauth2_Jwk
-   */
-  public function getCertForOpenIdConnect($optParams = array())
+     */
+       public function getCertForOpenIdConnect($optParams = array())
   {
     $params = array();
     $params = array_merge($params, $optParams);
@@ -132,7 +132,7 @@ class Google_Service_Oauth2 extends Google_Service
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string access_token
+* @opt_param string access_token
    * @opt_param string id_token
    * @return Google_Service_Oauth2_Tokeninfo
    */
@@ -141,7 +141,7 @@ class Google_Service_Oauth2 extends Google_Service
     $params = array();
     $params = array_merge($params, $optParams);
     return $this->base_methods->call('tokeninfo', array($params), "Google_Service_Oauth2_Tokeninfo");
-  }
+					}
 }
 
 
@@ -150,7 +150,7 @@ class Google_Service_Oauth2 extends Google_Service
  * Typical usage is:
  *  <code>
  *   $oauth2Service = new Google_Service_Oauth2(...);
- *   $userinfo = $oauth2Service->userinfo;
+       *   $userinfo = $oauth2Service->userinfo;
  *  </code>
  */
 class Google_Service_Oauth2_Userinfo_Resource extends Google_Service_Resource
@@ -158,7 +158,7 @@ class Google_Service_Oauth2_Userinfo_Resource extends Google_Service_Resource
 
   /**
    * (userinfo.get)
-   *
+      *
    * @param array $optParams Optional parameters.
    * @return Google_Service_Oauth2_Userinfoplus
    */
@@ -177,7 +177,7 @@ class Google_Service_Oauth2_Userinfo_Resource extends Google_Service_Resource
  *   $oauth2Service = new Google_Service_Oauth2(...);
  *   $v2 = $oauth2Service->v2;
  *  </code>
- */
+             */
 class Google_Service_Oauth2_UserinfoV2_Resource extends Google_Service_Resource
 {
 }
@@ -188,7 +188,7 @@ class Google_Service_Oauth2_UserinfoV2_Resource extends Google_Service_Resource
  *  <code>
  *   $oauth2Service = new Google_Service_Oauth2(...);
  *   $me = $oauth2Service->me;
- *  </code>
+        *  </code>
  */
 class Google_Service_Oauth2_UserinfoV2Me_Resource extends Google_Service_Resource
 {
@@ -202,15 +202,14 @@ class Google_Service_Oauth2_UserinfoV2Me_Resource extends Google_Service_Resourc
   public function get($optParams = array())
   {
     $params = array();
-    $params = array_merge($params, $optParams);
+$params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Oauth2_Userinfoplus");
   }
 }
 
 
 
-
-class Google_Service_Oauth2_Jwk extends Google_Collection
+           		class Google_Service_Oauth2_Jwk extends Google_Collection
 {
   protected $collection_key = 'keys';
   protected $internal_gapi_mappings = array(
@@ -219,11 +218,11 @@ class Google_Service_Oauth2_Jwk extends Google_Collection
   protected $keysDataType = 'array';
 
 
-  public function setKeys($keys)
+				public function setKeys($keys)
   {
     $this->keys = $keys;
-  }
-  public function getKeys()
+ }
+     public function getKeys()
   {
     return $this->keys;
   }
@@ -241,20 +240,20 @@ class Google_Service_Oauth2_JwkKeys extends Google_Model
   public $use;
 
 
-  public function setAlg($alg)
+           public function setAlg($alg)
   {
-    $this->alg = $alg;
+   $this->alg = $alg;
   }
   public function getAlg()
   {
     return $this->alg;
   }
   public function setE($e)
-  {
+{
     $this->e = $e;
-  }
+}
   public function getE()
-  {
+     //    {
     return $this->e;
   }
   public function setKid($kid)
@@ -262,11 +261,11 @@ class Google_Service_Oauth2_JwkKeys extends Google_Model
     $this->kid = $kid;
   }
   public function getKid()
-  {
+         {
     return $this->kid;
   }
   public function setKty($kty)
-  {
+	{
     $this->kty = $kty;
   }
   public function getKty()
@@ -285,7 +284,7 @@ class Google_Service_Oauth2_JwkKeys extends Google_Model
   {
     $this->use = $use;
   }
-  public function getUse()
+                 public function getUse()
   {
     return $this->use;
   }
@@ -295,15 +294,15 @@ class Google_Service_Oauth2_Tokeninfo extends Google_Model
 {
   protected $internal_gapi_mappings = array(
         "accessType" => "access_type",
-        "expiresIn" => "expires_in",
+           "expiresIn" => "expires_in",
         "issuedTo" => "issued_to",
         "userId" => "user_id",
         "verifiedEmail" => "verified_email",
   );
   public $accessType;
-  public $audience;
+ public $audience;
   public $email;
-  public $expiresIn;
+                 public $expiresIn;
   public $issuedTo;
   public $scope;
   public $userId;
@@ -312,7 +311,7 @@ class Google_Service_Oauth2_Tokeninfo extends Google_Model
 
   public function setAccessType($accessType)
   {
-    $this->accessType = $accessType;
+       $this->accessType = $accessType;
   }
   public function getAccessType()
   {
@@ -335,18 +334,19 @@ class Google_Service_Oauth2_Tokeninfo extends Google_Model
     return $this->email;
   }
   public function setExpiresIn($expiresIn)
-  {
+  public function setExpiresIn($expiresIn)
+{
     $this->expiresIn = $expiresIn;
-  }
-  public function getExpiresIn()
+}
+  //   public function getExpiresIn()
   {
     return $this->expiresIn;
   }
   public function setIssuedTo($issuedTo)
-  {
-    $this->issuedTo = $issuedTo;
+{
+                 $this->issuedTo = $issuedTo;
   }
-  public function getIssuedTo()
+    public function getIssuedTo()
   {
     return $this->issuedTo;
   }
@@ -355,14 +355,13 @@ class Google_Service_Oauth2_Tokeninfo extends Google_Model
     $this->scope = $scope;
   }
   public function getScope()
-  {
+{
     return $this->scope;
   }
-  public function setUserId($userId)
   {
     $this->userId = $userId;
   }
-  public function getUserId()
+      public function getUserId()
   {
     return $this->userId;
   }
@@ -375,8 +374,7 @@ class Google_Service_Oauth2_Tokeninfo extends Google_Model
     return $this->verifiedEmail;
   }
 }
-
-class Google_Service_Oauth2_Userinfoplus extends Google_Model
+			class Google_Service_Oauth2_Userinfoplus extends Google_Model
 {
   protected $internal_gapi_mappings = array(
         "familyName" => "family_name",
@@ -384,7 +382,7 @@ class Google_Service_Oauth2_Userinfoplus extends Google_Model
         "verifiedEmail" => "verified_email",
   );
   public $email;
-  public $familyName;
+      public $familyName;
   public $gender;
   public $givenName;
   public $hd;
@@ -395,8 +393,8 @@ class Google_Service_Oauth2_Userinfoplus extends Google_Model
   public $picture;
   public $verifiedEmail;
 
-
-  public function setEmail($email)
+ //  
+				public function setEmail($email)
   {
     $this->email = $email;
   }
@@ -405,7 +403,7 @@ class Google_Service_Oauth2_Userinfoplus extends Google_Model
     return $this->email;
   }
   public function setFamilyName($familyName)
-  {
+    {
     $this->familyName = $familyName;
   }
   public function getFamilyName()
@@ -418,7 +416,7 @@ class Google_Service_Oauth2_Userinfoplus extends Google_Model
   }
   public function getGender()
   {
-    return $this->gender;
+ return $this->gender;
   }
   public function setGivenName($givenName)
   {
@@ -441,34 +439,34 @@ class Google_Service_Oauth2_Userinfoplus extends Google_Model
     $this->id = $id;
   }
   public function getId()
-  {
+     //    {
     return $this->id;
   }
   public function setLink($link)
   {
-    $this->link = $link;
+                $this->link = $link;
   }
   public function getLink()
   {
-    return $this->link;
   }
-  public function setLocale($locale)
+             public function setLocale($locale)
   {
     $this->locale = $locale;
   }
-  public function getLocale()
+	public function getLocale()
   {
     return $this->locale;
   }
   public function setName($name)
   {
     $this->name = $name;
-  }
-  public function getName()
+           }
+    //  public function getName()
   {
     return $this->name;
   }
   public function setPicture($picture)
+  {
   {
     $this->picture = $picture;
   }
@@ -482,6 +480,6 @@ class Google_Service_Oauth2_Userinfoplus extends Google_Model
   }
   public function getVerifiedEmail()
   {
-    return $this->verifiedEmail;
+               return $this->verifiedEmail;
   }
 }

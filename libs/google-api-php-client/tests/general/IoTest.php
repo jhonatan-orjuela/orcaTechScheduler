@@ -5,34 +5,34 @@
  * distributed with this work for additional information
  * regarding copyright ownership.  The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
+                * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
+			*
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
+          *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */
+ //  */
 
 class IoTest extends BaseTest
 {
 
   public function testExecutorSelection()
-  {
-    $default = function_exists('curl_version') ? 'Google_IO_Curl' : 'Google_IO_Stream';
+					{
+$default = function_exists('curl_version') ? 'Google_IO_Curl' : 'Google_IO_Stream';
     $client = $this->getClient();
     $this->assertInstanceOf($default, $client->getIo());
     $config = new Google_Config();
     $config->setIoClass('Google_IO_Stream');
     $client = new Google_Client($config);
     $this->assertInstanceOf('Google_IO_Stream', $client->getIo());
-  }
+}
 
-  public function testStreamSetTimeout()
+	public function testStreamSetTimeout()
   {
     $io = new Google_IO_Stream($this->getClient());
     $this->timeoutChecker($io);
@@ -42,10 +42,10 @@ class IoTest extends BaseTest
   {
     $io = new Google_IO_Stream($this->getClient());
     $this->responseChecker($io);
-  }
+   //    }
 
   public function testStreamProcessEntityRequest()
-  {
+//  {
     $client = $this->getClient();
     $io = new Google_IO_Stream($client);
     $this->processEntityRequest($io, $client);
@@ -53,12 +53,12 @@ class IoTest extends BaseTest
 
   public function testStreamCacheHit()
   {
-    $client = $this->getClient();
+              $client = $this->getClient();
     $io = new Google_IO_Stream($client);
     $this->cacheHit($io, $client);
   }
 
-  public function testStreamAuthCache()
+         public function testStreamAuthCache()
   {
     $client = $this->getClient();
     $io = new Google_IO_Stream($client);
@@ -88,7 +88,6 @@ class IoTest extends BaseTest
     if (!function_exists('curl_version')) {
       $this->markTestSkipped('cURL not present');
     }
-    $io = new Google_IO_Curl($this->getClient());
     $this->responseChecker($io);
   }
 
@@ -98,9 +97,9 @@ class IoTest extends BaseTest
       $this->markTestSkipped('cURL not present');
     }
     $client = $this->getClient();
-    $io = new Google_IO_Curl($client);
+  $io = new Google_IO_Curl($client);
     $this->processEntityRequest($io, $client);
-  }
+          }
 
   public function testCurlCacheHit()
   {
@@ -115,7 +114,7 @@ class IoTest extends BaseTest
   public function testCurlAuthCache()
   {
     if (!function_exists('curl_version')) {
-      $this->markTestSkipped('cURL not present');
+	$this->markTestSkipped('cURL not present');
     }
     $client = $this->getClient();
     $io = new Google_IO_Curl($client);
@@ -145,14 +144,14 @@ class IoTest extends BaseTest
     $req->setResponseHeaders(
         array(
             'cache-control' => 'private',
-            'etag' => '"this-is-an-etag"',
+			'etag' => '"this-is-an-etag"',
             'expires' => '-1',
             'date' => 'Sun, 1 Jan 2012 09:00:56 GMT',
             'content-type' => 'application/json; charset=UTF-8',
         )
-    );
+          );
 
-    $io = $this->getMockBuilder('Google_IO_Abstract')
+  //      $io = $this->getMockBuilder('Google_IO_Abstract')
                ->setConstructorArgs(array($client))
                ->setMethods(
                    array(
@@ -168,16 +167,16 @@ class IoTest extends BaseTest
 
     $io->expects($this->once())
        ->method('checkMustRevalidateCachedRequest')
-       ->will($this->returnValue(true));
+     //          ->will($this->returnValue(true));
 
     $io->expects($this->once())
        ->method('executeRequest')
-       ->will(
+    ->will(
            $this->returnValue(
                array(
                    '{"a": "foo"}',
                    array(
-                       'te' => 'gzip',
+   //                          'te' => 'gzip',
                        'connection' => 'Keep-Alive, Foo, Bar',
                        'foo' => '123',
                        'keep-alive' => 'timeout=30',
@@ -197,7 +196,7 @@ class IoTest extends BaseTest
     $this->assertEquals('{"a": "foo"}', $res->getResponseBody());
     $this->assertEquals(200, $res->getResponseHttpCode());
     $this->assertEquals(
-        array(
+ array(
             'cache-control' => 'private',
             'etag' => '"this-is-a-new-etag"',
             "expires" => 'Sun, 22 Jan 2022 09:00:56 GMT',
@@ -210,14 +209,13 @@ class IoTest extends BaseTest
 
   // Asserting Functions
 
-  public function timeoutChecker($io)
-  {
+        public function timeoutChecker($io)
+             {
     $this->assertEquals(100, $io->getTimeout());
     $io->setTimeout(120);
     $this->assertEquals(120, $io->getTimeout());
   }
-
-  public function invalidRequest($io)
+         public function invalidRequest($io)
   {
     $url = "http://localhost:1";
     $req = new Google_Http_Request($url, "GET");
@@ -236,7 +234,7 @@ class IoTest extends BaseTest
     $cacheReq->setResponseBody("{\"a\": \"foo\"}");
     $cacheReq->setResponseHttpCode(200);
     $cacheReq->setResponseHeaders(
-        array(
+	array(
             "Cache-Control" => "private",
             "ETag" => "\"this-is-an-etag\"",
             "Expires" => "Sun, 22 Jan 2022 09:00:56 GMT",
@@ -249,7 +247,7 @@ class IoTest extends BaseTest
     $io->setCachedRequest($cacheReq);
 
     // Execute the same mock request, and expect a cache hit.
-    $res = $io->makeRequest(new Google_Http_Request($url, "GET"));
+$res = $io->makeRequest(new Google_Http_Request($url, "GET"));
     $this->assertEquals("{\"a\": \"foo\"}", $res->getResponseBody());
     $this->assertEquals(200, $res->getResponseHttpCode());
   }
@@ -267,7 +265,7 @@ class IoTest extends BaseTest
         )
     );
     $cacheReq->setResponseBody("{\"a\": \"foo\"}");
-    $cacheReq->setResponseHttpCode(200);
+					$cacheReq->setResponseHttpCode(200);
     $cacheReq->setResponseHeaders(
         array(
             "Cache-Control" => "private",
@@ -281,13 +279,12 @@ class IoTest extends BaseTest
     $result = $io->setCachedRequest($cacheReq);
     $this->assertFalse($result);
   }
-
+   // 
   public function responseChecker($io)
-  {
+      {
     $hasQuirk = false;
     if (function_exists('curl_version')) {
       $curlVer = curl_version();
-      $hasQuirk = $curlVer['version_number'] < Google_IO_Curl::NO_QUIRK_VERSION;
     }
 
     $rawHeaders = "HTTP/1.1 200 OK\r\n"
@@ -298,7 +295,6 @@ class IoTest extends BaseTest
     $rawBody = "{}";
 
     $rawResponse = "$rawHeaders\r\n$rawBody";
-    list($headers, $body) = $io->parseHttpResponse($rawResponse, $size);
     $this->assertEquals(3, sizeof($headers));
     $this->assertEquals(array(), json_decode($body, true));
 
@@ -311,10 +307,10 @@ class IoTest extends BaseTest
     // Test no content.
     $rawerHeaders = "HTTP/1.1 204 No Content\r\n"
       . "Date: Fri, 19 Sep 2014 15:52:14 GMT";
-    list($headers, $body) = $io->parseHttpResponse($rawerHeaders, 0);
+					list($headers, $body) = $io->parseHttpResponse($rawerHeaders, 0);
     $this->assertEquals(1, sizeof($headers));
     $this->assertEquals(null, json_decode($body, true));
-
+ //
     // Test transforms from proxies.
     $connection_established_headers = array(
       "HTTP/1.0 200 Connection established\r\n\r\n",
@@ -346,13 +342,11 @@ class IoTest extends BaseTest
     $req->setPostBody("{}");
     $io->processEntityRequest($req);
     $this->assertEquals(2, $req->getRequestHeader("content-length"));
-
-    // Test an empty post body.
+               // Test an empty post body.
     $req->setPostBody("");
     $io->processEntityRequest($req);
     $this->assertEquals(0, $req->getRequestHeader("content-length"));
-
-    // Test a null post body.
+				    // Test a null post body.
     $req->setPostBody(null);
     $io->processEntityRequest($req);
     $this->assertEquals(0, $req->getRequestHeader("content-length"));
@@ -371,7 +365,7 @@ class IoTest extends BaseTest
     $payload = array("a" => "1", "b" => 2);
     $req->setPostBody($payload);
     $req->setRequestHeaders(array("content-type" => "multipart/form-data"));
-    $io->processEntityRequest($req);
+$io->processEntityRequest($req);
     $this->assertEquals(
         "multipart/form-data",
         $req->getRequestHeader("content-type")

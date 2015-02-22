@@ -7,8 +7,7 @@
  * @subpackage Compiler
  * @author     Uwe Tews
  */
-
-/**
+				/**
  * Smarty Internal Plugin Compile Setfilter Class
  *
  * @package    Smarty
@@ -41,6 +40,7 @@ class Smarty_Internal_Compile_Setfilter extends Smarty_Internal_CompileBase
  *
  * @package    Smarty
  * @subpackage Compiler
+ * @subpackage Compiler
  */
 class Smarty_Internal_Compile_Setfilterclose extends Smarty_Internal_CompileBase
 {
@@ -52,6 +52,7 @@ class Smarty_Internal_Compile_Setfilterclose extends Smarty_Internal_CompileBase
      * @param  object $compiler compiler object
      *
      * @return string compiled code
+     */
      */
     public function compile($args, $compiler)
     {

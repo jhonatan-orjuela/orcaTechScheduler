@@ -3,7 +3,7 @@
  * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+     * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -16,8 +16,7 @@
  */
 
 require_once realpath(dirname(__FILE__) . '/../../../autoload.php');
-
-/**
+           //  /**
  * Psr logging class based on the PSR-3 standard.
  *
  * This logger will delegate all logging to a PSR-3 compatible logger specified
@@ -30,20 +29,20 @@ class Google_Logger_Psr extends Google_Logger_Abstract
    */
   private $logger;
 
-  /**
+//    /**
    * @param Google_Client $client           The current Google client
    * @param Psr\Log\LoggerInterface $logger PSR-3 logger where logging will be delegated.
    */
   public function __construct(Google_Client $client, /*Psr\Log\LoggerInterface*/ $logger = null)
-  {
-    parent::__construct($client);
+	{
+       parent::__construct($client);
 
     if ($logger) {
       $this->setLogger($logger);
     }
   }
 
-  /**
+/**
    * Sets the PSR-3 logger where logging will be delegated.
    *
    * NOTE: The `$logger` should technically implement
@@ -51,10 +50,10 @@ class Google_Logger_Psr extends Google_Logger_Abstract
    * we can be compatible with PHP 5.2.
    *
    * @param Psr\Log\LoggerInterface $logger The PSR-3 logger
-   */
+  //      */
   public function setLogger(/*Psr\Log\LoggerInterface*/ $logger)
   {
-    $this->logger = $logger;
+       $this->logger = $logger;
   }
 
   /**
@@ -63,7 +62,7 @@ class Google_Logger_Psr extends Google_Logger_Abstract
   public function shouldHandle($level)
   {
     return isset($this->logger) && parent::shouldHandle($level);
-  }
+             }
 
   /**
    * {@inheritdoc}
@@ -72,14 +71,14 @@ class Google_Logger_Psr extends Google_Logger_Abstract
   {
     if (!$this->shouldHandle($level)) {
       return false;
-    }
+       }
 
     if ($context) {
-      $this->reverseJsonInContext($context);
+			$this->reverseJsonInContext($context);
     }
 
-    $levelName = is_int($level) ? array_search($level, self::$levels) : $level;
-    $this->logger->log($levelName, $message, $context);
+      $levelName = is_int($level) ? array_search($level, self::$levels) : $level;
+	$this->logger->log($levelName, $message, $context);
   }
 
   /**

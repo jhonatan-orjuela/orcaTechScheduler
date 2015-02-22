@@ -4,7 +4,7 @@
  * Smarty Internal Plugin Compile Modifier
  * Compiles code for modifier execution
  *
- * @package    Smarty
+       * @package    Smarty
  * @subpackage Compiler
  * @author     Uwe Tews
  */
@@ -15,9 +15,10 @@
  * @package    Smarty
  * @subpackage Compiler
  */
-class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBase
+                class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBase
 {
     /**
+     * Compiles code for modifier execution
      * Compiles code for modifier execution
      *
      * @param  array  $args      array with attributes from parser
@@ -25,21 +26,21 @@ class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBa
      * @param  array  $parameter array with compilation parameter
      *
      * @return string compiled code
-     */
+	*/
     public function compile($args, $compiler, $parameter)
     {
         // check and get attributes
         $_attr = $this->getAttributes($compiler, $args);
         $output = $parameter['value'];
-        // loop over list of modifiers
+         // loop over list of modifiers
         foreach ($parameter['modifierlist'] as $single_modifier) {
-            $modifier = $single_modifier[0];
+               $modifier = $single_modifier[0];
             $single_modifier[0] = $output;
             $params = implode(',', $single_modifier);
             // check if we know already the type of modifier
-            if (isset($compiler->known_modifier_type[$modifier])) {
+    if (isset($compiler->known_modifier_type[$modifier])) {
                 $modifier_types = array($compiler->known_modifier_type[$modifier]);
-            } else {
+        } else {
                 $modifier_types = array(1, 2, 3, 4, 5, 6);
             }
             foreach ($modifier_types as $type) {
@@ -56,18 +57,18 @@ class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBa
                                 } else {
                                     $output = $function[0] . '::' . $function[1] . '(' . $params . ')';
                                 }
-                            }
+ //                            }
                             $compiler->known_modifier_type[$modifier] = $type;
                             break 2;
-                        }
+    //                        }
                         break;
                     case 2:
                         // registered modifier compiler
-                        if (isset($compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIERCOMPILER][$modifier][0])) {
+ if (isset($compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIERCOMPILER][$modifier][0])) {
                             $output = call_user_func($compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIERCOMPILER][$modifier][0], $single_modifier, $compiler->smarty);
                             $compiler->known_modifier_type[$modifier] = $type;
                             break 2;
-                        }
+    //                         }
                         break;
                     case 3:
                         // modifiercompiler plugin
@@ -87,10 +88,10 @@ class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBa
                             // check if modifier allowed
                             if (!is_object($compiler->smarty->security_policy) || $compiler->smarty->security_policy->isTrustedModifier($modifier, $compiler)) {
                                 $output = "{$function}({$params})";
-                            }
+  //                            }
                             $compiler->known_modifier_type[$modifier] = $type;
                             break 2;
-                        }
+	}
                         break;
                     case 5:
                         // PHP function
@@ -126,11 +127,11 @@ class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBa
                                 $compiler->known_modifier_type[$modifier] = $type;
                             }
                             break 2;
-                        }
+}
                 }
             }
             if (!isset($compiler->known_modifier_type[$modifier])) {
-                $compiler->trigger_template_error("unknown modifier \"" . $modifier . "\"", $compiler->lex->taglineno);
+					$compiler->trigger_template_error("unknown modifier \"" . $modifier . "\"", $compiler->lex->taglineno);
             }
         }
 
