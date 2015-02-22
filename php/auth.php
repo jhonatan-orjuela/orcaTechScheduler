@@ -16,8 +16,6 @@ $client->setScopes(array('https://www.googleapis.com/auth/plus.login'));
 // $service implements the client interface, has to be set before auth call
 $service = new Google_Service_Calendar($client);
 
-echo var_dump($service);
-
 if (isset($_GET['logout'])) { // logout: destroy token
     unset($_SESSION['token']);
 	die('Logged out.');
@@ -78,5 +76,6 @@ if ($tokenInfo->audience != CLIENT_ID) {
 // Store the token in the session for later use.
 $app['session']->set('token', json_encode($token));
 $response = 'Succesfully connected with token: ' . print_r($token, true);
+
 
 ?>
