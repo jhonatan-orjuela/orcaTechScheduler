@@ -29,8 +29,29 @@
 /* Contacts Page Content */
 
 #contacts {
-	max-height: 85%;
+	height: 95%;
 	overflow-y: auto;
+	background: rgba(255,255,255,0.7);
 }
 
 /* Contacts Page Content End */
+
+/* Events Page Content */
+#events {
+	
+	height: 85%;
+	background: rgba(255,255,255,0.5);
+
+	th{
+		text-align: center !important;
+		width: calc(100% / 8);
+	}
+	td {
+		text-align: center;
+	}
+}
+
+body {
+	background: url("../../images/lightpaperfibers.png");
+}
+/* Events Page End */
