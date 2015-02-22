@@ -10,13 +10,13 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
-				* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 				* See the License for the specific language governing permissions and
  * limitations under the License.
- */
+               */
 require_once dirname(__FILE__) . '/../autoload.php';
 
-$client = new Google_Client();
+          $client = new Google_Client();
 $client->setScopes(
     array(
       "https://www.googleapis.com/auth/plus.me",
@@ -30,12 +30,12 @@ $client->setRedirectUri("urn:ietf:wg:oauth:2.0:oob");
 // Visit https://code.google.com/apis/console to
 // generate your oauth2_client_id, oauth2_client_secret, and to
 // register your oauth2_redirect_uri.
-$client->setClientId("");
+  // $client->setClientId("");
 $client->setClientSecret("");
 
 $authUrl = $client->createAuthUrl();
 
-`open '$authUrl'`;
+				`open '$authUrl'`;
 echo "\nPlease enter the auth code:\n";
 $authCode = trim(fgets(STDIN));
 

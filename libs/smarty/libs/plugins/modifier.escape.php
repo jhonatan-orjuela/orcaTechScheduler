@@ -1,5 +1,5 @@
     <?php
-/**
+               /**
  * Smarty plugin
  *
  * @package    Smarty
@@ -8,7 +8,7 @@
 
 		/**
  * Smarty escape modifier plugin
- * Type:     modifier<br>
+* Type:     modifier<br>
  * Name:     escape<br>
  * Purpose:  escape string for output
  *
@@ -25,7 +25,7 @@
 function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $double_encode = true)
 {
     static $_double_encode = null;
-    if ($_double_encode === null) {
+if ($_double_encode === null) {
         $_double_encode = version_compare(PHP_VERSION, '5.2.3', '>=');
     }
                   if (!$char_set) {
@@ -83,17 +83,15 @@ return $string;
                     return htmlentities($string, ENT_QUOTES, $char_set);
 					} else {
                     $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
-                    $string = htmlentities($string, ENT_QUOTES, $char_set);
+			$string = htmlentities($string, ENT_QUOTES, $char_set);
                     $string = str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
-
-                    return $string;
+                            return $string;
                 }
             }
 
         case 'url':
-     //             return rawurlencode($string);
-
-        case 'urlpathinfo':
+      //             return rawurlencode($string);
+	        case 'urlpathinfo':
             return str_replace('%2F', '/', rawurlencode($string));
 
         case 'quotes':
@@ -105,7 +103,7 @@ return $string;
  // Note that the UTF-8 encoded character ä will be represented as %c3%a4
             $return = '';
             $_length = strlen($string);
-            for ($x = 0; $x < $_length; $x ++) {
+   for ($x = 0; $x < $_length; $x ++) {
 $return .= '%' . bin2hex($string[$x]);
             }
 
@@ -120,15 +118,15 @@ $return .= '%' . bin2hex($string[$x]);
                     $return .= '&#x' . strtoupper(dechex($unicode)) . ';';
                 }
 
-                return $return;
-            }
+               return $return;
+      }
             // no MBString fallback
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x ++) {
                 $return .= '&#x' . bin2hex($string[$x]) . ';';
             }
 
-            return $return;
+      return $return;
 
         case 'decentity':
 				$return = '';
@@ -137,7 +135,7 @@ $return .= '%' . bin2hex($string[$x]);
                 $return = '';
                 foreach (smarty_mb_to_unicode($string, Smarty::$_CHARSET) as $unicode) {
                     $return .= '&#' . $unicode . ';';
-                }
+				}
 
  return $return;
             }
@@ -154,16 +152,15 @@ $return .= '%' . bin2hex($string[$x]);
 
         case 'mail':
             if (Smarty::$_MBSTRING) {
-                require_once(SMARTY_PLUGINS_DIR . 'shared.mb_str_replace.php');
-
-                return smarty_mb_str_replace(array('@', '.'), array(' [AT] ', ' [DOT] '), $string);
+            require_once(SMARTY_PLUGINS_DIR . 'shared.mb_str_replace.php');
+                     return smarty_mb_str_replace(array('@', '.'), array(' [AT] ', ' [DOT] '), $string);
             }
 		// no MBString fallback
             return str_replace(array('@', '.'), array(' [AT] ', ' [DOT] '), $string);
 
         case 'nonstd':
             // escape non-standard chars, such as ms document quotes
-            $return = '';
+ $return = '';
             if (Smarty::$_MBSTRING) {
                 require_once(SMARTY_PLUGINS_DIR . 'shared.mb_unicode.php');
 		foreach (smarty_mb_to_unicode($string, Smarty::$_CHARSET) as $unicode) {
@@ -173,19 +170,19 @@ $return .= '%' . bin2hex($string[$x]);
                         $return .= chr($unicode);
  //                      }
                 }
-
+  //
                 return $return;
             }
 
             $_length = strlen($string);
             for ($_i = 0; $_i < $_length; $_i ++) {
            $_ord = ord(substr($string, $_i, 1));
-                // non-standard char, escape it
+               // non-standard char, escape it
                 if ($_ord >= 126) {
                     $return .= '&#' . $_ord . ';';
                 } else {
                     $return .= substr($string, $_i, 1);
-                }
+		}
             }
 
             return $return;

@@ -36,7 +36,7 @@ $_attr = $this->getAttributes($compiler, $args);
         }
 
         // maybe nocache because of nocache variables
-        $compiler->nocache = $compiler->nocache | $compiler->tag_nocache;
+   //         $compiler->nocache = $compiler->nocache | $compiler->tag_nocache;
         if (is_array($parameter['if condition'])) {
             if ($compiler->nocache) {
   //                $_nocache = ',true';
@@ -51,13 +51,13 @@ $_attr = $this->getAttributes($compiler, $args);
             }
             if (is_array($parameter['if condition']['var'])) {
                 $_output = "<?php if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]) || !is_array(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value)) \$_smarty_tpl->createLocalArrayVariable(" . $parameter['if condition']['var']['var'] . "$_nocache);\n";
-                $_output .= "while (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value" . $parameter['if condition']['var']['smarty_internal_index'] . " = " . $parameter['if condition']['value'] . ") {?>";
+    //                   $_output .= "while (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value" . $parameter['if condition']['var']['smarty_internal_index'] . " = " . $parameter['if condition']['value'] . ") {?>";
             } else {
-                $_output = "<?php if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "])) \$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "] = new Smarty_Variable(null{$_nocache});";
+   $_output = "<?php if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "])) \$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "] = new Smarty_Variable(null{$_nocache});";
       $_output .= "while (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "]->value = " . $parameter['if condition']['value'] . ") {?>";
             }
 
-            return $_output;
+//              return $_output;
         } else {
             return "<?php while ({$parameter['if condition']}) {?>";
         }
@@ -68,26 +68,26 @@ $_attr = $this->getAttributes($compiler, $args);
  * Smarty Internal Plugin Compile Whileclose Class
  *
  * @package    Smarty
- * @subpackage Compiler
-     //    */
+                * @subpackage Compiler
+//     //    */
 class Smarty_Internal_Compile_Whileclose extends Smarty_Internal_CompileBase
 {
     /**
      * Compiles code for the {/while} tag
      *
-     * @param  array  $args     array with attributes from parser
-     * @param  object $compiler compiler object
+               * @param  array  $args     array with attributes from parser
+				* @param  object $compiler compiler object
      *
      * @return string compiled code
      */
-    public function compile($args, $compiler)
+     //    public function compile($args, $compiler)
     {
         // must endblock be nocache?
         if ($compiler->nocache) {
-            $compiler->tag_nocache = true;
-        }
+                $compiler->tag_nocache = true;
+ //           }
         $compiler->nocache = $this->closeTag($compiler, array('while'));
 
         return "<?php }?>";
-    }
+			}
 }

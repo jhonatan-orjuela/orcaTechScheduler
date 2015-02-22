@@ -4,7 +4,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+ //   * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -12,7 +12,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
- * the License.
+            * the License.
  */
 
 /**
@@ -31,8 +31,7 @@
 class Google_Service_Customsearch extends Google_Service
 {
 
-
-  public $cse;
+               public $cse;
   
 
   /**
@@ -58,7 +57,7 @@ class Google_Service_Customsearch extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'q' => array(
-                  'location' => 'query',
+     'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -67,9 +66,9 @@ class Google_Service_Customsearch extends Google_Service
                   'type' => 'string',
                 ),
                 'orTerms' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'string',
-                ),
+			),
                 'highRange' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -82,7 +81,7 @@ class Google_Service_Customsearch extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'imgType' => array(
+     //                  'imgType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -105,28 +104,28 @@ class Google_Service_Customsearch extends Google_Service
                 'start' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
+  //                   ),
                 'imgDominantColor' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+	'location' => 'query',
+            'type' => 'string',
                 ),
                 'lr' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'siteSearch' => array(
+	'siteSearch' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'cref' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+					),
                 'dateRestrict' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'safe' => array(
+'safe' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -148,7 +147,7 @@ class Google_Service_Customsearch extends Google_Service
                 ),
                 'hl' => array(
                   'location' => 'query',
-                  'type' => 'string',
+					'type' => 'string',
                 ),
                 'lowRange' => array(
                   'location' => 'query',
@@ -156,9 +155,11 @@ class Google_Service_Customsearch extends Google_Service
                 ),
                 'imgSize' => array(
                   'location' => 'query',
+                  'location' => 'query',
                   'type' => 'string',
                 ),
-                'imgColorType' => array(
+                ),
+			'imgColorType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -166,6 +167,7 @@ class Google_Service_Customsearch extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'excludeTerms' => array(
                 'excludeTerms' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -191,7 +193,7 @@ class Google_Service_Customsearch extends Google_Service
           )
         )
     );
-  }
+     }
 }
 
 
@@ -205,20 +207,19 @@ class Google_Service_Customsearch extends Google_Service
  */
 class Google_Service_Customsearch_Cse_Resource extends Google_Service_Resource
 {
-
   /**
    * Returns metadata about the search performed, metadata about the custom search
    * engine used for the search, and the search results. (cse.listCse)
    *
-   * @param string $q Query
+         * @param string $q Query
    * @param array $optParams Optional parameters.
    *
    * @opt_param string sort The sort expression to apply to the results
    * @opt_param string orTerms Provides additional search terms to check for in a
-   * document, where each document in the search results must contain at least one
-   * of the additional search terms
-   * @opt_param string highRange Creates a range in form as_nlo value..as_nhi
-   * value and attempts to append it to query
+ //    * document, where each document in the search results must contain at least one
+      * of the additional search terms
+	* @opt_param string highRange Creates a range in form as_nlo value..as_nhi
+ //    * value and attempts to append it to query
    * @opt_param string num Number of search results to return
    * @opt_param string cr Country restrict(s).
    * @opt_param string imgType Returns images of a type, which can be one of:
@@ -237,9 +238,9 @@ class Google_Service_Customsearch_Cse_Resource extends Google_Service_Resource
    * from a given site
    * @opt_param string cref The URL of a linked custom search engine
    * @opt_param string dateRestrict Specifies all search results are from a time
-   * period
+		* period
    * @opt_param string safe Search safety level
-   * @opt_param string c2coff Turns off the translation between zh-CN and zh-TW.
+           * @opt_param string c2coff Turns off the translation between zh-CN and zh-TW.
    * @opt_param string googlehost The local Google domain to use to perform the
    * search.
    * @opt_param string hq Appends the extra query terms to the query.
@@ -250,12 +251,12 @@ class Google_Service_Customsearch_Cse_Resource extends Google_Service_Resource
    * and attempts to append it to query
    * @opt_param string imgSize Returns images of a specified size, where size can
    * be one of: icon, small, medium, large, xlarge, xxlarge, and huge.
-   * @opt_param string imgColorType Returns black and white, grayscale, or color
+* @opt_param string imgColorType Returns black and white, grayscale, or color
    * images: mono, gray, and color.
    * @opt_param string rights Filters based on licensing. Supported values
    * include: cc_publicdomain, cc_attribute, cc_sharealike, cc_noncommercial,
    * cc_nonderived and combinations of these.
-   * @opt_param string excludeTerms Identifies a word or phrase that should not
+            * @opt_param string excludeTerms Identifies a word or phrase that should not
    * appear in any documents in the search results
    * @opt_param string filter Controls turning on or off the duplicate content
    * filter.
@@ -267,14 +268,13 @@ class Google_Service_Customsearch_Cse_Resource extends Google_Service_Resource
    * @return Google_Service_Customsearch_Search
    */
   public function listCse($q, $optParams = array())
-  {
+   //  {
     $params = array('q' => $q);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Customsearch_Search");
   }
 }
-
-
+                 
 
 
 class Google_Service_Customsearch_Context extends Google_Collection
@@ -297,7 +297,7 @@ class Google_Service_Customsearch_Context extends Google_Collection
   }
   public function setTitle($title)
   {
-    $this->title = $title;
+     $this->title = $title;
   }
   public function getTitle()
   {
@@ -347,9 +347,9 @@ class Google_Service_Customsearch_Promotion extends Google_Collection
   protected $internal_gapi_mappings = array(
   );
   protected $bodyLinesType = 'Google_Service_Customsearch_PromotionBodyLines';
-  protected $bodyLinesDataType = 'array';
+                 protected $bodyLinesDataType = 'array';
   public $displayLink;
-  public $htmlTitle;
+ //   public $htmlTitle;
   protected $imageType = 'Google_Service_Customsearch_PromotionImage';
   protected $imageDataType = '';
   public $link;
@@ -371,23 +371,23 @@ class Google_Service_Customsearch_Promotion extends Google_Collection
   public function getDisplayLink()
   {
     return $this->displayLink;
-  }
+      }
   public function setHtmlTitle($htmlTitle)
-  {
+              {
     $this->htmlTitle = $htmlTitle;
   }
   public function getHtmlTitle()
   {
-    return $this->htmlTitle;
-  }
-  public function setImage(Google_Service_Customsearch_PromotionImage $image)
+             return $this->htmlTitle;
+ }
+     //   public function setImage(Google_Service_Customsearch_PromotionImage $image)
   {
     $this->image = $image;
   }
   public function getImage()
   {
     return $this->image;
-  }
+					}
   public function setLink($link)
   {
     $this->link = $link;
@@ -404,7 +404,7 @@ class Google_Service_Customsearch_Promotion extends Google_Collection
   {
     return $this->title;
   }
-}
+ //}
 
 class Google_Service_Customsearch_PromotionBodyLines extends Google_Model
 {
@@ -418,7 +418,7 @@ class Google_Service_Customsearch_PromotionBodyLines extends Google_Model
 
   public function setHtmlTitle($htmlTitle)
   {
-    $this->htmlTitle = $htmlTitle;
+        $this->htmlTitle = $htmlTitle;
   }
   public function getHtmlTitle()
   {
@@ -432,25 +432,25 @@ class Google_Service_Customsearch_PromotionBodyLines extends Google_Model
   {
     return $this->link;
   }
-  public function setTitle($title)
+          public function setTitle($title)
   {
     $this->title = $title;
   }
   public function getTitle()
   {
     return $this->title;
-  }
+  //   }
   public function setUrl($url)
   {
     $this->url = $url;
   }
   public function getUrl()
-  {
+	{
     return $this->url;
   }
 }
 
-class Google_Service_Customsearch_PromotionImage extends Google_Model
+         class Google_Service_Customsearch_PromotionImage extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -458,7 +458,7 @@ class Google_Service_Customsearch_PromotionImage extends Google_Model
   public $source;
   public $width;
 
-
+    //  
   public function setHeight($height)
   {
     $this->height = $height;
@@ -471,31 +471,31 @@ class Google_Service_Customsearch_PromotionImage extends Google_Model
   {
     $this->source = $source;
   }
-  public function getSource()
+   public function getSource()
   {
     return $this->source;
   }
-  public function setWidth($width)
+                 public function setWidth($width)
   {
     $this->width = $width;
   }
   public function getWidth()
   {
-    return $this->width;
+					return $this->width;
   }
-}
+                }
 
 class Google_Service_Customsearch_Query extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
-  );
+		protected $internal_gapi_mappings = array(
+				);
   public $count;
-  public $cr;
-  public $cref;
-  public $cx;
+				public $cr;
+	public $cref;
+	public $cx;
   public $dateRestrict;
   public $disableCnTwTranslation;
-  public $exactTerms;
+     //   public $exactTerms;
   public $excludeTerms;
   public $fileType;
   public $filter;
@@ -507,23 +507,23 @@ class Google_Service_Customsearch_Query extends Google_Model
   public $imgColorType;
   public $imgDominantColor;
   public $imgSize;
-  public $imgType;
+   //  public $imgType;
   public $inputEncoding;
-  public $language;
+         public $language;
   public $linkSite;
   public $lowRange;
-  public $orTerms;
-  public $outputEncoding;
+       public $orTerms;
+          public $outputEncoding;
   public $relatedSite;
   public $rights;
-  public $safe;
+              public $safe;
   public $searchTerms;
   public $searchType;
   public $siteSearch;
   public $siteSearchFilter;
   public $sort;
   public $startIndex;
-  public $startPage;
+   public $startPage;
   public $title;
   public $totalResults;
 
@@ -538,10 +538,10 @@ class Google_Service_Customsearch_Query extends Google_Model
   }
   public function setCr($cr)
   {
-    $this->cr = $cr;
+             $this->cr = $cr;
   }
-  public function getCr()
-  {
+				public function getCr()
+ //   {
     return $this->cr;
   }
   public function setCref($cref)
@@ -559,9 +559,9 @@ class Google_Service_Customsearch_Query extends Google_Model
   public function getCx()
   {
     return $this->cx;
-  }
+				}
   public function setDateRestrict($dateRestrict)
-  {
+{
     $this->dateRestrict = $dateRestrict;
   }
   public function getDateRestrict()
@@ -569,7 +569,7 @@ class Google_Service_Customsearch_Query extends Google_Model
     return $this->dateRestrict;
   }
   public function setDisableCnTwTranslation($disableCnTwTranslation)
-  {
+             {
     $this->disableCnTwTranslation = $disableCnTwTranslation;
   }
   public function getDisableCnTwTranslation()
@@ -583,7 +583,7 @@ class Google_Service_Customsearch_Query extends Google_Model
   public function getExactTerms()
   {
     return $this->exactTerms;
-  }
+     //     }
   public function setExcludeTerms($excludeTerms)
   {
     $this->excludeTerms = $excludeTerms;
@@ -592,24 +592,24 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     return $this->excludeTerms;
   }
-  public function setFileType($fileType)
-  {
+          public function setFileType($fileType)
+      {
     $this->fileType = $fileType;
   }
-  public function getFileType()
+            public function getFileType()
   {
     return $this->fileType;
-  }
+         }
   public function setFilter($filter)
   {
     $this->filter = $filter;
-  }
+        }
   public function getFilter()
-  {
+        {
     return $this->filter;
   }
   public function setGl($gl)
-  {
+          {
     $this->gl = $gl;
   }
   public function getGl()
@@ -637,13 +637,13 @@ class Google_Service_Customsearch_Query extends Google_Model
     $this->hl = $hl;
   }
   public function getHl()
-  {
+       {
     return $this->hl;
   }
   public function setHq($hq)
   {
     $this->hq = $hq;
-  }
+           }
   public function getHq()
   {
     return $this->hq;
@@ -656,10 +656,9 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     return $this->imgColorType;
   }
-  public function setImgDominantColor($imgDominantColor)
+				public function setImgDominantColor($imgDominantColor)
   {
     $this->imgDominantColor = $imgDominantColor;
-  }
   public function getImgDominantColor()
   {
     return $this->imgDominantColor;
@@ -667,7 +666,7 @@ class Google_Service_Customsearch_Query extends Google_Model
   public function setImgSize($imgSize)
   {
     $this->imgSize = $imgSize;
-  }
+                }
   public function getImgSize()
   {
     return $this->imgSize;
@@ -680,7 +679,7 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     return $this->imgType;
   }
-  public function setInputEncoding($inputEncoding)
+			public function setInputEncoding($inputEncoding)
   {
     $this->inputEncoding = $inputEncoding;
   }
@@ -689,7 +688,6 @@ class Google_Service_Customsearch_Query extends Google_Model
     return $this->inputEncoding;
   }
   public function setLanguage($language)
-  {
     $this->language = $language;
   }
   public function getLanguage()
@@ -699,13 +697,13 @@ class Google_Service_Customsearch_Query extends Google_Model
   public function setLinkSite($linkSite)
   {
     $this->linkSite = $linkSite;
-  }
+            }
   public function getLinkSite()
   {
     return $this->linkSite;
   }
   public function setLowRange($lowRange)
-  {
+		{
     $this->lowRange = $lowRange;
   }
   public function getLowRange()
@@ -715,7 +713,7 @@ class Google_Service_Customsearch_Query extends Google_Model
   public function setOrTerms($orTerms)
   {
     $this->orTerms = $orTerms;
-  }
+					}
   public function getOrTerms()
   {
     return $this->orTerms;
@@ -748,7 +746,7 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     $this->safe = $safe;
   }
-  public function getSafe()
+       public function getSafe()
   {
     return $this->safe;
   }
@@ -760,13 +758,13 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     return $this->searchTerms;
   }
-  public function setSearchType($searchType)
+              public function setSearchType($searchType)
   {
     $this->searchType = $searchType;
   }
   public function getSearchType()
   {
-    return $this->searchType;
+              return $this->searchType;
   }
   public function setSiteSearch($siteSearch)
   {
@@ -788,11 +786,11 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     $this->sort = $sort;
   }
-  public function getSort()
+     public function getSort()
   {
     return $this->sort;
   }
-  public function setStartIndex($startIndex)
+			public function setStartIndex($startIndex)
   {
     $this->startIndex = $startIndex;
   }
@@ -800,12 +798,12 @@ class Google_Service_Customsearch_Query extends Google_Model
   {
     return $this->startIndex;
   }
-  public function setStartPage($startPage)
+ public function setStartPage($startPage)
   {
-    $this->startPage = $startPage;
+					$this->startPage = $startPage;
   }
   public function getStartPage()
-  {
+              {
     return $this->startPage;
   }
   public function setTitle($title)
@@ -813,11 +811,11 @@ class Google_Service_Customsearch_Query extends Google_Model
     $this->title = $title;
   }
   public function getTitle()
-  {
+               {
     return $this->title;
   }
   public function setTotalResults($totalResults)
-  {
+   //     {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults()
@@ -825,8 +823,7 @@ class Google_Service_Customsearch_Query extends Google_Model
     return $this->totalResults;
   }
 }
-
-class Google_Service_Customsearch_Result extends Google_Collection
+                class Google_Service_Customsearch_Result extends Google_Collection
 {
   protected $collection_key = 'labels';
   protected $internal_gapi_mappings = array(
@@ -836,7 +833,7 @@ class Google_Service_Customsearch_Result extends Google_Collection
   public $fileFormat;
   public $formattedUrl;
   public $htmlFormattedUrl;
-  public $htmlSnippet;
+            public $htmlSnippet;
   public $htmlTitle;
   protected $imageType = 'Google_Service_Customsearch_ResultImage';
   protected $imageDataType = '';
@@ -865,12 +862,12 @@ class Google_Service_Customsearch_Result extends Google_Collection
   public function getDisplayLink()
   {
     return $this->displayLink;
-  }
-  public function setFileFormat($fileFormat)
+//  }
+   //   public function setFileFormat($fileFormat)
   {
     $this->fileFormat = $fileFormat;
   }
-  public function getFileFormat()
+	public function getFileFormat()
   {
     return $this->fileFormat;
   }
@@ -903,17 +900,17 @@ class Google_Service_Customsearch_Result extends Google_Collection
     $this->htmlTitle = $htmlTitle;
   }
   public function getHtmlTitle()
-  {
+			{
     return $this->htmlTitle;
   }
   public function setImage(Google_Service_Customsearch_ResultImage $image)
   {
     $this->image = $image;
   }
-  public function getImage()
+			public function getImage()
   {
-    return $this->image;
-  }
+   return $this->image;
+//     }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -925,10 +922,10 @@ class Google_Service_Customsearch_Result extends Google_Collection
   public function setLabels($labels)
   {
     $this->labels = $labels;
-  }
+                }
   public function getLabels()
   {
-    return $this->labels;
+				return $this->labels;
   }
   public function setLink($link)
   {
@@ -946,15 +943,15 @@ class Google_Service_Customsearch_Result extends Google_Collection
   {
     return $this->mime;
   }
-  public function setPagemap($pagemap)
+               public function setPagemap($pagemap)
   {
     $this->pagemap = $pagemap;
   }
   public function getPagemap()
   {
-    return $this->pagemap;
+         return $this->pagemap;
   }
-  public function setSnippet($snippet)
+         public function setSnippet($snippet)
   {
     $this->snippet = $snippet;
   }
@@ -965,21 +962,22 @@ class Google_Service_Customsearch_Result extends Google_Collection
   public function setTitle($title)
   {
     $this->title = $title;
-  }
+      }
   public function getTitle()
-  {
+  //   {
     return $this->title;
+             }
   }
-}
 
 class Google_Service_Customsearch_ResultImage extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+			protected $internal_gapi_mappings = array(
   );
   public $byteSize;
   public $contextLink;
   public $height;
   public $thumbnailHeight;
+  public $thumbnailLink;
   public $thumbnailLink;
   public $thumbnailWidth;
   public $width;
@@ -989,13 +987,13 @@ class Google_Service_Customsearch_ResultImage extends Google_Model
   {
     $this->byteSize = $byteSize;
   }
-  public function getByteSize()
+          public function getByteSize()
   {
     return $this->byteSize;
   }
   public function setContextLink($contextLink)
   {
-    $this->contextLink = $contextLink;
+         $this->contextLink = $contextLink;
   }
   public function getContextLink()
   {
@@ -1006,12 +1004,12 @@ class Google_Service_Customsearch_ResultImage extends Google_Model
     $this->height = $height;
   }
   public function getHeight()
-  {
+				{
     return $this->height;
   }
   public function setThumbnailHeight($thumbnailHeight)
-  {
-    $this->thumbnailHeight = $thumbnailHeight;
+				{
+              $this->thumbnailHeight = $thumbnailHeight;
   }
   public function getThumbnailHeight()
   {
@@ -1049,19 +1047,19 @@ class Google_Service_Customsearch_ResultLabels extends Google_Model
         "labelWithOp" => "label_with_op",
   );
   public $displayName;
-  public $labelWithOp;
+           public $labelWithOp;
   public $name;
 
 
-  public function setDisplayName($displayName)
-  {
+               public function setDisplayName($displayName)
+	{
     $this->displayName = $displayName;
   }
   public function getDisplayName()
   {
     return $this->displayName;
   }
-  public function setLabelWithOp($labelWithOp)
+                public function setLabelWithOp($labelWithOp)
   {
     $this->labelWithOp = $labelWithOp;
   }
@@ -1071,7 +1069,7 @@ class Google_Service_Customsearch_ResultLabels extends Google_Model
   }
   public function setName($name)
   {
-    $this->name = $name;
+          $this->name = $name;
   }
   public function getName()
   {
@@ -1096,30 +1094,29 @@ class Google_Service_Customsearch_Search extends Google_Collection
   protected $contextDataType = '';
   protected $itemsType = 'Google_Service_Customsearch_Result';
   protected $itemsDataType = 'array';
-  public $kind;
-  protected $promotionsType = 'Google_Service_Customsearch_Promotion';
+				public $kind;
+//   protected $promotionsType = 'Google_Service_Customsearch_Promotion';
   protected $promotionsDataType = 'array';
   protected $queriesType = 'Google_Service_Customsearch_Query';
-  protected $queriesDataType = 'map';
+ protected $queriesDataType = 'map';
   protected $searchInformationType = 'Google_Service_Customsearch_SearchSearchInformation';
   protected $searchInformationDataType = '';
-  protected $spellingType = 'Google_Service_Customsearch_SearchSpelling';
+protected $spellingType = 'Google_Service_Customsearch_SearchSpelling';
   protected $spellingDataType = '';
   protected $urlType = 'Google_Service_Customsearch_SearchUrl';
-  protected $urlDataType = '';
+              protected $urlDataType = '';
 
 
   public function setContext(Google_Service_Customsearch_Context $context)
   {
     $this->context = $context;
   }
-  public function getContext()
   {
     return $this->context;
   }
-  public function setItems($items)
+public function setItems($items)
   {
-    $this->items = $items;
+					$this->items = $items;
   }
   public function getItems()
   {
@@ -1127,21 +1124,21 @@ class Google_Service_Customsearch_Search extends Google_Collection
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+                $this->kind = $kind;
   }
   public function getKind()
   {
     return $this->kind;
   }
   public function setPromotions($promotions)
-  {
+ //   {
     $this->promotions = $promotions;
   }
   public function getPromotions()
   {
     return $this->promotions;
   }
-  public function setQueries($queries)
+		public function setQueries($queries)
   {
     $this->queries = $queries;
   }
@@ -1155,7 +1152,7 @@ class Google_Service_Customsearch_Search extends Google_Collection
   }
   public function getSearchInformation()
   {
-    return $this->searchInformation;
+			return $this->searchInformation;
   }
   public function setSpelling(Google_Service_Customsearch_SearchSpelling $spelling)
   {
@@ -1169,15 +1166,15 @@ class Google_Service_Customsearch_Search extends Google_Collection
   {
     $this->url = $url;
   }
-  public function getUrl()
+   public function getUrl()
   {
-    return $this->url;
+	return $this->url;
   }
 }
 
 class Google_Service_Customsearch_SearchQueries extends Google_Model
 {
-}
+	}
 
 class Google_Service_Customsearch_SearchSearchInformation extends Google_Model
 {
@@ -1260,13 +1257,13 @@ class Google_Service_Customsearch_SearchUrl extends Google_Model
   public function setTemplate($template)
   {
     $this->template = $template;
-  }
+				}
   public function getTemplate()
-  {
+                {
     return $this->template;
   }
   public function setType($type)
-  {
+		{
     $this->type = $type;
   }
   public function getType()

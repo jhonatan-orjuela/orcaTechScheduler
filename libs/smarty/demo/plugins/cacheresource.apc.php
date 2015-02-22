@@ -1,6 +1,6 @@
 <?php
 
-/**
+     /**
  * APC CacheResource
  * CacheResource Implementation based on the KeyValueStore API to use
  * memcache as the storage resource for Smarty's output caching.
@@ -13,7 +13,7 @@ class Smarty_CacheResource_Apc extends Smarty_CacheResource_KeyValueStore
 {
     public function __construct()
     {
-        // test if APC is present
+                 // test if APC is present
         if (!function_exists('apc_cache_info')) {
             throw new Exception('APC Template Caching Error: APC is not installed');
         }
@@ -48,11 +48,10 @@ class Smarty_CacheResource_Apc extends Smarty_CacheResource_KeyValueStore
      */
     protected function write(array $keys, $expire = null)
     {
-        foreach ($keys as $k => $v) {
+   foreach ($keys as $k => $v) {
             apc_store($k, $v, $expire);
         }
-
-        return true;
+			        return true;
     }
          /**
      * Remove values from cache
@@ -64,16 +63,16 @@ class Smarty_CacheResource_Apc extends Smarty_CacheResource_KeyValueStore
          protected function delete(array $keys)
     {
         foreach ($keys as $k) {
-         apc_delete($k);
+apc_delete($k);
         }
 
         return true;
     }
    //  
-    /**
+    //      /**
      * Remove *all* values from cache
          *
- //        * @return boolean true on success, false on failure
+  //        * @return boolean true on success, false on failure
               */
     protected function purge()
 	{

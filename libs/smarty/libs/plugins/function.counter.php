@@ -6,7 +6,7 @@
  * @subpackage PluginsFunction
  */
 
-/**
+  /**
  * Smarty {counter} function plugin
  * Type:     function<br>
  * Name:     counter<br>
@@ -19,16 +19,16 @@
  * @param array                    $params   parameters
  * @param Smarty_Internal_Template $template template object
  *
- * @return string|null
+                 * @return string|null
  */
 function smarty_function_counter($params, $template)
 {
     static $counters = array();
 
-    $name = (isset($params['name'])) ? $params['name'] : 'default';
+            $name = (isset($params['name'])) ? $params['name'] : 'default';
     if (!isset($counters[$name])) {
         $counters[$name] = array(
-            'start'     => 1,
+		'start'     => 1,
             'skip'      => 1,
             'direction' => 'up',
             'count'     => 1
@@ -36,7 +36,7 @@ function smarty_function_counter($params, $template)
     }
     $counter =& $counters[$name];
 
-    if (isset($params['start'])) {
+     if (isset($params['start'])) {
         $counter['start'] = $counter['count'] = (int) $params['start'];
     }
 
@@ -44,32 +44,31 @@ function smarty_function_counter($params, $template)
         $counter['assign'] = $params['assign'];
     }
 
-    if (isset($counter['assign'])) {
+           if (isset($counter['assign'])) {
         $template->assign($counter['assign'], $counter['count']);
     }
 
     if (isset($params['print'])) {
-        $print = (bool) $params['print'];
+   $print = (bool) $params['print'];
     } else {
         $print = empty($counter['assign']);
     }
-
-    if ($print) {
+				    if ($print) {
         $retval = $counter['count'];
     } else {
         $retval = null;
-    }
+     //    }
 
     if (isset($params['skip'])) {
         $counter['skip'] = $params['skip'];
     }
 
-    if (isset($params['direction'])) {
+   //     if (isset($params['direction'])) {
         $counter['direction'] = $params['direction'];
     }
 
     if ($counter['direction'] == "down") {
-        $counter['count'] -= $counter['skip'];
+               $counter['count'] -= $counter['skip'];
     } else {
         $counter['count'] += $counter['skip'];
     }

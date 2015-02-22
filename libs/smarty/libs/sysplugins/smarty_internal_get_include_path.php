@@ -11,11 +11,11 @@
         * Smarty Internal Read Include Path Class
  *
  * @package    Smarty
-					* @subpackage PluginsInternal
+             * @subpackage PluginsInternal
  */
 class Smarty_Internal_Get_Include_Path
 {
- /**
+               /**
      * Return full file path from PHP include_path
      *
      * @param  string $filepath filepath
@@ -31,8 +31,8 @@ class Smarty_Internal_Get_Include_Path
         }
 
         if ($_include_path === null) {
-            $_include_path = explode(PATH_SEPARATOR, get_include_path());
-        }
+    $_include_path = explode(PATH_SEPARATOR, get_include_path());
+		}
 
         foreach ($_include_path as $_path) {
             if (file_exists($_path . DS . $filepath)) {
@@ -41,5 +41,5 @@ class Smarty_Internal_Get_Include_Path
 		}
 
         return false;
-				}
+     }
  }

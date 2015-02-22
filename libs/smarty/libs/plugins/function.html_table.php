@@ -4,7 +4,7 @@
  *
  * @package    Smarty
  * @subpackage PluginsFunction
- */
+    // */
 
 /**
  * Smarty {html_table} function plugin
@@ -16,11 +16,11 @@
  * <pre>
  * - loop       - array to loop through
  * - cols       - number of columns, comma separated list of column names
- *                or array of column names
+	*                or array of column names
  * - rows       - number of rows
  * - table_attr - table attributes
  * - th_attr    - table heading attributes (arrays are cycled)
- * - tr_attr    - table row attributes (arrays are cycled)
+	* - tr_attr    - table row attributes (arrays are cycled)
  * - td_attr    - table cell attributes (arrays are cycled)
  * - trailpad   - value to pad trailing cells with
  * - caption    - text for caption element
@@ -30,8 +30,8 @@
  *                $loop will be printed column by column otherwise)
  * </pre>
  * Examples:
- * <pre>
- * {table loop=$data}
+    //  * <pre>
+                * {table loop=$data}
  * {table loop=$data cols=4 tr_attr='"bgcolor=red"'}
  * {table loop=$data cols="first,second,third" tr_attr=$colors}
  * </pre>
@@ -64,13 +64,12 @@ function smarty_function_html_table($params)
 
     if (!isset($params['loop'])) {
         trigger_error("html_table: missing 'loop' parameter", E_USER_WARNING);
-
-        return;
+                      return;
     }
 
     foreach ($params as $_key => $_value) {
         switch ($_key) {
-            case 'loop':
+				case 'loop':
                 $$_key = (array) $_value;
                 break;
 
@@ -82,7 +81,7 @@ function smarty_function_html_table($params)
                     $cols = explode(',', $_value);
                     $cols_count = count($cols);
                 } elseif (!empty($_value)) {
-                    $cols_count = (int) $_value;
+ //                     $cols_count = (int) $_value;
                 } else {
                     $cols_count = $cols;
                 }
@@ -90,7 +89,7 @@ function smarty_function_html_table($params)
 
             case 'rows':
                 $$_key = (int) $_value;
-                break;
+			break;
 
             case 'table_attr':
             case 'trailpad':
@@ -100,8 +99,7 @@ function smarty_function_html_table($params)
             case 'caption':
                 $$_key = (string) $_value;
                 break;
-
-            case 'tr_attr':
+                   case 'tr_attr':
             case 'td_attr':
             case 'th_attr':
                 $$_key = $_value;
@@ -112,9 +110,9 @@ function smarty_function_html_table($params)
     $loop_count = count($loop);
     if (empty($params['rows'])) {
         /* no rows specified */
-        $rows = ceil($loop_count / $cols_count);
+$rows = ceil($loop_count / $cols_count);
     } elseif (empty($params['cols'])) {
-        if (!empty($params['rows'])) {
+			if (!empty($params['rows'])) {
             /* no cols specified, but rows */
             $cols_count = ceil($loop_count / $rows);
         }
@@ -126,7 +124,7 @@ function smarty_function_html_table($params)
         $output .= '<caption>' . $caption . "</caption>\n";
     }
 
-    if (is_array($cols)) {
+					if (is_array($cols)) {
         $cols = ($hdir == 'right') ? $cols : array_reverse($cols);
         $output .= "<thead><tr>\n";
 
@@ -136,14 +134,14 @@ function smarty_function_html_table($params)
             $output .= "</th>\n";
         }
         $output .= "</tr></thead>\n";
-    }
+}
 
     $output .= "<tbody>\n";
     for ($r = 0; $r < $rows; $r ++) {
         $output .= "<tr" . smarty_function_html_table_cycle('tr', $tr_attr, $r) . ">\n";
         $rx = ($vdir == 'down') ? $r * $cols_count : ($rows - 1 - $r) * $cols_count;
 
-        for ($c = 0; $c < $cols_count; $c ++) {
+	for ($c = 0; $c < $cols_count; $c ++) {
             $x = ($hdir == 'right') ? $rx + $c : $rx + $cols_count - 1 - $c;
             if ($inner != 'cols') {
                 /* shuffle x to loop over rows*/

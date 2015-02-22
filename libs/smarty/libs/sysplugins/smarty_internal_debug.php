@@ -1,12 +1,12 @@
 <?php
-/**
+			/**
  * Smarty Internal Plugin Debug
  * Class to collect data for the Smarty Debugging Consol
  *
  * @package    Smarty
- * @subpackage Debug
- * @author     Uwe Tews
- */
+             * @subpackage Debug
+     //    * @author     Uwe Tews
+             */
 
 /**
  * Smarty Internal Plugin Debug Class
@@ -21,9 +21,9 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
      *
      * @var array
      */
-    public static $template_data = array();
+               public static $template_data = array();
 
-    /**
+       /**
      * List of uid's which shall be ignored
      *
      * @var array
@@ -39,17 +39,17 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
     {
         // calculate Uid if not already done
         if ($template->source->uid == '') {
-            $template->source->filepath;
+		$template->source->filepath;
         }
         self::$ignore_uid[$template->source->uid] = true;
     }
 
-    /**
+         /**
      * Start logging of compile time
-     *
+     //        *
      * @param object $template
      */
-    public static function start_compile($template)
+	public static function start_compile($template)
     {
         static $_is_stringy = array('string' => true, 'eval' => true);
         if (!empty($template->compiler->trace_uid)) {
@@ -95,6 +95,7 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
     /**
      * Start logging of render time
      *
+     *
      * @param object $template
      */
     public static function start_render($template)
@@ -110,12 +111,12 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
      */
     public static function end_render($template)
     {
-        $key = self::get_key($template);
+    $key = self::get_key($template);
         self::$template_data[$key]['render_time'] += microtime(true) - self::$template_data[$key]['start_time'];
     }
 
     /**
-     * Start logging of cache time
+//        * Start logging of cache time
      *
      * @param object $template cached template
      */
@@ -125,7 +126,7 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
         self::$template_data[$key]['start_time'] = microtime(true);
     }
 
-    /**
+/**
      * End logging of cache time
      *
      * @param object $template cached template
@@ -150,14 +151,14 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
         } else {
             $smarty = clone $obj->smarty;
         }
-        $_assigned_vars = $ptr->tpl_vars;
+         $_assigned_vars = $ptr->tpl_vars;
         ksort($_assigned_vars);
         $_config_vars = $ptr->config_vars;
         ksort($_config_vars);
         $smarty->registered_filters = array();
         $smarty->autoload_filters = array();
-        $smarty->default_modifiers = array();
-        $smarty->force_compile = false;
+   $smarty->default_modifiers = array();
+		$smarty->force_compile = false;
         $smarty->left_delimiter = '{';
         $smarty->right_delimiter = '}';
         $smarty->debugging = false;
@@ -170,8 +171,8 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
         $_template->compile_id = null;
         if ($obj instanceof Smarty_Internal_Template) {
             $_template->assign('template_name', $obj->source->type . ':' . $obj->source->name);
-        }
-        if ($obj instanceof Smarty) {
+  //           }
+		if ($obj instanceof Smarty) {
             $_template->assign('template_data', self::$template_data);
         } else {
             $_template->assign('template_data', null);
@@ -209,8 +210,8 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
             $tpl_vars = array_merge($parent->tpl_vars, $tpl_vars);
             $config_vars = array_merge($parent->config_vars, $config_vars);
         } else {
-            foreach (Smarty::$global_tpl_vars as $name => $var) {
-                if (!array_key_exists($name, $tpl_vars)) {
+                 foreach (Smarty::$global_tpl_vars as $name => $var) {
+if (!array_key_exists($name, $tpl_vars)) {
                     $clone = clone $var;
                     $clone->scope = 'Global';
                     $tpl_vars[$name] = $clone;
@@ -222,7 +223,7 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
     }
 
     /**
-     * Return key into $template_data for template
+    //        * Return key into $template_data for template
      *
      * @param  object $template template object
      *
@@ -244,7 +245,7 @@ class Smarty_Internal_Debug extends Smarty_Internal_Data
             } else {
                 self::$template_data[$key]['name'] = $template->source->filepath;
             }
-            self::$template_data[$key]['compile_time'] = 0;
+    self::$template_data[$key]['compile_time'] = 0;
             self::$template_data[$key]['render_time'] = 0;
             self::$template_data[$key]['cache_time'] = 0;
 

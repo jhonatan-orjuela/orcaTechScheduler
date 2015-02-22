@@ -1,5 +1,5 @@
 <?php
-/*
+//   /*
  * Copyright 2011 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-class RestTest extends BaseTest
+                class RestTest extends BaseTest
 {
   /**
    * @var Google_Http_REST $rest
@@ -35,20 +35,19 @@ class RestTest extends BaseTest
     $response->setResponseHttpCode(204);
     $decoded = $this->rest->decodeHttpResponse($response, $client);
     $this->assertEquals(null, $decoded);
-
-
+                 
     foreach (array(200, 201) as $code) {
       $headers = array('foo', 'bar');
       $response = new Google_Http_Request($url, 'GET', $headers);
       $response->setResponseBody('{"a": 1}');
 
       $response->setResponseHttpCode($code);
-      $decoded = $this->rest->decodeHttpResponse($response, $client);
-      $this->assertEquals(array("a" => 1), $decoded);
+   $decoded = $this->rest->decodeHttpResponse($response, $client);
+         $this->assertEquals(array("a" => 1), $decoded);
     }
 
     $response = new Google_Http_Request($url);
-    $response->setResponseHttpCode(500);
+     //      $response->setResponseHttpCode(500);
 
     $error = "";
     try {
@@ -59,9 +58,8 @@ class RestTest extends BaseTest
     }
     $this->assertEquals(trim($error), "Error calling GET http://localhost: (500)");
   }
-
-
-  public function testDecodeEmptyResponse()
+  // 
+                   public function testDecodeEmptyResponse()
   {
     $url = 'http://localhost';
 
@@ -69,7 +67,7 @@ class RestTest extends BaseTest
     $response->setResponseBody('{}');
 
     $response->setResponseHttpCode(200);
-    $decoded = $this->rest->decodeHttpResponse($response);
+         $decoded = $this->rest->decodeHttpResponse($response);
     $this->assertEquals(array(), $decoded);
   }
 
@@ -81,14 +79,14 @@ class RestTest extends BaseTest
     // Test Path
     $params = array();
     $params['u']['type'] = 'string';
-    $params['u']['location'] = 'path';
+			$params['u']['location'] = 'path';
     $params['u']['value'] = 'me';
     $value = $this->rest->createRequestUri($basePath, $restPath, $params);
     $this->assertEquals("http://localhost/plus/me", $value);
 
     // Test Query
     $params = array();
-    $params['u']['type'] = 'string';
+			$params['u']['type'] = 'string';
     $params['u']['location'] = 'query';
     $params['u']['value'] = 'me';
     $value = $this->rest->createRequestUri($basePath, '/plus', $params);
@@ -110,7 +108,7 @@ class RestTest extends BaseTest
     $params = array();
     $params['u']['type'] = 'string';
     $params['u']['location'] = 'query';
-    $params['u']['value'] = '@me/';
+     //       $params['u']['value'] = '@me/';
     $value = $this->rest->createRequestUri($basePath, '/plus', $params);
     $this->assertEquals("http://localhost/plus?u=%40me%2F", $value);
   }
@@ -124,13 +122,13 @@ class RestTest extends BaseTest
     $request->setResponseHttpCode(500);
     $request->setResponseBody(
         '{
-         "error": {
+  "error": {
           "code": 500,
-          "message": null
+  //           "message": null
          }
         }'
     );
-    Google_Http_Rest::decodeHttpResponse($request);
+	Google_Http_Rest::decodeHttpResponse($request);
   }
 
   /**
@@ -138,7 +136,7 @@ class RestTest extends BaseTest
    */
   public function tesProperErrorFormatting()
   {
-    $request = new Google_Http_Request("/a/b");
+ //     $request = new Google_Http_Request("/a/b");
     $request->setResponseHttpCode(401);
     $request->setResponseBody(
         '{

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2010 Google Inc.
+				* Copyright 2010 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ require_once realpath(dirname(__FILE__) . '/../../../autoload.php');
  * key.
  * @author Chris Chabot <chabotc@google.com>
  * @author Chirag Shah <chirags@google.com>
- */
+              */
 class Google_Auth_Simple extends Google_Auth_Abstract
 {
   private $key = null;
@@ -33,8 +33,7 @@ class Google_Auth_Simple extends Google_Auth_Abstract
   {
     $this->client = $client;
   }
-
-  /**
+	  /**
    * Perform an authenticated / signed apiHttpRequest.
    * This function takes the apiHttpRequest, calls apiAuth->sign on it
    * (which can modify the request in what ever way fits the auth mechanism)
@@ -61,4 +60,4 @@ class Google_Auth_Simple extends Google_Auth_Abstract
     }
     return $request;
   }
-}
+      }

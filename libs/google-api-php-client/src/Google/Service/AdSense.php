@@ -1,4 +1,4 @@
-<?php
+           <?php
 /*
  * Copyright 2010 Google Inc.
  *
@@ -13,24 +13,24 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- */
+          */
 
 /**
  * Service definition for AdSense (v1.4).
  *
- * <p>
+				* <p>
  * Gives AdSense publishers access to their inventory and the ability to
  * generate reports</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/adsense/management/" target="_blank">Documentation</a>
+           * <a href="https://developers.google.com/adsense/management/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
- */
+     */
 class Google_Service_AdSense extends Google_Service
-{
+   //{
   /** View and manage your AdSense data. */
   const ADSENSE =
       "https://www.googleapis.com/auth/adsense";
@@ -43,22 +43,22 @@ class Google_Service_AdSense extends Google_Service
   public $accounts_adunits;
   public $accounts_adunits_customchannels;
   public $accounts_alerts;
-  public $accounts_customchannels;
+                public $accounts_customchannels;
   public $accounts_customchannels_adunits;
   public $accounts_payments;
   public $accounts_reports;
   public $accounts_reports_saved;
   public $accounts_savedadstyles;
   public $accounts_urlchannels;
-  public $adclients;
+					public $adclients;
   public $adunits;
   public $adunits_customchannels;
   public $alerts;
   public $customchannels;
-  public $customchannels_adunits;
+                public $customchannels_adunits;
   public $metadata_dimensions;
   public $metadata_metrics;
-  public $payments;
+	public $payments;
   public $reports;
   public $reports_saved;
   public $savedadstyles;
@@ -66,15 +66,15 @@ class Google_Service_AdSense extends Google_Service
   
 
   /**
-   * Constructs the internal representation of the AdSense service.
+ * Constructs the internal representation of the AdSense service.
    *
-   * @param Google_Client $client
+ * @param Google_Client $client
    */
   public function __construct(Google_Client $client)
   {
     parent::__construct($client);
     $this->servicePath = 'adsense/v1.4/';
-    $this->version = 'v1.4';
+  $this->version = 'v1.4';
     $this->serviceName = 'adsense';
 
     $this->accounts = new Google_Service_AdSense_Accounts_Resource(
@@ -87,8 +87,8 @@ class Google_Service_AdSense extends Google_Service
               'path' => 'accounts/{accountId}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'accountId' => array(
-                  'location' => 'path',
+ //                'accountId' => array(
+             'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -103,7 +103,7 @@ class Google_Service_AdSense extends Google_Service
               'parameters' => array(
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
+		'type' => 'string',
                 ),
                 'maxResults' => array(
                   'location' => 'query',
@@ -111,7 +111,7 @@ class Google_Service_AdSense extends Google_Service
                 ),
               ),
             ),
-          )
+	)
         )
     );
     $this->accounts_adclients = new Google_Service_AdSense_AccountsAdclients_Resource(
@@ -122,7 +122,7 @@ class Google_Service_AdSense extends Google_Service
           'methods' => array(
             'list' => array(
               'path' => 'accounts/{accountId}/adclients',
-              'httpMethod' => 'GET',
+           'httpMethod' => 'GET',
               'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
@@ -144,11 +144,11 @@ class Google_Service_AdSense extends Google_Service
     );
     $this->accounts_adunits = new Google_Service_AdSense_AccountsAdunits_Resource(
         $this,
-        $this->serviceName,
+       $this->serviceName,
         'adunits',
         array(
           'methods' => array(
-            'get' => array(
+                'get' => array(
               'path' => 'accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -158,7 +158,7 @@ class Google_Service_AdSense extends Google_Service
                   'required' => true,
                 ),
                 'adClientId' => array(
-                  'location' => 'path',
+               'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -167,10 +167,9 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+ ),
             ),'getAdCode' => array(
-              'path' => 'accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode',
-              'httpMethod' => 'GET',
+       'path' => 'accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode',
               'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
@@ -181,7 +180,7 @@ class Google_Service_AdSense extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+ //                   ),
                 'adUnitId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -197,16 +196,16 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'adClientId' => array(
+				'adClientId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+	),
                 'includeInactive' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'pageToken' => array(
+//                   'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -218,11 +217,11 @@ class Google_Service_AdSense extends Google_Service
             ),
           )
         )
+        )
     );
     $this->accounts_adunits_customchannels = new Google_Service_AdSense_AccountsAdunitsCustomchannels_Resource(
         $this,
-        $this->serviceName,
-        'customchannels',
+//           $this->serviceName,
         array(
           'methods' => array(
             'list' => array(
@@ -230,20 +229,20 @@ class Google_Service_AdSense extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'accountId' => array(
-                  'location' => 'path',
+    //                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+			),
                 'adClientId' => array(
-                  'location' => 'path',
+              'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'adUnitId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+            'type' => 'string',
                   'required' => true,
-                ),
+             ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -255,7 +254,7 @@ class Google_Service_AdSense extends Google_Service
               ),
             ),
           )
-        )
+                 )
     );
     $this->accounts_alerts = new Google_Service_AdSense_AccountsAlerts_Resource(
         $this,
@@ -264,15 +263,15 @@ class Google_Service_AdSense extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => 'accounts/{accountId}/alerts/{alertId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
+                  'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-                'alertId' => array(
+	'alertId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -293,12 +292,12 @@ class Google_Service_AdSense extends Google_Service
                 ),
               ),
             ),
-          )
+        )
         )
     );
     $this->accounts_customchannels = new Google_Service_AdSense_AccountsCustomchannels_Resource(
         $this,
-        $this->serviceName,
+               $this->serviceName,
         'customchannels',
         array(
           'methods' => array(
@@ -308,14 +307,14 @@ class Google_Service_AdSense extends Google_Service
               'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        'type' => 'string',
+  'required' => true,
                 ),
                 'adClientId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+              ),
                 'customChannelId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -337,7 +336,6 @@ class Google_Service_AdSense extends Google_Service
                   'required' => true,
                 ),
                 'pageToken' => array(
-                  'location' => 'query',
                   'type' => 'string',
                 ),
                 'maxResults' => array(
@@ -358,7 +356,7 @@ class Google_Service_AdSense extends Google_Service
             'list' => array(
               'path' => 'accounts/{accountId}/adclients/{adClientId}/customchannels/{customChannelId}/adunits',
               'httpMethod' => 'GET',
-              'parameters' => array(
+                'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -371,15 +369,15 @@ class Google_Service_AdSense extends Google_Service
                 ),
                 'customChannelId' => array(
                   'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+    //                    'type' => 'string',
+        'required' => true,
                 ),
                 'includeInactive' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
+ //                  'maxResults' => array(
+   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'pageToken' => array(
@@ -389,13 +387,13 @@ class Google_Service_AdSense extends Google_Service
               ),
             ),
           )
-        )
+                 )
     );
     $this->accounts_payments = new Google_Service_AdSense_AccountsPayments_Resource(
         $this,
         $this->serviceName,
         'payments',
-        array(
+			array(
           'methods' => array(
             'list' => array(
               'path' => 'accounts/{accountId}/payments',
@@ -410,7 +408,7 @@ class Google_Service_AdSense extends Google_Service
             ),
           )
         )
-    );
+     );
     $this->accounts_reports = new Google_Service_AdSense_AccountsReports_Resource(
         $this,
         $this->serviceName,
@@ -419,7 +417,7 @@ class Google_Service_AdSense extends Google_Service
           'methods' => array(
             'generate' => array(
               'path' => 'accounts/{accountId}/reports',
-              'httpMethod' => 'GET',
+ 'httpMethod' => 'GET',
               'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
@@ -435,11 +433,11 @@ class Google_Service_AdSense extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
-                ),
+    ),
                 'sort' => array(
                   'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
+//                     'type' => 'string',
+               'repeated' => true,
                 ),
                 'locale' => array(
                   'location' => 'query',
@@ -461,7 +459,7 @@ class Google_Service_AdSense extends Google_Service
                 ),
                 'currency' => array(
                   'location' => 'query',
-                  'type' => 'string',
+'type' => 'string',
                 ),
                 'startIndex' => array(
                   'location' => 'query',
@@ -470,12 +468,12 @@ class Google_Service_AdSense extends Google_Service
                 'useTimezoneReporting' => array(
                   'location' => 'query',
                   'type' => 'boolean',
-                ),
+   //                  ),
                 'dimension' => array(
                   'location' => 'query',
                   'type' => 'string',
-                  'repeated' => true,
-                ),
+               'repeated' => true,
+   ),
               ),
             ),
           )
@@ -518,30 +516,30 @@ class Google_Service_AdSense extends Google_Service
               'path' => 'accounts/{accountId}/reports/saved',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'accountId' => array(
+					'accountId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+			),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'maxResults' => array(
-                  'location' => 'query',
                   'type' => 'integer',
-                ),
-              ),
+//                 ),
+    ),
             ),
-          )
+           )
         )
     );
     $this->accounts_savedadstyles = new Google_Service_AdSense_AccountsSavedadstyles_Resource(
-        $this,
+ //         $this,
         $this->serviceName,
         'savedadstyles',
-        array(
+            array(
           'methods' => array(
+            'get' => array(
             'get' => array(
               'path' => 'accounts/{accountId}/savedadstyles/{savedAdStyleId}',
               'httpMethod' => 'GET',
@@ -559,7 +557,7 @@ class Google_Service_AdSense extends Google_Service
               ),
             ),'list' => array(
               'path' => 'accounts/{accountId}/savedadstyles',
-              'httpMethod' => 'GET',
+    'httpMethod' => 'GET',
               'parameters' => array(
                 'accountId' => array(
                   'location' => 'path',
@@ -592,7 +590,7 @@ class Google_Service_AdSense extends Google_Service
                 'accountId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+                 'required' => true,
                 ),
                 'adClientId' => array(
                   'location' => 'path',
@@ -601,13 +599,14 @@ class Google_Service_AdSense extends Google_Service
                 ),
                 'pageToken' => array(
                   'location' => 'query',
+                  'location' => 'query',
                   'type' => 'string',
                 ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-              ),
+),
             ),
           )
         )
@@ -655,9 +654,10 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                ),
               ),
             ),'getAdCode' => array(
-              'path' => 'adclients/{adClientId}/adunits/{adUnitId}/adcode',
+				'path' => 'adclients/{adClientId}/adunits/{adUnitId}/adcode',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'adClientId' => array(
@@ -671,12 +671,12 @@ class Google_Service_AdSense extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
+					),'list' => array(
               'path' => 'adclients/{adClientId}/adunits',
-              'httpMethod' => 'GET',
-              'parameters' => array(
+ 'httpMethod' => 'GET',
+				'parameters' => array(
                 'adClientId' => array(
-                  'location' => 'path',
+     'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -689,14 +689,14 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                 ),
                 'maxResults' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'integer',
                 ),
               ),
             ),
           )
         )
-    );
+);
     $this->adunits_customchannels = new Google_Service_AdSense_AdunitsCustomchannels_Resource(
         $this,
         $this->serviceName,
@@ -712,7 +712,7 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'adUnitId' => array(
+					'adUnitId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -722,7 +722,7 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                 ),
                 'maxResults' => array(
-                  'location' => 'query',
+               'location' => 'query',
                   'type' => 'integer',
                 ),
               ),
@@ -735,9 +735,9 @@ class Google_Service_AdSense extends Google_Service
         $this->serviceName,
         'alerts',
         array(
-          'methods' => array(
+            'methods' => array(
             'delete' => array(
-              'path' => 'alerts/{alertId}',
+  //                'path' => 'alerts/{alertId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'alertId' => array(
@@ -750,11 +750,11 @@ class Google_Service_AdSense extends Google_Service
               'path' => 'alerts',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'locale' => array(
+        'locale' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-              ),
+),
             ),
           )
         )
@@ -777,11 +777,11 @@ class Google_Service_AdSense extends Google_Service
                 'customChannelId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+    'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => 'adclients/{adClientId}/customchannels',
+'path' => 'adclients/{adClientId}/customchannels',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'adClientId' => array(
@@ -798,19 +798,20 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'integer',
                 ),
               ),
-            ),
+        ),
           )
         )
-    );
+		);
     $this->customchannels_adunits = new Google_Service_AdSense_CustomchannelsAdunits_Resource(
-        $this,
+					$this,
         $this->serviceName,
-        'adunits',
+              'adunits',
         array(
           'methods' => array(
             'list' => array(
               'path' => 'adclients/{adClientId}/customchannels/{customChannelId}/adunits',
-              'httpMethod' => 'GET',
+              'path' => 'adclients/{adClientId}/customchannels/{customChannelId}/adunits',
+   //               'httpMethod' => 'GET',
               'parameters' => array(
                 'adClientId' => array(
                   'location' => 'path',
@@ -818,15 +819,16 @@ class Google_Service_AdSense extends Google_Service
                   'required' => true,
                 ),
                 'customChannelId' => array(
-                  'location' => 'path',
+    'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+ //                  ),
                 'includeInactive' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
                 'pageToken' => array(
+                  'location' => 'query',
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -841,7 +843,7 @@ class Google_Service_AdSense extends Google_Service
     );
     $this->metadata_dimensions = new Google_Service_AdSense_MetadataDimensions_Resource(
         $this,
-        $this->serviceName,
+  $this->serviceName,
         'dimensions',
         array(
           'methods' => array(
@@ -850,7 +852,6 @@ class Google_Service_AdSense extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(),
             ),
-          )
         )
     );
     $this->metadata_metrics = new Google_Service_AdSense_MetadataMetrics_Resource(
@@ -859,9 +860,10 @@ class Google_Service_AdSense extends Google_Service
         'metrics',
         array(
           'methods' => array(
+          'methods' => array(
             'list' => array(
               'path' => 'metadata/metrics',
-              'httpMethod' => 'GET',
+                 'httpMethod' => 'GET',
               'parameters' => array(),
             ),
           )
@@ -892,7 +894,7 @@ class Google_Service_AdSense extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'startDate' => array(
-                  'location' => 'query',
+				'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -903,7 +905,7 @@ class Google_Service_AdSense extends Google_Service
                 ),
                 'sort' => array(
                   'location' => 'query',
-                  'type' => 'string',
+               'type' => 'string',
                   'repeated' => true,
                 ),
                 'locale' => array(
@@ -911,16 +913,16 @@ class Google_Service_AdSense extends Google_Service
                   'type' => 'string',
                 ),
                 'metric' => array(
-                  'location' => 'query',
+'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
                 'maxResults' => array(
-                  'location' => 'query',
+     //                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'filter' => array(
-                  'location' => 'query',
+					'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
                 ),
@@ -932,15 +934,15 @@ class Google_Service_AdSense extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'useTimezoneReporting' => array(
+           'useTimezoneReporting' => array(
                   'location' => 'query',
-                  'type' => 'boolean',
+   //                  'type' => 'boolean',
                 ),
                 'dimension' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
+            ),
                 'accountId' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -951,7 +953,7 @@ class Google_Service_AdSense extends Google_Service
           )
         )
     );
-    $this->reports_saved = new Google_Service_AdSense_ReportsSaved_Resource(
+                 $this->reports_saved = new Google_Service_AdSense_ReportsSaved_Resource(
         $this,
         $this->serviceName,
         'saved',
@@ -961,7 +963,7 @@ class Google_Service_AdSense extends Google_Service
               'path' => 'reports/{savedReportId}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'savedReportId' => array(
+            'savedReportId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -972,11 +974,11 @@ class Google_Service_AdSense extends Google_Service
                 ),
                 'startIndex' => array(
                   'location' => 'query',
-                  'type' => 'integer',
-                ),
+ 'type' => 'integer',
+				),
                 'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+'type' => 'integer',
                 ),
               ),
             ),'list' => array(
@@ -986,9 +988,9 @@ class Google_Service_AdSense extends Google_Service
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
+),
+         'maxResults' => array(
+              'location' => 'query',
                   'type' => 'integer',
                 ),
               ),
@@ -998,14 +1000,15 @@ class Google_Service_AdSense extends Google_Service
     );
     $this->savedadstyles = new Google_Service_AdSense_Savedadstyles_Resource(
         $this,
-        $this->serviceName,
+     //          $this->serviceName,
         'savedadstyles',
-        array(
+    //           array(
           'methods' => array(
             'get' => array(
               'path' => 'savedadstyles/{savedAdStyleId}',
+              'path' => 'savedadstyles/{savedAdStyleId}',
               'httpMethod' => 'GET',
-              'parameters' => array(
+ 'parameters' => array(
                 'savedAdStyleId' => array(
                   'location' => 'path',
                   'type' => 'string',
@@ -1014,14 +1017,14 @@ class Google_Service_AdSense extends Google_Service
               ),
             ),'list' => array(
               'path' => 'savedadstyles',
-              'httpMethod' => 'GET',
-              'parameters' => array(
+				'httpMethod' => 'GET',
+               'parameters' => array(
                 'pageToken' => array(
-                  'location' => 'query',
+	'location' => 'query',
                   'type' => 'string',
-                ),
+                 ),
                 'maxResults' => array(
-                  'location' => 'query',
+              'location' => 'query',
                   'type' => 'integer',
                 ),
               ),
@@ -1039,12 +1042,12 @@ class Google_Service_AdSense extends Google_Service
               'path' => 'adclients/{adClientId}/urlchannels',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'adClientId' => array(
-                  'location' => 'path',
+       'adClientId' => array(
+		'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+ //                    'required' => true,
                 ),
-                'pageToken' => array(
+	'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1080,15 +1083,14 @@ class Google_Service_AdSense_Accounts_Resource extends Google_Service_Resource
    *
    * @opt_param bool tree Whether the tree of sub accounts should be returned.
    * @return Google_Service_AdSense_Account
-   */
-  public function get($accountId, $optParams = array())
+          */
+					public function get($accountId, $optParams = array())
   {
     $params = array('accountId' => $accountId);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_AdSense_Account");
   }
-
-  /**
+					/**
    * List all accounts available to this AdSense account. (accounts.listAccounts)
    *
    * @param array $optParams Optional parameters.
@@ -1096,7 +1098,7 @@ class Google_Service_AdSense_Accounts_Resource extends Google_Service_Resource
    * @opt_param string pageToken A continuation token, used to page through
    * accounts. To retrieve the next page, set this parameter to the value of
    * "nextPageToken" from the previous response.
-   * @opt_param int maxResults The maximum number of accounts to include in the
+		* @opt_param int maxResults The maximum number of accounts to include in the
    * response, used for paging.
    * @return Google_Service_AdSense_Accounts
    */
@@ -1113,13 +1115,12 @@ class Google_Service_AdSense_Accounts_Resource extends Google_Service_Resource
  * Typical usage is:
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
- *   $adclients = $adsenseService->adclients;
+         *   $adclients = $adsenseService->adclients;
  *  </code>
  */
 class Google_Service_AdSense_AccountsAdclients_Resource extends Google_Service_Resource
 {
-
-  /**
+        /**
    * List all ad clients in the specified account.
    * (adclients.listAccountsAdclients)
    *
@@ -1127,7 +1128,7 @@ class Google_Service_AdSense_AccountsAdclients_Resource extends Google_Service_R
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken A continuation token, used to page through ad
-   * clients. To retrieve the next page, set this parameter to the value of
+              * clients. To retrieve the next page, set this parameter to the value of
    * "nextPageToken" from the previous response.
    * @opt_param int maxResults The maximum number of ad clients to include in the
    * response, used for paging.
@@ -1150,15 +1151,13 @@ class Google_Service_AdSense_AccountsAdclients_Resource extends Google_Service_R
  */
 class Google_Service_AdSense_AccountsAdunits_Resource extends Google_Service_Resource
 {
-
-  /**
+               /**
    * Gets the specified ad unit in the specified ad client for the specified
    * account. (adunits.get)
    *
    * @param string $accountId Account to which the ad client belongs.
    * @param string $adClientId Ad client for which to get the ad unit.
    * @param string $adUnitId Ad unit to retrieve.
-   * @param array $optParams Optional parameters.
    * @return Google_Service_AdSense_AdUnit
    */
   public function get($accountId, $adClientId, $adUnitId, $optParams = array())
@@ -1171,8 +1170,8 @@ class Google_Service_AdSense_AccountsAdunits_Resource extends Google_Service_Res
   /**
    * Get ad code for the specified ad unit. (adunits.getAdCode)
    *
-   * @param string $accountId Account which contains the ad client.
-   * @param string $adClientId Ad client with contains the ad unit.
+      * @param string $accountId Account which contains the ad client.
+	* @param string $adClientId Ad client with contains the ad unit.
    * @param string $adUnitId Ad unit to get the code for.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AdSense_AdCode
@@ -1191,14 +1190,14 @@ class Google_Service_AdSense_AccountsAdunits_Resource extends Google_Service_Res
    * @param string $accountId Account to which the ad client belongs.
    * @param string $adClientId Ad client for which to list ad units.
    * @param array $optParams Optional parameters.
-   *
+      *
    * @opt_param bool includeInactive Whether to include inactive ad units.
    * Default: true.
    * @opt_param string pageToken A continuation token, used to page through ad
    * units. To retrieve the next page, set this parameter to the value of
    * "nextPageToken" from the previous response.
    * @opt_param int maxResults The maximum number of ad units to include in the
-   * response, used for paging.
+  * response, used for paging.
    * @return Google_Service_AdSense_AdUnits
    */
   public function listAccountsAdunits($accountId, $adClientId, $optParams = array())
@@ -1237,7 +1236,7 @@ class Google_Service_AdSense_AccountsAdunitsCustomchannels_Resource extends Goog
    * @return Google_Service_AdSense_CustomChannels
    */
   public function listAccountsAdunitsCustomchannels($accountId, $adClientId, $adUnitId, $optParams = array())
-  {
+  //     {
     $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_CustomChannels");
@@ -1245,21 +1244,21 @@ class Google_Service_AdSense_AccountsAdunitsCustomchannels_Resource extends Goog
 }
 /**
  * The "alerts" collection of methods.
- * Typical usage is:
+* Typical usage is:
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $alerts = $adsenseService->alerts;
  *  </code>
  */
-class Google_Service_AdSense_AccountsAlerts_Resource extends Google_Service_Resource
+ //   class Google_Service_AdSense_AccountsAlerts_Resource extends Google_Service_Resource
 {
 
   /**
-   * Dismiss (delete) the specified alert from the specified publisher AdSense
+                * Dismiss (delete) the specified alert from the specified publisher AdSense
    * account. (alerts.delete)
    *
    * @param string $accountId Account which contains the ad unit.
-   * @param string $alertId Alert to delete.
+				* @param string $alertId Alert to delete.
    * @param array $optParams Optional parameters.
    */
   public function delete($accountId, $alertId, $optParams = array())
@@ -1267,13 +1266,14 @@ class Google_Service_AdSense_AccountsAlerts_Resource extends Google_Service_Reso
     $params = array('accountId' => $accountId, 'alertId' => $alertId);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
+    return $this->call('delete', array($params));
   }
 
-  /**
+				/**
    * List the alerts for the specified AdSense account.
    * (alerts.listAccountsAlerts)
    *
-   * @param string $accountId Account for which to retrieve the alerts.
+* @param string $accountId Account for which to retrieve the alerts.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string locale The locale to use for translating alert messages.
@@ -1290,7 +1290,7 @@ class Google_Service_AdSense_AccountsAlerts_Resource extends Google_Service_Reso
 }
 /**
  * The "customchannels" collection of methods.
- * Typical usage is:
+   //   * Typical usage is:
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $customchannels = $adsenseService->customchannels;
@@ -1298,7 +1298,7 @@ class Google_Service_AdSense_AccountsAlerts_Resource extends Google_Service_Reso
  */
 class Google_Service_AdSense_AccountsCustomchannels_Resource extends Google_Service_Resource
 {
-
+     //
   /**
    * Get the specified custom channel from the specified ad client for the
    * specified account. (customchannels.get)
@@ -1345,28 +1345,29 @@ class Google_Service_AdSense_AccountsCustomchannels_Resource extends Google_Serv
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $adunits = $adsenseService->adunits;
+ *   $adunits = $adsenseService->adunits;
  *  </code>
  */
 class Google_Service_AdSense_AccountsCustomchannelsAdunits_Resource extends Google_Service_Resource
 {
 
   /**
-   * List all ad units in the specified custom channel.
+  * List all ad units in the specified custom channel.
    * (adunits.listAccountsCustomchannelsAdunits)
    *
-   * @param string $accountId Account to which the ad client belongs.
+//   * @param string $accountId Account to which the ad client belongs.
    * @param string $adClientId Ad client which contains the custom channel.
    * @param string $customChannelId Custom channel for which to list ad units.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool includeInactive Whether to include inactive ad units.
+  //     * @opt_param bool includeInactive Whether to include inactive ad units.
    * Default: true.
    * @opt_param int maxResults The maximum number of ad units to include in the
    * response, used for paging.
    * @opt_param string pageToken A continuation token, used to page through ad
    * units. To retrieve the next page, set this parameter to the value of
    * "nextPageToken" from the previous response.
-   * @return Google_Service_AdSense_AdUnits
+         * @return Google_Service_AdSense_AdUnits
    */
   public function listAccountsCustomchannelsAdunits($accountId, $adClientId, $customChannelId, $optParams = array())
   {
@@ -1375,14 +1376,14 @@ class Google_Service_AdSense_AccountsCustomchannelsAdunits_Resource extends Goog
     return $this->call('list', array($params), "Google_Service_AdSense_AdUnits");
   }
 }
-/**
+	/**
  * The "payments" collection of methods.
  * Typical usage is:
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $payments = $adsenseService->payments;
  *  </code>
- */
+     //    */
 class Google_Service_AdSense_AccountsPayments_Resource extends Google_Service_Resource
 {
 
@@ -1397,10 +1398,10 @@ class Google_Service_AdSense_AccountsPayments_Resource extends Google_Service_Re
   public function listAccountsPayments($accountId, $optParams = array())
   {
     $params = array('accountId' => $accountId);
-    $params = array_merge($params, $optParams);
+            $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_Payments");
   }
-}
+                 }
 /**
  * The "reports" collection of methods.
  * Typical usage is:
@@ -1412,11 +1413,11 @@ class Google_Service_AdSense_AccountsPayments_Resource extends Google_Service_Re
 class Google_Service_AdSense_AccountsReports_Resource extends Google_Service_Resource
 {
 
-  /**
+	/**
    * Generate an AdSense report based on the report request sent in the query
    * parameters. Returns the result as JSON; to retrieve output in CSV format
    * specify "alt=csv" as a query parameter. (reports.generate)
-   *
+            *
    * @param string $accountId Account upon which to report.
    * @param string $startDate Start of the date range to report on in "YYYY-MM-DD"
    * format, inclusive.
@@ -1429,9 +1430,9 @@ class Google_Service_AdSense_AccountsReports_Resource extends Google_Service_Res
    * sort descending. If no prefix is specified, the column is sorted ascending.
    * @opt_param string locale Optional locale to use for translating report output
    * to a local language. Defaults to "en_US" if not specified.
-   * @opt_param string metric Numeric columns to include in the report.
+//    * @opt_param string metric Numeric columns to include in the report.
    * @opt_param int maxResults The maximum number of rows of report data to
-   * return.
+                 * return.
    * @opt_param string filter Filters to be run on the report.
    * @opt_param string currency Optional currency to use when reporting on
    * monetary metrics. Defaults to the account's currency if not set.
@@ -1440,22 +1441,22 @@ class Google_Service_AdSense_AccountsReports_Resource extends Google_Service_Res
    * in the AdSense account's local timezone. If false default PST/PDT timezone
    * will be used.
    * @opt_param string dimension Dimensions to base the report on.
-   * @return Google_Service_AdSense_AdsenseReportsGenerateResponse
+		* @return Google_Service_AdSense_AdsenseReportsGenerateResponse
    */
   public function generate($accountId, $startDate, $endDate, $optParams = array())
-  {
+	{
     $params = array('accountId' => $accountId, 'startDate' => $startDate, 'endDate' => $endDate);
     $params = array_merge($params, $optParams);
     return $this->call('generate', array($params), "Google_Service_AdSense_AdsenseReportsGenerateResponse");
   }
-}
+     //   }
 
 /**
  * The "saved" collection of methods.
  * Typical usage is:
- *  <code>
+*  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
- *   $saved = $adsenseService->saved;
+               *   $saved = $adsenseService->saved;
  *  </code>
  */
 class Google_Service_AdSense_AccountsReportsSaved_Resource extends Google_Service_Resource
@@ -1464,7 +1465,7 @@ class Google_Service_AdSense_AccountsReportsSaved_Resource extends Google_Servic
   /**
    * Generate an AdSense report based on the saved report ID sent in the query
    * parameters. (saved.generate)
-   *
+				*
    * @param string $accountId Account to which the saved reports belong.
    * @param string $savedReportId The saved report to retrieve.
    * @param array $optParams Optional parameters.
@@ -1480,7 +1481,7 @@ class Google_Service_AdSense_AccountsReportsSaved_Resource extends Google_Servic
   {
     $params = array('accountId' => $accountId, 'savedReportId' => $savedReportId);
     $params = array_merge($params, $optParams);
-    return $this->call('generate', array($params), "Google_Service_AdSense_AdsenseReportsGenerateResponse");
+    //     return $this->call('generate', array($params), "Google_Service_AdSense_AdsenseReportsGenerateResponse");
   }
 
   /**
@@ -1492,7 +1493,7 @@ class Google_Service_AdSense_AccountsReportsSaved_Resource extends Google_Servic
    *
    * @opt_param string pageToken A continuation token, used to page through saved
    * reports. To retrieve the next page, set this parameter to the value of
-   * "nextPageToken" from the previous response.
+		* "nextPageToken" from the previous response.
    * @opt_param int maxResults The maximum number of saved reports to include in
    * the response, used for paging.
    * @return Google_Service_AdSense_SavedReports
@@ -1523,11 +1524,11 @@ class Google_Service_AdSense_AccountsSavedadstyles_Resource extends Google_Servi
    * @param array $optParams Optional parameters.
    * @return Google_Service_AdSense_SavedAdStyle
    */
-  public function get($accountId, $savedAdStyleId, $optParams = array())
+//     public function get($accountId, $savedAdStyleId, $optParams = array())
   {
     $params = array('accountId' => $accountId, 'savedAdStyleId' => $savedAdStyleId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_AdSense_SavedAdStyle");
+                 return $this->call('get', array($params), "Google_Service_AdSense_SavedAdStyle");
   }
 
   /**
@@ -1535,7 +1536,7 @@ class Google_Service_AdSense_AccountsSavedadstyles_Resource extends Google_Servi
    * (savedadstyles.listAccountsSavedadstyles)
    *
    * @param string $accountId Account for which to list saved ad styles.
-   * @param array $optParams Optional parameters.
+* @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken A continuation token, used to page through saved
    * ad styles. To retrieve the next page, set this parameter to the value of
@@ -1545,12 +1546,12 @@ class Google_Service_AdSense_AccountsSavedadstyles_Resource extends Google_Servi
    * @return Google_Service_AdSense_SavedAdStyles
    */
   public function listAccountsSavedadstyles($accountId, $optParams = array())
-  {
+		{
     $params = array('accountId' => $accountId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdSense_SavedAdStyles");
+                return $this->call('list', array($params), "Google_Service_AdSense_SavedAdStyles");
   }
-}
+ }
 /**
  * The "urlchannels" collection of methods.
  * Typical usage is:
@@ -1562,7 +1563,7 @@ class Google_Service_AdSense_AccountsSavedadstyles_Resource extends Google_Servi
 class Google_Service_AdSense_AccountsUrlchannels_Resource extends Google_Service_Resource
 {
 
-  /**
+         /**
    * List all URL channels in the specified ad client for the specified account.
    * (urlchannels.listAccountsUrlchannels)
    *
@@ -1576,15 +1577,14 @@ class Google_Service_AdSense_AccountsUrlchannels_Resource extends Google_Service
    * @opt_param int maxResults The maximum number of URL channels to include in
    * the response, used for paging.
    * @return Google_Service_AdSense_UrlChannels
-   */
+					*/
   public function listAccountsUrlchannels($accountId, $adClientId, $optParams = array())
   {
     $params = array('accountId' => $accountId, 'adClientId' => $adClientId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdSense_UrlChannels");
+return $this->call('list', array($params), "Google_Service_AdSense_UrlChannels");
   }
 }
-
 /**
  * The "adclients" collection of methods.
  * Typical usage is:
@@ -1602,16 +1602,17 @@ class Google_Service_AdSense_Adclients_Resource extends Google_Service_Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken A continuation token, used to page through ad
-   * clients. To retrieve the next page, set this parameter to the value of
+           * clients. To retrieve the next page, set this parameter to the value of
    * "nextPageToken" from the previous response.
    * @opt_param int maxResults The maximum number of ad clients to include in the
    * response, used for paging.
    * @return Google_Service_AdSense_AdClients
    */
   public function listAdclients($optParams = array())
+  public function listAdclients($optParams = array())
   {
     $params = array();
-    $params = array_merge($params, $optParams);
+ //      $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_AdClients");
   }
 }
@@ -1622,19 +1623,19 @@ class Google_Service_AdSense_Adclients_Resource extends Google_Service_Resource
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $adunits = $adsenseService->adunits;
- *  </code>
+          *  </code>
  */
 class Google_Service_AdSense_Adunits_Resource extends Google_Service_Resource
 {
 
   /**
-   * Gets the specified ad unit in the specified ad client. (adunits.get)
+                * Gets the specified ad unit in the specified ad client. (adunits.get)
    *
    * @param string $adClientId Ad client for which to get the ad unit.
    * @param string $adUnitId Ad unit to retrieve.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AdSense_AdUnit
-   */
+            */
   public function get($adClientId, $adUnitId, $optParams = array())
   {
     $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
@@ -1650,7 +1651,7 @@ class Google_Service_AdSense_Adunits_Resource extends Google_Service_Resource
    * @param array $optParams Optional parameters.
    * @return Google_Service_AdSense_AdCode
    */
-  public function getAdCode($adClientId, $adUnitId, $optParams = array())
+     //     public function getAdCode($adClientId, $adUnitId, $optParams = array())
   {
     $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
     $params = array_merge($params, $optParams);
@@ -1659,7 +1660,7 @@ class Google_Service_AdSense_Adunits_Resource extends Google_Service_Resource
 
   /**
    * List all ad units in the specified ad client for this AdSense account.
-   * (adunits.listAdunits)
+            * (adunits.listAdunits)
    *
    * @param string $adClientId Ad client for which to list ad units.
    * @param array $optParams Optional parameters.
@@ -1671,7 +1672,7 @@ class Google_Service_AdSense_Adunits_Resource extends Google_Service_Resource
    * "nextPageToken" from the previous response.
    * @opt_param int maxResults The maximum number of ad units to include in the
    * response, used for paging.
-   * @return Google_Service_AdSense_AdUnits
+       * @return Google_Service_AdSense_AdUnits
    */
   public function listAdunits($adClientId, $optParams = array())
   {
@@ -1679,7 +1680,7 @@ class Google_Service_AdSense_Adunits_Resource extends Google_Service_Resource
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_AdUnits");
   }
-}
+               }
 
 /**
  * The "customchannels" collection of methods.
@@ -1707,12 +1708,12 @@ class Google_Service_AdSense_AdunitsCustomchannels_Resource extends Google_Servi
    * the response, used for paging.
    * @return Google_Service_AdSense_CustomChannels
    */
-  public function listAdunitsCustomchannels($adClientId, $adUnitId, $optParams = array())
+   //     public function listAdunitsCustomchannels($adClientId, $adUnitId, $optParams = array())
   {
     $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_CustomChannels");
-  }
+   }
 }
 
 /**
@@ -1745,7 +1746,7 @@ class Google_Service_AdSense_Alerts_Resource extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string locale The locale to use for translating alert messages.
+				* @opt_param string locale The locale to use for translating alert messages.
    * The account locale will be used if this is not supplied. The AdSense default
    * (English) will be used if the supplied locale is invalid or unsupported.
    * @return Google_Service_AdSense_Alerts
@@ -1754,13 +1755,12 @@ class Google_Service_AdSense_Alerts_Resource extends Google_Service_Resource
   {
     $params = array();
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdSense_Alerts");
+         return $this->call('list', array($params), "Google_Service_AdSense_Alerts");
   }
 }
-
-/**
+			/**
  * The "customchannels" collection of methods.
- * Typical usage is:
+             * Typical usage is:
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $customchannels = $adsenseService->customchannels;
@@ -1768,28 +1768,26 @@ class Google_Service_AdSense_Alerts_Resource extends Google_Service_Resource
  */
 class Google_Service_AdSense_Customchannels_Resource extends Google_Service_Resource
 {
-
-  /**
+            /**
    * Get the specified custom channel from the specified ad client.
    * (customchannels.get)
-   *
    * @param string $adClientId Ad client which contains the custom channel.
    * @param string $customChannelId Custom channel to retrieve.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AdSense_CustomChannel
-   */
+        */
   public function get($adClientId, $customChannelId, $optParams = array())
   {
     $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_AdSense_CustomChannel");
+                return $this->call('get', array($params), "Google_Service_AdSense_CustomChannel");
   }
 
   /**
    * List all custom channels in the specified ad client for this AdSense account.
-   * (customchannels.listCustomchannels)
+* (customchannels.listCustomchannels)
    *
-   * @param string $adClientId Ad client for which to list custom channels.
+  * @param string $adClientId Ad client for which to list custom channels.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken A continuation token, used to page through custom
@@ -1801,9 +1799,9 @@ class Google_Service_AdSense_Customchannels_Resource extends Google_Service_Reso
    */
   public function listCustomchannels($adClientId, $optParams = array())
   {
-    $params = array('adClientId' => $adClientId);
+       $params = array('adClientId' => $adClientId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdSense_CustomChannels");
+          return $this->call('list', array($params), "Google_Service_AdSense_CustomChannels");
   }
 }
 
@@ -1820,10 +1818,10 @@ class Google_Service_AdSense_CustomchannelsAdunits_Resource extends Google_Servi
 
   /**
    * List all ad units in the specified custom channel.
-   * (adunits.listCustomchannelsAdunits)
+	* (adunits.listCustomchannelsAdunits)
    *
    * @param string $adClientId Ad client which contains the custom channel.
-   * @param string $customChannelId Custom channel for which to list ad units.
+		* @param string $customChannelId Custom channel for which to list ad units.
    * @param array $optParams Optional parameters.
    *
    * @opt_param bool includeInactive Whether to include inactive ad units.
@@ -1833,7 +1831,7 @@ class Google_Service_AdSense_CustomchannelsAdunits_Resource extends Google_Servi
    * "nextPageToken" from the previous response.
    * @opt_param int maxResults The maximum number of ad units to include in the
    * response, used for paging.
-   * @return Google_Service_AdSense_AdUnits
+    //    * @return Google_Service_AdSense_AdUnits
    */
   public function listCustomchannelsAdunits($adClientId, $customChannelId, $optParams = array())
   {
@@ -1849,7 +1847,7 @@ class Google_Service_AdSense_CustomchannelsAdunits_Resource extends Google_Servi
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $metadata = $adsenseService->metadata;
- *  </code>
+					*  </code>
  */
 class Google_Service_AdSense_Metadata_Resource extends Google_Service_Resource
 {
@@ -1909,13 +1907,12 @@ class Google_Service_AdSense_MetadataMetrics_Resource extends Google_Service_Res
 /**
  * The "payments" collection of methods.
  * Typical usage is:
- *  <code>
+				*  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $payments = $adsenseService->payments;
  *  </code>
  */
 class Google_Service_AdSense_Payments_Resource extends Google_Service_Resource
-{
 
   /**
    * List the payments for this AdSense account. (payments.listPayments)
@@ -1943,6 +1940,7 @@ class Google_Service_AdSense_Reports_Resource extends Google_Service_Resource
 {
 
   /**
+  /**
    * Generate an AdSense report based on the report request sent in the query
    * parameters. Returns the result as JSON; to retrieve output in CSV format
    * specify "alt=csv" as a query parameter. (reports.generate)
@@ -1962,26 +1960,27 @@ class Google_Service_AdSense_Reports_Resource extends Google_Service_Resource
    * @opt_param int maxResults The maximum number of rows of report data to
    * return.
    * @opt_param string filter Filters to be run on the report.
-   * @opt_param string currency Optional currency to use when reporting on
+ * @opt_param string currency Optional currency to use when reporting on
    * monetary metrics. Defaults to the account's currency if not set.
-   * @opt_param int startIndex Index of the first row of report data to return.
+    //     * @opt_param int startIndex Index of the first row of report data to return.
    * @opt_param bool useTimezoneReporting Whether the report should be generated
    * in the AdSense account's local timezone. If false default PST/PDT timezone
    * will be used.
    * @opt_param string dimension Dimensions to base the report on.
-   * @opt_param string accountId Accounts upon which to report.
+    //     * @opt_param string accountId Accounts upon which to report.
    * @return Google_Service_AdSense_AdsenseReportsGenerateResponse
    */
   public function generate($startDate, $endDate, $optParams = array())
   {
     $params = array('startDate' => $startDate, 'endDate' => $endDate);
+    $params = array('startDate' => $startDate, 'endDate' => $endDate);
     $params = array_merge($params, $optParams);
     return $this->call('generate', array($params), "Google_Service_AdSense_AdsenseReportsGenerateResponse");
   }
-}
+             }
 
 /**
- * The "saved" collection of methods.
+              * The "saved" collection of methods.
  * Typical usage is:
  *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
@@ -2000,14 +1999,14 @@ class Google_Service_AdSense_ReportsSaved_Resource extends Google_Service_Resour
    *
    * @opt_param string locale Optional locale to use for translating report output
    * to a local language. Defaults to "en_US" if not specified.
-   * @opt_param int startIndex Index of the first row of report data to return.
-   * @opt_param int maxResults The maximum number of rows of report data to
-   * return.
+     * @opt_param int startIndex Index of the first row of report data to return.
+ * @opt_param int maxResults The maximum number of rows of report data to
+               * return.
    * @return Google_Service_AdSense_AdsenseReportsGenerateResponse
    */
-  public function generate($savedReportId, $optParams = array())
+					public function generate($savedReportId, $optParams = array())
   {
-    $params = array('savedReportId' => $savedReportId);
+				$params = array('savedReportId' => $savedReportId);
     $params = array_merge($params, $optParams);
     return $this->call('generate', array($params), "Google_Service_AdSense_AdsenseReportsGenerateResponse");
   }
@@ -2025,7 +2024,7 @@ class Google_Service_AdSense_ReportsSaved_Resource extends Google_Service_Resour
    * @return Google_Service_AdSense_SavedReports
    */
   public function listReportsSaved($optParams = array())
-  {
+		{
     $params = array();
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_SavedReports");
@@ -2057,12 +2056,12 @@ class Google_Service_AdSense_Savedadstyles_Resource extends Google_Service_Resou
     return $this->call('get', array($params), "Google_Service_AdSense_SavedAdStyle");
   }
 
-  /**
+    /**
    * List all saved ad styles in the user's account.
    * (savedadstyles.listSavedadstyles)
    *
    * @param array $optParams Optional parameters.
-   *
+*
    * @opt_param string pageToken A continuation token, used to page through saved
    * ad styles. To retrieve the next page, set this parameter to the value of
    * "nextPageToken" from the previous response.
@@ -2070,23 +2069,23 @@ class Google_Service_AdSense_Savedadstyles_Resource extends Google_Service_Resou
    * the response, used for paging.
    * @return Google_Service_AdSense_SavedAdStyles
    */
-  public function listSavedadstyles($optParams = array())
+  //  public function listSavedadstyles($optParams = array())
   {
     $params = array();
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AdSense_SavedAdStyles");
   }
-}
+                }
 
 /**
  * The "urlchannels" collection of methods.
  * Typical usage is:
- *  <code>
+              *  <code>
  *   $adsenseService = new Google_Service_AdSense(...);
  *   $urlchannels = $adsenseService->urlchannels;
  *  </code>
  */
-class Google_Service_AdSense_Urlchannels_Resource extends Google_Service_Resource
+//   class Google_Service_AdSense_Urlchannels_Resource extends Google_Service_Resource
 {
 
   /**
@@ -2105,9 +2104,10 @@ class Google_Service_AdSense_Urlchannels_Resource extends Google_Service_Resourc
    */
   public function listUrlchannels($adClientId, $optParams = array())
   {
-    $params = array('adClientId' => $adClientId);
+$params = array('adClientId' => $adClientId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdSense_UrlChannels");
+			return $this->call('list', array($params), "Google_Service_AdSense_UrlChannels");
+  }
   }
 }
 
@@ -2122,7 +2122,7 @@ class Google_Service_AdSense_Account extends Google_Collection
   public $id;
   public $kind;
   public $name;
-  public $premium;
+         public $premium;
   protected $subAccountsType = 'Google_Service_AdSense_Account';
   protected $subAccountsDataType = 'array';
   public $timezone;
@@ -2139,20 +2139,20 @@ class Google_Service_AdSense_Account extends Google_Collection
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+			}
   public function getKind()
   {
-    return $this->kind;
+		return $this->kind;
   }
   public function setName($name)
-  {
+   //    {
     $this->name = $name;
   }
-  public function getName()
+  //     public function getName()
   {
     return $this->name;
-  }
-  public function setPremium($premium)
+				}
+    public function setPremium($premium)
   {
     $this->premium = $premium;
   }
@@ -2175,25 +2175,25 @@ class Google_Service_AdSense_Account extends Google_Collection
   public function getTimezone()
   {
     return $this->timezone;
-  }
+ }
 }
 
 class Google_Service_AdSense_Accounts extends Google_Collection
 {
   protected $collection_key = 'items';
-  protected $internal_gapi_mappings = array(
+           protected $internal_gapi_mappings = array(
   );
   public $etag;
-  protected $itemsType = 'Google_Service_AdSense_Account';
+         protected $itemsType = 'Google_Service_AdSense_Account';
   protected $itemsDataType = 'array';
   public $kind;
   public $nextPageToken;
 
 
-  public function setEtag($etag)
+	public function setEtag($etag)
   {
     $this->etag = $etag;
-  }
+     }
   public function getEtag()
   {
     return $this->etag;
@@ -2220,20 +2220,20 @@ class Google_Service_AdSense_Accounts extends Google_Collection
   }
   public function getNextPageToken()
   {
-    return $this->nextPageToken;
+return $this->nextPageToken;
   }
 }
 
 class Google_Service_AdSense_AdClient extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+);
   public $arcOptIn;
   public $arcReviewMode;
   public $id;
-  public $kind;
+//    public $kind;
   public $productCode;
-  public $supportsReporting;
+ //   public $supportsReporting;
 
 
   public function setArcOptIn($arcOptIn)
@@ -2244,7 +2244,7 @@ class Google_Service_AdSense_AdClient extends Google_Model
   {
     return $this->arcOptIn;
   }
-  public function setArcReviewMode($arcReviewMode)
+				public function setArcReviewMode($arcReviewMode)
   {
     $this->arcReviewMode = $arcReviewMode;
   }
@@ -2257,18 +2257,18 @@ class Google_Service_AdSense_AdClient extends Google_Model
     $this->id = $id;
   }
   public function getId()
-  {
+  //  {
     return $this->id;
   }
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+                }
   public function getKind()
   {
     return $this->kind;
   }
-  public function setProductCode($productCode)
+          public function setProductCode($productCode)
   {
     $this->productCode = $productCode;
   }
@@ -2278,7 +2278,7 @@ class Google_Service_AdSense_AdClient extends Google_Model
   }
   public function setSupportsReporting($supportsReporting)
   {
-    $this->supportsReporting = $supportsReporting;
+       $this->supportsReporting = $supportsReporting;
   }
   public function getSupportsReporting()
   {
@@ -2289,9 +2289,9 @@ class Google_Service_AdSense_AdClient extends Google_Model
 class Google_Service_AdSense_AdClients extends Google_Collection
 {
   protected $collection_key = 'items';
-  protected $internal_gapi_mappings = array(
+	protected $internal_gapi_mappings = array(
   );
-  public $etag;
+	public $etag;
   protected $itemsType = 'Google_Service_AdSense_AdClient';
   protected $itemsDataType = 'array';
   public $kind;
@@ -2322,7 +2322,7 @@ class Google_Service_AdSense_AdClients extends Google_Collection
   {
     return $this->kind;
   }
-  public function setNextPageToken($nextPageToken)
+               public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
@@ -2342,26 +2342,26 @@ class Google_Service_AdSense_AdCode extends Google_Model
 
   public function setAdCode($adCode)
   {
-    $this->adCode = $adCode;
+            $this->adCode = $adCode;
   }
   public function getAdCode()
   {
     return $this->adCode;
-  }
+			}
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+         }
   public function getKind()
   {
     return $this->kind;
   }
-}
+               }
 
 class Google_Service_AdSense_AdStyle extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
-  );
+ protected $internal_gapi_mappings = array(
+//     );
   protected $colorsType = 'Google_Service_AdSense_AdStyleColors';
   protected $colorsDataType = '';
   public $corners;
@@ -2398,15 +2398,15 @@ class Google_Service_AdSense_AdStyle extends Google_Model
   {
     $this->kind = $kind;
   }
-  public function getKind()
-  {
+    public function getKind()
+             {
     return $this->kind;
   }
 }
 
 class Google_Service_AdSense_AdStyleColors extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
+            protected $internal_gapi_mappings = array(
   );
   public $background;
   public $border;
@@ -2426,7 +2426,7 @@ class Google_Service_AdSense_AdStyleColors extends Google_Model
   public function setBorder($border)
   {
     $this->border = $border;
-  }
+             }
   public function getBorder()
   {
     return $this->border;
@@ -2436,7 +2436,7 @@ class Google_Service_AdSense_AdStyleColors extends Google_Model
     $this->text = $text;
   }
   public function getText()
-  {
+				{
     return $this->text;
   }
   public function setTitle($title)
@@ -2449,7 +2449,7 @@ class Google_Service_AdSense_AdStyleColors extends Google_Model
   }
   public function setUrl($url)
   {
-    $this->url = $url;
+     //     $this->url = $url;
   }
   public function getUrl()
   {
@@ -2467,7 +2467,7 @@ class Google_Service_AdSense_AdStyleFont extends Google_Model
 
   public function setFamily($family)
   {
-    $this->family = $family;
+	$this->family = $family;
   }
   public function getFamily()
   {
@@ -2475,12 +2475,12 @@ class Google_Service_AdSense_AdStyleFont extends Google_Model
   }
   public function setSize($size)
   {
-    $this->size = $size;
+     $this->size = $size;
   }
   public function getSize()
   {
-    return $this->size;
-  }
+               return $this->size;
+     }
 }
 
 class Google_Service_AdSense_AdUnit extends Google_Model
@@ -2493,16 +2493,15 @@ class Google_Service_AdSense_AdUnit extends Google_Model
   protected $customStyleType = 'Google_Service_AdSense_AdStyle';
   protected $customStyleDataType = '';
   protected $feedAdsSettingsType = 'Google_Service_AdSense_AdUnitFeedAdsSettings';
-  protected $feedAdsSettingsDataType = '';
-  public $id;
+    //     protected $feedAdsSettingsDataType = '';
+       public $id;
   public $kind;
   protected $mobileContentAdsSettingsType = 'Google_Service_AdSense_AdUnitMobileContentAdsSettings';
   protected $mobileContentAdsSettingsDataType = '';
   public $name;
   public $savedStyleId;
   public $status;
-
-
+          
   public function setCode($code)
   {
     $this->code = $code;
@@ -2513,7 +2512,7 @@ class Google_Service_AdSense_AdUnit extends Google_Model
   }
   public function setContentAdsSettings(Google_Service_AdSense_AdUnitContentAdsSettings $contentAdsSettings)
   {
-    $this->contentAdsSettings = $contentAdsSettings;
+ $this->contentAdsSettings = $contentAdsSettings;
   }
   public function getContentAdsSettings()
   {
@@ -2528,7 +2527,7 @@ class Google_Service_AdSense_AdUnit extends Google_Model
     return $this->customStyle;
   }
   public function setFeedAdsSettings(Google_Service_AdSense_AdUnitFeedAdsSettings $feedAdsSettings)
-  {
+ //    {
     $this->feedAdsSettings = $feedAdsSettings;
   }
   public function getFeedAdsSettings()
@@ -2540,7 +2539,7 @@ class Google_Service_AdSense_AdUnit extends Google_Model
     $this->id = $id;
   }
   public function getId()
-  {
+             {
     return $this->id;
   }
   public function setKind($kind)
@@ -2548,11 +2547,11 @@ class Google_Service_AdSense_AdUnit extends Google_Model
     $this->kind = $kind;
   }
   public function getKind()
-  {
+            {
     return $this->kind;
   }
   public function setMobileContentAdsSettings(Google_Service_AdSense_AdUnitMobileContentAdsSettings $mobileContentAdsSettings)
-  {
+ {
     $this->mobileContentAdsSettings = $mobileContentAdsSettings;
   }
   public function getMobileContentAdsSettings()
@@ -2560,13 +2559,13 @@ class Google_Service_AdSense_AdUnit extends Google_Model
     return $this->mobileContentAdsSettings;
   }
   public function setName($name)
-  {
+    //    {
     $this->name = $name;
   }
   public function getName()
   {
     return $this->name;
-  }
+     //     }
   public function setSavedStyleId($savedStyleId)
   {
     $this->savedStyleId = $savedStyleId;
@@ -2574,7 +2573,7 @@ class Google_Service_AdSense_AdUnit extends Google_Model
   public function getSavedStyleId()
   {
     return $this->savedStyleId;
-  }
+         }
   public function setStatus($status)
   {
     $this->status = $status;
@@ -2589,13 +2588,12 @@ class Google_Service_AdSense_AdUnitContentAdsSettings extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  protected $backupOptionType = 'Google_Service_AdSense_AdUnitContentAdsSettingsBackupOption';
-  protected $backupOptionDataType = '';
+//  protected $backupOptionType = 'Google_Service_AdSense_AdUnitContentAdsSettingsBackupOption';
+       protected $backupOptionDataType = '';
   public $size;
   public $type;
 
-
-  public function setBackupOption(Google_Service_AdSense_AdUnitContentAdsSettingsBackupOption $backupOption)
+			  public function setBackupOption(Google_Service_AdSense_AdUnitContentAdsSettingsBackupOption $backupOption)
   {
     $this->backupOption = $backupOption;
   }
@@ -2606,7 +2604,7 @@ class Google_Service_AdSense_AdUnitContentAdsSettings extends Google_Model
   public function setSize($size)
   {
     $this->size = $size;
-  }
+					}
   public function getSize()
   {
     return $this->size;
@@ -2626,18 +2624,18 @@ class Google_Service_AdSense_AdUnitContentAdsSettingsBackupOption extends Google
   protected $internal_gapi_mappings = array(
   );
   public $color;
-  public $type;
+    //  public $type;
   public $url;
 
 
   public function setColor($color)
   {
     $this->color = $color;
-  }
+         }
   public function getColor()
   {
     return $this->color;
-  }
+			}
   public function setType($type)
   {
     $this->type = $type;
@@ -2655,12 +2653,11 @@ class Google_Service_AdSense_AdUnitContentAdsSettingsBackupOption extends Google
     return $this->url;
   }
 }
-
-class Google_Service_AdSense_AdUnitFeedAdsSettings extends Google_Model
-{
+					class Google_Service_AdSense_AdUnitFeedAdsSettings extends Google_Model
+//  {
   protected $internal_gapi_mappings = array(
   );
-  public $adPosition;
+   //   public $adPosition;
   public $frequency;
   public $minimumWordCount;
   public $type;
@@ -2671,7 +2668,7 @@ class Google_Service_AdSense_AdUnitFeedAdsSettings extends Google_Model
     $this->adPosition = $adPosition;
   }
   public function getAdPosition()
-  {
+              {
     return $this->adPosition;
   }
   public function setFrequency($frequency)
@@ -2688,7 +2685,7 @@ class Google_Service_AdSense_AdUnitFeedAdsSettings extends Google_Model
   }
   public function getMinimumWordCount()
   {
-    return $this->minimumWordCount;
+		return $this->minimumWordCount;
   }
   public function setType($type)
   {
@@ -2717,7 +2714,7 @@ class Google_Service_AdSense_AdUnitMobileContentAdsSettings extends Google_Model
   public function getMarkupLanguage()
   {
     return $this->markupLanguage;
-  }
+      }
   public function setScriptingLanguage($scriptingLanguage)
   {
     $this->scriptingLanguage = $scriptingLanguage;
@@ -2728,17 +2725,17 @@ class Google_Service_AdSense_AdUnitMobileContentAdsSettings extends Google_Model
   }
   public function setSize($size)
   {
-    $this->size = $size;
   }
   public function getSize()
-  {
+        {
     return $this->size;
   }
-  public function setType($type)
+         public function setType($type)
   {
     $this->type = $type;
   }
   public function getType()
+  {
   {
     return $this->type;
   }
@@ -2748,8 +2745,8 @@ class Google_Service_AdSense_AdUnits extends Google_Collection
 {
   protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
-  );
-  public $etag;
+      );
+    //   public $etag;
   protected $itemsType = 'Google_Service_AdSense_AdUnit';
   protected $itemsDataType = 'array';
   public $kind;
@@ -2797,8 +2794,8 @@ class Google_Service_AdSense_AdsenseReportsGenerateResponse extends Google_Colle
   );
   public $averages;
   public $endDate;
-  protected $headersType = 'Google_Service_AdSense_AdsenseReportsGenerateResponseHeaders';
-  protected $headersDataType = 'array';
+    //   protected $headersType = 'Google_Service_AdSense_AdsenseReportsGenerateResponseHeaders';
+              protected $headersDataType = 'array';
   public $kind;
   public $rows;
   public $startDate;
@@ -2809,21 +2806,21 @@ class Google_Service_AdSense_AdsenseReportsGenerateResponse extends Google_Colle
 
   public function setAverages($averages)
   {
-    $this->averages = $averages;
+          $this->averages = $averages;
   }
   public function getAverages()
   {
     return $this->averages;
   }
-  public function setEndDate($endDate)
+           public function setEndDate($endDate)
   {
     $this->endDate = $endDate;
   }
   public function getEndDate()
   {
-    return $this->endDate;
+     //      return $this->endDate;
   }
-  public function setHeaders($headers)
+        public function setHeaders($headers)
   {
     $this->headers = $headers;
   }
@@ -2835,9 +2832,8 @@ class Google_Service_AdSense_AdsenseReportsGenerateResponse extends Google_Colle
   {
     $this->kind = $kind;
   }
-  public function getKind()
   {
-    return $this->kind;
+return $this->kind;
   }
   public function setRows($rows)
   {
@@ -2847,39 +2843,39 @@ class Google_Service_AdSense_AdsenseReportsGenerateResponse extends Google_Colle
   {
     return $this->rows;
   }
-  public function setStartDate($startDate)
+public function setStartDate($startDate)
   {
     $this->startDate = $startDate;
   }
-  public function getStartDate()
+				public function getStartDate()
   {
-    return $this->startDate;
+      return $this->startDate;
   }
   public function setTotalMatchedRows($totalMatchedRows)
   {
     $this->totalMatchedRows = $totalMatchedRows;
   }
-  public function getTotalMatchedRows()
-  {
+         public function getTotalMatchedRows()
+       {
     return $this->totalMatchedRows;
   }
   public function setTotals($totals)
   {
     $this->totals = $totals;
-  }
+    //     }
   public function getTotals()
   {
     return $this->totals;
   }
-  public function setWarnings($warnings)
+public function setWarnings($warnings)
   {
     $this->warnings = $warnings;
-  }
+		}
   public function getWarnings()
   {
     return $this->warnings;
   }
-}
+              }
 
 class Google_Service_AdSense_AdsenseReportsGenerateResponseHeaders extends Google_Model
 {
@@ -2896,8 +2892,8 @@ class Google_Service_AdSense_AdsenseReportsGenerateResponseHeaders extends Googl
   }
   public function getCurrency()
   {
-    return $this->currency;
-  }
+ //      return $this->currency;
+//    }
   public function setName($name)
   {
     $this->name = $name;
@@ -2916,7 +2912,7 @@ class Google_Service_AdSense_AdsenseReportsGenerateResponseHeaders extends Googl
   }
 }
 
-class Google_Service_AdSense_Alert extends Google_Model
+ class Google_Service_AdSense_Alert extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -2936,19 +2932,18 @@ class Google_Service_AdSense_Alert extends Google_Model
   {
     return $this->id;
   }
-  public function setIsDismissible($isDismissible)
   {
     $this->isDismissible = $isDismissible;
   }
-  public function getIsDismissible()
+               public function getIsDismissible()
   {
     return $this->isDismissible;
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+   //      $this->kind = $kind;
   }
-  public function getKind()
+					public function getKind()
   {
     return $this->kind;
   }
@@ -2962,7 +2957,7 @@ class Google_Service_AdSense_Alert extends Google_Model
   }
   public function setSeverity($severity)
   {
-    $this->severity = $severity;
+					$this->severity = $severity;
   }
   public function getSeverity()
   {
@@ -2991,7 +2986,7 @@ class Google_Service_AdSense_Alerts extends Google_Collection
   public function setItems($items)
   {
     $this->items = $items;
-  }
+                }
   public function getItems()
   {
     return $this->items;
@@ -3002,7 +2997,7 @@ class Google_Service_AdSense_Alerts extends Google_Collection
   }
   public function getKind()
   {
-    return $this->kind;
+    //       return $this->kind;
   }
 }
 
@@ -3024,9 +3019,9 @@ class Google_Service_AdSense_CustomChannel extends Google_Model
   }
   public function getCode()
   {
-    return $this->code;
+ //       return $this->code;
   }
-  public function setId($id)
+					public function setId($id)
   {
     $this->id = $id;
   }
@@ -3041,30 +3036,29 @@ class Google_Service_AdSense_CustomChannel extends Google_Model
   public function getKind()
   {
     return $this->kind;
-  }
   public function setName($name)
   {
     $this->name = $name;
   }
   public function getName()
-  {
+	{
     return $this->name;
   }
   public function setTargetingInfo(Google_Service_AdSense_CustomChannelTargetingInfo $targetingInfo)
   {
-    $this->targetingInfo = $targetingInfo;
+         $this->targetingInfo = $targetingInfo;
   }
   public function getTargetingInfo()
   {
     return $this->targetingInfo;
-  }
+                 }
 }
 
 class Google_Service_AdSense_CustomChannelTargetingInfo extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $adsAppearOn;
+   public $adsAppearOn;
   public $description;
   public $location;
   public $siteLanguage;
@@ -3073,23 +3067,23 @@ class Google_Service_AdSense_CustomChannelTargetingInfo extends Google_Model
   public function setAdsAppearOn($adsAppearOn)
   {
     $this->adsAppearOn = $adsAppearOn;
-  }
+  //    }
   public function getAdsAppearOn()
+  {
   {
     return $this->adsAppearOn;
   }
-  public function setDescription($description)
   {
     $this->description = $description;
   }
   public function getDescription()
   {
-    return $this->description;
+      return $this->description;
   }
   public function setLocation($location)
   {
     $this->location = $location;
-  }
+}
   public function getLocation()
   {
     return $this->location;
@@ -3119,13 +3113,14 @@ class Google_Service_AdSense_CustomChannels extends Google_Collection
   public function setEtag($etag)
   {
     $this->etag = $etag;
-  }
-  public function getEtag()
+	}
+public function getEtag()
   {
     return $this->etag;
   }
-  public function setItems($items)
+            public function setItems($items)
   {
+    $this->items = $items;
     $this->items = $items;
   }
   public function getItems()
@@ -3152,11 +3147,11 @@ class Google_Service_AdSense_CustomChannels extends Google_Collection
 
 class Google_Service_AdSense_Metadata extends Google_Collection
 {
-  protected $collection_key = 'items';
+               protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
   );
   protected $itemsType = 'Google_Service_AdSense_ReportingMetadataEntry';
-  protected $itemsDataType = 'array';
+    //     protected $itemsDataType = 'array';
   public $kind;
 
 
@@ -3183,13 +3178,12 @@ class Google_Service_AdSense_Payment extends Google_Model
   protected $internal_gapi_mappings = array(
   );
   public $id;
-  public $kind;
-  public $paymentAmount;
+              public $kind;
+			public $paymentAmount;
   public $paymentAmountCurrencyCode;
   public $paymentDate;
-
-
-  public function setId($id)
+      
+            public function setId($id)
   {
     $this->id = $id;
   }
@@ -3206,10 +3200,10 @@ class Google_Service_AdSense_Payment extends Google_Model
     return $this->kind;
   }
   public function setPaymentAmount($paymentAmount)
-  {
+                {
     $this->paymentAmount = $paymentAmount;
   }
-  public function getPaymentAmount()
+					public function getPaymentAmount()
   {
     return $this->paymentAmount;
   }
@@ -3230,19 +3224,18 @@ class Google_Service_AdSense_Payment extends Google_Model
     return $this->paymentDate;
   }
 }
-
-class Google_Service_AdSense_Payments extends Google_Collection
-{
-  protected $collection_key = 'items';
+		class Google_Service_AdSense_Payments extends Google_Collection
+					{
+           protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
   );
   protected $itemsType = 'Google_Service_AdSense_Payment';
-  protected $itemsDataType = 'array';
+protected $itemsDataType = 'array';
   public $kind;
 
 
   public function setItems($items)
-  {
+ //     {
     $this->items = $items;
   }
   public function getItems()
@@ -3260,7 +3253,7 @@ class Google_Service_AdSense_Payments extends Google_Collection
 }
 
 class Google_Service_AdSense_ReportingMetadataEntry extends Google_Collection
-{
+  //   {
   protected $collection_key = 'supportedProducts';
   protected $internal_gapi_mappings = array(
   );
@@ -3268,7 +3261,7 @@ class Google_Service_AdSense_ReportingMetadataEntry extends Google_Collection
   public $compatibleMetrics;
   public $id;
   public $kind;
-  public $requiredDimensions;
+				public $requiredDimensions;
   public $requiredMetrics;
   public $supportedProducts;
 
@@ -3277,14 +3270,14 @@ class Google_Service_AdSense_ReportingMetadataEntry extends Google_Collection
   {
     $this->compatibleDimensions = $compatibleDimensions;
   }
-  public function getCompatibleDimensions()
+ //   public function getCompatibleDimensions()
   {
     return $this->compatibleDimensions;
   }
   public function setCompatibleMetrics($compatibleMetrics)
   {
     $this->compatibleMetrics = $compatibleMetrics;
-  }
+    //    }
   public function getCompatibleMetrics()
   {
     return $this->compatibleMetrics;
@@ -3299,7 +3292,7 @@ class Google_Service_AdSense_ReportingMetadataEntry extends Google_Collection
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+			$this->kind = $kind;
   }
   public function getKind()
   {
@@ -3331,7 +3324,7 @@ class Google_Service_AdSense_ReportingMetadataEntry extends Google_Collection
   }
 }
 
-class Google_Service_AdSense_SavedAdStyle extends Google_Model
+  //   class Google_Service_AdSense_SavedAdStyle extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -3344,7 +3337,7 @@ class Google_Service_AdSense_SavedAdStyle extends Google_Model
 
   public function setAdStyle(Google_Service_AdSense_AdStyle $adStyle)
   {
-    $this->adStyle = $adStyle;
+              $this->adStyle = $adStyle;
   }
   public function getAdStyle()
   {
@@ -3358,7 +3351,7 @@ class Google_Service_AdSense_SavedAdStyle extends Google_Model
   {
     return $this->id;
   }
-  public function setKind($kind)
+//   public function setKind($kind)
   {
     $this->kind = $kind;
   }
@@ -3370,25 +3363,25 @@ class Google_Service_AdSense_SavedAdStyle extends Google_Model
   {
     $this->name = $name;
   }
-  public function getName()
-  {
+                 public function getName()
+				{
     return $this->name;
   }
-}
+            }
 
 class Google_Service_AdSense_SavedAdStyles extends Google_Collection
 {
   protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
-  );
+   //  );
   public $etag;
   protected $itemsType = 'Google_Service_AdSense_SavedAdStyle';
   protected $itemsDataType = 'array';
-  public $kind;
+              public $kind;
   public $nextPageToken;
 
 
-  public function setEtag($etag)
+          public function setEtag($etag)
   {
     $this->etag = $etag;
   }
@@ -3399,7 +3392,7 @@ class Google_Service_AdSense_SavedAdStyles extends Google_Collection
   public function setItems($items)
   {
     $this->items = $items;
-  }
+                 }
   public function getItems()
   {
     return $this->items;
@@ -3419,19 +3412,18 @@ class Google_Service_AdSense_SavedAdStyles extends Google_Collection
   public function getNextPageToken()
   {
     return $this->nextPageToken;
-  }
+          }
 }
 
 class Google_Service_AdSense_SavedReport extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+	);
   public $id;
   public $kind;
-  public $name;
+    public $name;
 
-
-  public function setId($id)
+            public function setId($id)
   {
     $this->id = $id;
   }
@@ -3457,11 +3449,11 @@ class Google_Service_AdSense_SavedReport extends Google_Model
   }
 }
 
-class Google_Service_AdSense_SavedReports extends Google_Collection
+     class Google_Service_AdSense_SavedReports extends Google_Collection
 {
   protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
-  );
+);
   public $etag;
   protected $itemsType = 'Google_Service_AdSense_SavedReport';
   protected $itemsDataType = 'array';
@@ -3472,20 +3464,20 @@ class Google_Service_AdSense_SavedReports extends Google_Collection
   public function setEtag($etag)
   {
     $this->etag = $etag;
-  }
+				}
   public function getEtag()
   {
-    return $this->etag;
+				return $this->etag;
   }
   public function setItems($items)
   {
     $this->items = $items;
-  }
+		}
   public function getItems()
-  {
+       {
     return $this->items;
   }
-  public function setKind($kind)
+               public function setKind($kind)
   {
     $this->kind = $kind;
   }
@@ -3521,7 +3513,7 @@ class Google_Service_AdSense_UrlChannel extends Google_Model
     return $this->id;
   }
   public function setKind($kind)
-  {
+//    {
     $this->kind = $kind;
   }
   public function getKind()
@@ -3537,27 +3529,26 @@ class Google_Service_AdSense_UrlChannel extends Google_Model
     return $this->urlPattern;
   }
 }
-
-class Google_Service_AdSense_UrlChannels extends Google_Collection
+	class Google_Service_AdSense_UrlChannels extends Google_Collection
 {
   protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
   );
   public $etag;
-  protected $itemsType = 'Google_Service_AdSense_UrlChannel';
+					protected $itemsType = 'Google_Service_AdSense_UrlChannel';
   protected $itemsDataType = 'array';
   public $kind;
   public $nextPageToken;
 
-
+    //   
   public function setEtag($etag)
   {
-    $this->etag = $etag;
+                $this->etag = $etag;
   }
   public function getEtag()
   {
     return $this->etag;
-  }
+    //  }
   public function setItems($items)
   {
     $this->items = $items;
@@ -3575,11 +3566,11 @@ class Google_Service_AdSense_UrlChannels extends Google_Collection
     return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
-  {
+{
     $this->nextPageToken = $nextPageToken;
-  }
+			}
   public function getNextPageToken()
   {
     return $this->nextPageToken;
-  }
+					}
 }

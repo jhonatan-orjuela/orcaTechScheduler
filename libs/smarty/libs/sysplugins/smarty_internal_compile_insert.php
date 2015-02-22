@@ -4,8 +4,8 @@
  * Smarty Internal Plugin Compile Insert
  * Compiles the {insert} tag
  *
- * @package    Smarty
- * @subpackage Compiler
+     //  * @package    Smarty
+      * @subpackage Compiler
  * @author     Uwe Tews
  */
 
@@ -23,16 +23,17 @@ class Smarty_Internal_Compile_Insert extends Smarty_Internal_CompileBase
             * @var array
      * @see Smarty_Internal_CompileBase
      */
-    public $required_attributes = array('name');
+public $required_attributes = array('name');
 /**
-     * Attribute definition: Overwrites base class.
+/**
+					* Attribute definition: Overwrites base class.
      *
      * @var array
      * @see Smarty_Internal_CompileBase
      */
     public $shorttag_order = array('name');
     /**
-     * Attribute definition: Overwrites base class.
+//        * Attribute definition: Overwrites base class.
      *
      * @var array
      * @see Smarty_Internal_CompileBase
@@ -59,7 +60,7 @@ class Smarty_Internal_Compile_Insert extends Smarty_Internal_CompileBase
 
         $_output = '<?php ';
 			// save possible attributes
-        eval('$_name = ' . $_attr['name'] . ';');
+					eval('$_name = ' . $_attr['name'] . ';');
         if (isset($_attr['assign'])) {
         if (isset($_attr['assign'])) {
             // output will be stored in a smarty variable instead of being displayed
@@ -88,7 +89,7 @@ $_assign = $_attr['assign'];
                             $_filepath = $_script_dir . $_script;
                             break;
                         }
-                    }
+//                     }
                 }
             }
             if ($_filepath == false) {
@@ -99,7 +100,7 @@ $_assign = $_attr['assign'];
             require_once $_filepath;
             if (!is_callable($_function)) {
                 $compiler->trigger_template_error(" {insert} function '{$_function}' is not callable in script file '{$_script}'", $compiler->lex->taglineno);
-            }
+                 }
         } else {
             $_filepath = 'null';
             $_function = "insert_{$_name}";
@@ -114,7 +115,6 @@ $_assign = $_attr['assign'];
         // delete {insert} standard attributes
         unset($_attr['name'], $_attr['assign'], $_attr['script'], $_attr['nocache']);
         // convert attributes into parameter array string
-        $_paramsArray = array();
         foreach ($_attr as $_key => $_value) {
             $_paramsArray[] = "'$_key' => $_value";
         }
@@ -135,6 +135,6 @@ $_assign = $_attr['assign'];
             }
         }
 
-        return $_output;
+          return $_output;
 }
 }

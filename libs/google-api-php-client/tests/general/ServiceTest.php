@@ -5,7 +5,7 @@
  * distributed with this work for additional information
  * regarding copyright ownership.  The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
+             * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -16,7 +16,7 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */
+  */
 
 class TestModel extends Google_Model
 {
@@ -26,15 +26,14 @@ class TestModel extends Google_Model
   }
 
   public function isAssociativeArray($array)
-  {
+               {
     return parent::isAssociativeArray($array);
   }
 }
-
 class ServiceTest extends PHPUnit_Framework_TestCase
 {
   public function testModel()
-  {
+ //     {
     $model = new TestModel();
 
     $model->mapTypes(
@@ -48,7 +47,7 @@ class ServiceTest extends PHPUnit_Framework_TestCase
     $model->mapTypes(
         array(
           '__infoType' => 'Google_Model',
-          '__infoDataType' => 'map',
+         '__infoDataType' => 'map',
           'info' => array (
             'location' => 'mars',
             'timezone' => 'mst',
@@ -58,17 +57,17 @@ class ServiceTest extends PHPUnit_Framework_TestCase
         )
     );
     $this->assertEquals('asdf', $model->name);
-    $this->assertEquals('z', $model->gender);
+                $this->assertEquals('z', $model->gender);
 
     $this->assertEquals(false, $model->isAssociativeArray(""));
-    $this->assertEquals(false, $model->isAssociativeArray(false));
+          $this->assertEquals(false, $model->isAssociativeArray(false));
     $this->assertEquals(false, $model->isAssociativeArray(null));
     $this->assertEquals(false, $model->isAssociativeArray(array()));
     $this->assertEquals(false, $model->isAssociativeArray(array(1, 2)));
     $this->assertEquals(false, $model->isAssociativeArray(array(1 => 2)));
 
     $this->assertEquals(true, $model->isAssociativeArray(array('test' => 'a')));
-    $this->assertEquals(true, $model->isAssociativeArray(array("a", "b" => 2)));
+					$this->assertEquals(true, $model->isAssociativeArray(array("a", "b" => 2)));
   }
 
   /**
@@ -78,7 +77,7 @@ class ServiceTest extends PHPUnit_Framework_TestCase
   {
     $this->assertTrue(
         class_exists($class),
-        sprintf('Failed asserting class %s exists.', $class)
+ //           sprintf('Failed asserting class %s exists.', $class)
     );
   }
 
@@ -87,7 +86,7 @@ class ServiceTest extends PHPUnit_Framework_TestCase
     $classes = array();
     $path = dirname(dirname(dirname(__FILE__))) . '/src/Google/Service';
     foreach (glob($path . "/*.php") as $file) {
-      $classes[] = array('Google_Service_' . basename($file, '.php'));
+$classes[] = array('Google_Service_' . basename($file, '.php'));
     }
 
     return $classes;

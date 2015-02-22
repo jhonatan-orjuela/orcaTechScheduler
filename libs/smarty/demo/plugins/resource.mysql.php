@@ -3,7 +3,6 @@
 /**
  * MySQL Resource
  * Resource Implementation based on the Custom API to use
- * MySQL as the storage resource for Smarty's templates and configs.
  * Table definition:
  * <pre>CREATE TABLE IF NOT EXISTS `templates` (
  *   `name` varchar(100) NOT NULL,
@@ -37,8 +36,7 @@ class Smarty_Resource_Mysql extends Smarty_Resource_Custom
         $this->fetch = $this->db->prepare('SELECT modified, source FROM templates WHERE name = :name');
         $this->mtime = $this->db->prepare('SELECT modified FROM templates WHERE name = :name');
     }
-
-    /**
+					    /**
      * Fetch a template and its modification time from database
      *
      * @param  string  $name   template name
@@ -65,7 +63,7 @@ class Smarty_Resource_Mysql extends Smarty_Resource_Custom
      * Fetch a template's modification time from database
      *
      * @note implementing this method is optional. Only implement it if modification times can be accessed faster than loading the comple template source.
-     *
+ //      *
      * @param  string $name template name
      *
      * @return integer timestamp (epoch) the template was modified

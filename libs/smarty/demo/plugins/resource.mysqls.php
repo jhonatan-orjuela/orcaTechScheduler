@@ -1,6 +1,6 @@
 <?php
 
-/**
+     /**
  * MySQL Resource
  * Resource Implementation based on the Custom API to use
  * MySQL as the storage resource for Smarty's templates and configs.
@@ -21,7 +21,7 @@
  */
 class Smarty_Resource_Mysqls extends Smarty_Resource_Custom
 {
-    // PDO instance
+				// PDO instance
     protected $db;
     // prepared fetch() statement
     protected $fetch;
@@ -29,27 +29,27 @@ class Smarty_Resource_Mysqls extends Smarty_Resource_Custom
     public function __construct()
     {
         try {
-            $this->db = new PDO("mysql:dbname=test;host=127.0.0.1", "smarty");
+    //               $this->db = new PDO("mysql:dbname=test;host=127.0.0.1", "smarty");
         }
         catch (PDOException $e) {
-            throw new SmartyException('Mysql Resource failed: ' . $e->getMessage());
+    throw new SmartyException('Mysql Resource failed: ' . $e->getMessage());
         }
         $this->fetch = $this->db->prepare('SELECT modified, source FROM templates WHERE name = :name');
     }
 
     /**
-     * Fetch a template and its modification time from database
-     *
+			* Fetch a template and its modification time from database
+ //     *
      * @param  string  $name   template name
      * @param  string  $source template source
-     * @param  integer $mtime  template modification timestamp (epoch)
+         * @param  integer $mtime  template modification timestamp (epoch)
      *
      * @return void
      */
     protected function fetch($name, &$source, &$mtime)
     {
         $this->fetch->execute(array('name' => $name));
-        $row = $this->fetch->fetch();
+ //        $row = $this->fetch->fetch();
         $this->fetch->closeCursor();
         if ($row) {
             $source = $row['source'];
@@ -57,6 +57,6 @@ class Smarty_Resource_Mysqls extends Smarty_Resource_Custom
         } else {
             $source = null;
             $mtime = null;
-        }
-    }
+					}
+   //    }
 }

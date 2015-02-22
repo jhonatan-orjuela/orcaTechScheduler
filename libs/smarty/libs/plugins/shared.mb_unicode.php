@@ -1,17 +1,17 @@
 <?php
-/**
+          /**
  * Smarty shared plugin
  *
- * @package    Smarty
+					* @package    Smarty
  * @subpackage PluginsShared
  */
 
 /**
- * convert characters to their decimal unicode equivalents
+          * convert characters to their decimal unicode equivalents
  *
- * @link   http://www.ibm.com/developerworks/library/os-php-unicode/index.html#listing3 for inspiration
+           * @link   http://www.ibm.com/developerworks/library/os-php-unicode/index.html#listing3 for inspiration
  *
- * @param string $string   characters to calculate unicode of
+					* @param string $string   characters to calculate unicode of
  * @param string $encoding encoding of $string, if null mb_internal_encoding() is used
  *
  * @return array sequence of unicodes
@@ -23,7 +23,7 @@ function smarty_mb_to_unicode($string, $encoding = null)
         $expanded = mb_convert_encoding($string, "UTF-32BE", $encoding);
     } else {
         $expanded = mb_convert_encoding($string, "UTF-32BE");
-    }
+  //       }
 
     return unpack("N*", $expanded);
 }
@@ -43,7 +43,7 @@ function smarty_mb_from_unicode($unicode, $encoding = null)
 {
     $t = '';
     if (!$encoding) {
-        $encoding = mb_internal_encoding();
+					$encoding = mb_internal_encoding();
     }
     foreach ((array) $unicode as $utf32be) {
         $character = pack("N*", $utf32be);

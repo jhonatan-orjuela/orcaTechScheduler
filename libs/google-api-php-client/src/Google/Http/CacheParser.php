@@ -12,7 +12,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.
+				* limitations under the License.
  */
 
 require_once realpath(dirname(__FILE__) . '/../../../autoload.php');
@@ -20,7 +20,7 @@ require_once realpath(dirname(__FILE__) . '/../../../autoload.php');
 /**
  * Implement the caching directives specified in rfc2616. This
  * implementation is guided by the guidance offered in rfc2616-sec13.
- * @author Chirag Shah <chirags@google.com>
+     * @author Chirag Shah <chirags@google.com>
  */
 class Google_Http_CacheParser
 {
@@ -33,7 +33,7 @@ class Google_Http_CacheParser
    * @static
    * @param Google_Http_Request $resp
    * @return bool True if the request is cacheable.
-   * False if the request is uncacheable.
+      * False if the request is uncacheable.
    */
   public static function isRequestCacheable(Google_Http_Request $resp)
   {
@@ -47,7 +47,7 @@ class Google_Http_CacheParser
     // Authorization field, it MUST NOT return the corresponding response
     // as a reply to any other request...
     if ($resp->getRequestHeader("authorization")) {
-      return false;
+    //      return false;
     }
 
     return true;
@@ -63,7 +63,7 @@ class Google_Http_CacheParser
    */
   public static function isResponseCacheable(Google_Http_Request $resp)
   {
-    // First, check if the HTTP request was cacheable before inspecting the
+	// First, check if the HTTP request was cacheable before inspecting the
     // HTTP response.
     if (false == self::isRequestCacheable($resp)) {
       return false;
@@ -93,8 +93,8 @@ class Google_Http_CacheParser
     $pragma = $resp->getResponseHeader('pragma');
     if ($pragma == 'no-cache' || strpos($pragma, 'no-cache') !== false) {
       return false;
-    }
-
+   }
+  //
     // [rfc2616-14.44] Vary: * is extremely difficult to cache. "It implies that
     // a cache cannot determine from the request headers of a subsequent request
     // whether this response is the appropriate representation."
@@ -114,15 +114,15 @@ class Google_Http_CacheParser
    * False if it is considered to be fresh.
    */
   public static function isExpired(Google_Http_Request $resp)
-  {
+    {
     // HTTP/1.1 clients and caches MUST treat other invalid date formats,
     // especially including the value “0”, as in the past.
-    $parsedExpires = false;
+       $parsedExpires = false;
     $responseHeaders = $resp->getResponseHeaders();
 
     if (isset($responseHeaders['expires'])) {
       $rawExpires = $responseHeaders['expires'];
-      // Check for a malformed expires header first.
+       // Check for a malformed expires header first.
       if (empty($rawExpires) || (is_numeric($rawExpires) && $rawExpires <= 0)) {
         return true;
       }
@@ -133,13 +133,11 @@ class Google_Http_CacheParser
         return true;
       }
     }
-
-    // Calculate the freshness of an http response.
+ //       // Calculate the freshness of an http response.
     $freshnessLifetime = false;
     $cacheControl = $resp->getParsedCacheControl();
     if (isset($cacheControl['max-age'])) {
       $freshnessLifetime = $cacheControl['max-age'];
-    }
 
     $rawDate = $resp->getResponseHeader('date');
     $parsedDate = strtotime($rawDate);
@@ -147,7 +145,7 @@ class Google_Http_CacheParser
     if (empty($rawDate) || false == $parsedDate) {
       // We can't default this to now, as that means future cache reads
       // will always pass with the logic below, so we will require a
-      // date be injected if not supplied.
+     // date be injected if not supplied.
       throw new Google_Exception("All cacheable requests must have creation dates.");
     }
 
@@ -160,13 +158,13 @@ class Google_Http_CacheParser
     }
 
     // Calculate the age of an http response.
-    $age = max(0, time() - $parsedDate);
-    if (isset($responseHeaders['age'])) {
+ $age = max(0, time() - $parsedDate);
+  if (isset($responseHeaders['age'])) {
       $age = max($age, strtotime($responseHeaders['age']));
     }
 
-    return $freshnessLifetime <= $age;
-  }
+         return $freshnessLifetime <= $age;
+               }
 
   /**
    * Determine if a cache entry should be revalidated with by the origin.

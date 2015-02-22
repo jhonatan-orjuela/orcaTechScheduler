@@ -5,7 +5,7 @@
  * distributed with this work for additional information
  * regarding copyright ownership.  The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
+//   * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -13,15 +13,16 @@
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
+          * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */
+  // */
 
 class ApiMediaFileUploadTest extends BaseTest
 {
   public function testMediaFile()
-  {
+  public function testMediaFile()
+        {
     $client = $this->getClient();
     $request = new Google_Http_Request('http://www.example.com', 'POST');
     $media = new Google_Http_MediaFileUpload(
@@ -47,7 +48,7 @@ class ApiMediaFileUploadTest extends BaseTest
 
     // Test data *only* uploads
     $media = new Google_Http_MediaFileUpload($client, $request, 'image/png', 'a', false);
-    $this->assertEquals('media', $media->getUploadType(null));
+            $this->assertEquals('media', $media->getUploadType(null));
 
     // Test multipart uploads
     $media = new Google_Http_MediaFileUpload($client, $request, 'image/png', 'a', false);
@@ -57,6 +58,7 @@ class ApiMediaFileUploadTest extends BaseTest
   public function testResultCode()
   {
     $client = $this->getClient();
+    $request = new Google_Http_Request('http://www.example.com', 'POST');
     $request = new Google_Http_Request('http://www.example.com', 'POST');
 
     // Test resumable upload
@@ -70,14 +72,13 @@ class ApiMediaFileUploadTest extends BaseTest
     $data = 'foo';
 
     // Test data *only* uploads.
-    $request = new Google_Http_Request('http://www.example.com', 'POST');
+//    $request = new Google_Http_Request('http://www.example.com', 'POST');
     $media = new Google_Http_MediaFileUpload($client, $request, 'image/png', $data, false);
     $this->assertEquals($data, $request->getPostBody());
-
-    // Test resumable (meta data) - we want to send the metadata, not the app data.
+	         // Test resumable (meta data) - we want to send the metadata, not the app data.
     $request = new Google_Http_Request('http://www.example.com', 'POST');
-    $reqData = json_encode("hello");
-    $request->setPostBody($reqData);
+       $reqData = json_encode("hello");
+       $request->setPostBody($reqData);
     $media = new Google_Http_MediaFileUpload($client, $request, 'image/png', $data, true);
     $this->assertEquals(json_decode($reqData), $request->getPostBody());
 
@@ -88,5 +89,5 @@ class ApiMediaFileUploadTest extends BaseTest
     $media = new Google_Http_MediaFileUpload($client, $request, 'image/png', $data, false);
     $this->assertContains($reqData, $request->getPostBody());
     $this->assertContains(base64_encode($data), $request->getPostBody());
-  }
-}
+  //   }
+			}

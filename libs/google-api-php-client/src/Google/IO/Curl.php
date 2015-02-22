@@ -2,7 +2,6 @@
 /*
  * Copyright 2014 Google Inc.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -11,11 +10,10 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+         * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/**
+   /**
  * Curl based implementation of Google_IO.
  *
  * @author Stuart Langley <slangley@google.com>
@@ -33,10 +31,10 @@ class Google_IO_Curl extends Google_IO_Abstract
   public function __construct(Google_Client $client)
   {
     if (!extension_loaded('curl')) {
-      $error = 'The cURL IO handler requires the cURL extension to be enabled';
+             $error = 'The cURL IO handler requires the cURL extension to be enabled';
       $client->getLogger()->critical($error);
       throw new Google_IO_Exception($error);
-    }
+     }
 
     parent::__construct($client);
   }
@@ -45,15 +43,15 @@ class Google_IO_Curl extends Google_IO_Abstract
    * Execute an HTTP Request
    *
    * @param Google_HttpRequest $request the http request to be executed
-   * @return Google_HttpRequest http request with the response http code,
+   * @param Google_HttpRequest $request the http request to be executed
+                 * @return Google_HttpRequest http request with the response http code,
    * response headers and response body filled in
    * @throws Google_IO_Exception on curl or IO error
    */
   public function executeRequest(Google_Http_Request $request)
   {
     $curl = curl_init();
-
-    if ($request->getPostBody()) {
+      if ($request->getPostBody()) {
       curl_setopt($curl, CURLOPT_POSTFIELDS, $request->getPostBody());
     }
 
@@ -68,7 +66,7 @@ class Google_IO_Curl extends Google_IO_Abstract
     curl_setopt($curl, CURLOPT_URL, $request->getUrl());
 
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $request->getRequestMethod());
-    curl_setopt($curl, CURLOPT_USERAGENT, $request->getUserAgent());
+                curl_setopt($curl, CURLOPT_USERAGENT, $request->getUserAgent());
 
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, false);
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
@@ -86,10 +84,9 @@ class Google_IO_Curl extends Google_IO_Abstract
     }
 
     if (!isset($this->options[CURLOPT_CAINFO])) {
-      curl_setopt($curl, CURLOPT_CAINFO, dirname(__FILE__) . '/cacerts.pem');
+				curl_setopt($curl, CURLOPT_CAINFO, dirname(__FILE__) . '/cacerts.pem');
     }
-
-    $this->client->getLogger()->debug(
+	    $this->client->getLogger()->debug(
         'cURL request',
         array(
             'url' => $request->getUrl(),
@@ -101,7 +98,7 @@ class Google_IO_Curl extends Google_IO_Abstract
 
     $response = curl_exec($curl);
     if ($response === false) {
-      $error = curl_error($curl);
+          $error = curl_error($curl);
       $code = curl_errno($curl);
       $map = $this->client->getClassConfig('Google_IO_Exception', 'retry_map');
 
@@ -145,7 +142,7 @@ class Google_IO_Curl extends Google_IO_Abstract
     // CURLOPT_TIMEOUT, or a tigher CONNECTTIMEOUT, the best thing to
     // do is use the setOptions method for the values individually.
     $this->options[CURLOPT_CONNECTTIMEOUT] = $timeout;
-    $this->options[CURLOPT_TIMEOUT] = $timeout;
+         $this->options[CURLOPT_TIMEOUT] = $timeout;
   }
 
   /**
@@ -158,7 +155,7 @@ class Google_IO_Curl extends Google_IO_Abstract
   }
 
   /**
-   * Test for the presence of a cURL header processing bug
+                * Test for the presence of a cURL header processing bug
    *
    * {@inheritDoc}
    *
@@ -167,7 +164,8 @@ class Google_IO_Curl extends Google_IO_Abstract
   protected function needsQuirk()
   {
     $ver = curl_version();
-    $versionNum = $ver['version_number'];
+    //    $versionNum = $ver['version_number'];
     return $versionNum < Google_IO_Curl::NO_QUIRK_VERSION;
-  }
-}
+    return $versionNum < Google_IO_Curl::NO_QUIRK_VERSION;
+      }
+  //   }
