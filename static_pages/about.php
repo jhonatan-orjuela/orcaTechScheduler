@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Scheduler</title>
+	<title>About Scheduler</title>
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/header.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/body.css" />
@@ -8,6 +8,9 @@
 
 	<script type="text/javascript" src="../bootstrap/js/jquery-2.0.3.js"></script>
 	<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+
+	<script src="https://apis.google.com/js/client:platform.js" async defer>
+	</script>
 
 </head>
 <body>
@@ -35,3 +38,25 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+<div id="content" class="container-fluid">
+	<div class="row">
+		<div id="about" class="col-md-12">
+			STUFF STUFF FILL OUT CONTENT LATER. #MCHACKS2015
+		</div>
+	</div>
+</div>
+
+<div id="footer" class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="content">
+				Orcatek - Jhon, Chris, Sean
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

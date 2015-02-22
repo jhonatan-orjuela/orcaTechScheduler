@@ -1,17 +1,25 @@
 /* Index Page Start */
-#content {
+#content-index {
   text-align: center;
-  font-size: 50px;
-  height: 83%;
+  height: 85%;
   background-image: url("../../images/mainPageImage.png");
   background-size: cover; }
-  #content #index-login {
-    margin-top: 10%; }
-    #content #index-login h1 {
-      background: rgba(0, 0, 0, 0.5); }
+  #content-index p {
+    font-size: 24px; }
+  #content-index .row {
+    background: rgba(255, 255, 255, 0.3);
+    height: 100%; }
+  #content-index #index-login {
+    margin-top: 15%; }
+    #content-index #index-login h1 {
+      color: black; }
 
 /* Index Page End */
-/* Contact Page Content */
-/* Contact Page Content End */
+/* Contacts Page Content */
+#contacts {
+  max-height: 85%;
+  overflow-y: auto; }
+
+/* Contacts Page Content End */
 
 /*# sourceMappingURL=body.css.map */

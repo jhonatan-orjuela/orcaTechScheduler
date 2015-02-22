@@ -1,24 +1,36 @@
 /* Index Page Start */
 
-#content {
+#content-index {
 	text-align: center;
-	font-size: 50px;
-	height: 83%;
+	height: 85%;
 	background-image: url("../../images/mainPageImage.png");
 	background-size: cover;
 
+	p {
+		font-size: 24px;
+	}
+
+	.row {
+		background: rgba(255, 255, 255, 0.30);
+		height: 100%;
+	}
+	
 	#index-login {
-		margin-top: 10%;
+		margin-top: 15%;
 
 		h1 {
-			background: rgba(0,0,0,0.5);
+			color: black;
 		}
 	}
 }
 
 /* Index Page End */
 
-/* Contact Page Content */
+/* Contacts Page Content */
 
+#contacts {
+	max-height: 85%;
+	overflow-y: auto;
+}
 
-/* Contact Page Content End */
+/* Contacts Page Content End */

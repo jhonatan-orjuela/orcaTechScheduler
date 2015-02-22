@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Scheduler</title>
+	<title> Scheduler </title>
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/header.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/body.css" />
@@ -8,6 +8,9 @@
 
 	<script type="text/javascript" src="../bootstrap/js/jquery-2.0.3.js"></script>
 	<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+
+	<script src="https://apis.google.com/js/client:platform.js" async defer>
+	</script>
 
 </head>
 <body>
@@ -35,3 +38,56 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+<div id="content-contacts" class="container-fluid">
+	<div class="row">
+		<div id="contacts" class="col-md-12">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<table class="table table-hover table-striped">
+						<tr class="info">
+							<td></td>
+							<td>Name</td>
+							<td>Email</td>
+						</tr>
+						
+						<!-- SOME SMARTY LOOP HERE TO GENERATE TABLES -->
+						<tr>
+							<td>
+		      					<input id="checkBox" name="contacts[]" type="checkbox">
+	    					</td>
+							<td>hi</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<td>
+		      					<input id="checkBox" name="contacts[]" type="checkbox">
+	    					</td>
+							<td>hi</td>
+							<td>test</td>
+						</tr>
+						<!-- END OF SOME SMARTY LOOP HERE TO GENERATE TABLES -->
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$('input[name^=contacts]').change(function() {
+	if(this.checked) {
+		alert("Je suis ici.");
+		$("input[name^=contacts]").closest("tr").addClass("active");
+	}
+	else {
+		alert("Inside the else.");
+		$("input[name^=contacts]").closest("tr").removeClass("active");
+	}
+
+});
+</script>
+
+</body>
+</html>

@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-{include file='../tpl/header.tpl'}
-
-{$event}
-
-{include file='../tpl/footer.tpl'}
-=======
 <html>
 <head>
 	<title> Scheduler </title>
@@ -19,7 +12,6 @@
 </head>
 <body>
 
-
 {include file='header-logged.tpl'}
 
 <div id="content" class="container-fluid">
@@ -31,4 +23,3 @@
 </div>
 
 {include file='footer.tpl'}
->>>>>>> Stashed changes

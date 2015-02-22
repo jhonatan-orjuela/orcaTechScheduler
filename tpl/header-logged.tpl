@@ -1,17 +1,3 @@
-<html>
-<head>
-	<title> Scheduler </title>
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/header.css" />
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/body.css" />
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/footer.css" />
-
-	<script type="text/javascript" src="../bootstrap/js/jquery-2.0.3.js"></script>
-	<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
-
-</head>
-<body>
-
 <nav id="header" class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
