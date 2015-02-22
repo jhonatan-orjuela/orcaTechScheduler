@@ -33,7 +33,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="https://www.google.com/m8/feeds/contacts/konceptproduction%40gmail.com/full">Contact</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -69,7 +69,8 @@
 </div>
 
 <script type="text/javascript">
-function signInCallback(authResult) {
+function signinCallback(authResult) {
+		console.log(authResult);
 	  if (authResult['code']) {
 		  document.getElementById('signinButton').setAttribute('style', 'display: none');
 	    // Hide the sign-in button now that the user is authorized, for example:
@@ -78,7 +79,7 @@ function signInCallback(authResult) {
 	    // Send the code to the server
 	    $.ajax({
 	      type: 'POST',
-	      url: 'plus.php?storeToken',
+	      url: '../php/auth.php?storeToken',
 	      contentType: 'application/octet-stream; charset=utf-8',
 	      success: function(result) {
 	        // Handle or verify the server response if necessary.

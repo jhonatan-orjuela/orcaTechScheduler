@@ -1,7 +1,43 @@
 <?php 
+session_start();
+require_once '../libs/google-api-php-client/src/Google/Client.php';
+require_once '../libs/google-api-php-client/src/Google/Service/Calendar.php';
 
-$request = $_POST['request'];
+$scriptUri = "http://".$_SERVER["HTTP_HOST"].$_SERVER['PHP_SELF'];
 
+$client = new Google_Client();
+$client->setAccessType('online'); // default: offline
+$client->setApplicationName('OrCATek Scheduler');
+$client->setClientId('377351928922-c771ed20ns780hbmv6cjebtrv9p7uqu6.apps.googleusercontent.com');
+$client->setClientSecret('NVTXUL6Tjz6fnvji2HcwGngA');
+$client->setRedirectUri($scriptUri);
+$client->setDeveloperKey('AIzaSyDdq77kaa9rk4yxyKeTR8DLZaCneDGKfQY'); // API key
+$client->setScopes(array('https://www.googleapis.com/auth/plus.login'));
+// $service implements the client interface, has to be set before auth call
+$service = new Google_Service_Calendar($client);
+
+if (isset($_GET['logout'])) { // logout: destroy token
+    unset($_SESSION['token']);
+	die('Logged out.');
+}
+
+if (isset($_GET['code'])) { // we received the positive auth callback, get the token and store it in session
+    $client->authenticate();
+    $_SESSION['token'] = $client->getAccessToken();
+}
+
+if (isset($_SESSION['token'])) { // extract token from session and configure client
+    $token = $_SESSION['token'];
+    $client->setAccessToken($token);
+}
+
+if (!$client->getAccessToken()) { // auth call to google
+    $authUrl = $client->createAuthUrl();
+    header("Location: ".$authUrl);
+    die;
+}
+  $request = $_POST['storeToken'];
+ 
 // Ensure that this is no request forgery going on, and that the user
 // sending us this connect request is the user that was supposed to.
 if ($request->get('state') != ($app['session']->get('state'))) {
