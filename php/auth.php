@@ -12,7 +12,7 @@ $client->setClientId('377351928922-c771ed20ns780hbmv6cjebtrv9p7uqu6.apps.googleu
 $client->setClientSecret('NVTXUL6Tjz6fnvji2HcwGngA');
 $client->setRedirectUri($scriptUri);
 $client->setDeveloperKey('AIzaSyDdq77kaa9rk4yxyKeTR8DLZaCneDGKfQY'); // API key
-$client->setScopes(array('https://www.googleapis.com/auth/plus.login'));
+$client->setScopes(array('https://www.googleapis.com/auth/plus.login', 'https://www.google.com/m8/feeds', 'https://www.googleapis.com/auth/contacts.readonly'));
 // $service implements the client interface, has to be set before auth call
 $service = new Google_Service_Calendar($client);
 
