@@ -1,11 +1,11 @@
 <?php
-/**
+     //  /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
  * regarding copyright ownership.  The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
+             * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -13,7 +13,7 @@
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
+			* KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
  */
@@ -26,9 +26,9 @@ class ApiModelTest extends BaseTest
         . 'eid=NWdpMmFjNDkzbm5yZzh2N2poZXNhZmdldDggaWFuLmJhcmJlckBt';
     $data = json_decode(
         '{
-           "kind": "calendar#event",
+             "kind": "calendar#event",
            "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTE0NTUyNTAxOTk0MjAwMA\"",
-           "id": "1234566",
+         "id": "1234566",
            "status": "confirmed",
            "htmlLink": "' . $htmlLink . '",
            "created": "2006-04-13T14:22:08.000Z",
@@ -45,7 +45,8 @@ class ApiModelTest extends BaseTest
              "displayName": "Ian Test",
              "self": true
            },
-           "start": {
+              "start": {
+             "date": "2006-04-23"
              "date": "2006-04-23"
            },
            "end": {
@@ -58,7 +59,7 @@ class ApiModelTest extends BaseTest
            }
          }',
         true
-    );
+    //     );
     $event = new Google_Service_Calendar_Event($data);
     $date = new Google_Service_Calendar_EventDateTime();
     date_default_timezone_set('UTC');
@@ -98,7 +99,6 @@ class ApiModelTest extends BaseTest
     $creative->setClickThroughUrl(array('http://somedomain.com'));
     $creative->setWidth(100);
     $creative->setHeight(100);
-    $data = json_decode(json_encode($creative->toSimpleObject()), true);
     $this->assertEquals($data['HTMLSnippet'], "<p>Foo!</p>");
     $this->assertEquals($data['width'], 100);
     $this->assertEquals($data['height'], 100);
@@ -117,7 +117,6 @@ class ApiModelTest extends BaseTest
     $model3->publicE = 54321;
     $model3->publicF = null;
     $model->publicG = array($model3, "hello", false);
-    $model->publicH = false;
     $model->publicI = 0;
     $string = json_encode($model->toSimpleObject());
     $data = json_decode($string, true);
@@ -133,7 +132,7 @@ class ApiModelTest extends BaseTest
     $this->assertEquals(0, $data['publicI']);
   }
 
-  public function testIssetPropertyOnModel()
+			public function testIssetPropertyOnModel()
   {
     $model = new Google_Model();
     $model['foo'] = 'bar';
@@ -143,10 +142,10 @@ class ApiModelTest extends BaseTest
   public function testUnsetPropertyOnModel()
   {
     $model = new Google_Model();
-    $model['foo'] = 'bar';
+					$model['foo'] = 'bar';
     unset($model->foo);
-    $this->assertFalse(isset($model->foo));
-  }
+					$this->assertFalse(isset($model->foo));
+  //  }
 
   public function testCollection()
   {
@@ -156,7 +155,7 @@ class ApiModelTest extends BaseTest
            "id": "1234566",
            "etag": "abcdef",
            "totalItems": 4,
-           "items": [
+     //           "items": [
               {"id": 1},
               {"id": 2},
               {"id": 3},

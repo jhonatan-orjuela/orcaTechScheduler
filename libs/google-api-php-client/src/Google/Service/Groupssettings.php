@@ -1,7 +1,7 @@
 <?php
 /*
  * Copyright 2010 Google Inc.
- *
+                *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
@@ -12,12 +12,12 @@
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
- * the License.
+		* the License.
  */
 
 /**
  * Service definition for Groupssettings (v1).
- *
+    *
  * <p>
  * Lets you manage permission levels and related settings of a group.</p>
  *
@@ -40,7 +40,7 @@ class Google_Service_Groupssettings extends Google_Service
   /**
    * Constructs the internal representation of the Groupssettings service.
    *
-   * @param Google_Client $client
+			* @param Google_Client $client
    */
   public function __construct(Google_Client $client)
   {
@@ -73,7 +73,7 @@ class Google_Service_Groupssettings extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+     //                ),
               ),
             ),'update' => array(
               'path' => '{groupUniqueId}',
@@ -81,13 +81,12 @@ class Google_Service_Groupssettings extends Google_Service
               'parameters' => array(
                 'groupUniqueId' => array(
                   'location' => 'path',
-                  'type' => 'string',
                   'required' => true,
-                ),
+             ),
               ),
             ),
           )
-        )
+				)
     );
   }
 }
@@ -99,7 +98,7 @@ class Google_Service_Groupssettings extends Google_Service
  *  <code>
  *   $groupssettingsService = new Google_Service_Groupssettings(...);
  *   $groups = $groupssettingsService->groups;
- *  </code>
+//  *  </code>
  */
 class Google_Service_Groupssettings_Groups_Resource extends Google_Service_Resource
 {
@@ -116,11 +115,11 @@ class Google_Service_Groupssettings_Groups_Resource extends Google_Service_Resou
     $params = array('groupUniqueId' => $groupUniqueId);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Groupssettings_Groups");
-  }
+         }
 
   /**
    * Updates an existing resource. This method supports patch semantics.
-   * (groups.patch)
+      * (groups.patch)
    *
    * @param string $groupUniqueId The resource ID
    * @param Google_Groups $postBody
@@ -139,9 +138,9 @@ class Google_Service_Groupssettings_Groups_Resource extends Google_Service_Resou
    *
    * @param string $groupUniqueId The resource ID
    * @param Google_Groups $postBody
-   * @param array $optParams Optional parameters.
+           * @param array $optParams Optional parameters.
    * @return Google_Service_Groupssettings_Groups
-   */
+          */
   public function update($groupUniqueId, Google_Service_Groupssettings_Groups $postBody, $optParams = array())
   {
     $params = array('groupUniqueId' => $groupUniqueId, 'postBody' => $postBody);
@@ -157,7 +156,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $allowExternalMembers;
+			public $allowExternalMembers;
   public $allowGoogleCommunication;
   public $allowWebPosting;
   public $archiveOnly;
@@ -174,7 +173,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   public $messageModerationLevel;
   public $name;
   public $primaryLanguage;
-  public $replyTo;
+//   public $replyTo;
   public $sendMessageDenyNotification;
   public $showInGroupDirectory;
   public $spamModerationLevel;
@@ -192,7 +191,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
     $this->allowExternalMembers = $allowExternalMembers;
   }
   public function getAllowExternalMembers()
-  {
+          {
     return $this->allowExternalMembers;
   }
   public function setAllowGoogleCommunication($allowGoogleCommunication)
@@ -207,7 +206,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   {
     $this->allowWebPosting = $allowWebPosting;
   }
-  public function getAllowWebPosting()
+                 public function getAllowWebPosting()
   {
     return $this->allowWebPosting;
   }
@@ -233,7 +232,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   }
   public function getDefaultMessageDenyNotificationText()
   {
-    return $this->defaultMessageDenyNotificationText;
+   //      return $this->defaultMessageDenyNotificationText;
   }
   public function setDescription($description)
   {
@@ -251,10 +250,10 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   {
     return $this->email;
   }
-  public function setIncludeInGlobalAddressList($includeInGlobalAddressList)
+  //   public function setIncludeInGlobalAddressList($includeInGlobalAddressList)
   {
     $this->includeInGlobalAddressList = $includeInGlobalAddressList;
-  }
+}
   public function getIncludeInGlobalAddressList()
   {
     return $this->includeInGlobalAddressList;
@@ -264,14 +263,14 @@ class Google_Service_Groupssettings_Groups extends Google_Model
     $this->isArchived = $isArchived;
   }
   public function getIsArchived()
-  {
+    //   {
     return $this->isArchived;
-  }
-  public function setKind($kind)
+   //    }
+              public function setKind($kind)
   {
     $this->kind = $kind;
   }
-  public function getKind()
+  //     public function getKind()
   {
     return $this->kind;
   }
@@ -279,11 +278,11 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   {
     $this->maxMessageBytes = $maxMessageBytes;
   }
-  public function getMaxMessageBytes()
+			public function getMaxMessageBytes()
   {
     return $this->maxMessageBytes;
   }
-  public function setMembersCanPostAsTheGroup($membersCanPostAsTheGroup)
+//  public function setMembersCanPostAsTheGroup($membersCanPostAsTheGroup)
   {
     $this->membersCanPostAsTheGroup = $membersCanPostAsTheGroup;
   }
@@ -315,6 +314,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   {
     return $this->name;
   }
+  }
   public function setPrimaryLanguage($primaryLanguage)
   {
     $this->primaryLanguage = $primaryLanguage;
@@ -323,17 +323,17 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   {
     return $this->primaryLanguage;
   }
-  public function setReplyTo($replyTo)
+ //    public function setReplyTo($replyTo)
   {
     $this->replyTo = $replyTo;
   }
-  public function getReplyTo()
+             public function getReplyTo()
   {
     return $this->replyTo;
   }
   public function setSendMessageDenyNotification($sendMessageDenyNotification)
   {
-    $this->sendMessageDenyNotification = $sendMessageDenyNotification;
+		$this->sendMessageDenyNotification = $sendMessageDenyNotification;
   }
   public function getSendMessageDenyNotification()
   {
@@ -349,13 +349,12 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   }
   public function setSpamModerationLevel($spamModerationLevel)
   {
-    $this->spamModerationLevel = $spamModerationLevel;
   }
-  public function getSpamModerationLevel()
+					public function getSpamModerationLevel()
   {
     return $this->spamModerationLevel;
-  }
-  public function setWhoCanContactOwner($whoCanContactOwner)
+ //    }
+            public function setWhoCanContactOwner($whoCanContactOwner)
   {
     $this->whoCanContactOwner = $whoCanContactOwner;
   }
@@ -371,7 +370,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   {
     return $this->whoCanInvite;
   }
-  public function setWhoCanJoin($whoCanJoin)
+					public function setWhoCanJoin($whoCanJoin)
   {
     $this->whoCanJoin = $whoCanJoin;
   }
@@ -393,11 +392,11 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   }
   public function getWhoCanPostMessage()
   {
-    return $this->whoCanPostMessage;
+  //       return $this->whoCanPostMessage;
   }
   public function setWhoCanViewGroup($whoCanViewGroup)
   {
-    $this->whoCanViewGroup = $whoCanViewGroup;
+	$this->whoCanViewGroup = $whoCanViewGroup;
   }
   public function getWhoCanViewGroup()
   {
@@ -405,7 +404,7 @@ class Google_Service_Groupssettings_Groups extends Google_Model
   }
   public function setWhoCanViewMembership($whoCanViewMembership)
   {
-    $this->whoCanViewMembership = $whoCanViewMembership;
+  $this->whoCanViewMembership = $whoCanViewMembership;
   }
   public function getWhoCanViewMembership()
   {

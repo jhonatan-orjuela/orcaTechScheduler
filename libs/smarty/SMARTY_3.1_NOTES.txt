@@ -1,4 +1,4 @@
-Smarty 3.1 Notes
+           Smarty 3.1 Notes
 ================
 
 Smarty 3.1 is a departure from 2.0 compatibility. Most notably, all
@@ -10,7 +10,7 @@ Some differences from 3.0 are also present. 3.1 begins the journey of
 requiring setters/getters for property access. So far this is only
 implemented on the five directory properties: template_dir,
 plugins_dir, configs_dir, compile_dir and cache_dir. These properties
-are now protected, it is required to use the setters/getters instead.
+    are now protected, it is required to use the setters/getters instead.
 That said, direct property access will still work, however slightly
 slower since they will now fall through __set() and __get() and in
 turn passed through the setter/getter methods. 3.2 will exhibit a full
@@ -20,12 +20,9 @@ so code-completion in your IDE will work as expected.
 There is absolutely no PHP allowed in templates any more. All
 deprecated features of Smarty 2.0 are gone. Again, use the SmartyBC
 class if you need any backward compatibility.
+          Internal Changes
 
-Internal Changes
 
-  Full UTF-8 Compatibility
-
-The plugins shipped with Smarty 3.1 have been rewritten to fully
 support UTF-8 strings if Multibyte String is available. Without
 MBString UTF-8 cannot be handled properly. For those rare cases where
 templates themselves have to juggle encodings, the new modifiers
@@ -41,12 +38,11 @@ mimics the behavior of Smarty, this API simplification should not
 require any changes to custom plugins.
 
 The plugins shipped with Smarty 3.1 have been rewritten for better
-performance. Most notably {html_select_date} and {html_select_time}
+         performance. Most notably {html_select_date} and {html_select_time}
 have been improved vastly. Performance aside, plugins have also been
 reviewed and generalized in their API. {html_select_date} and
 {html_select_time} now share almost all available options.
-
-The escape modifier now knows the $double_encode option, which will
+     The escape modifier now knows the $double_encode option, which will
 prevent entities from being encoded again.
 
 The capitalize modifier now know the $lc_rest option, which makes sure
@@ -57,8 +53,8 @@ legitimate endings of a sentence - previously only (.) was
 accepted
 
 The new unescape modifier is there to reverse the effects of the
-escape modifier. This applies to the escape formats html, htmlall and
-entity.
+               escape modifier. This applies to the escape formats html, htmlall and
+           entity.
 
   default_template_handler_func
 
@@ -66,13 +62,12 @@ The invocation of $smarty->$default_template_handler_func had to be
 altered. Instead of a Smarty_Internal_Template, the fifth argument is
 now provided with the Smarty instance. New footprint:
 
-
-/**
+       /**
  * Default Template Handler
  *
  * called when Smarty's file: resource is unable to load a requested file
- * 
- * @param string   $type     resource type (e.g. "file", "string", "eval", "resource")
+  * 
+      * @param string   $type     resource type (e.g. "file", "string", "eval", "resource")
  * @param string   $name     resource name (e.g. "foo/bar.tpl")
  * @param string  &$content  template's content
  * @param integer &$modified template's modification time
@@ -82,8 +77,8 @@ now provided with the Smarty instance. New footprint:
  *                          could be loaded
  */
 function default_template_handler_func($type, $name, &$content, &$modified, Smarty $smarty) {
-    if (false) {
-        // return corrected filepath
+					if (false) {
+				// return corrected filepath
         return "/tmp/some/foobar.tpl";
     } elseif (false) {
         // return a template directly
@@ -103,16 +98,15 @@ improvement is that all compiled templates are now handled as PHP
 functions. This speeds up repeated templates tremendously, as each one
 calls an (in-memory) PHP function instead of performing another file
 include/scan.
-
-New Features
+include/scan.
+       		New Features
 
   Template syntax
 
  {block}..{/block}
-
-The {block} tag has a new hide option flag. It does suppress the block
+	The {block} tag has a new hide option flag. It does suppress the block
 content if no corresponding child block exists.
-EXAMPLE:
+          EXAMPLE:
 parent.tpl
 {block name=body hide} child content "{$smarty.block.child}" was
 inserted {block}
@@ -120,8 +114,7 @@ In the above example the whole block will be suppressed if no child
 block "body" is existing.
 
  {setfilter}..{/setfilter}
-
-The new {setfilter} block tag allows the definition of filters which
+ The new {setfilter} block tag allows the definition of filters which
 run on variable output.
 SYNTAX:
 {setfilter filter1|filter2|filter3....}
@@ -132,7 +125,7 @@ additional parameter like filter2:'foo'
 3. a PHP function
 {/setfilter} will turn previous filter setting off again.
 {setfilter} tags can be nested.
-EXAMPLE:
+ EXAMPLE:
 {setfilter filter1}
   {$foo}
   {setfilter filter2}
@@ -141,7 +134,7 @@ EXAMPLE:
   {$buh}
 {/setfilter}
 {$blar}
-In the above example filter1 will run on the output of $foo, filter2
+				In the above example filter1 will run on the output of $foo, filter2
 on $bar, filter1 again on $buh and no filter on $blar.
 NOTES:
 - {$foo nofilter} will suppress the filters
@@ -149,7 +142,7 @@ NOTES:
 registerFilter('variable',...), autoLoadFilter('variable',...) and
 defined default modifier.
 - {setfilter} will effect only the current template, not included
-subtemplates.
+               subtemplates.
 
   Resource API
 
@@ -161,7 +154,7 @@ well as define new template types adhering to the special
 non-compiling (e,g, plain php) and non-compile-caching (e.g. eval:
 resource type) resources.
 
-See demo/plugins/resource.mysql.php for an example custom database
+       See demo/plugins/resource.mysql.php for an example custom database
 resource.
 
 Note that old-fashioned registration of callbacks for resource
@@ -170,7 +163,7 @@ management has been deprecated but is still possible with SmartyBC.
   CacheResource API
 
 In line with the Resource API, the CacheResource API offers a more
-comfortable handling of output-cache data. With the
+			comfortable handling of output-cache data. With the
 Smarty_CacheResource_Custom accessing databases is made simple. With
 the introduction of Smarty_CacheResource_KeyValueStore the
 implementation of resources like memcache or APC became a no-brainer;
@@ -187,13 +180,13 @@ anymore. As the functionality had not been ported to Smarty 3.0.x
 properly, it has been dropped from 3.1 completely.
 
 Locking facilities have been implemented to avoid concurrent cache 
-generation. Enable cache locking by setting 
+		generation. Enable cache locking by setting 
 $smarty->cache_locking = true;
 
   Relative Paths in Templates (File-Resource)
 
 As of Smarty 3.1 {include file="../foo.tpl"} and {include
-file="./foo.tpl"} will resolve relative to the template they're in.
+        file="./foo.tpl"} will resolve relative to the template they're in.
 Relative paths are available with {include file="..."} and
 {extends file="..."}. As $smarty->fetch('../foo.tpl') and
 $smarty->fetch('./foo.tpl') cannot be relative to a template, an
@@ -207,7 +200,7 @@ require the template bar.tpl to be loaded from $template_dir['foo'];
 Smarty::setTemplateDir() and Smarty::addTemplateDir() offer ways to
 define indexes along with the actual directories.
 
-  Mixing Resources in extends-Resource
+Mixing Resources in extends-Resource
 
 Taking the php extends: template resource one step further, it is now
 possible to mix resources within an extends: call like
@@ -216,7 +209,7 @@ $smarty->fetch("extends:file:foo.tpl|db:bar.tpl");
 To make eval: and string: resources available to the inheritance
 chain, eval:base64:TPL_STRING and eval:urlencode:TPL_STRING have been
 introduced. Supplying the base64 or urlencode flags will trigger
-decoding the TPL_STRING in with either base64_decode() or urldecode().
+      decoding the TPL_STRING in with either base64_decode() or urldecode().
 
   extends-Resource in template inheritance
 
@@ -226,18 +219,18 @@ resource like {extends file="extends:foo.tpl|db:bar.tpl"}.
   New Smarty property escape_html
 
 $smarty->escape_html = true will autoescape all template variable
-output by calling htmlspecialchars({$output}, ENT_QUOTES,
+       output by calling htmlspecialchars({$output}, ENT_QUOTES,
 SMARTY_RESOURCE_CHAR_SET).
 NOTE:
 This is a compile time option. If you change the setting you must make
-sure that the templates get recompiled.
+  sure that the templates get recompiled.
 
   New option at Smarty property compile_check
 
-The automatic recompilation of modified templates can now be
+			The automatic recompilation of modified templates can now be
 controlled by the following settings:
 $smarty->compile_check = COMPILECHECK_OFF (false) - template files
-will not be checked
+               will not be checked
 $smarty->compile_check = COMPILECHECK_ON (true) - template files will
 always be checked
 $smarty->compile_check = COMPILECHECK_CACHEMISS - template files will
@@ -298,7 +291,7 @@ replaces $smarty->plugins_dir[] = "bar";
 string getCompileDir()
 replaces $smarty->compile_dir;
 Smarty setCompileDir( string $path )
-replaces $smarty->compile_dir = "foo";
+      replaces $smarty->compile_dir = "foo";
 
 string getCacheDir()
 replaces $smarty->cache_dir;

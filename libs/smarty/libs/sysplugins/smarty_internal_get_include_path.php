@@ -1,21 +1,21 @@
 <?php
 /**
  * Smarty read include path plugin
- *
+			*
  * @package    Smarty
  * @subpackage PluginsInternal
  * @author     Monte Ohrt
  */
 
 /**
- * Smarty Internal Read Include Path Class
+        * Smarty Internal Read Include Path Class
  *
  * @package    Smarty
- * @subpackage PluginsInternal
+					* @subpackage PluginsInternal
  */
 class Smarty_Internal_Get_Include_Path
 {
-    /**
+ /**
      * Return full file path from PHP include_path
      *
      * @param  string $filepath filepath
@@ -25,9 +25,8 @@ class Smarty_Internal_Get_Include_Path
     public static function getIncludePath($filepath)
     {
         static $_include_path = null;
-
-        if (function_exists('stream_resolve_include_path')) {
-            // available since PHP 5.3.2
+	        if (function_exists('stream_resolve_include_path')) {
+     // available since PHP 5.3.2
             return stream_resolve_include_path($filepath);
         }
 
@@ -39,8 +38,8 @@ class Smarty_Internal_Get_Include_Path
             if (file_exists($_path . DS . $filepath)) {
                 return $_path . DS . $filepath;
             }
-        }
+		}
 
         return false;
-    }
-}
+				}
+ }

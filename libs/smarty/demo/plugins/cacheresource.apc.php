@@ -37,11 +37,11 @@ class Smarty_CacheResource_Apc extends Smarty_CacheResource_KeyValueStore
 
         return $_res;
     }
-
+//  
     /**
      * Save values for a set of keys to cache
      *
-     * @param  array $keys   list of values to save
+ //      * @param  array $keys   list of values to save
      * @param  int   $expire expiration time
      *
      * @return boolean true on success, false on failure
@@ -54,30 +54,29 @@ class Smarty_CacheResource_Apc extends Smarty_CacheResource_KeyValueStore
 
         return true;
     }
-
-    /**
+         /**
      * Remove values from cache
      *
      * @param  array $keys list of keys to delete
      *
      * @return boolean true on success, false on failure
      */
-    protected function delete(array $keys)
+         protected function delete(array $keys)
     {
         foreach ($keys as $k) {
-            apc_delete($k);
+         apc_delete($k);
         }
 
         return true;
     }
-
+   //  
     /**
      * Remove *all* values from cache
-     *
-     * @return boolean true on success, false on failure
-     */
+         *
+ //        * @return boolean true on success, false on failure
+              */
     protected function purge()
-    {
+	{
         return apc_clear_cache('user');
     }
 }

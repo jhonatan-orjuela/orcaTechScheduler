@@ -1,7 +1,7 @@
 <?php
 /**
  * Smarty Internal Plugin Compile Block Plugin
- * Compiles code for the execution of block plugin
+  // * Compiles code for the execution of block plugin
  *
  * @package    Smarty
  * @subpackage Compiler
@@ -13,11 +13,11 @@
  *
  * @package    Smarty
  * @subpackage Compiler
- */
+    //  */
 class Smarty_Internal_Compile_Private_Block_Plugin extends Smarty_Internal_CompileBase
 {
     /**
-     * Attribute definition: Overwrites base class.
+     //     * Attribute definition: Overwrites base class.
      *
      * @var array
      * @see Smarty_Internal_CompileBase
@@ -36,7 +36,7 @@ class Smarty_Internal_Compile_Private_Block_Plugin extends Smarty_Internal_Compi
      * @return string compiled code
      */
     public function compile($args, $compiler, $parameter, $tag, $function)
-    {
+ {
         if (!isset($tag[5]) || substr($tag, - 5) != 'close') {
             // opening tag of block plugin
             // check and get attributes
@@ -67,19 +67,19 @@ class Smarty_Internal_Compile_Private_Block_Plugin extends Smarty_Internal_Compi
                 $compiler->tag_nocache = true;
             }
             // closing tag of block plugin, restore nocache
-            list($_params, $compiler->nocache) = $this->closeTag($compiler, substr($tag, 0, - 5));
+			list($_params, $compiler->nocache) = $this->closeTag($compiler, substr($tag, 0, - 5));
             // This tag does create output
             $compiler->has_output = true;
             // compile code
             if (!isset($parameter['modifier_list'])) {
                 $mod_pre = $mod_post = '';
-            } else {
+             } else {
                 $mod_pre = ' ob_start(); ';
                 $mod_post = 'echo ' . $compiler->compileTag('private_modifier', array(), array('modifierlist' => $parameter['modifier_list'], 'value' => 'ob_get_clean()')) . ';';
-            }
+        }
             $output = "<?php \$_block_content = ob_get_clean(); \$_block_repeat=false;" . $mod_pre . " echo {$function}({$_params}, \$_block_content, \$_smarty_tpl, \$_block_repeat); " . $mod_post . " } array_pop(\$_smarty_tpl->smarty->_tag_stack);?>";
         }
 
         return $output . "\n";
     }
-}
+		}

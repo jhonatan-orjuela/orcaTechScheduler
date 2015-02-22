@@ -5,27 +5,27 @@
  *
  * @package    Smarty
  * @subpackage Compiler
- * @author     Uwe Tews
+//  * @author     Uwe Tews
  */
 
 /**
  * Smarty Internal Plugin Compile Break Class
  *
- * @package    Smarty
+           * @package    Smarty
  * @subpackage Compiler
  */
 class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
 {
     /**
-     * Attribute definition: Overwrites base class.
+  * Attribute definition: Overwrites base class.
      *
      * @var array
      * @see Smarty_Internal_CompileBase
      */
     public $optional_attributes = array('levels');
-    /**
-     * Attribute definition: Overwrites base class.
-     *
+/**
+* Attribute definition: Overwrites base class.
+      *
      * @var array
      * @see Smarty_Internal_CompileBase
      */
@@ -42,7 +42,7 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
      */
     public function compile($args, $compiler, $parameter)
     {
-        static $_is_loopy = array('for' => true, 'foreach' => true, 'while' => true, 'section' => true);
+    //        static $_is_loopy = array('for' => true, 'foreach' => true, 'while' => true, 'section' => true);
         // check and get attributes
         $_attr = $this->getAttributes($compiler, $args);
 
@@ -50,7 +50,7 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
             $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
         }
 
-        if (isset($_attr['levels'])) {
+ //          if (isset($_attr['levels'])) {
             if (!is_numeric($_attr['levels'])) {
                 $compiler->trigger_template_error('level attribute must be a numeric constant', $compiler->lex->taglineno);
             }
@@ -69,7 +69,6 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
         if ($level_count != 0) {
             $compiler->trigger_template_error("cannot break {$_levels} level(s)", $compiler->lex->taglineno);
         }
-
-        return "<?php break {$_levels};?>";
+			        return "<?php break {$_levels};?>";
     }
 }

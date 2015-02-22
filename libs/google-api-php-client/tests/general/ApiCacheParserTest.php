@@ -7,7 +7,7 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
+     *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
@@ -15,10 +15,9 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
- * under the License.
- */
-
-class ApiCacheParserTest extends BaseTest
+      * under the License.
+          */
+         class ApiCacheParserTest extends BaseTest
 {
   public function testIsResponseCacheable()
   {
@@ -31,7 +30,7 @@ class ApiCacheParserTest extends BaseTest
     // revalidation.
     $resp = new Google_Http_Request('http://localhost', 'GET');
     $resp->setResponseHttpCode('200');
-    $resp->setResponseHeaders(
+		$resp->setResponseHeaders(
         array(
           'Cache-Control' => 'max-age=3600, must-revalidate',
           'Expires' => 'Fri, 30 Oct 1998 14:19:41 GMT',
@@ -41,7 +40,7 @@ class ApiCacheParserTest extends BaseTest
     );
     $result = Google_Http_CacheParser::isResponseCacheable($resp);
     $this->assertFalse($result);
-
+//
     // Verify cacheable responses.
     $resp = new Google_Http_Request('http://localhost', 'GET');
     $resp->setResponseHttpCode('200');
@@ -49,7 +48,7 @@ class ApiCacheParserTest extends BaseTest
         array(
           'Cache-Control' => 'max-age=3600, must-revalidate',
           'Expires' => 'Fri, 30 Oct 2013 14:19:41 GMT',
-          'Date' => 'Mon, 29 Jun 2011 02:28:12 GMT',
+              'Date' => 'Mon, 29 Jun 2011 02:28:12 GMT',
           'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
           'ETag' => '3e86-410-3596fbbc',
         )
@@ -57,7 +56,7 @@ class ApiCacheParserTest extends BaseTest
     $result = Google_Http_CacheParser::isResponseCacheable($resp);
     $this->assertTrue($result);
 
-    // Verify that responses to HEAD requests are cacheable.
+       // Verify that responses to HEAD requests are cacheable.
     $resp = new Google_Http_Request('http://localhost', 'HEAD');
     $resp->setResponseHttpCode('200');
     $resp->setResponseBody(null);
@@ -66,16 +65,16 @@ class ApiCacheParserTest extends BaseTest
           'Cache-Control' => 'max-age=3600, must-revalidate',
           'Expires' => 'Fri, 30 Oct 2013 14:19:41 GMT',
           'Date' => 'Mon, 29 Jun 2011 02:28:12 GMT',
-          'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
-          'ETag' => '3e86-410-3596fbbc',
+ //           'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
+        'ETag' => '3e86-410-3596fbbc',
         )
     );
-    $result = Google_Http_CacheParser::isResponseCacheable($resp);
+                 $result = Google_Http_CacheParser::isResponseCacheable($resp);
     $this->assertTrue($result);
 
     // Verify that Vary: * cannot get cached.
     $resp = new Google_Http_Request('http://localhost', 'GET');
-    $resp->setResponseHttpCode('200');
+			$resp->setResponseHttpCode('200');
     $resp->setResponseHeaders(
         array(
           'Cache-Control' => 'max-age=3600, must-revalidate',
@@ -83,21 +82,21 @@ class ApiCacheParserTest extends BaseTest
           'Date' => 'Mon, 29 Jun 2011 02:28:12 GMT',
           'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
           'Vary' => 'foo',
-          'ETag' => '3e86-410-3596fbbc',
+         'ETag' => '3e86-410-3596fbbc',
         )
     );
     $result = Google_Http_CacheParser::isResponseCacheable($resp);
     $this->assertFalse($result);
 
     // Verify 201s cannot get cached.
-    $resp = new Google_Http_Request('http://localhost', 'GET');
+   //     $resp = new Google_Http_Request('http://localhost', 'GET');
     $resp->setResponseHttpCode('201');
     $resp->setResponseBody(null);
     $resp->setResponseHeaders(
         array(
           'Cache-Control' => 'max-age=3600, must-revalidate',
           'Expires' => 'Fri, 30 Oct 2013 14:19:41 GMT',
-          'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
+             'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
           'ETag' => '3e86-410-3596fbbc',
         )
     );
@@ -120,28 +119,28 @@ class ApiCacheParserTest extends BaseTest
     $this->assertFalse($result);
 
     // Verify Cache-Control: no-store.
-    $resp = new Google_Http_Request('http://localhost', 'GET');
+      $resp = new Google_Http_Request('http://localhost', 'GET');
     $resp->setResponseHttpCode('200');
     $resp->setResponseHeaders(
         array(
           'Expires' =>  'Wed, 11 Jan 2012 04:03:37 GMT',
           'Date' => 'Wed, 11 Jan 2012 04:03:37 GMT',
-          'Cache-Control' => 'no-store',
+     //            'Cache-Control' => 'no-store',
           'ETag' => '3e86-410-3596fbbc',
         )
     );
-    $result = Google_Http_CacheParser::isResponseCacheable($resp);
+    //      $result = Google_Http_CacheParser::isResponseCacheable($resp);
     $this->assertFalse($result);
 
     // Verify that authorized responses are not cacheable.
     $resp = new Google_Http_Request('http://localhost', 'GET');
-    $resp->setRequestHeaders(array('Authorization' => 'Bearer Token'));
+                $resp->setRequestHeaders(array('Authorization' => 'Bearer Token'));
     $resp->setResponseHttpCode('200');
     $resp->setResponseHeaders(
-        array(
+                array(
           'Cache-Control' => 'max-age=3600, must-revalidate',
           'Expires' => 'Fri, 30 Oct 2013 14:19:41 GMT',
-          'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
+ //           'Last-Modified' => 'Mon, 29 Jun 2011 02:28:12 GMT',
           'ETag' => '3e86-410-3596fbbc',
         )
     );
@@ -152,7 +151,7 @@ class ApiCacheParserTest extends BaseTest
   public function testIsExpired()
   {
     $now = time();
-    $future = $now + (365 * 24 * 60 * 60);
+      $future = $now + (365 * 24 * 60 * 60);
     $client = $this->getClient();
 
     // Expires 1 year in the future. Response is fresh.
@@ -176,18 +175,17 @@ class ApiCacheParserTest extends BaseTest
         )
     );
     $this->assertFalse(Google_Http_CacheParser::isExpired($resp));
-
-    // Expired 1 year ago. Response is stale.
+               // Expired 1 year ago. Response is stale.
     $past = $now - (365 * 24 * 60 * 60);
     $resp = new Google_Http_Request('http://localhost', 'GET');
     $resp->setResponseHttpCode('200');
     $resp->setResponseHeaders(
         array(
           'Expires' =>  gmdate('D, d M Y H:i:s', $past) . ' GMT',
-          'Date' => gmdate('D, d M Y H:i:s', $now) . ' GMT',
+    'Date' => gmdate('D, d M Y H:i:s', $now) . ' GMT',
         )
     );
-    $this->assertTrue(Google_Http_CacheParser::isExpired($resp));
+   $this->assertTrue(Google_Http_CacheParser::isExpired($resp));
 
     // Invalid expires header. Response is stale.
     $resp = new Google_Http_Request('http://localhost', 'GET');
@@ -205,7 +203,7 @@ class ApiCacheParserTest extends BaseTest
     $resp->setResponseHttpCode('200');
     $resp->setResponseHeaders(
         array(
-          'Expires' =>  gmdate('D, d M Y H:i:s', $now) . ' GMT',
+			'Expires' =>  gmdate('D, d M Y H:i:s', $now) . ' GMT',
           'Date' =>     gmdate('D, d M Y H:i:s', $now) . ' GMT',
         )
     );
@@ -240,7 +238,7 @@ class ApiCacheParserTest extends BaseTest
         array(
           'Cache-Control' => 'max-age=3600',
           'Expires' =>  gmdate('D, d M Y H:i:s', $future) . ' GMT',
-          'Date' => gmdate('D, d M Y H:i:s', $past) . ' GMT',
+			'Date' => gmdate('D, d M Y H:i:s', $past) . ' GMT',
         )
     );
     $this->assertTrue(Google_Http_CacheParser::mustRevalidate($resp));
@@ -258,5 +256,5 @@ class ApiCacheParserTest extends BaseTest
         )
     );
     $this->assertFalse(Google_Http_CacheParser::mustRevalidate($resp));
-  }
-}
+                }
+              }

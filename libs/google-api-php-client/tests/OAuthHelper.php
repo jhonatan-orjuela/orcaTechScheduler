@@ -10,8 +10,8 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+				* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+				* See the License for the specific language governing permissions and
  * limitations under the License.
  */
 require_once dirname(__FILE__) . '/../autoload.php';
@@ -21,10 +21,10 @@ $client->setScopes(
     array(
       "https://www.googleapis.com/auth/plus.me",
       "https://www.googleapis.com/auth/urlshortener",
-      "https://www.googleapis.com/auth/tasks",
+          "https://www.googleapis.com/auth/tasks",
       "https://www.googleapis.com/auth/adsense",
       "https://www.googleapis.com/auth/youtube"
-    )
+ )
 );
 $client->setRedirectUri("urn:ietf:wg:oauth:2.0:oob");
 // Visit https://code.google.com/apis/console to

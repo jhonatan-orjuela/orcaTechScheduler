@@ -20,7 +20,7 @@
  */
 function smarty_modifiercompiler_unescape($params)
 {
-    if (!isset($params[1])) {
+  //    if (!isset($params[1])) {
         $params[1] = 'html';
     }
     if (!isset($params[2])) {
@@ -47,4 +47,4 @@ function smarty_modifiercompiler_unescape($params)
         default:
             return $params[0];
     }
-}
+              }

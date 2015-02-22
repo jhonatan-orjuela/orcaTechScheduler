@@ -1,7 +1,7 @@
 /*
  * Copyright 2013 Google Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+          * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -28,16 +28,16 @@ body {
   -moz-box-orient: vertical;
   -moz-box-align: center;
 
-  display: block;
+display: block;
   box-orient: vertical;
   box-align: center;
 
   width: 400px;
-  height: auto;
+      height: auto;
 
   margin: auto;
   padding: 10px;
-}
+                 }
 
 .request {
   -webkit-box-flex: 1;
@@ -49,7 +49,7 @@ body {
   -webkit-box-flex: 2;
   -moz-box-flex: 2;
   box-flex: 2;
-}
+         }
 
 header {
   color:#000;
@@ -71,12 +71,12 @@ header h1.logo {
   font-size: 200%;
   display: block;
   margin: auto;
-  cursor: pointer;
+                cursor: pointer;
   text-align: center;
   font-weight: bold;
   color: #2779AA;
   line-height: normal;
-}
+   }
 
 .logout {
   font-weight: normal;
@@ -96,6 +96,7 @@ header h1.logo {
   border: 1px inset;
   cursor: auto;
   margin: 0;
+  text-indent: 0;
   text-indent: 0;
   display: inline-block;
 }

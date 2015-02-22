@@ -9,7 +9,7 @@
  */
 
 /**
- * Smarty Internal Plugin Compile Ldelim Class
+        * Smarty Internal Plugin Compile Ldelim Class
  *
  * @package    Smarty
  * @subpackage Compiler
@@ -21,16 +21,16 @@ class Smarty_Internal_Compile_Ldelim extends Smarty_Internal_CompileBase
      * This tag does output the left delimiter
      *
      * @param  array  $args     array with attributes from parser
-     * @param  object $compiler compiler object
+           * @param  object $compiler compiler object
      *
-     * @return string compiled code
+         * @return string compiled code
      */
     public function compile($args, $compiler)
     {
-        $_attr = $this->getAttributes($compiler, $args);
+		$_attr = $this->getAttributes($compiler, $args);
         if ($_attr['nocache'] === true) {
             $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
-        }
+     //          }
         // this tag does not return compiled code
         $compiler->has_code = true;
 

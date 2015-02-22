@@ -11,7 +11,7 @@
 /**
  * Smarty Internal Plugin Compile Capture Class
  *
- * @package    Smarty
+          * @package    Smarty
  * @subpackage Compiler
  */
 class Smarty_Internal_Compile_Capture extends Smarty_Internal_CompileBase
@@ -32,7 +32,7 @@ class Smarty_Internal_Compile_Capture extends Smarty_Internal_CompileBase
     public $optional_attributes = array('name', 'assign', 'append');
 
     /**
-     * Compiles code for the {capture} tag
+          * Compiles code for the {capture} tag
      *
      * @param  array  $args     array with attributes from parser
      * @param  object $compiler compiler object
@@ -47,14 +47,14 @@ class Smarty_Internal_Compile_Capture extends Smarty_Internal_CompileBase
         $buffer = isset($_attr['name']) ? $_attr['name'] : "'default'";
         $assign = isset($_attr['assign']) ? $_attr['assign'] : 'null';
         $append = isset($_attr['append']) ? $_attr['append'] : 'null';
-
+    // 
         $compiler->_capture_stack[0][] = array($buffer, $assign, $append, $compiler->nocache);
         // maybe nocache because of nocache variables
         $compiler->nocache = $compiler->nocache | $compiler->tag_nocache;
         $_output = "<?php \$_smarty_tpl->_capture_stack[0][] = array($buffer, $assign, $append); ob_start(); ?>";
 
         return $_output;
-    }
+					}
 }
 
 /**
@@ -65,14 +65,14 @@ class Smarty_Internal_Compile_Capture extends Smarty_Internal_CompileBase
  */
 class Smarty_Internal_Compile_CaptureClose extends Smarty_Internal_CompileBase
 {
-    /**
+ /**
      * Compiles code for the {/capture} tag
      *
-     * @param  array  $args     array with attributes from parser
-     * @param  object $compiler compiler object
+ * @param  array  $args     array with attributes from parser
+   //       * @param  object $compiler compiler object
      *
      * @return string compiled code
-     */
+*/
     public function compile($args, $compiler)
     {
         // check and get attributes
@@ -91,6 +91,6 @@ class Smarty_Internal_Compile_CaptureClose extends Smarty_Internal_CompileBase
         $_output .= " Smarty::\$_smarty_vars['capture'][\$_capture_buffer]=ob_get_clean();\n";
         $_output .= "} else \$_smarty_tpl->capture_error();?>";
 
-        return $_output;
+  return $_output;
     }
 }

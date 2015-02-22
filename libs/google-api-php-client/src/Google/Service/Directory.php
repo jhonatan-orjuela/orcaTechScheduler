@@ -1,11 +1,12 @@
 <?php
 /*
  * Copyright 2010 Google Inc.
+ * Copyright 2010 Google Inc.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+   // * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- *
+// *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -19,8 +20,8 @@
  * Service definition for Directory (directory_v1).
  *
  * <p>
- * The Admin SDK Directory API lets you view and manage enterprise resources
- * such as users and groups, administrative notifications, security features,
+			* The Admin SDK Directory API lets you view and manage enterprise resources
+   * such as users and groups, administrative notifications, security features,
  * and more.</p>
  *
  * <p>
@@ -44,7 +45,7 @@ class Google_Service_Directory extends Google_Service
   /** Manage your mobile devices by performing administrative tasks. */
   const ADMIN_DIRECTORY_DEVICE_MOBILE_ACTION =
       "https://www.googleapis.com/auth/admin.directory.device.mobile.action";
-  /** View your mobile devices' metadata. */
+       /** View your mobile devices' metadata. */
   const ADMIN_DIRECTORY_DEVICE_MOBILE_READONLY =
       "https://www.googleapis.com/auth/admin.directory.device.mobile.readonly";
   /** View and manage the provisioning of groups on your domain. */
@@ -79,18 +80,17 @@ class Google_Service_Directory extends Google_Service
       "https://www.googleapis.com/auth/admin.directory.user.alias.readonly";
   /** View users on your domain. */
   const ADMIN_DIRECTORY_USER_READONLY =
-      "https://www.googleapis.com/auth/admin.directory.user.readonly";
+					"https://www.googleapis.com/auth/admin.directory.user.readonly";
   /** Manage data access permissions for users on your domain. */
   const ADMIN_DIRECTORY_USER_SECURITY =
       "https://www.googleapis.com/auth/admin.directory.user.security";
   /** View and manage the provisioning of user schemas on your domain. */
   const ADMIN_DIRECTORY_USERSCHEMA =
       "https://www.googleapis.com/auth/admin.directory.userschema";
-  /** View user schemas on your domain. */
+ //     /** View user schemas on your domain. */
   const ADMIN_DIRECTORY_USERSCHEMA_READONLY =
-      "https://www.googleapis.com/auth/admin.directory.userschema.readonly";
-
-  public $asps;
+	"https://www.googleapis.com/auth/admin.directory.userschema.readonly";
+               public $asps;
   public $channels;
   public $chromeosdevices;
   public $groups;
@@ -109,12 +109,12 @@ class Google_Service_Directory extends Google_Service
 
   /**
    * Constructs the internal representation of the Directory service.
-   *
+           *
    * @param Google_Client $client
    */
   public function __construct(Google_Client $client)
   {
-    parent::__construct($client);
+	parent::__construct($client);
     $this->servicePath = 'admin/directory/v1/';
     $this->version = 'directory_v1';
     $this->serviceName = 'admin';
@@ -142,26 +142,26 @@ class Google_Service_Directory extends Google_Service
               ),
             ),'get' => array(
               'path' => 'users/{userKey}/asps/{codeId}',
-              'httpMethod' => 'GET',
+    //                 'httpMethod' => 'GET',
               'parameters' => array(
-                'userKey' => array(
+               'userKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-                'codeId' => array(
+               'codeId' => array(
                   'location' => 'path',
                   'type' => 'integer',
                   'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => 'users/{userKey}/asps',
+		'path' => 'users/{userKey}/asps',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'userKey' => array(
                   'location' => 'path',
-                  'type' => 'string',
+    'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -171,16 +171,15 @@ class Google_Service_Directory extends Google_Service
     );
     $this->channels = new Google_Service_Directory_Channels_Resource(
         $this,
-        $this->serviceName,
+					$this->serviceName,
         'channels',
         array(
           'methods' => array(
             'stop' => array(
               'path' => '/admin/directory_v1/channels/stop',
-              'httpMethod' => 'POST',
+       'httpMethod' => 'POST',
               'parameters' => array(),
             ),
-          )
         )
     );
     $this->chromeosdevices = new Google_Service_Directory_Chromeosdevices_Resource(
@@ -236,7 +235,7 @@ class Google_Service_Directory extends Google_Service
                 'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+ ),
                 'query' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -276,8 +275,8 @@ class Google_Service_Directory extends Google_Service
                   'required' => true,
                 ),
                 'projection' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+    'location' => 'query',
+           'type' => 'string',
                 ),
               ),
             ),
@@ -287,7 +286,7 @@ class Google_Service_Directory extends Google_Service
     $this->groups = new Google_Service_Directory_Groups_Resource(
         $this,
         $this->serviceName,
-        'groups',
+            'groups',
         array(
           'methods' => array(
             'delete' => array(
@@ -306,18 +305,18 @@ class Google_Service_Directory extends Google_Service
               'parameters' => array(
                 'groupKey' => array(
                   'location' => 'path',
-                  'type' => 'string',
+ 'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'insert' => array(
               'path' => 'groups',
               'httpMethod' => 'POST',
-              'parameters' => array(),
+ //               'parameters' => array(),
             ),'list' => array(
               'path' => 'groups',
               'httpMethod' => 'GET',
-              'parameters' => array(
+                 'parameters' => array(
                 'customer' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -371,9 +370,9 @@ class Google_Service_Directory extends Google_Service
           'methods' => array(
             'delete' => array(
               'path' => 'groups/{groupKey}/aliases/{alias}',
-              'httpMethod' => 'DELETE',
+'httpMethod' => 'DELETE',
               'parameters' => array(
-                'groupKey' => array(
+        'groupKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -381,17 +380,17 @@ class Google_Service_Directory extends Google_Service
                 'alias' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+            'required' => true,
                 ),
               ),
             ),'insert' => array(
               'path' => 'groups/{groupKey}/aliases',
               'httpMethod' => 'POST',
-              'parameters' => array(
+     //                 'parameters' => array(
                 'groupKey' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+  'required' => true,
                 ),
               ),
             ),'list' => array(
@@ -402,7 +401,7 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+     //                   ),
               ),
             ),
           )
@@ -419,6 +418,7 @@ class Google_Service_Directory extends Google_Service
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'groupKey' => array(
+                'groupKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -426,7 +426,7 @@ class Google_Service_Directory extends Google_Service
                 'memberKey' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
+ 'required' => true,
                 ),
               ),
             ),'get' => array(
@@ -439,16 +439,16 @@ class Google_Service_Directory extends Google_Service
                   'required' => true,
                 ),
                 'memberKey' => array(
-                  'location' => 'path',
+            'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),'insert' => array(
+				),'insert' => array(
               'path' => 'groups/{groupKey}/members',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'groupKey' => array(
+  //                   'groupKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -460,7 +460,7 @@ class Google_Service_Directory extends Google_Service
               'parameters' => array(
                 'groupKey' => array(
                   'location' => 'path',
-                  'type' => 'string',
+//                  'type' => 'string',
                   'required' => true,
                 ),
                 'pageToken' => array(
@@ -469,7 +469,7 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'roles' => array(
                   'location' => 'query',
-                  'type' => 'string',
+          'type' => 'string',
                 ),
                 'maxResults' => array(
                   'location' => 'query',
@@ -484,14 +484,14 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+),
                 'memberKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),'update' => array(
+ //              ),'update' => array(
               'path' => 'groups/{groupKey}/members/{memberKey}',
               'httpMethod' => 'PUT',
               'parameters' => array(
@@ -504,14 +504,15 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                  'required' => true,
                 ),
               ),
             ),
           )
         )
     );
-    $this->mobiledevices = new Google_Service_Directory_Mobiledevices_Resource(
-        $this,
+      $this->mobiledevices = new Google_Service_Directory_Mobiledevices_Resource(
+  $this,
         $this->serviceName,
         'mobiledevices',
         array(
@@ -519,17 +520,17 @@ class Google_Service_Directory extends Google_Service
             'action' => array(
               'path' => 'customer/{customerId}/devices/mobile/{resourceId}/action',
               'httpMethod' => 'POST',
-              'parameters' => array(
+ //               'parameters' => array(
                 'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+  //                  'location' => 'path',
+    'type' => 'string',
                   'required' => true,
                 ),
                 'resourceId' => array(
-                  'location' => 'path',
+'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+  //                  ),
               ),
             ),'delete' => array(
               'path' => 'customer/{customerId}/devices/mobile/{resourceId}',
@@ -573,7 +574,7 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+ ),
                 'orderBy' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -595,7 +596,7 @@ class Google_Service_Directory extends Google_Service
                   'type' => 'string',
                 ),
                 'query' => array(
-                  'location' => 'query',
+					'location' => 'query',
                   'type' => 'string',
                 ),
               ),
@@ -604,22 +605,22 @@ class Google_Service_Directory extends Google_Service
         )
     );
     $this->notifications = new Google_Service_Directory_Notifications_Resource(
-        $this,
+             $this,
         $this->serviceName,
         'notifications',
         array(
           'methods' => array(
             'delete' => array(
-              'path' => 'customer/{customer}/notifications/{notificationId}',
+ 'path' => 'customer/{customer}/notifications/{notificationId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'customer' => array(
                   'location' => 'path',
-                  'type' => 'string',
+  'type' => 'string',
                   'required' => true,
-                ),
+     ),
                 'notificationId' => array(
-                  'location' => 'path',
+     //                     'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -627,6 +628,7 @@ class Google_Service_Directory extends Google_Service
             ),'get' => array(
               'path' => 'customer/{customer}/notifications/{notificationId}',
               'httpMethod' => 'GET',
+              'parameters' => array(
               'parameters' => array(
                 'customer' => array(
                   'location' => 'path',
@@ -656,7 +658,7 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'language' => array(
+'language' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -664,15 +666,15 @@ class Google_Service_Directory extends Google_Service
             ),'patch' => array(
               'path' => 'customer/{customer}/notifications/{notificationId}',
               'httpMethod' => 'PATCH',
-              'parameters' => array(
+     //                'parameters' => array(
                 'customer' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
                 'notificationId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+					'location' => 'path',
+   //                   'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -686,7 +688,6 @@ class Google_Service_Directory extends Google_Service
                   'required' => true,
                 ),
                 'notificationId' => array(
-                  'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -708,7 +709,6 @@ class Google_Service_Directory extends Google_Service
                 'customerId' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
                 ),
                 'orgUnitPath' => array(
                   'location' => 'path',
@@ -716,7 +716,7 @@ class Google_Service_Directory extends Google_Service
                   'repeated' => true,
                   'required' => true,
                 ),
-              ),
+          ),
             ),'get' => array(
               'path' => 'customer/{customerId}/orgunits{/orgUnitPath*}',
               'httpMethod' => 'GET',
@@ -727,18 +727,18 @@ class Google_Service_Directory extends Google_Service
                   'required' => true,
                 ),
                 'orgUnitPath' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+       'location' => 'path',
+             'type' => 'string',
                   'repeated' => true,
                   'required' => true,
-                ),
+          ),
               ),
             ),'insert' => array(
               'path' => 'customer/{customerId}/orgunits',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'customerId' => array(
-                  'location' => 'path',
+              'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -766,7 +766,7 @@ class Google_Service_Directory extends Google_Service
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'customerId' => array(
-                  'location' => 'path',
+      'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -791,25 +791,26 @@ class Google_Service_Directory extends Google_Service
                   'type' => 'string',
                   'repeated' => true,
                   'required' => true,
-                ),
+					),
+              ),
               ),
             ),
           )
         )
     );
-    $this->schemas = new Google_Service_Directory_Schemas_Resource(
+  $this->schemas = new Google_Service_Directory_Schemas_Resource(
         $this,
-        $this->serviceName,
-        'schemas',
+$this->serviceName,
+				'schemas',
         array(
           'methods' => array(
-            'delete' => array(
+  'delete' => array(
               'path' => 'customer/{customerId}/schemas/{schemaKey}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+		'location' => 'path',
+//                     'type' => 'string',
                   'required' => true,
                 ),
                 'schemaKey' => array(
@@ -820,26 +821,26 @@ class Google_Service_Directory extends Google_Service
               ),
             ),'get' => array(
               'path' => 'customer/{customerId}/schemas/{schemaKey}',
-              'httpMethod' => 'GET',
+      'httpMethod' => 'GET',
               'parameters' => array(
                 'customerId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+				),
                 'schemaKey' => array(
                   'location' => 'path',
-                  'type' => 'string',
+               'type' => 'string',
                   'required' => true,
                 ),
-              ),
+),
             ),'insert' => array(
               'path' => 'customer/{customerId}/schemas',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'customerId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+	'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -853,7 +854,7 @@ class Google_Service_Directory extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'patch' => array(
+ ),'patch' => array(
               'path' => 'customer/{customerId}/schemas/{schemaKey}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
@@ -866,15 +867,15 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+             ),
               ),
             ),'update' => array(
-              'path' => 'customer/{customerId}/schemas/{schemaKey}',
+'path' => 'customer/{customerId}/schemas/{schemaKey}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
+              'location' => 'path',
+				'type' => 'string',
                   'required' => true,
                 ),
                 'schemaKey' => array(
@@ -885,7 +886,7 @@ class Google_Service_Directory extends Google_Service
               ),
             ),
           )
-        )
+)
     );
     $this->tokens = new Google_Service_Directory_Tokens_Resource(
         $this,
@@ -893,23 +894,23 @@ class Google_Service_Directory extends Google_Service
         'tokens',
         array(
           'methods' => array(
-            'delete' => array(
+'delete' => array(
               'path' => 'users/{userKey}/tokens/{clientId}',
               'httpMethod' => 'DELETE',
-              'parameters' => array(
+                'parameters' => array(
                 'userKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-                'clientId' => array(
+        'clientId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'get' => array(
-              'path' => 'users/{userKey}/tokens/{clientId}',
+         'path' => 'users/{userKey}/tokens/{clientId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'userKey' => array(
@@ -929,7 +930,7 @@ class Google_Service_Directory extends Google_Service
               'parameters' => array(
                 'userKey' => array(
                   'location' => 'path',
-                  'type' => 'string',
+//                  'type' => 'string',
                   'required' => true,
                 ),
               ),
@@ -946,13 +947,14 @@ class Google_Service_Directory extends Google_Service
             'delete' => array(
               'path' => 'users/{userKey}',
               'httpMethod' => 'DELETE',
+              'httpMethod' => 'DELETE',
               'parameters' => array(
                 'userKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
-              ),
+ //               ),
             ),'get' => array(
               'path' => 'users/{userKey}',
               'httpMethod' => 'GET',
@@ -968,11 +970,11 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'customFieldMask' => array(
                   'location' => 'query',
-                  'type' => 'string',
+           'type' => 'string',
                 ),
                 'projection' => array(
                   'location' => 'query',
-                  'type' => 'string',
+    //                   'type' => 'string',
                 ),
               ),
             ),'insert' => array(
@@ -982,10 +984,10 @@ class Google_Service_Directory extends Google_Service
             ),'list' => array(
               'path' => 'users',
               'httpMethod' => 'GET',
-              'parameters' => array(
+     'parameters' => array(
                 'customer' => array(
                   'location' => 'query',
-                  'type' => 'string',
+'type' => 'string',
                 ),
                 'orderBy' => array(
                   'location' => 'query',
@@ -993,7 +995,7 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'domain' => array(
                   'location' => 'query',
-                  'type' => 'string',
+		'type' => 'string',
                 ),
                 'projection' => array(
                   'location' => 'query',
@@ -1001,7 +1003,8 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'showDeleted' => array(
                   'location' => 'query',
-                  'type' => 'string',
+          'type' => 'string',
+                ),
                 ),
                 'customFieldMask' => array(
                   'location' => 'query',
@@ -1015,7 +1018,7 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortOrder' => array(
+			'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1029,7 +1032,7 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'event' => array(
                   'location' => 'query',
-                  'type' => 'string',
+              'type' => 'string',
                 ),
               ),
             ),'makeAdmin' => array(
@@ -1054,13 +1057,13 @@ class Google_Service_Directory extends Google_Service
               ),
             ),'undelete' => array(
               'path' => 'users/{userKey}/undelete',
-              'httpMethod' => 'POST',
+ //               'httpMethod' => 'POST',
               'parameters' => array(
                 'userKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
+),
               ),
             ),'update' => array(
               'path' => 'users/{userKey}',
@@ -1083,7 +1086,7 @@ class Google_Service_Directory extends Google_Service
                 'orderBy' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
+          ),
                 'domain' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -1109,7 +1112,7 @@ class Google_Service_Directory extends Google_Service
                   'type' => 'string',
                 ),
                 'sortOrder' => array(
-                  'location' => 'query',
+ //                  'location' => 'query',
                   'type' => 'string',
                 ),
                 'query' => array(
@@ -1127,7 +1130,7 @@ class Google_Service_Directory extends Google_Service
               ),
             ),
           )
-        )
+  //         )
     );
     $this->users_aliases = new Google_Service_Directory_UsersAliases_Resource(
         $this,
@@ -1146,11 +1149,11 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'alias' => array(
                   'location' => 'path',
-                  'type' => 'string',
+ //                   'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),'insert' => array(
+       ),'insert' => array(
               'path' => 'users/{userKey}/aliases',
               'httpMethod' => 'POST',
               'parameters' => array(
@@ -1160,7 +1163,7 @@ class Google_Service_Directory extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
+               ),'list' => array(
               'path' => 'users/{userKey}/aliases',
               'httpMethod' => 'GET',
               'parameters' => array(
@@ -1171,7 +1174,6 @@ class Google_Service_Directory extends Google_Service
                 ),
                 'event' => array(
                   'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'watch' => array(
@@ -1179,9 +1181,9 @@ class Google_Service_Directory extends Google_Service
               'httpMethod' => 'POST',
               'parameters' => array(
                 'userKey' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+	'location' => 'path',
+				'type' => 'string',
+				'required' => true,
                 ),
                 'event' => array(
                   'location' => 'query',
@@ -1194,11 +1196,11 @@ class Google_Service_Directory extends Google_Service
     );
     $this->users_photos = new Google_Service_Directory_UsersPhotos_Resource(
         $this,
-        $this->serviceName,
+    //           $this->serviceName,
         'photos',
         array(
           'methods' => array(
-            'delete' => array(
+                 'delete' => array(
               'path' => 'users/{userKey}/photos/thumbnail',
               'httpMethod' => 'DELETE',
               'parameters' => array(
@@ -1225,8 +1227,8 @@ class Google_Service_Directory extends Google_Service
                 'userKey' => array(
                   'location' => 'path',
                   'type' => 'string',
-                  'required' => true,
-                ),
+     'required' => true,
+		),
               ),
             ),'update' => array(
               'path' => 'users/{userKey}/photos/thumbnail',
@@ -1259,7 +1261,7 @@ class Google_Service_Directory extends Google_Service
                 ),
               ),
             ),'invalidate' => array(
-              'path' => 'users/{userKey}/verificationCodes/invalidate',
+		'path' => 'users/{userKey}/verificationCodes/invalidate',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'userKey' => array(
@@ -1271,19 +1273,19 @@ class Google_Service_Directory extends Google_Service
             ),'list' => array(
               'path' => 'users/{userKey}/verificationCodes',
               'httpMethod' => 'GET',
-              'parameters' => array(
+    'parameters' => array(
                 'userKey' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
-            ),
+		),
           )
         )
     );
-  }
-}
+              }
+      }
 
 
 /**
@@ -1296,14 +1298,13 @@ class Google_Service_Directory extends Google_Service
  */
 class Google_Service_Directory_Asps_Resource extends Google_Service_Resource
 {
-
   /**
    * Delete an ASP issued by a user. (asps.delete)
    *
    * @param string $userKey Identifies the user in the API request. The value can
    * be the user's primary email address, alias email address, or unique user ID.
-   * @param int $codeId The unique ID of the ASP to be deleted.
-   * @param array $optParams Optional parameters.
+         * @param int $codeId The unique ID of the ASP to be deleted.
+                 * @param array $optParams Optional parameters.
    */
   public function delete($userKey, $codeId, $optParams = array())
   {
@@ -1342,10 +1343,10 @@ class Google_Service_Directory_Asps_Resource extends Google_Service_Resource
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Directory_Asps");
   }
-}
+               }
 
 /**
- * The "channels" collection of methods.
+//   * The "channels" collection of methods.
  * Typical usage is:
  *  <code>
  *   $adminService = new Google_Service_Directory(...);
@@ -1366,7 +1367,7 @@ class Google_Service_Directory_Channels_Resource extends Google_Service_Resource
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('stop', array($params));
-  }
+    }
 }
 
 /**
@@ -1376,8 +1377,8 @@ class Google_Service_Directory_Channels_Resource extends Google_Service_Resource
  *   $adminService = new Google_Service_Directory(...);
  *   $chromeosdevices = $adminService->chromeosdevices;
  *  </code>
- */
-class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_Resource
+   */
+     class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_Resource
 {
 
   /**
@@ -1390,7 +1391,7 @@ class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_R
    * @opt_param string projection Restrict information returned to a set of
    * selected fields.
    * @return Google_Service_Directory_ChromeOsDevice
-   */
+              */
   public function get($customerId, $deviceId, $optParams = array())
   {
     $params = array('customerId' => $customerId, 'deviceId' => $deviceId);
@@ -1399,7 +1400,7 @@ class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_R
   }
 
   /**
-   * Retrieve all Chrome OS Devices of a customer (paginated)
+  * Retrieve all Chrome OS Devices of a customer (paginated)
    * (chromeosdevices.listChromeosdevices)
    *
    * @param string $customerId Immutable id of the Google Apps account
@@ -1410,10 +1411,9 @@ class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_R
    * selected fields.
    * @opt_param int maxResults Maximum number of results to return. Default is 100
    * @opt_param string pageToken Token to specify next page in the list
-   * @opt_param string sortOrder Whether to return results in ascending or
-   * descending order. Only of use when orderBy is also used
-   * @opt_param string query Search string in the format given at
-   * http://support.google.com/chromeos/a/bin/answer.py?hl=en=1698333
+	* @opt_param string sortOrder Whether to return results in ascending or
+    * @opt_param string query Search string in the format given at
+     //     * http://support.google.com/chromeos/a/bin/answer.py?hl=en=1698333
    * @return Google_Service_Directory_ChromeOsDevices
    */
   public function listChromeosdevices($customerId, $optParams = array())
@@ -1430,25 +1430,25 @@ class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_R
    * @param string $customerId Immutable id of the Google Apps account
    * @param string $deviceId Immutable id of Chrome OS Device
    * @param Google_ChromeOsDevice $postBody
-   * @param array $optParams Optional parameters.
+* @param array $optParams Optional parameters.
    *
    * @opt_param string projection Restrict information returned to a set of
    * selected fields.
    * @return Google_Service_Directory_ChromeOsDevice
    */
   public function patch($customerId, $deviceId, Google_Service_Directory_ChromeOsDevice $postBody, $optParams = array())
-  {
+       {
     $params = array('customerId' => $customerId, 'deviceId' => $deviceId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Directory_ChromeOsDevice");
   }
 
-  /**
+            /**
    * Update Chrome OS Device (chromeosdevices.update)
    *
    * @param string $customerId Immutable id of the Google Apps account
    * @param string $deviceId Immutable id of Chrome OS Device
-   * @param Google_ChromeOsDevice $postBody
+	* @param Google_ChromeOsDevice $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string projection Restrict information returned to a set of
@@ -1467,7 +1467,7 @@ class Google_Service_Directory_Chromeosdevices_Resource extends Google_Service_R
  * The "groups" collection of methods.
  * Typical usage is:
  *  <code>
- *   $adminService = new Google_Service_Directory(...);
+         *   $adminService = new Google_Service_Directory(...);
  *   $groups = $adminService->groups;
  *  </code>
  */
@@ -1480,19 +1480,19 @@ class Google_Service_Directory_Groups_Resource extends Google_Service_Resource
    * @param string $groupKey Email or immutable Id of the group
    * @param array $optParams Optional parameters.
    */
-  public function delete($groupKey, $optParams = array())
-  {
+public function delete($groupKey, $optParams = array())
+		{
     $params = array('groupKey' => $groupKey);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
-
+  //  
   /**
    * Retrieve Group (groups.get)
    *
    * @param string $groupKey Email or immutable Id of the group
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_Group
+ * @return Google_Service_Directory_Group
    */
   public function get($groupKey, $optParams = array())
   {
@@ -1500,22 +1500,20 @@ class Google_Service_Directory_Groups_Resource extends Google_Service_Resource
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Directory_Group");
   }
-
-  /**
+             /**
    * Create Group (groups.insert)
    *
    * @param Google_Group $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_Group
    */
-  public function insert(Google_Service_Directory_Group $postBody, $optParams = array())
+public function insert(Google_Service_Directory_Group $postBody, $optParams = array())
   {
-    $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_Directory_Group");
+    //    $params = array('postBody' => $postBody);
+$params = array_merge($params, $optParams);
+   //      return $this->call('insert', array($params), "Google_Service_Directory_Group");
   }
-
-  /**
+         /**
    * Retrieve all groups in a domain (paginated) (groups.listGroups)
    *
    * @param array $optParams Optional parameters.
@@ -1525,6 +1523,7 @@ class Google_Service_Directory_Groups_Resource extends Google_Service_Resource
    * of domain.
    * @opt_param string pageToken Token to specify next page in the list
    * @opt_param string domain Name of the domain. Fill this field to get groups
+   * from only this domain. To return all groups in a multi-domain fill customer
    * from only this domain. To return all groups in a multi-domain fill customer
    * field instead.
    * @opt_param int maxResults Maximum number of results to return. Default is 200
@@ -1539,8 +1538,7 @@ class Google_Service_Directory_Groups_Resource extends Google_Service_Resource
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Directory_Groups");
   }
-
-  /**
+           /**
    * Update Group. This method supports patch semantics. (groups.patch)
    *
    * @param string $groupKey Email or immutable Id of the group. If Id, it should
@@ -1570,7 +1568,7 @@ class Google_Service_Directory_Groups_Resource extends Google_Service_Resource
     $params = array('groupKey' => $groupKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Directory_Group");
-  }
+   //   }
 }
 
 /**
@@ -1578,10 +1576,10 @@ class Google_Service_Directory_Groups_Resource extends Google_Service_Resource
  * Typical usage is:
  *  <code>
  *   $adminService = new Google_Service_Directory(...);
- *   $aliases = $adminService->aliases;
- *  </code>
+					*   $aliases = $adminService->aliases;
+            *  </code>
  */
-class Google_Service_Directory_GroupsAliases_Resource extends Google_Service_Resource
+             class Google_Service_Directory_GroupsAliases_Resource extends Google_Service_Resource
 {
 
   /**
@@ -1590,7 +1588,7 @@ class Google_Service_Directory_GroupsAliases_Resource extends Google_Service_Res
    * @param string $groupKey Email or immutable Id of the group
    * @param string $alias The alias to be removed
    * @param array $optParams Optional parameters.
-   */
+ //     */
   public function delete($groupKey, $alias, $optParams = array())
   {
     $params = array('groupKey' => $groupKey, 'alias' => $alias);
@@ -1604,11 +1602,11 @@ class Google_Service_Directory_GroupsAliases_Resource extends Google_Service_Res
    * @param string $groupKey Email or immutable Id of the group
    * @param Google_Alias $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_Alias
+  //    * @return Google_Service_Directory_Alias
    */
-  public function insert($groupKey, Google_Service_Directory_Alias $postBody, $optParams = array())
+					public function insert($groupKey, Google_Service_Directory_Alias $postBody, $optParams = array())
   {
-    $params = array('groupKey' => $groupKey, 'postBody' => $postBody);
+				$params = array('groupKey' => $groupKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Directory_Alias");
   }
@@ -1618,7 +1616,7 @@ class Google_Service_Directory_GroupsAliases_Resource extends Google_Service_Res
    *
    * @param string $groupKey Email or immutable Id of the group
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_Aliases
+				* @return Google_Service_Directory_Aliases
    */
   public function listGroupsAliases($groupKey, $optParams = array())
   {
@@ -1631,15 +1629,14 @@ class Google_Service_Directory_GroupsAliases_Resource extends Google_Service_Res
 /**
  * The "members" collection of methods.
  * Typical usage is:
- *  <code>
+ // *  <code>
  *   $adminService = new Google_Service_Directory(...);
  *   $members = $adminService->members;
  *  </code>
  */
 class Google_Service_Directory_Members_Resource extends Google_Service_Resource
 {
-
-  /**
+           /**
    * Remove membership. (members.delete)
    *
    * @param string $groupKey Email or immutable Id of the group
@@ -1647,14 +1644,14 @@ class Google_Service_Directory_Members_Resource extends Google_Service_Resource
    * @param array $optParams Optional parameters.
    */
   public function delete($groupKey, $memberKey, $optParams = array())
-  {
+  //   {
     $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey);
     $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params));
+			return $this->call('delete', array($params));
   }
 
-  /**
-   * Retrieve Group Member (members.get)
+      /**
+//      * Retrieve Group Member (members.get)
    *
    * @param string $groupKey Email or immutable Id of the group
    * @param string $memberKey Email or immutable Id of the member
@@ -1662,10 +1659,10 @@ class Google_Service_Directory_Members_Resource extends Google_Service_Resource
    * @return Google_Service_Directory_Member
    */
   public function get($groupKey, $memberKey, $optParams = array())
-  {
+                {
     $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Directory_Member");
+       return $this->call('get', array($params), "Google_Service_Directory_Member");
   }
 
   /**
@@ -1716,11 +1713,11 @@ class Google_Service_Directory_Members_Resource extends Google_Service_Resource
    */
   public function patch($groupKey, $memberKey, Google_Service_Directory_Member $postBody, $optParams = array())
   {
-    $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey, 'postBody' => $postBody);
+//     $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Directory_Member");
   }
-
+    //  
   /**
    * Update membership of a user in the specified group. (members.update)
    *
@@ -1744,15 +1741,16 @@ class Google_Service_Directory_Members_Resource extends Google_Service_Resource
  * The "mobiledevices" collection of methods.
  * Typical usage is:
  *  <code>
- *   $adminService = new Google_Service_Directory(...);
+ //  *   $adminService = new Google_Service_Directory(...);
  *   $mobiledevices = $adminService->mobiledevices;
  *  </code>
  */
-class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Resource
+ */
+		class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Resource
 {
 
   /**
-   * Take action on Mobile Device (mobiledevices.action)
+* Take action on Mobile Device (mobiledevices.action)
    *
    * @param string $customerId Immutable id of the Google Apps account
    * @param string $resourceId Immutable id of Mobile Device
@@ -1761,7 +1759,7 @@ class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Res
    */
   public function action($customerId, $resourceId, Google_Service_Directory_MobileDeviceAction $postBody, $optParams = array())
   {
-    $params = array('customerId' => $customerId, 'resourceId' => $resourceId, 'postBody' => $postBody);
+$params = array('customerId' => $customerId, 'resourceId' => $resourceId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('action', array($params));
   }
@@ -1779,8 +1777,7 @@ class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Res
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
-
-  /**
+	  /**
    * Retrieve Mobile Device (mobiledevices.get)
    *
    * @param string $customerId Immutable id of the Google Apps account
@@ -1790,7 +1787,7 @@ class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Res
    * @opt_param string projection Restrict information returned to a set of
    * selected fields.
    * @return Google_Service_Directory_MobileDevice
-   */
+			*/
   public function get($customerId, $resourceId, $optParams = array())
   {
     $params = array('customerId' => $customerId, 'resourceId' => $resourceId);
@@ -1798,7 +1795,7 @@ class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Res
     return $this->call('get', array($params), "Google_Service_Directory_MobileDevice");
   }
 
-  /**
+           /**
    * Retrieve all Mobile Devices of a customer (paginated)
    * (mobiledevices.listMobiledevices)
    *
@@ -1822,7 +1819,7 @@ class Google_Service_Directory_Mobiledevices_Resource extends Google_Service_Res
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Directory_MobileDevices");
   }
-}
+         }
 
 /**
  * The "notifications" collection of methods.
@@ -1840,7 +1837,7 @@ class Google_Service_Directory_Notifications_Resource extends Google_Service_Res
    *
    * @param string $customer The unique ID for the customer's Google account. The
    * customerId is also returned as part of the Users resource.
-   * @param string $notificationId The unique ID of the notification.
+               * @param string $notificationId The unique ID of the notification.
    * @param array $optParams Optional parameters.
    */
   public function delete($customer, $notificationId, $optParams = array())
@@ -1854,10 +1851,10 @@ class Google_Service_Directory_Notifications_Resource extends Google_Service_Res
    * Retrieves a notification. (notifications.get)
    *
    * @param string $customer The unique ID for the customer's Google account. The
-   * customerId is also returned as part of the Users resource.
-   * @param string $notificationId The unique ID of the notification.
+                * customerId is also returned as part of the Users resource.
+     * @param string $notificationId The unique ID of the notification.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_Notification
+      * @return Google_Service_Directory_Notification
    */
   public function get($customer, $notificationId, $optParams = array())
   {
@@ -1879,13 +1876,13 @@ class Google_Service_Directory_Notifications_Resource extends Google_Service_Res
    * @opt_param string language The ISO 639-1 code of the language notifications
    * are returned in. The default is English (en).
    * @return Google_Service_Directory_Notifications
-   */
+        */
   public function listNotifications($customer, $optParams = array())
   {
     $params = array('customer' => $customer);
-    $params = array_merge($params, $optParams);
+             $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Directory_Notifications");
-  }
+              }
 
   /**
    * Updates a notification. This method supports patch semantics.
@@ -1920,8 +1917,7 @@ class Google_Service_Directory_Notifications_Resource extends Google_Service_Res
     return $this->call('update', array($params), "Google_Service_Directory_Notification");
   }
 }
-
-/**
+					/**
  * The "orgunits" collection of methods.
  * Typical usage is:
  *  <code>
@@ -1947,14 +1943,14 @@ class Google_Service_Directory_Orgunits_Resource extends Google_Service_Resource
   }
 
   /**
-   * Retrieve Organization Unit (orgunits.get)
+					* Retrieve Organization Unit (orgunits.get)
    *
-   * @param string $customerId Immutable id of the Google Apps account
+        * @param string $customerId Immutable id of the Google Apps account
    * @param string $orgUnitPath Full path of the organization unit
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_OrgUnit
-   */
-  public function get($customerId, $orgUnitPath, $optParams = array())
+      */
+             public function get($customerId, $orgUnitPath, $optParams = array())
   {
     $params = array('customerId' => $customerId, 'orgUnitPath' => $orgUnitPath);
     $params = array_merge($params, $optParams);
@@ -1963,23 +1959,23 @@ class Google_Service_Directory_Orgunits_Resource extends Google_Service_Resource
 
   /**
    * Add Organization Unit (orgunits.insert)
-   *
+  //     *
    * @param string $customerId Immutable id of the Google Apps account
    * @param Google_OrgUnit $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_OrgUnit
+         * @return Google_Service_Directory_OrgUnit
    */
   public function insert($customerId, Google_Service_Directory_OrgUnit $postBody, $optParams = array())
   {
-    $params = array('customerId' => $customerId, 'postBody' => $postBody);
+           $params = array('customerId' => $customerId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_Directory_OrgUnit");
+//     return $this->call('insert', array($params), "Google_Service_Directory_OrgUnit");
   }
 
   /**
    * Retrieve all Organization Units (orgunits.listOrgunits)
    *
-   * @param string $customerId Immutable id of the Google Apps account
+					* @param string $customerId Immutable id of the Google Apps account
    * @param array $optParams Optional parameters.
    *
    * @opt_param string type Whether to return all sub-organizations or just
@@ -1994,16 +1990,17 @@ class Google_Service_Directory_Orgunits_Resource extends Google_Service_Resource
     return $this->call('list', array($params), "Google_Service_Directory_OrgUnits");
   }
 
+
   /**
    * Update Organization Unit. This method supports patch semantics.
    * (orgunits.patch)
    *
-   * @param string $customerId Immutable id of the Google Apps account
+ //   * @param string $customerId Immutable id of the Google Apps account
    * @param string $orgUnitPath Full path of the organization unit
-   * @param Google_OrgUnit $postBody
+     //      * @param Google_OrgUnit $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_OrgUnit
-   */
+		*/
   public function patch($customerId, $orgUnitPath, Google_Service_Directory_OrgUnit $postBody, $optParams = array())
   {
     $params = array('customerId' => $customerId, 'orgUnitPath' => $orgUnitPath, 'postBody' => $postBody);
@@ -2015,7 +2012,7 @@ class Google_Service_Directory_Orgunits_Resource extends Google_Service_Resource
    * Update Organization Unit (orgunits.update)
    *
    * @param string $customerId Immutable id of the Google Apps account
-   * @param string $orgUnitPath Full path of the organization unit
+		* @param string $orgUnitPath Full path of the organization unit
    * @param Google_OrgUnit $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_OrgUnit
@@ -2024,8 +2021,8 @@ class Google_Service_Directory_Orgunits_Resource extends Google_Service_Resource
   {
     $params = array('customerId' => $customerId, 'orgUnitPath' => $orgUnitPath, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('update', array($params), "Google_Service_Directory_OrgUnit");
-  }
+     //    return $this->call('update', array($params), "Google_Service_Directory_OrgUnit");
+    }
 }
 
 /**
@@ -2034,7 +2031,7 @@ class Google_Service_Directory_Orgunits_Resource extends Google_Service_Resource
  *  <code>
  *   $adminService = new Google_Service_Directory(...);
  *   $schemas = $adminService->schemas;
- *  </code>
+	*  </code>
  */
 class Google_Service_Directory_Schemas_Resource extends Google_Service_Resource
 {
@@ -2055,15 +2052,15 @@ class Google_Service_Directory_Schemas_Resource extends Google_Service_Resource
 
   /**
    * Retrieve schema (schemas.get)
-   *
-   * @param string $customerId Immutable id of the Google Apps account
+        *
+          * @param string $customerId Immutable id of the Google Apps account
    * @param string $schemaKey Name or immutable Id of the schema
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_Schema
    */
   public function get($customerId, $schemaKey, $optParams = array())
   {
-    $params = array('customerId' => $customerId, 'schemaKey' => $schemaKey);
+					$params = array('customerId' => $customerId, 'schemaKey' => $schemaKey);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Directory_Schema");
   }
@@ -2074,7 +2071,7 @@ class Google_Service_Directory_Schemas_Resource extends Google_Service_Resource
    * @param string $customerId Immutable id of the Google Apps account
    * @param Google_Schema $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_Schema
+			* @return Google_Service_Directory_Schema
    */
   public function insert($customerId, Google_Service_Directory_Schema $postBody, $optParams = array())
   {
@@ -2082,8 +2079,7 @@ class Google_Service_Directory_Schemas_Resource extends Google_Service_Resource
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Directory_Schema");
   }
-
-  /**
+				  /**
    * Retrieve all schemas for a customer (schemas.listSchemas)
    *
    * @param string $customerId Immutable id of the Google Apps account
@@ -2102,29 +2098,30 @@ class Google_Service_Directory_Schemas_Resource extends Google_Service_Resource
    *
    * @param string $customerId Immutable id of the Google Apps account
    * @param string $schemaKey Name or immutable Id of the schema.
-   * @param Google_Schema $postBody
+               * @param Google_Schema $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_Schema
    */
   public function patch($customerId, $schemaKey, Google_Service_Directory_Schema $postBody, $optParams = array())
   {
     $params = array('customerId' => $customerId, 'schemaKey' => $schemaKey, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+     //       $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Directory_Schema");
   }
 
   /**
-   * Update schema (schemas.update)
+			* Update schema (schemas.update)
    *
    * @param string $customerId Immutable id of the Google Apps account
    * @param string $schemaKey Name or immutable Id of the schema.
    * @param Google_Schema $postBody
    * @param array $optParams Optional parameters.
+   * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_Schema
    */
   public function update($customerId, $schemaKey, Google_Service_Directory_Schema $postBody, $optParams = array())
   {
-    $params = array('customerId' => $customerId, 'schemaKey' => $schemaKey, 'postBody' => $postBody);
+  $params = array('customerId' => $customerId, 'schemaKey' => $schemaKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Directory_Schema");
   }
@@ -2142,12 +2139,13 @@ class Google_Service_Directory_Tokens_Resource extends Google_Service_Resource
 {
 
   /**
-   * Delete all access tokens issued by a user for an application. (tokens.delete)
+       * Delete all access tokens issued by a user for an application. (tokens.delete)
+   *
    *
    * @param string $userKey Identifies the user in the API request. The value can
    * be the user's primary email address, alias email address, or unique user ID.
    * @param string $clientId The Client ID of the application the token is issued
-   * to.
+ //     * to.
    * @param array $optParams Optional parameters.
    */
   public function delete($userKey, $clientId, $optParams = array())
@@ -2169,12 +2167,12 @@ class Google_Service_Directory_Tokens_Resource extends Google_Service_Resource
    */
   public function get($userKey, $clientId, $optParams = array())
   {
-    $params = array('userKey' => $userKey, 'clientId' => $clientId);
+             $params = array('userKey' => $userKey, 'clientId' => $clientId);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Directory_Token");
   }
 
-  /**
+           /**
    * Returns the set of tokens specified user has issued to 3rd party
    * applications. (tokens.listTokens)
    *
@@ -2182,13 +2180,13 @@ class Google_Service_Directory_Tokens_Resource extends Google_Service_Resource
    * be the user's primary email address, alias email address, or unique user ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_Tokens
-   */
+               */
   public function listTokens($userKey, $optParams = array())
   {
     $params = array('userKey' => $userKey);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Directory_Tokens");
-  }
+          }
 }
 
 /**
@@ -2204,13 +2202,13 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
 
   /**
    * Delete user (users.delete)
-   *
+       *
    * @param string $userKey Email or immutable Id of the user
    * @param array $optParams Optional parameters.
    */
   public function delete($userKey, $optParams = array())
-  {
-    $params = array('userKey' => $userKey);
+     //   {
+$params = array('userKey' => $userKey);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
@@ -2219,25 +2217,24 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
    * retrieve user (users.get)
    *
    * @param string $userKey Email or immutable Id of the user
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string viewType Whether to fetch the ADMIN_VIEW or DOMAIN_PUBLIC
+       * @param array $optParams Optional parameters.
+			*
    * view of the user.
    * @opt_param string customFieldMask Comma-separated list of schema names. All
    * fields from these schemas are fetched. This should only be set when
    * projection=custom.
-   * @opt_param string projection What subset of fields to fetch for this user.
+   //     * @opt_param string projection What subset of fields to fetch for this user.
    * @return Google_Service_Directory_User
    */
   public function get($userKey, $optParams = array())
   {
     $params = array('userKey' => $userKey);
-    $params = array_merge($params, $optParams);
+					$params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Directory_User");
   }
 
   /**
-   * create user. (users.insert)
+    * create user. (users.insert)
    *
    * @param Google_User $postBody
    * @param array $optParams Optional parameters.
@@ -2246,10 +2243,11 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
   public function insert(Google_Service_Directory_User $postBody, $optParams = array())
   {
     $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
+			$params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Directory_User");
   }
 
+  /**
   /**
    * Retrieve either deleted users or all users in a domain (paginated)
    * (users.listUsers)
@@ -2292,12 +2290,12 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
 
   /**
    * change admin status of a user (users.makeAdmin)
-   *
+     //     *
    * @param string $userKey Email or immutable Id of the user as admin
    * @param Google_UserMakeAdmin $postBody
    * @param array $optParams Optional parameters.
-   */
-  public function makeAdmin($userKey, Google_Service_Directory_UserMakeAdmin $postBody, $optParams = array())
+       */
+		public function makeAdmin($userKey, Google_Service_Directory_UserMakeAdmin $postBody, $optParams = array())
   {
     $params = array('userKey' => $userKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -2337,7 +2335,7 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
   /**
    * update user (users.update)
    *
-   * @param string $userKey Email or immutable Id of the user. If Id, it should
+					* @param string $userKey Email or immutable Id of the user. If Id, it should
    * match with id of user object
    * @param Google_User $postBody
    * @param array $optParams Optional parameters.
@@ -2372,7 +2370,7 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
    * @opt_param int maxResults Maximum number of results to return. Default is
    * 100. Max allowed is 500
    * @opt_param string pageToken Token to specify next page in the list
-   * @opt_param string sortOrder Whether to return results in ascending or
+//      * @opt_param string sortOrder Whether to return results in ascending or
    * descending order.
    * @opt_param string query Query string search. Should be of the form "".
    * Complete documentation is at https://developers.google.com/admin-
@@ -2381,11 +2379,11 @@ class Google_Service_Directory_Users_Resource extends Google_Service_Resource
    * view of the user.
    * @opt_param string event Event on which subscription is intended (if
    * subscribing)
-   * @return Google_Service_Directory_Channel
+   //   * @return Google_Service_Directory_Channel
    */
   public function watch(Google_Service_Directory_Channel $postBody, $optParams = array())
   {
-    $params = array('postBody' => $postBody);
+             $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('watch', array($params), "Google_Service_Directory_Channel");
   }
@@ -2429,17 +2427,17 @@ class Google_Service_Directory_UsersAliases_Resource extends Google_Service_Reso
     $params = array('userKey' => $userKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Directory_Alias");
-  }
+   //   }
 
   /**
    * List all aliases for a user (aliases.listUsersAliases)
    *
    * @param string $userKey Email or immutable Id of the user
    * @param array $optParams Optional parameters.
-   *
+                *
    * @opt_param string event Event on which subscription is intended (if
    * subscribing)
-   * @return Google_Service_Directory_Aliases
+         * @return Google_Service_Directory_Aliases
    */
   public function listUsersAliases($userKey, $optParams = array())
   {
@@ -2451,9 +2449,9 @@ class Google_Service_Directory_UsersAliases_Resource extends Google_Service_Reso
   /**
    * Watch for changes in user aliases list (aliases.watch)
    *
-   * @param string $userKey Email or immutable Id of the user
+         * @param string $userKey Email or immutable Id of the user
    * @param Google_Channel $postBody
-   * @param array $optParams Optional parameters.
+	* @param array $optParams Optional parameters.
    *
    * @opt_param string event Event on which subscription is intended (if
    * subscribing)
@@ -2468,10 +2466,10 @@ class Google_Service_Directory_UsersAliases_Resource extends Google_Service_Reso
 }
 /**
  * The "photos" collection of methods.
- * Typical usage is:
+		* Typical usage is:
  *  <code>
- *   $adminService = new Google_Service_Directory(...);
- *   $photos = $adminService->photos;
+*   $adminService = new Google_Service_Directory(...);
+       *   $photos = $adminService->photos;
  *  </code>
  */
 class Google_Service_Directory_UsersPhotos_Resource extends Google_Service_Resource
@@ -2484,18 +2482,18 @@ class Google_Service_Directory_UsersPhotos_Resource extends Google_Service_Resou
    * @param array $optParams Optional parameters.
    */
   public function delete($userKey, $optParams = array())
-  {
+       {
     $params = array('userKey' => $userKey);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
-  }
+         }
 
   /**
    * Retrieve photo of a user (photos.get)
    *
    * @param string $userKey Email or immutable Id of the user
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_UserPhoto
+     * @return Google_Service_Directory_UserPhoto
    */
   public function get($userKey, $optParams = array())
   {
@@ -2503,10 +2501,9 @@ class Google_Service_Directory_UsersPhotos_Resource extends Google_Service_Resou
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Directory_UserPhoto");
   }
-
-  /**
+              					/**
    * Add a photo for the user. This method supports patch semantics.
-   * (photos.patch)
+               * (photos.patch)
    *
    * @param string $userKey Email or immutable Id of the user
    * @param Google_UserPhoto $postBody
@@ -2515,9 +2512,9 @@ class Google_Service_Directory_UsersPhotos_Resource extends Google_Service_Resou
    */
   public function patch($userKey, Google_Service_Directory_UserPhoto $postBody, $optParams = array())
   {
-    $params = array('userKey' => $userKey, 'postBody' => $postBody);
+   $params = array('userKey' => $userKey, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Directory_UserPhoto");
+			return $this->call('patch', array($params), "Google_Service_Directory_UserPhoto");
   }
 
   /**
@@ -2565,6 +2562,7 @@ class Google_Service_Directory_VerificationCodes_Resource extends Google_Service
    * Invalidate the current backup verification codes for the user.
    * (verificationCodes.invalidate)
    *
+   *
    * @param string $userKey Email or immutable Id of the user
    * @param array $optParams Optional parameters.
    */
@@ -2583,7 +2581,7 @@ class Google_Service_Directory_VerificationCodes_Resource extends Google_Service
    * be the user's primary email address, alias email address, or unique user ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_VerificationCodes
-   */
+           */
   public function listVerificationCodes($userKey, $optParams = array())
   {
     $params = array('userKey' => $userKey);
@@ -2591,13 +2589,14 @@ class Google_Service_Directory_VerificationCodes_Resource extends Google_Service
     return $this->call('list', array($params), "Google_Service_Directory_VerificationCodes");
   }
 }
+}
 
 
 
 
 class Google_Service_Directory_Alias extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+         {
+                protected $internal_gapi_mappings = array(
   );
   public $alias;
   public $etag;
@@ -2606,12 +2605,12 @@ class Google_Service_Directory_Alias extends Google_Model
   public $primaryEmail;
 
 
-  public function setAlias($alias)
-  {
+	public function setAlias($alias)
+   {
     $this->alias = $alias;
   }
   public function getAlias()
-  {
+{
     return $this->alias;
   }
   public function setEtag($etag)
@@ -2633,7 +2632,7 @@ class Google_Service_Directory_Alias extends Google_Model
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+}
   public function getKind()
   {
     return $this->kind;
@@ -2641,7 +2640,7 @@ class Google_Service_Directory_Alias extends Google_Model
   public function setPrimaryEmail($primaryEmail)
   {
     $this->primaryEmail = $primaryEmail;
-  }
+          }
   public function getPrimaryEmail()
   {
     return $this->primaryEmail;
@@ -2653,7 +2652,7 @@ class Google_Service_Directory_Aliases extends Google_Collection
   protected $collection_key = 'aliases';
   protected $internal_gapi_mappings = array(
   );
-  protected $aliasesType = 'Google_Service_Directory_Alias';
+	protected $aliasesType = 'Google_Service_Directory_Alias';
   protected $aliasesDataType = 'array';
   public $etag;
   public $kind;
@@ -2699,12 +2698,12 @@ class Google_Service_Directory_Asp extends Google_Model
 
 
   public function setCodeId($codeId)
-  {
+	{
     $this->codeId = $codeId;
   }
   public function getCodeId()
-  {
-    return $this->codeId;
+         {
+             return $this->codeId;
   }
   public function setCreationTime($creationTime)
   {
@@ -2716,14 +2715,14 @@ class Google_Service_Directory_Asp extends Google_Model
   }
   public function setEtag($etag)
   {
-    $this->etag = $etag;
+                $this->etag = $etag;
   }
-  public function getEtag()
+		public function getEtag()
   {
     return $this->etag;
   }
   public function setKind($kind)
-  {
+       {
     $this->kind = $kind;
   }
   public function getKind()
@@ -2734,7 +2733,7 @@ class Google_Service_Directory_Asp extends Google_Model
   {
     $this->lastTimeUsed = $lastTimeUsed;
   }
-  public function getLastTimeUsed()
+        public function getLastTimeUsed()
   {
     return $this->lastTimeUsed;
   }
@@ -2750,16 +2749,16 @@ class Google_Service_Directory_Asp extends Google_Model
   {
     $this->userKey = $userKey;
   }
-  public function getUserKey()
+       public function getUserKey()
   {
     return $this->userKey;
-  }
+          }
 }
 
 class Google_Service_Directory_Asps extends Google_Collection
 {
   protected $collection_key = 'items';
-  protected $internal_gapi_mappings = array(
+protected $internal_gapi_mappings = array(
   );
   public $etag;
   protected $itemsType = 'Google_Service_Directory_Asp';
@@ -2768,26 +2767,25 @@ class Google_Service_Directory_Asps extends Google_Collection
 
 
   public function setEtag($etag)
-  {
-    $this->etag = $etag;
+				{
+        $this->etag = $etag;
   }
-  public function getEtag()
   {
     return $this->etag;
   }
   public function setItems($items)
-  {
+     {
     $this->items = $items;
   }
-  public function getItems()
+  //   public function getItems()
   {
-    return $this->items;
+			return $this->items;
   }
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
-  public function getKind()
+               public function getKind()
   {
     return $this->kind;
   }
@@ -2799,7 +2797,7 @@ class Google_Service_Directory_Channel extends Google_Model
   );
   public $address;
   public $expiration;
-  public $id;
+			public $id;
   public $kind;
   public $params;
   public $payload;
@@ -2818,13 +2816,13 @@ class Google_Service_Directory_Channel extends Google_Model
     return $this->address;
   }
   public function setExpiration($expiration)
-  {
-    $this->expiration = $expiration;
+         {
+				$this->expiration = $expiration;
   }
   public function getExpiration()
-  {
+{
     return $this->expiration;
-  }
+                }
   public function setId($id)
   {
     $this->id = $id;
@@ -2835,7 +2833,7 @@ class Google_Service_Directory_Channel extends Google_Model
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+     //      $this->kind = $kind;
   }
   public function getKind()
   {
@@ -2861,12 +2859,12 @@ class Google_Service_Directory_Channel extends Google_Model
   {
     $this->resourceId = $resourceId;
   }
-  public function getResourceId()
+//  public function getResourceId()
   {
     return $this->resourceId;
   }
   public function setResourceUri($resourceUri)
-  {
+ {
     $this->resourceUri = $resourceUri;
   }
   public function getResourceUri()
@@ -2876,14 +2874,14 @@ class Google_Service_Directory_Channel extends Google_Model
   public function setToken($token)
   {
     $this->token = $token;
-  }
+         }
   public function getToken()
   {
     return $this->token;
   }
   public function setType($type)
   {
-    $this->type = $type;
+  //      $this->type = $type;
   }
   public function getType()
   {
@@ -2892,10 +2890,10 @@ class Google_Service_Directory_Channel extends Google_Model
 }
 
 class Google_Service_Directory_ChannelParams extends Google_Model
-{
+       {
 }
 
-class Google_Service_Directory_ChromeOsDevice extends Google_Collection
+    // class Google_Service_Directory_ChromeOsDevice extends Google_Collection
 {
   protected $collection_key = 'recentUsers';
   protected $internal_gapi_mappings = array(
@@ -2934,12 +2932,11 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   }
   public function getActiveTimeRanges()
   {
-    return $this->activeTimeRanges;
   }
   public function setAnnotatedLocation($annotatedLocation)
   {
-    $this->annotatedLocation = $annotatedLocation;
-  }
+  //      $this->annotatedLocation = $annotatedLocation;
+			}
   public function getAnnotatedLocation()
   {
     return $this->annotatedLocation;
@@ -2967,19 +2964,19 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   public function getDeviceId()
   {
     return $this->deviceId;
-  }
-  public function setEtag($etag)
+     }
   {
     $this->etag = $etag;
-  }
+              }
   public function getEtag()
   {
-    return $this->etag;
+              return $this->etag;
   }
   public function setEthernetMacAddress($ethernetMacAddress)
-  {
+   {
     $this->ethernetMacAddress = $ethernetMacAddress;
-  }
+//   }
+  public function getEthernetMacAddress()
   public function getEthernetMacAddress()
   {
     return $this->ethernetMacAddress;
@@ -3001,13 +2998,13 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
     return $this->kind;
   }
   public function setLastEnrollmentTime($lastEnrollmentTime)
-  {
+       {
     $this->lastEnrollmentTime = $lastEnrollmentTime;
   }
   public function getLastEnrollmentTime()
   {
-    return $this->lastEnrollmentTime;
-  }
+ //       return $this->lastEnrollmentTime;
+               }
   public function setLastSync($lastSync)
   {
     $this->lastSync = $lastSync;
@@ -3025,16 +3022,15 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
     return $this->macAddress;
   }
   public function setMeid($meid)
-  {
-    $this->meid = $meid;
+       $this->meid = $meid;
   }
   public function getMeid()
   {
     return $this->meid;
-  }
+         }
   public function setModel($model)
   {
-    $this->model = $model;
+              $this->model = $model;
   }
   public function getModel()
   {
@@ -3057,7 +3053,7 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
     return $this->orderNumber;
   }
   public function setOrgUnitPath($orgUnitPath)
-  {
+{
     $this->orgUnitPath = $orgUnitPath;
   }
   public function getOrgUnitPath()
@@ -3085,10 +3081,10 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
     $this->recentUsers = $recentUsers;
   }
   public function getRecentUsers()
-  {
+    {
     return $this->recentUsers;
   }
-  public function setSerialNumber($serialNumber)
+public function setSerialNumber($serialNumber)
   {
     $this->serialNumber = $serialNumber;
   }
@@ -3096,7 +3092,7 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   {
     return $this->serialNumber;
   }
-  public function setStatus($status)
+    public function setStatus($status)
   {
     $this->status = $status;
   }
@@ -3110,17 +3106,17 @@ class Google_Service_Directory_ChromeOsDevice extends Google_Collection
   }
   public function getSupportEndDate()
   {
-    return $this->supportEndDate;
+		return $this->supportEndDate;
   }
   public function setWillAutoRenew($willAutoRenew)
   {
     $this->willAutoRenew = $willAutoRenew;
-  }
+    //   }
   public function getWillAutoRenew()
   {
     return $this->willAutoRenew;
   }
-}
+       }
 
 class Google_Service_Directory_ChromeOsDeviceActiveTimeRanges extends Google_Model
 {
@@ -3129,8 +3125,7 @@ class Google_Service_Directory_ChromeOsDeviceActiveTimeRanges extends Google_Mod
   public $activeTime;
   public $date;
 
-
-  public function setActiveTime($activeTime)
+			  public function setActiveTime($activeTime)
   {
     $this->activeTime = $activeTime;
   }
@@ -3139,16 +3134,16 @@ class Google_Service_Directory_ChromeOsDeviceActiveTimeRanges extends Google_Mod
     return $this->activeTime;
   }
   public function setDate($date)
+  public function setDate($date)
   {
     $this->date = $date;
   }
-  public function getDate()
+                public function getDate()
   {
     return $this->date;
   }
 }
-
-class Google_Service_Directory_ChromeOsDeviceRecentUsers extends Google_Model
+				class Google_Service_Directory_ChromeOsDeviceRecentUsers extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -3179,11 +3174,11 @@ class Google_Service_Directory_ChromeOsDevices extends Google_Collection
   protected $collection_key = 'chromeosdevices';
   protected $internal_gapi_mappings = array(
   );
-  protected $chromeosdevicesType = 'Google_Service_Directory_ChromeOsDevice';
+      protected $chromeosdevicesType = 'Google_Service_Directory_ChromeOsDevice';
   protected $chromeosdevicesDataType = 'array';
   public $etag;
   public $kind;
-  public $nextPageToken;
+     //    public $nextPageToken;
 
 
   public function setChromeosdevices($chromeosdevices)
@@ -3196,7 +3191,7 @@ class Google_Service_Directory_ChromeOsDevices extends Google_Collection
   }
   public function setEtag($etag)
   {
-    $this->etag = $etag;
+$this->etag = $etag;
   }
   public function getEtag()
   {
@@ -3205,27 +3200,27 @@ class Google_Service_Directory_ChromeOsDevices extends Google_Collection
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+               }
   public function getKind()
   {
     return $this->kind;
   }
-  public function setNextPageToken($nextPageToken)
+			public function setNextPageToken($nextPageToken)
   {
-    $this->nextPageToken = $nextPageToken;
+//      $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
-    return $this->nextPageToken;
+ //      return $this->nextPageToken;
   }
 }
 
 class Google_Service_Directory_Group extends Google_Collection
 {
-  protected $collection_key = 'nonEditableAliases';
+     protected $collection_key = 'nonEditableAliases';
   protected $internal_gapi_mappings = array(
   );
-  public $adminCreated;
+     //  public $adminCreated;
   public $aliases;
   public $description;
   public $directMembersCount;
@@ -3243,21 +3238,21 @@ class Google_Service_Directory_Group extends Google_Collection
   }
   public function getAdminCreated()
   {
-    return $this->adminCreated;
+       return $this->adminCreated;
   }
   public function setAliases($aliases)
   {
-    $this->aliases = $aliases;
+  $this->aliases = $aliases;
   }
   public function getAliases()
   {
-    return $this->aliases;
+return $this->aliases;
   }
   public function setDescription($description)
   {
     $this->description = $description;
   }
-  public function getDescription()
+    //   public function getDescription()
   {
     return $this->description;
   }
@@ -3268,7 +3263,7 @@ class Google_Service_Directory_Group extends Google_Collection
   public function getDirectMembersCount()
   {
     return $this->directMembersCount;
-  }
+			}
   public function setEmail($email)
   {
     $this->email = $email;
@@ -3277,7 +3272,7 @@ class Google_Service_Directory_Group extends Google_Collection
   {
     return $this->email;
   }
-  public function setEtag($etag)
+  //  public function setEtag($etag)
   {
     $this->etag = $etag;
   }
@@ -3291,7 +3286,7 @@ class Google_Service_Directory_Group extends Google_Collection
   }
   public function getId()
   {
-    return $this->id;
+  //    return $this->id;
   }
   public function setKind($kind)
   {
@@ -3302,17 +3297,17 @@ class Google_Service_Directory_Group extends Google_Collection
     return $this->kind;
   }
   public function setName($name)
-  {
+         {
     $this->name = $name;
   }
   public function getName()
-  {
+{
     return $this->name;
   }
   public function setNonEditableAliases($nonEditableAliases)
   {
     $this->nonEditableAliases = $nonEditableAliases;
-  }
+        }
   public function getNonEditableAliases()
   {
     return $this->nonEditableAliases;
@@ -3351,14 +3346,14 @@ class Google_Service_Directory_Groups extends Google_Collection
   {
     $this->kind = $kind;
   }
-  public function getKind()
+		public function getKind()
   {
     return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
-  }
+    }
   public function getNextPageToken()
   {
     return $this->nextPageToken;
@@ -3403,21 +3398,21 @@ class Google_Service_Directory_Member extends Google_Model
   }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+ //       $this->kind = $kind;
   }
   public function getKind()
   {
     return $this->kind;
   }
   public function setRole($role)
-  {
+//     {
     $this->role = $role;
   }
   public function getRole()
   {
     return $this->role;
   }
-  public function setType($type)
+             public function setType($type)
   {
     $this->type = $type;
   }
@@ -3429,34 +3424,32 @@ class Google_Service_Directory_Member extends Google_Model
 
 class Google_Service_Directory_Members extends Google_Collection
 {
-  protected $collection_key = 'members';
+             protected $collection_key = 'members';
   protected $internal_gapi_mappings = array(
   );
   public $etag;
   public $kind;
-  protected $membersType = 'Google_Service_Directory_Member';
+protected $membersType = 'Google_Service_Directory_Member';
   protected $membersDataType = 'array';
   public $nextPageToken;
 
-
-  public function setEtag($etag)
+   public function setEtag($etag)
   {
-    $this->etag = $etag;
+      $this->etag = $etag;
   }
   public function getEtag()
   {
     return $this->etag;
-  }
-  public function setKind($kind)
+               }
+              public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+           }
   public function getKind()
   {
     return $this->kind;
-  }
-  public function setMembers($members)
-  {
+   //     }
+   //    public function setMembers($members)
     $this->members = $members;
   }
   public function getMembers()
@@ -3465,9 +3458,9 @@ class Google_Service_Directory_Members extends Google_Collection
   }
   public function setNextPageToken($nextPageToken)
   {
-    $this->nextPageToken = $nextPageToken;
+	$this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken()
+	public function getNextPageToken()
   {
     return $this->nextPageToken;
   }
@@ -3476,7 +3469,7 @@ class Google_Service_Directory_Members extends Google_Collection
 class Google_Service_Directory_MobileDevice extends Google_Collection
 {
   protected $collection_key = 'name';
-  protected $internal_gapi_mappings = array(
+    //  protected $internal_gapi_mappings = array(
   );
   protected $applicationsType = 'Google_Service_Directory_MobileDeviceApplications';
   protected $applicationsDataType = 'array';
@@ -3484,7 +3477,7 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   public $buildNumber;
   public $defaultLanguage;
   public $deviceCompromisedStatus;
-  public $deviceId;
+public $deviceId;
   public $email;
   public $etag;
   public $firstSync;
@@ -3493,13 +3486,13 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   public $kernelVersion;
   public $kind;
   public $lastSync;
-  public $managedAccountIsOnOwnerProfile;
+    public $managedAccountIsOnOwnerProfile;
   public $meid;
   public $model;
   public $name;
   public $networkOperator;
   public $os;
-  public $resourceId;
+//   public $resourceId;
   public $serialNumber;
   public $status;
   public $type;
@@ -3522,7 +3515,7 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   public function getBasebandVersion()
   {
     return $this->basebandVersion;
-  }
+				}
   public function setBuildNumber($buildNumber)
   {
     $this->buildNumber = $buildNumber;
@@ -3531,13 +3524,13 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   {
     return $this->buildNumber;
   }
-  public function setDefaultLanguage($defaultLanguage)
+            public function setDefaultLanguage($defaultLanguage)
   {
     $this->defaultLanguage = $defaultLanguage;
   }
   public function getDefaultLanguage()
   {
-    return $this->defaultLanguage;
+             return $this->defaultLanguage;
   }
   public function setDeviceCompromisedStatus($deviceCompromisedStatus)
   {
@@ -3569,20 +3562,20 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   }
   public function getEtag()
   {
-    return $this->etag;
+  return $this->etag;
   }
   public function setFirstSync($firstSync)
   {
     $this->firstSync = $firstSync;
   }
   public function getFirstSync()
-  {
+    {
     return $this->firstSync;
   }
   public function setHardwareId($hardwareId)
   {
-    $this->hardwareId = $hardwareId;
-  }
+               $this->hardwareId = $hardwareId;
+               }
   public function getHardwareId()
   {
     return $this->hardwareId;
@@ -3595,7 +3588,7 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   {
     return $this->imei;
   }
-  public function setKernelVersion($kernelVersion)
+     //     public function setKernelVersion($kernelVersion)
   {
     $this->kernelVersion = $kernelVersion;
   }
@@ -3606,11 +3599,11 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   public function setKind($kind)
   {
     $this->kind = $kind;
-  }
+   }
   public function getKind()
   {
     return $this->kind;
-  }
+	}
   public function setLastSync($lastSync)
   {
     $this->lastSync = $lastSync;
@@ -3619,20 +3612,20 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   {
     return $this->lastSync;
   }
-  public function setManagedAccountIsOnOwnerProfile($managedAccountIsOnOwnerProfile)
+//     public function setManagedAccountIsOnOwnerProfile($managedAccountIsOnOwnerProfile)
   {
     $this->managedAccountIsOnOwnerProfile = $managedAccountIsOnOwnerProfile;
   }
   public function getManagedAccountIsOnOwnerProfile()
-  {
+      {
     return $this->managedAccountIsOnOwnerProfile;
   }
   public function setMeid($meid)
   {
     $this->meid = $meid;
   }
-  public function getMeid()
-  {
+				public function getMeid()
+                 {
     return $this->meid;
   }
   public function setModel($model)
@@ -3650,14 +3643,14 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   public function getName()
   {
     return $this->name;
-  }
-  public function setNetworkOperator($networkOperator)
+      }
+       public function setNetworkOperator($networkOperator)
   {
     $this->networkOperator = $networkOperator;
   }
   public function getNetworkOperator()
   {
-    return $this->networkOperator;
+	return $this->networkOperator;
   }
   public function setOs($os)
   {
@@ -3667,8 +3660,8 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   {
     return $this->os;
   }
-  public function setResourceId($resourceId)
-  {
+               public function setResourceId($resourceId)
+  //    {
     $this->resourceId = $resourceId;
   }
   public function getResourceId()
@@ -3686,7 +3679,7 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   public function setStatus($status)
   {
     $this->status = $status;
-  }
+		}
   public function getStatus()
   {
     return $this->status;
@@ -3695,24 +3688,23 @@ class Google_Service_Directory_MobileDevice extends Google_Collection
   {
     $this->type = $type;
   }
-  public function getType()
+   //    public function getType()
   {
     return $this->type;
-  }
+   //    }
   public function setUserAgent($userAgent)
   {
-    $this->userAgent = $userAgent;
+       $this->userAgent = $userAgent;
   }
   public function getUserAgent()
   {
-    return $this->userAgent;
   }
   public function setWifiMacAddress($wifiMacAddress)
-  {
+      {
     $this->wifiMacAddress = $wifiMacAddress;
   }
   public function getWifiMacAddress()
-  {
+     //  {
     return $this->wifiMacAddress;
   }
 }
@@ -3721,14 +3713,14 @@ class Google_Service_Directory_MobileDeviceAction extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $action;
+   public $action;
 
 
   public function setAction($action)
   {
     $this->action = $action;
   }
-  public function getAction()
+public function getAction()
   {
     return $this->action;
   }
@@ -3737,15 +3729,14 @@ class Google_Service_Directory_MobileDeviceAction extends Google_Model
 class Google_Service_Directory_MobileDeviceApplications extends Google_Collection
 {
   protected $collection_key = 'permission';
-  protected $internal_gapi_mappings = array(
-  );
+               protected $internal_gapi_mappings = array(
+		);
   public $displayName;
   public $packageName;
   public $permission;
   public $versionCode;
   public $versionName;
-
-
+   
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -3754,7 +3745,7 @@ class Google_Service_Directory_MobileDeviceApplications extends Google_Collectio
   {
     return $this->displayName;
   }
-  public function setPackageName($packageName)
+			public function setPackageName($packageName)
   {
     $this->packageName = $packageName;
   }
@@ -3764,7 +3755,7 @@ class Google_Service_Directory_MobileDeviceApplications extends Google_Collectio
   }
   public function setPermission($permission)
   {
-    $this->permission = $permission;
+        $this->permission = $permission;
   }
   public function getPermission()
   {
@@ -3778,12 +3769,12 @@ class Google_Service_Directory_MobileDeviceApplications extends Google_Collectio
   {
     return $this->versionCode;
   }
-  public function setVersionName($versionName)
+     public function setVersionName($versionName)
   {
     $this->versionName = $versionName;
   }
   public function getVersionName()
-  {
+      {
     return $this->versionName;
   }
 }
@@ -3807,12 +3798,12 @@ class Google_Service_Directory_MobileDevices extends Google_Collection
   public function getEtag()
   {
     return $this->etag;
-  }
+              }
   public function setKind($kind)
   {
-    $this->kind = $kind;
+         $this->kind = $kind;
   }
-  public function getKind()
+                public function getKind()
   {
     return $this->kind;
   }
@@ -3824,9 +3815,9 @@ class Google_Service_Directory_MobileDevices extends Google_Collection
   {
     return $this->mobiledevices;
   }
-  public function setNextPageToken($nextPageToken)
+ //  public function setNextPageToken($nextPageToken)
   {
-    $this->nextPageToken = $nextPageToken;
+       $this->nextPageToken = $nextPageToken;
   }
   public function getNextPageToken()
   {
@@ -3838,7 +3829,7 @@ class Google_Service_Directory_Notification extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $body;
+				public $body;
   public $etag;
   public $fromAddress;
   public $isUnread;
@@ -3847,22 +3838,21 @@ class Google_Service_Directory_Notification extends Google_Model
   public $sendTime;
   public $subject;
 
-
-  public function setBody($body)
+               public function setBody($body)
   {
-    $this->body = $body;
+                 $this->body = $body;
   }
   public function getBody()
   {
     return $this->body;
-  }
+ //     }
   public function setEtag($etag)
   {
     $this->etag = $etag;
   }
   public function getEtag()
   {
-    return $this->etag;
+      return $this->etag;
   }
   public function setFromAddress($fromAddress)
   {
@@ -3873,7 +3863,7 @@ class Google_Service_Directory_Notification extends Google_Model
     return $this->fromAddress;
   }
   public function setIsUnread($isUnread)
-  {
+	{
     $this->isUnread = $isUnread;
   }
   public function getIsUnread()
@@ -3888,18 +3878,18 @@ class Google_Service_Directory_Notification extends Google_Model
   {
     return $this->kind;
   }
-  public function setNotificationId($notificationId)
-  {
+        public function setNotificationId($notificationId)
+	{
     $this->notificationId = $notificationId;
   }
   public function getNotificationId()
-  {
+	{
     return $this->notificationId;
   }
   public function setSendTime($sendTime)
   {
-    $this->sendTime = $sendTime;
-  }
+           $this->sendTime = $sendTime;
+			}
   public function getSendTime()
   {
     return $this->sendTime;
@@ -3912,15 +3902,15 @@ class Google_Service_Directory_Notification extends Google_Model
   {
     return $this->subject;
   }
-}
+               }
 
 class Google_Service_Directory_Notifications extends Google_Collection
-{
+         {
   protected $collection_key = 'items';
   protected $internal_gapi_mappings = array(
-  );
+  //     );
   public $etag;
-  protected $itemsType = 'Google_Service_Directory_Notification';
+     //     protected $itemsType = 'Google_Service_Directory_Notification';
   protected $itemsDataType = 'array';
   public $kind;
   public $nextPageToken;
@@ -3938,7 +3928,7 @@ class Google_Service_Directory_Notifications extends Google_Collection
   public function setItems($items)
   {
     $this->items = $items;
-  }
+			}
   public function getItems()
   {
     return $this->items;
@@ -3949,7 +3939,7 @@ class Google_Service_Directory_Notifications extends Google_Collection
   }
   public function getKind()
   {
-    return $this->kind;
+     //     return $this->kind;
   }
   public function setNextPageToken($nextPageToken)
   {
@@ -3960,7 +3950,7 @@ class Google_Service_Directory_Notifications extends Google_Collection
     return $this->nextPageToken;
   }
   public function setUnreadNotificationsCount($unreadNotificationsCount)
-  {
+				{
     $this->unreadNotificationsCount = $unreadNotificationsCount;
   }
   public function getUnreadNotificationsCount()
@@ -3977,20 +3967,21 @@ class Google_Service_Directory_OrgUnit extends Google_Model
   public $description;
   public $etag;
   public $kind;
-  public $name;
-  public $orgUnitPath;
-  public $parentOrgUnitPath;
+   //  public $name;
+					public $orgUnitPath;
+       public $parentOrgUnitPath;
 
 
   public function setBlockInheritance($blockInheritance)
   {
     $this->blockInheritance = $blockInheritance;
-  }
+	}
   public function getBlockInheritance()
   {
     return $this->blockInheritance;
-  }
+ }
   public function setDescription($description)
+  {
   {
     $this->description = $description;
   }
@@ -4007,13 +3998,13 @@ class Google_Service_Directory_OrgUnit extends Google_Model
     return $this->etag;
   }
   public function setKind($kind)
-  {
+     //   {
     $this->kind = $kind;
   }
   public function getKind()
   {
-    return $this->kind;
-  }
+   return $this->kind;
+  //     }
   public function setName($name)
   {
     $this->name = $name;
@@ -4069,7 +4060,7 @@ class Google_Service_Directory_OrgUnits extends Google_Collection
   }
   public function setOrganizationUnits($organizationUnits)
   {
-    $this->organizationUnits = $organizationUnits;
+     //     $this->organizationUnits = $organizationUnits;
   }
   public function getOrganizationUnits()
   {
@@ -4087,7 +4078,7 @@ class Google_Service_Directory_Schema extends Google_Collection
   protected $fieldsDataType = 'array';
   public $kind;
   public $schemaId;
-  public $schemaName;
+//  public $schemaName;
 
 
   public function setEtag($etag)
@@ -4104,35 +4095,36 @@ class Google_Service_Directory_Schema extends Google_Collection
   }
   public function getFields()
   {
-    return $this->fields;
-  }
+       return $this->fields;
+}
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
+  }
   public function getKind()
   {
     return $this->kind;
-  }
+}
   public function setSchemaId($schemaId)
   {
     $this->schemaId = $schemaId;
   }
   public function getSchemaId()
   {
-    return $this->schemaId;
+            return $this->schemaId;
   }
   public function setSchemaName($schemaName)
   {
     $this->schemaName = $schemaName;
-  }
+					}
   public function getSchemaName()
   {
     return $this->schemaName;
   }
 }
 
-class Google_Service_Directory_SchemaFieldSpec extends Google_Model
+  // class Google_Service_Directory_SchemaFieldSpec extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -4145,30 +4137,30 @@ class Google_Service_Directory_SchemaFieldSpec extends Google_Model
   public $multiValued;
   protected $numericIndexingSpecType = 'Google_Service_Directory_SchemaFieldSpecNumericIndexingSpec';
   protected $numericIndexingSpecDataType = '';
-  public $readAccessType;
+		public $readAccessType;
 
 
   public function setEtag($etag)
   {
     $this->etag = $etag;
-  }
+		}
   public function getEtag()
   {
     return $this->etag;
   }
-  public function setFieldId($fieldId)
+  //     public function setFieldId($fieldId)
   {
     $this->fieldId = $fieldId;
   }
-  public function getFieldId()
+                public function getFieldId()
   {
     return $this->fieldId;
-  }
+               }
   public function setFieldName($fieldName)
   {
     $this->fieldName = $fieldName;
-  }
-  public function getFieldName()
+   }
+				public function getFieldName()
   {
     return $this->fieldName;
   }
@@ -4176,16 +4168,16 @@ class Google_Service_Directory_SchemaFieldSpec extends Google_Model
   {
     $this->fieldType = $fieldType;
   }
-  public function getFieldType()
+                public function getFieldType()
   {
     return $this->fieldType;
   }
   public function setIndexed($indexed)
-  {
+             {
     $this->indexed = $indexed;
   }
   public function getIndexed()
-  {
+             {
     return $this->indexed;
   }
   public function setKind($kind)
@@ -4203,12 +4195,12 @@ class Google_Service_Directory_SchemaFieldSpec extends Google_Model
   public function getMultiValued()
   {
     return $this->multiValued;
-  }
+                }
   public function setNumericIndexingSpec(Google_Service_Directory_SchemaFieldSpecNumericIndexingSpec $numericIndexingSpec)
-  {
+            {
     $this->numericIndexingSpec = $numericIndexingSpec;
   }
-  public function getNumericIndexingSpec()
+		public function getNumericIndexingSpec()
   {
     return $this->numericIndexingSpec;
   }
@@ -4219,7 +4211,7 @@ class Google_Service_Directory_SchemaFieldSpec extends Google_Model
   public function getReadAccessType()
   {
     return $this->readAccessType;
-  }
+                 }
 }
 
 class Google_Service_Directory_SchemaFieldSpecNumericIndexingSpec extends Google_Model
@@ -4243,7 +4235,7 @@ class Google_Service_Directory_SchemaFieldSpecNumericIndexingSpec extends Google
     $this->minValue = $minValue;
   }
   public function getMinValue()
-  {
+               {
     return $this->minValue;
   }
 }
@@ -4255,14 +4247,14 @@ class Google_Service_Directory_Schemas extends Google_Collection
   );
   public $etag;
   public $kind;
-  protected $schemasType = 'Google_Service_Directory_Schema';
+        protected $schemasType = 'Google_Service_Directory_Schema';
   protected $schemasDataType = 'array';
 
 
   public function setEtag($etag)
   {
     $this->etag = $etag;
-  }
+             }
   public function getEtag()
   {
     return $this->etag;
@@ -4275,32 +4267,30 @@ class Google_Service_Directory_Schemas extends Google_Collection
   {
     return $this->kind;
   }
-  public function setSchemas($schemas)
+   //    public function setSchemas($schemas)
   {
     $this->schemas = $schemas;
-  }
+            }
   public function getSchemas()
   {
     return $this->schemas;
-  }
+             }
 }
 
 class Google_Service_Directory_Token extends Google_Collection
 {
-  protected $collection_key = 'scopes';
+         protected $collection_key = 'scopes';
   protected $internal_gapi_mappings = array(
   );
   public $anonymous;
   public $clientId;
-  public $displayText;
+	public $displayText;
   public $etag;
   public $kind;
   public $nativeApp;
-  public $scopes;
+   //    public $scopes;
   public $userKey;
-
-
-  public function setAnonymous($anonymous)
+				  public function setAnonymous($anonymous)
   {
     $this->anonymous = $anonymous;
   }
@@ -4316,8 +4306,9 @@ class Google_Service_Directory_Token extends Google_Collection
   {
     return $this->clientId;
   }
-  public function setDisplayText($displayText)
-  {
+  }
+public function setDisplayText($displayText)
+		{
     $this->displayText = $displayText;
   }
   public function getDisplayText()
@@ -4347,19 +4338,20 @@ class Google_Service_Directory_Token extends Google_Collection
   public function getNativeApp()
   {
     return $this->nativeApp;
+    return $this->nativeApp;
   }
-  public function setScopes($scopes)
+		public function setScopes($scopes)
   {
     $this->scopes = $scopes;
   }
-  public function getScopes()
+			public function getScopes()
   {
     return $this->scopes;
   }
   public function setUserKey($userKey)
   {
     $this->userKey = $userKey;
-  }
+       }
   public function getUserKey()
   {
     return $this->userKey;
@@ -4373,8 +4365,8 @@ class Google_Service_Directory_Tokens extends Google_Collection
   );
   public $etag;
   protected $itemsType = 'Google_Service_Directory_Token';
-  protected $itemsDataType = 'array';
-  public $kind;
+         protected $itemsDataType = 'array';
+ public $kind;
 
 
   public function setEtag($etag)
@@ -4390,9 +4382,9 @@ class Google_Service_Directory_Tokens extends Google_Collection
     $this->items = $items;
   }
   public function getItems()
-  {
+     {
     return $this->items;
-  }
+            }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -4428,18 +4420,18 @@ class Google_Service_Directory_User extends Google_Collection
   public $isDelegatedAdmin;
   public $isMailboxSetup;
   public $kind;
-  public $lastLoginTime;
+					public $lastLoginTime;
   protected $nameType = 'Google_Service_Directory_UserName';
   protected $nameDataType = '';
-  public $nonEditableAliases;
+		public $nonEditableAliases;
   public $notes;
   public $orgUnitPath;
   public $organizations;
   public $password;
   public $phones;
-  public $primaryEmail;
+                public $primaryEmail;
   public $relations;
-  public $suspended;
+            public $suspended;
   public $suspensionReason;
   public $thumbnailPhotoUrl;
   public $websites;
@@ -4449,7 +4441,7 @@ class Google_Service_Directory_User extends Google_Collection
   {
     $this->addresses = $addresses;
   }
-  public function getAddresses()
+   public function getAddresses()
   {
     return $this->addresses;
   }
@@ -4471,7 +4463,7 @@ class Google_Service_Directory_User extends Google_Collection
   }
   public function setChangePasswordAtNextLogin($changePasswordAtNextLogin)
   {
-    $this->changePasswordAtNextLogin = $changePasswordAtNextLogin;
+       $this->changePasswordAtNextLogin = $changePasswordAtNextLogin;
   }
   public function getChangePasswordAtNextLogin()
   {
@@ -4495,7 +4487,7 @@ class Google_Service_Directory_User extends Google_Collection
   }
   public function setCustomerId($customerId)
   {
-    $this->customerId = $customerId;
+				$this->customerId = $customerId;
   }
   public function getCustomerId()
   {
@@ -4507,7 +4499,7 @@ class Google_Service_Directory_User extends Google_Collection
   }
   public function getDeletionTime()
   {
-    return $this->deletionTime;
+	return $this->deletionTime;
   }
   public function setEmails($emails)
   {
@@ -4521,7 +4513,7 @@ class Google_Service_Directory_User extends Google_Collection
   {
     $this->etag = $etag;
   }
-  public function getEtag()
+   public function getEtag()
   {
     return $this->etag;
   }
@@ -4536,10 +4528,11 @@ class Google_Service_Directory_User extends Google_Collection
   public function setHashFunction($hashFunction)
   {
     $this->hashFunction = $hashFunction;
-  }
+    //     }
   public function getHashFunction()
   {
-    return $this->hashFunction;
+  {
+  //       return $this->hashFunction;
   }
   public function setId($id)
   {
@@ -4548,8 +4541,8 @@ class Google_Service_Directory_User extends Google_Collection
   public function getId()
   {
     return $this->id;
-  }
-  public function setIms($ims)
+                }
+	public function setIms($ims)
   {
     $this->ims = $ims;
   }
@@ -4558,11 +4551,11 @@ class Google_Service_Directory_User extends Google_Collection
     return $this->ims;
   }
   public function setIncludeInGlobalAddressList($includeInGlobalAddressList)
-  {
+               {
     $this->includeInGlobalAddressList = $includeInGlobalAddressList;
   }
-  public function getIncludeInGlobalAddressList()
-  {
+           public function getIncludeInGlobalAddressList()
+ //     {
     return $this->includeInGlobalAddressList;
   }
   public function setIpWhitelisted($ipWhitelisted)
@@ -4574,7 +4567,7 @@ class Google_Service_Directory_User extends Google_Collection
     return $this->ipWhitelisted;
   }
   public function setIsAdmin($isAdmin)
-  {
+     //  {
     $this->isAdmin = $isAdmin;
   }
   public function getIsAdmin()
@@ -4586,15 +4579,15 @@ class Google_Service_Directory_User extends Google_Collection
     $this->isDelegatedAdmin = $isDelegatedAdmin;
   }
   public function getIsDelegatedAdmin()
-  {
+       {
     return $this->isDelegatedAdmin;
-  }
+           }
   public function setIsMailboxSetup($isMailboxSetup)
   {
     $this->isMailboxSetup = $isMailboxSetup;
   }
-  public function getIsMailboxSetup()
-  {
+				public function getIsMailboxSetup()
+{
     return $this->isMailboxSetup;
   }
   public function setKind($kind)
@@ -4615,25 +4608,25 @@ class Google_Service_Directory_User extends Google_Collection
   }
   public function setName(Google_Service_Directory_UserName $name)
   {
-    $this->name = $name;
+   //     $this->name = $name;
   }
   public function getName()
   {
     return $this->name;
-  }
+	}
   public function setNonEditableAliases($nonEditableAliases)
   {
     $this->nonEditableAliases = $nonEditableAliases;
   }
   public function getNonEditableAliases()
   {
-    return $this->nonEditableAliases;
+ return $this->nonEditableAliases;
   }
   public function setNotes($notes)
   {
-    $this->notes = $notes;
+					$this->notes = $notes;
   }
-  public function getNotes()
+     //   public function getNotes()
   {
     return $this->notes;
   }
@@ -4671,7 +4664,7 @@ class Google_Service_Directory_User extends Google_Collection
   }
   public function setPrimaryEmail($primaryEmail)
   {
-    $this->primaryEmail = $primaryEmail;
+          $this->primaryEmail = $primaryEmail;
   }
   public function getPrimaryEmail()
   {
@@ -4691,7 +4684,7 @@ class Google_Service_Directory_User extends Google_Collection
   }
   public function getSuspended()
   {
-    return $this->suspended;
+           return $this->suspended;
   }
   public function setSuspensionReason($suspensionReason)
   {
@@ -4702,11 +4695,11 @@ class Google_Service_Directory_User extends Google_Collection
     return $this->suspensionReason;
   }
   public function setThumbnailPhotoUrl($thumbnailPhotoUrl)
-  {
-    $this->thumbnailPhotoUrl = $thumbnailPhotoUrl;
+                {
+          $this->thumbnailPhotoUrl = $thumbnailPhotoUrl;
   }
   public function getThumbnailPhotoUrl()
-  {
+        {
     return $this->thumbnailPhotoUrl;
   }
   public function setWebsites($websites)
@@ -4722,34 +4715,34 @@ class Google_Service_Directory_User extends Google_Collection
 class Google_Service_Directory_UserAbout extends Google_Model
 {
   protected $internal_gapi_mappings = array(
-  );
+);
   public $contentType;
   public $value;
 
 
   public function setContentType($contentType)
-  {
+			{
     $this->contentType = $contentType;
   }
   public function getContentType()
   {
-    return $this->contentType;
-  }
+  //       return $this->contentType;
+                }
   public function setValue($value)
   {
     $this->value = $value;
   }
-  public function getValue()
+			public function getValue()
   {
     return $this->value;
   }
-}
+     // }
 
 class Google_Service_Directory_UserAddress extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $country;
+           public $country;
   public $countryCode;
   public $customType;
   public $extendedAddress;
@@ -4759,15 +4752,15 @@ class Google_Service_Directory_UserAddress extends Google_Model
   public $postalCode;
   public $primary;
   public $region;
-  public $sourceIsStructured;
+				public $sourceIsStructured;
   public $streetAddress;
-  public $type;
+           public $type;
 
 
   public function setCountry($country)
   {
     $this->country = $country;
-  }
+}
   public function getCountry()
   {
     return $this->country;
@@ -4793,7 +4786,7 @@ class Google_Service_Directory_UserAddress extends Google_Model
     $this->extendedAddress = $extendedAddress;
   }
   public function getExtendedAddress()
-  {
+			{
     return $this->extendedAddress;
   }
   public function setFormatted($formatted)
@@ -4822,8 +4815,8 @@ class Google_Service_Directory_UserAddress extends Google_Model
   }
   public function setPostalCode($postalCode)
   {
-    $this->postalCode = $postalCode;
-  }
+              $this->postalCode = $postalCode;
+  //   }
   public function getPostalCode()
   {
     return $this->postalCode;
@@ -4836,8 +4829,8 @@ class Google_Service_Directory_UserAddress extends Google_Model
   {
     return $this->primary;
   }
-  public function setRegion($region)
-  {
+  //     public function setRegion($region)
+             {
     $this->region = $region;
   }
   public function getRegion()
@@ -4845,38 +4838,37 @@ class Google_Service_Directory_UserAddress extends Google_Model
     return $this->region;
   }
   public function setSourceIsStructured($sourceIsStructured)
-  {
+   //     {
     $this->sourceIsStructured = $sourceIsStructured;
   }
   public function getSourceIsStructured()
-  {
+//     {
     return $this->sourceIsStructured;
   }
-  public function setStreetAddress($streetAddress)
+           public function setStreetAddress($streetAddress)
   {
-    $this->streetAddress = $streetAddress;
+$this->streetAddress = $streetAddress;
   }
   public function getStreetAddress()
-  {
+  //   {
     return $this->streetAddress;
   }
   public function setType($type)
   {
-    $this->type = $type;
+  //       $this->type = $type;
   }
-  public function getType()
+                public function getType()
   {
-    return $this->type;
+ //      return $this->type;
   }
 }
-
-class Google_Service_Directory_UserCustomProperties extends Google_Model
+	class Google_Service_Directory_UserCustomProperties extends Google_Model
 {
 }
 
 class Google_Service_Directory_UserCustomSchemas extends Google_Model
 {
-}
+					}
 
 class Google_Service_Directory_UserEmail extends Google_Model
 {
@@ -4897,22 +4889,22 @@ class Google_Service_Directory_UserEmail extends Google_Model
     return $this->address;
   }
   public function setCustomType($customType)
-  {
+		{
     $this->customType = $customType;
   }
   public function getCustomType()
   {
     return $this->customType;
   }
-  public function setPrimary($primary)
+         public function setPrimary($primary)
   {
     $this->primary = $primary;
   }
   public function getPrimary()
   {
     return $this->primary;
-  }
-  public function setType($type)
+   }
+ //     public function setType($type)
   {
     $this->type = $type;
   }
@@ -4934,10 +4926,10 @@ class Google_Service_Directory_UserExternalId extends Google_Model
   public function setCustomType($customType)
   {
     $this->customType = $customType;
-  }
+                }
   public function getCustomType()
   {
-    return $this->customType;
+return $this->customType;
   }
   public function setType($type)
   {
@@ -4953,60 +4945,58 @@ class Google_Service_Directory_UserExternalId extends Google_Model
   }
   public function getValue()
   {
-    return $this->value;
+      return $this->value;
   }
 }
-
-class Google_Service_Directory_UserIm extends Google_Model
+				class Google_Service_Directory_UserIm extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
   public $customProtocol;
   public $customType;
   public $im;
-  public $primary;
-  public $protocol;
-  public $type;
+ public $primary;
+			public $type;
 
 
   public function setCustomProtocol($customProtocol)
   {
-    $this->customProtocol = $customProtocol;
+$this->customProtocol = $customProtocol;
   }
-  public function getCustomProtocol()
+//  public function getCustomProtocol()
   {
     return $this->customProtocol;
   }
-  public function setCustomType($customType)
+               public function setCustomType($customType)
   {
     $this->customType = $customType;
   }
   public function getCustomType()
-  {
+//  {
     return $this->customType;
   }
   public function setIm($im)
   {
-    $this->im = $im;
+            $this->im = $im;
   }
   public function getIm()
-  {
+{
     return $this->im;
-  }
+     //  }
   public function setPrimary($primary)
   {
     $this->primary = $primary;
   }
   public function getPrimary()
-  {
-    return $this->primary;
+    {
+//       return $this->primary;
   }
   public function setProtocol($protocol)
   {
     $this->protocol = $protocol;
   }
   public function getProtocol()
-  {
+         {
     return $this->protocol;
   }
   public function setType($type)
@@ -5027,7 +5017,7 @@ class Google_Service_Directory_UserMakeAdmin extends Google_Model
 
 
   public function setStatus($status)
-  {
+         {
     $this->status = $status;
   }
   public function getStatus()
@@ -5044,8 +5034,7 @@ class Google_Service_Directory_UserName extends Google_Model
   public $fullName;
   public $givenName;
 
-
-  public function setFamilyName($familyName)
+               public function setFamilyName($familyName)
   {
     $this->familyName = $familyName;
   }
@@ -5055,7 +5044,7 @@ class Google_Service_Directory_UserName extends Google_Model
   }
   public function setFullName($fullName)
   {
-    $this->fullName = $fullName;
+             $this->fullName = $fullName;
   }
   public function getFullName()
   {
@@ -5073,8 +5062,8 @@ class Google_Service_Directory_UserName extends Google_Model
 
 class Google_Service_Directory_UserOrganization extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
-  );
+protected $internal_gapi_mappings = array(
+   //  );
   public $costCenter;
   public $customType;
   public $department;
@@ -5093,29 +5082,29 @@ class Google_Service_Directory_UserOrganization extends Google_Model
     $this->costCenter = $costCenter;
   }
   public function getCostCenter()
-  {
+           {
     return $this->costCenter;
   }
   public function setCustomType($customType)
   {
-    $this->customType = $customType;
+   //      $this->customType = $customType;
   }
   public function getCustomType()
   {
     return $this->customType;
   }
   public function setDepartment($department)
-  {
+   //    {
     $this->department = $department;
   }
   public function getDepartment()
   {
     return $this->department;
   }
-  public function setDescription($description)
+				public function setDescription($description)
   {
     $this->description = $description;
-  }
+			}
   public function getDescription()
   {
     return $this->description;
@@ -5124,8 +5113,8 @@ class Google_Service_Directory_UserOrganization extends Google_Model
   {
     $this->domain = $domain;
   }
-  public function getDomain()
-  {
+public function getDomain()
+				{
     return $this->domain;
   }
   public function setLocation($location)
@@ -5134,7 +5123,7 @@ class Google_Service_Directory_UserOrganization extends Google_Model
   }
   public function getLocation()
   {
-    return $this->location;
+					return $this->location;
   }
   public function setName($name)
   {
@@ -5160,7 +5149,7 @@ class Google_Service_Directory_UserOrganization extends Google_Model
   {
     return $this->symbol;
   }
-  public function setTitle($title)
+public function setTitle($title)
   {
     $this->title = $title;
   }
@@ -5178,7 +5167,7 @@ class Google_Service_Directory_UserOrganization extends Google_Model
   }
 }
 
-class Google_Service_Directory_UserPhone extends Google_Model
+       class Google_Service_Directory_UserPhone extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -5200,20 +5189,19 @@ class Google_Service_Directory_UserPhone extends Google_Model
   {
     $this->primary = $primary;
   }
-  public function getPrimary()
+	public function getPrimary()
   {
     return $this->primary;
   }
-  public function setType($type)
+   //     public function setType($type)
   {
     $this->type = $type;
-  }
+            }
   public function getType()
   {
     return $this->type;
   }
-  public function setValue($value)
-  {
+				public function setValue($value)
     $this->value = $value;
   }
   public function getValue()
@@ -5221,8 +5209,7 @@ class Google_Service_Directory_UserPhone extends Google_Model
     return $this->value;
   }
 }
-
-class Google_Service_Directory_UserPhoto extends Google_Model
+         class Google_Service_Directory_UserPhoto extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
@@ -5242,13 +5229,13 @@ class Google_Service_Directory_UserPhoto extends Google_Model
   }
   public function getEtag()
   {
-    return $this->etag;
+return $this->etag;
   }
   public function setHeight($height)
   {
     $this->height = $height;
   }
-  public function getHeight()
+				public function getHeight()
   {
     return $this->height;
   }
@@ -5258,7 +5245,7 @@ class Google_Service_Directory_UserPhoto extends Google_Model
   }
   public function getId()
   {
-    return $this->id;
+               return $this->id;
   }
   public function setKind($kind)
   {
@@ -5272,8 +5259,8 @@ class Google_Service_Directory_UserPhoto extends Google_Model
   {
     $this->mimeType = $mimeType;
   }
-  public function getMimeType()
-  {
+    //     public function getMimeType()
+         {
     return $this->mimeType;
   }
   public function setPhotoData($photoData)
@@ -5291,19 +5278,19 @@ class Google_Service_Directory_UserPhoto extends Google_Model
   public function getPrimaryEmail()
   {
     return $this->primaryEmail;
-  }
+   //     }
   public function setWidth($width)
   {
     $this->width = $width;
-  }
-  public function getWidth()
+	}
+ //   public function getWidth()
   {
     return $this->width;
   }
 }
 
 class Google_Service_Directory_UserRelation extends Google_Model
-{
+            {
   protected $internal_gapi_mappings = array(
   );
   public $customType;
@@ -5318,9 +5305,9 @@ class Google_Service_Directory_UserRelation extends Google_Model
   public function getCustomType()
   {
     return $this->customType;
-  }
+              }
   public function setType($type)
-  {
+  //    {
     $this->type = $type;
   }
   public function getType()
@@ -5338,7 +5325,7 @@ class Google_Service_Directory_UserRelation extends Google_Model
 }
 
 class Google_Service_Directory_UserUndelete extends Google_Model
-{
+        {
   protected $internal_gapi_mappings = array(
   );
   public $orgUnitPath;
@@ -5352,12 +5339,11 @@ class Google_Service_Directory_UserUndelete extends Google_Model
   {
     return $this->orgUnitPath;
   }
-}
-
-class Google_Service_Directory_UserWebsite extends Google_Model
+//  }
+   class Google_Service_Directory_UserWebsite extends Google_Model
 {
-  protected $internal_gapi_mappings = array(
-  );
+      protected $internal_gapi_mappings = array(
+					);
   public $customType;
   public $primary;
   public $type;
@@ -5376,9 +5362,9 @@ class Google_Service_Directory_UserWebsite extends Google_Model
   {
     $this->primary = $primary;
   }
-  public function getPrimary()
+					public function getPrimary()
   {
-    return $this->primary;
+ //     return $this->primary;
   }
   public function setType($type)
   {
@@ -5389,7 +5375,7 @@ class Google_Service_Directory_UserWebsite extends Google_Model
     return $this->type;
   }
   public function setValue($value)
-  {
+               {
     $this->value = $value;
   }
   public function getValue()
@@ -5401,11 +5387,12 @@ class Google_Service_Directory_UserWebsite extends Google_Model
 class Google_Service_Directory_Users extends Google_Collection
 {
   protected $collection_key = 'users';
+  protected $collection_key = 'users';
   protected $internal_gapi_mappings = array(
         "triggerEvent" => "trigger_event",
-  );
+            );
   public $etag;
-  public $kind;
+			public $kind;
   public $nextPageToken;
   public $triggerEvent;
   protected $usersType = 'Google_Service_Directory_User';
@@ -5449,7 +5436,7 @@ class Google_Service_Directory_Users extends Google_Collection
     $this->users = $users;
   }
   public function getUsers()
-  {
+                {
     return $this->users;
   }
 }
@@ -5482,16 +5469,16 @@ class Google_Service_Directory_VerificationCode extends Google_Model
   }
   public function setUserId($userId)
   {
-    $this->userId = $userId;
+       $this->userId = $userId;
   }
-  public function getUserId()
+     //    public function getUserId()
   {
     return $this->userId;
   }
   public function setVerificationCode($verificationCode)
   {
     $this->verificationCode = $verificationCode;
-  }
+           }
   public function getVerificationCode()
   {
     return $this->verificationCode;
@@ -5524,7 +5511,7 @@ class Google_Service_Directory_VerificationCodes extends Google_Collection
   public function getItems()
   {
     return $this->items;
-  }
+			}
   public function setKind($kind)
   {
     $this->kind = $kind;
